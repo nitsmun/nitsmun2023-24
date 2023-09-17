@@ -13,11 +13,11 @@ Thank you for considering contributing to NITSMUN Website repo! We welcome contr
 
 ## Code Style Guidelines
 
-- We follow the [NITSMUN Website Repo General Convention]() for this project. Please review and adhere to these guidelines when writing code.
-- Make use of basic linting, as specified in our documentation to maintain code consistency.
+
+- Make use of strict linting, as specified in our repo to maintain code consistency.
 
   ## Issue and Pull Request Workflow
-- Before working on a new feature or bug fix, check the [issue tracker]() for existing issues or feature requests.
+- Before working on a new feature or bug fix, check the [issue tracker](https://github.com/nitsmun/nitsmun2023-24/issues) for existing issues or feature requests.
 - If the issue does not exist, please open a new issue to discuss your proposed changes.
 - Fork the `dev` branch and create a new branch for your work.
 - Reference the issue number in your commit messages and pull request description using `#issue_number`.
@@ -44,4 +44,4 @@ Thank you for considering contributing to NITSMUN Website repo! We welcome contr
 
 ## License
 
-By contributing to this project, you agree that your contributions will be licensed under the project's [LICENSE]().
+By contributing to this project, you agree that your contributions will be licensed under the project's [LICENSE](https://github.com/nitsmun/nitsmun2023-24/blob/dev/LICENSE).
