@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+:root {
+  // Font family
+  --NITSMUN-font-1: "Poppins", sans-serif;
+  --NITSMUN-font-2: "Montserrat", sans-serif;
+  --NITSMUN-font-3: "Inter", sans-serif;
+
+  --NITSMUN-main-theme: ;
+
+  // Font colors
+  --NITSMUN-white-1: #ffffff;
+  --NITSMUN-gray-1: rgba(255, 255, 255, 0.5);
+  --NITSMUN-gray-2: rgba(255, 255, 255, 0.72);
+  --NITSMUN4-white: #fff;
+
+  --NITSMUN4-shadow-1: ;
+  --NITSMUN4-shadow-2: ;
+  --NITSMUN4-shadow-3: ;
+
+  --NITSMUN4-gradient-1: ;
+  --NITSMUN4-gradient-2: linear-gradient();
+
+  --heading-1-text-weight: 600;
+  --heading-2-text-weight: 500;
+  --heading-3-text-weight: 700;
+
+  --heading-1-font-size-pc: ;
+  --heading-2-font-size-tablet: ;
+  --heading-3-font-size-mobile: ;
+
+  --paragraph-1-text-weight: 400;
+  --paragraph-2-text-weight: 300;
+
+  // Navbar
+  --NITSMUN4-navbar-height-pc: ;
+  --NITSMUN4-navbar-height-tablet: ;
+  --NITSMUN4-navbar-height-mobile: ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--NITSMUN-font-1);
+}
