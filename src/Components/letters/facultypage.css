@@ -1,0 +1,155 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.content{
+    background-color: aliceblue;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 7rem 2rem 8rem;
+    text-align: justify;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-top: 4rem;
+
+}
+
+.dear {
+    font-size: 1.1rem;
+    font-weight: bold;
+    justify-content: space-around;
+    margin-top: 5rem;
+}
+
+.para1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.para1-text {
+    width: 80%;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+
+.photo img{
+    width: 200px;
+    height: 200px;
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+}
+
+.para2 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+
+}
+.para3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+.para4 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+.regards {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+
+}
+.regards p{
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.container img {
+    width: 300px;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.whatmun-container {
+    background-image: url(https://res.cloudinary.com/sarr/image/upload/v1697474684/zog40hhhzyadgl22kbaw.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    width: 100%;
+    height: 700px;
+    
+}
+.whatmun-container::before{
+    content: "";
+    background-image: inherit;
+    filter: blur(5px) grayscale(0.5) brightness(1.2);
+    position: absolute;
+    z-index: -1;
+}
+
+.text-box {
+    padding: 3rem;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    gap: 14rem;
+    z-index: 2;
+}
+.logo-container img {
+    height: 11rem;
+    width: 12rem;
+    margin-top: 4rem;
+}
+.mun-big-text {
+    color:#fff;
+    font-size: 2rem;
+    align-items: center;
+    font-weight: 15px;
+}
+.mun-big-text span {
+    font-weight: bold;
+}
+.mun-text {
+    color: #fff;
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: justify;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    margin-top: 2rem;
+    
+}
+button {
+    background-color: rgb(190, 179, 26);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s, color 0.3sec;
+}
+

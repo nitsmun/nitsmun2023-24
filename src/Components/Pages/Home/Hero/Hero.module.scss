@@ -1,0 +1,62 @@
+.Herocard {
+    border: 1rem solid var(--NITSMUN-navbar-golden);
+    border-radius: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 2rem;
+    margin: 10vw;
+    padding: 25vw;
+    margin-top: 0;
+    background-color: var(--NITSMUN-navbar-blue);
+}
+
+.Herodetails {
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.Herologo {
+    scale: 1.2;
+    margin: 2rem;
+}
+
+.Heroorg {
+    font-size: 2.5rem;
+}
+
+.Herodes {
+    font-size: 1rem;
+}
+
+.Heroreg {
+    color: #ffffff;
+    background-color: var(--NITSMUN-navbar-golden);
+}
+
+.Herotimeline {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    row-gap: 1rem;
+}
+
+@media screen and (min-width:760px) {
+    .Herocard {
+        flex-direction: row-reverse;
+        column-gap: 3.5rem;
+        border-radius: 20vw;
+        padding: 5rem;
+    }
+
+    .Herologo {
+        scale: 2;
+    }
+
+    .Herodetails {
+        align-items: flex-start;
+    }
+}
