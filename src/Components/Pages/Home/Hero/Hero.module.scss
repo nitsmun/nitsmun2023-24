@@ -23,7 +23,7 @@
 }
 
 .Heroorg {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 
 .Herodes {
@@ -33,6 +33,7 @@
 .Heroreg {
     color: #ffffff;
     background-color: var(--NITSMUN-navbar-golden);
+    font-size: 1rem;
 }
 
 .Herotimeline {
@@ -44,6 +45,11 @@
     row-gap: 1rem;
 }
 
+.timeBox {
+    height: 2rem;
+    width: 2rem;
+}
+
 @media screen and (min-width:760px) {
     .Herocard {
         flex-direction: row-reverse;
@@ -52,11 +58,24 @@
         padding: 5rem;
     }
 
+    .Heroorg {
+        font-size: 2.5rem;
+    }
+
+    .Heroreg {
+        font-size: 2.5rem;
+    }
+
     .Herologo {
         scale: 2;
     }
 
     .Herodetails {
         align-items: flex-start;
+    }
+
+    .timeBox {
+        height: 5rem;
+        width: 5rem;
     }
 }

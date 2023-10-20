@@ -42,13 +42,16 @@
   --NITSMUN4-navbar-height-mobile: ;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--NITSMUN-font-1);
+#root {
+  width: 100vw;
 }
 
 html {
   overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--NITSMUN-font-1);
 }

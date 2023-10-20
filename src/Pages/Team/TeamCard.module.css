@@ -1,0 +1,65 @@
+.TeamCard {
+    width: 60vw;
+    margin: 0 auto;
+    transition-duration: 1s;
+    overflow: hidden;
+}
+
+.TeamCard:hover {
+    transition-duration: 1s;
+    scale: 1.1
+}
+
+.socialCont img {
+    scale: 1;
+    transition-duration: 0.5s;
+}
+
+.socialCont img:hover {
+    scale: 1.1;
+    transition-duration: 0.5s;
+}
+
+.lustre {
+    position: absolute;
+    width: 120%;
+    height: 15vh;
+    background-color: #bbbbbb73;
+    box-shadow: 0 0 10rem #bbbbbb73;
+    transform: translateX(-50%) translateY(-120%) rotateZ(45deg);
+    animation-name: none;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.TeamCard:hover .lustre {
+    animation-name: lustre;
+    transition-duration: 1s;
+}
+
+@keyframes lustre {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-120%) rotateZ(90deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(50%) translateY(-120%) rotateZ(90deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(50%) translateY(-120%) rotateZ(90deg);
+    }
+}
+
+@media screen and (min-width:760px) {
+    .TeamCard {
+        width: 20vw;
+    }
+}

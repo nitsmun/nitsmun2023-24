@@ -10,21 +10,21 @@ const TimeLine = () => {
                         <h6>
                             Days
                         </h6>
-                        <h2 style={{ backgroundColor: 'transparent', color: '#ffffff', border: '0.1rem solid var(--NITSMUN-navbar-golden)', borderRadius: '1.5rem', height: '5rem', width: '5rem' }}>
+                        <h2 className={styles.timeBox} style={{ backgroundColor: 'transparent', color: '#ffffff', border: '0.1rem solid var(--NITSMUN-navbar-golden)', borderRadius: '1.5rem' }}>
                         </h2>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'space-around' }}>
                         <h6>
                             Hours
                         </h6>
-                        <h2 style={{ backgroundColor: 'transparent', color: '#ffffff', border: '0.1rem solid var(--NITSMUN-navbar-golden)', borderRadius: '1.5rem', height: '5rem', width: '5rem' }}>
+                        <h2 className={styles.timeBox} style={{ backgroundColor: 'transparent', color: '#ffffff', border: '0.1rem solid var(--NITSMUN-navbar-golden)', borderRadius: '1.5rem' }}>
                         </h2>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'space-around' }}>
                         <h6>
                             Minutes
                         </h6>
-                        <h2 style={{ backgroundColor: 'transparent', color: '#ffffff', border: '0.1rem solid var(--NITSMUN-navbar-golden)', borderRadius: '1.5rem', height: '5rem', width: '5rem' }}>
+                        <h2 className={styles.timeBox} style={{ backgroundColor: 'transparent', color: '#ffffff', border: '0.1rem solid var(--NITSMUN-navbar-golden)', borderRadius: '1.5rem' }}>
                         </h2>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ const Hero = () => {
                 <h6 style={{ color: '#ffffff', textAlign: 'center' }} className={styles.Herodes}>The Delegates' Symposium</h6>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }} className={styles.Herodetails}>
-                <Link style={{ padding: '1rem', border: '0 solid transparent', borderRadius: '1rem', fontSize: '2rem', textDecoration: 'none' }} className={styles.Heroreg}>REGISTER</Link>
+                <Link style={{ padding: '1rem', border: '0 solid transparent', borderRadius: '1rem', textDecoration: 'none' }} className={styles.Heroreg}>REGISTER</Link>
                 <TimeLine />
             </div>
         </div>

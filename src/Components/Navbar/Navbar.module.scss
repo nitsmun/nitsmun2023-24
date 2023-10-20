@@ -3,15 +3,18 @@
     transition: ease 1000ms;
     height: 3rem;
     width: 3rem;
+    position: absolute;
+    left: 80vw;
+    top: 1rem;
 }
 
 .mobileNav {
     position: absolute;
-    width: 100vw;
     visibility: visible;
     background-color: var(--NITSMUN-navbar-blue);
     transition: ease 1000ms;
     height: 80vh;
+    top: 4rem;
     z-index: 5;
 }
 
@@ -27,7 +30,6 @@
 
 .deskNav a {
     background-color: transparent;
-    color: var(--NITSMUN-white-1);
     transition-duration: 0.5s;
     padding: 1rem;
     border: 0px solid transparent;
@@ -40,7 +42,7 @@
     background-color: var(--NITSMUN-navbar-golden);
 }
 
-@media screen and (min-width:760px) {
+@media screen and (min-width:1041px) {
     .mobileNav {
         visibility: hidden;
         height: 0;
