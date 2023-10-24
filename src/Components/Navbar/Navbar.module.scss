@@ -1,63 +1,63 @@
 .menuBtn {
-    visibility: visible;
-    transition: ease 1000ms;
-    height: 3rem;
-    width: 3rem;
-    position: absolute;
-    left: 80vw;
-    top: 1rem;
+  visibility: visible;
+  transition: ease 1000ms;
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  left: 80vw;
+  top: 1rem;
 }
 
 .mobileNav {
-    position: absolute;
-    visibility: visible;
-    background-color: var(--NITSMUN-navbar-blue);
-    transition: ease 1000ms;
-    height: 80vh;
-    top: 4rem;
-    z-index: 5;
+  position: absolute;
+  visibility: visible;
+  background-color: var(--NITSMUN-navbar-blue);
+  transition: ease 1000ms;
+  height: 80vh;
+  top: 4rem;
+  z-index: 5;
 }
 
 .mobileNav a {
-    color: var(--NITSMUN-navbar-golden);
+  color: var(--NITSMUN-navbar-golden);
 }
 
 .deskNav {
-    visibility: hidden;
-    width: 0;
-    height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 .deskNav a {
-    background-color: transparent;
-    transition-duration: 0.5s;
-    padding: 1rem;
-    border: 0px solid transparent;
-    border-radius: 0.5rem;
+  background-color: transparent;
+  transition-duration: 0.5s;
+  padding: 1rem;
+  border: 0px solid transparent;
+  border-radius: 0.5rem;
 }
 
 .deskNav a:hover {
-    transition-duration: 0.5s;
-    border-radius: 1rem;
-    background-color: var(--NITSMUN-navbar-golden);
+  transition-duration: 0.5s;
+  border-radius: 1rem;
+  background-color: var(--NITSMUN-navbar-golden);
 }
 
-@media screen and (min-width:1041px) {
-    .mobileNav {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-    }
+@media screen and (min-width: 1041px) {
+  .mobileNav {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+  }
 
-    .menuBtn {
-        visibility: hidden;
-        width: 0vw;
-        height: 0vh;
-    }
+  .menuBtn {
+    visibility: hidden;
+    width: 0vw;
+    height: 0vh;
+  }
 
-    .deskNav {
-        visibility: visible;
-        width: auto;
-        height: auto;
-    }
+  .deskNav {
+    visibility: visible;
+    width: auto;
+    height: auto;
+  }
 }
