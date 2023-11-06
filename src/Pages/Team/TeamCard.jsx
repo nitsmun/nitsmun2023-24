@@ -1,16 +1,17 @@
-import styles from "./TeamCard.module.css";
+import styles from "./TeamCard.module.scss";
+import { useState } from "react";
+
 const TeamCard = (props) => {
+  const [details, setDetails] = useState(0);
   return (
     <div>
       <div
         className={styles.TeamCard}
+        role="button"
         style={{
-          display: "flex",
           boxShadow: "0 0 2rem #998899aa",
           color: "#ffffff",
           backgroundColor: "#1D1C41",
-          flexDirection: "column",
-          justifyContent: "space-around",
         }}
       >
         <img
@@ -19,8 +20,7 @@ const TeamCard = (props) => {
           style={{
             textAlign: "center",
             width: "100%",
-            height: "80%",
-            backgroundColor: "#000000",
+            backgroundColor: "#000000"
           }}
           className={styles.photo}
         />
@@ -33,36 +33,43 @@ const TeamCard = (props) => {
             justifyContent: "space-around",
           }}
         >
-          <div className={styles.details}>
+          <div className={styles.overview}>
             <h1 style={{ fontSize: "1rem" }}>{props.name}</h1>
             <h4 style={{ fontSize: "0.8rem" }}>{props.designation}</h4>
-            <div
-              className={styles.socialCont}
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                width: "100%",
-                justifyContent: "space-around",
-                paddingTop: "0.5rem",
-                paddingBottom: "0.5rem",
-              }}
-            >
-              <img
-                alt="Facebook icon Loading..."
-                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1697786274/nitsmun/800px-Facebook_icon__28black_29.svg_dupbky.png"
-                style={{ height: "2rem", width: "2rem" }}
-              />
-              <img
-                alt="Instagram icon Loading..."
-                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1697786320/nitsmun/1384031_xjcws7.png"
-                style={{ height: "2rem", width: "2rem" }}
-              />
-              <img
-                alt="Linkedin icon Loading..."
-                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1697786365/nitsmun/11-linkedin-512_o9ywr7.png"
-                style={{ height: "2rem", width: "2rem" }}
-              />
+          </div>
+          <div className={styles.details} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', opacity: `${details}` }}>
+            <div style={{ margin: '0 auto' }}>
+              <h1 style={{ fontSize: "1rem" }}>{props.name}</h1>
+              <h4 style={{ fontSize: "0.8rem" }}>{props.designation}</h4>
+              <div
+                className={styles.socialCont}
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  width: "100%",
+                  justifyContent: "space-around",
+                  paddingTop: "0.5rem",
+                  paddingBottom: "0.5rem",
+                  cursor: 'pointer'
+                }}
+              >
+                <img
+                  alt="Facebook icon Loading..."
+                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699125289/fb_icon_325x325_oaepmd.png"
+                  style={{ height: "2rem", width: "2rem" }}
+                />
+                <img
+                  alt="Instagram icon Loading..."
+                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699125213/nitsmun/768px-Instagram-Icon_v4llqe.png"
+                  style={{ height: "2rem", width: "2rem" }}
+                />
+                <img
+                  alt="Linkedin icon Loading..."
+                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699125365/nitsmun/6WtDIesg_400x400_rnallb.png"
+                  style={{ height: "2rem", width: "2rem" }}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -71,15 +78,20 @@ const TeamCard = (props) => {
         className={styles.bottomCircle}
         style={{
           position: "relative",
-          top: "-6.5rem",
           left: "60%",
-          height: "5rem",
-          width: "5rem",
+          height: "3rem",
+          width: "3rem",
           border: "0 solid transparent",
           borderRadius: "5rem",
           backgroundColor: "#C9984E",
+          scale: `${details === 0 ? 1 : 1.05}`,
+          transition: 'ease 500ms',
+          padding: '0.1rem',
+          cursor: 'pointer'
         }}
-      ></div>
+        onClick={() => setDetails(details === 0 ? 1 : 0)}
+        role="button"
+      ><img className={styles.arrow} style={{ scale: '0.5', filter: 'invert(100%)' }} src={details === 0 ? 'https://res.cloudinary.com/dhry5xscm/image/upload/v1699124213/nitsmun/arrow-right-solid_qv7lfi.svg' : 'https://res.cloudinary.com/dhry5xscm/image/upload/v1699124213/nitsmun/arrow-left-solid_y8rtjn.svg'} alt="arrow" /></div>
     </div>
   );
 };

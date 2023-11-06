@@ -1,6 +1,6 @@
 import Navbar from "../../Components/Navbar/Navbar";
 import TeamCard from "./TeamCard";
-import styles from "./Team.module.css";
+import styles from "./Team.module.scss";
 const Team = () => {
   return (
     <>

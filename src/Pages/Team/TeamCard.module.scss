@@ -3,54 +3,53 @@
   padding: 2.5rem;
   scale: 0.8;
   transition-duration: 1s;
-  clip-path: polygon(0% 0%, 0% 90%, 100% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 0% 85%, 100% 100%, 100% 0%);
 }
 
-.TeamCard:hover {
-  transition-duration: 1s;
-  scale: 1.1;
-}
 
 .socialCont {
-  opacity: 0;
   transition-duration: 1s;
 }
 
 .socialCont img {
-  filter: invert(20%);
   transition-duration: 1s;
 }
 
-.TeamCard:hover .socialCont img {
-  filter: invert(100%);
-  transition-duration: 1s;
-}
+// .TeamCard:hover .socialCont img {
+//   (1filter: invert00%);
+//   transition-duration: 1s;
+// }
 
-.TeamCard:hover .socialCont {
-  opacity: 1;
-  transition-duration: 1s;
-}
+// .TeamCard:hover .socialCont {
+//   opacity: 1;
+//   transition-duration: 1s;
+// }
 
 .details {
-  position: relative;
-  top: 0;
+  position: absolute;
+  top: 0%;
   transition-duration: 1s;
+  background-color: #1D1C41;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: ease 500ms;
 }
 
-.TeamCard:hover .details {
-  top: -8rem;
-  transition-duration: 1s;
-}
+// .TeamCard:hover .details {
+//   top: -8rem;
+//   transition-duration: 1s;
+// }
 
 .photo {
   opacity: 1;
   transition-duration: 1s;
 }
 
-.TeamCard:hover .photo {
-  opacity: 0;
-  transition-duration: 1s;
-}
+// .TeamCard:hover .photo {
+//   opacity: 0;
+//   transition-duration: 1s;
+// }
 
 .socialCont img {
   scale: 1;
@@ -60,6 +59,11 @@
 .socialCont img:hover {
   scale: 1.1;
   transition-duration: 0.5s;
+}
+
+.bottomCircle {
+  position: relative;
+  top: -4.5rem;
 }
 
 .lustre {
@@ -78,10 +82,10 @@
   transition-duration: 1s;
 }
 
-.TeamCard:hover .lustre {
-  animation-name: lustre;
-  transition-duration: 1s;
-}
+// .TeamCard:hover .lustre {
+//   animation-name: lustre;
+//   transition-duration: 1s;
+// }
 
 @keyframes lustre {
   0% {
@@ -103,5 +107,9 @@
 @media screen and (min-width: 760px) {
   .TeamCard {
     width: 20vw;
+  }
+
+  .bottomCircle {
+    top: -3.5rem;
   }
 }

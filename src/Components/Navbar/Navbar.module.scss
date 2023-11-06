@@ -6,20 +6,21 @@
   position: absolute;
   left: 80vw;
   top: 1rem;
+  z-index: 6;
 }
 
 .mobileNav {
   position: absolute;
   visibility: visible;
   background-color: var(--NITSMUN-navbar-blue);
-  transition: ease 1000ms;
-  height: 80vh;
-  top: 4rem;
+  transition: ease 500ms;
+  width: 100vw;
+  top: 0rem;
   z-index: 5;
 }
 
 .mobileNav a {
-  color: var(--NITSMUN-navbar-golden);
+  color: #ffffff;
 }
 
 .deskNav {
@@ -42,7 +43,11 @@
   background-color: var(--NITSMUN-navbar-golden);
 }
 
-@media screen and (min-width: 1041px) {
+.deskHam {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 1051px) {
   .mobileNav {
     visibility: hidden;
     height: 0;
@@ -59,5 +64,12 @@
     visibility: visible;
     width: auto;
     height: auto;
+  }
+
+  .deskHam {
+    visibility: visible;
+    margin-left: 4rem;
+    width: 3rem;
+    height: 3rem;
   }
 }

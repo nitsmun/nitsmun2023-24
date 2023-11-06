@@ -1,4 +1,4 @@
-import styles from "./ReviewCard.module.css";
+import styles from "./ReviewCard.module.scss";
 const ReviewCard = (props) => {
   return (
     <div
@@ -7,7 +7,9 @@ const ReviewCard = (props) => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "flex-start",
+        margin: '3rem'
       }}
+      className={styles.card}
     >
       <img
         alt="loading review card..."
@@ -27,7 +29,6 @@ const ReviewCard = (props) => {
           padding: "3rem",
           border: "0 solid transparent",
           borderRadius: "1.5rem",
-          backgroundColor: "#aaaaff",
         }}
       >
         <p>{props.review}</p>

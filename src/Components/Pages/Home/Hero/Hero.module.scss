@@ -18,8 +18,8 @@
 }
 
 .Herologo {
-  scale: 1.2;
-  margin: 2rem;
+  width: 8.6rem;
+  height: 8.4rem
 }
 
 .Heroorg {
@@ -52,7 +52,7 @@
 
 @media screen and (min-width: 760px) {
   .Herocard {
-    flex-direction: row-reverse;
+    flex-direction: column;
     column-gap: 3.5rem;
     border-radius: 20vw;
     padding: 5rem;

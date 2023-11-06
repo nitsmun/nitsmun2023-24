@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Hero.module.scss";
+import { useState } from 'react';
 const TimeLine = () => {
   return (
     <div className={styles.Herotimeline}>
@@ -78,6 +79,7 @@ const TimeLine = () => {
   );
 };
 const Hero = () => {
+  const [eventActive, seteventActive] = useState(false);
   return (
     <div className={styles.Herocard}>
       <div
@@ -89,7 +91,7 @@ const Hero = () => {
         className={styles.Herodetails}
       >
         <img
-          src="https://res.cloudinary.com/dhry5xscm/image/upload/v1695657514/nitsmun/MUN_RTU_LOGO_2_ugychb.svg"
+          src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699293673/nitsmun/nitsmun_logo_otrutb.png"
           className={styles.Herologo}
           alt="logo"
         />
@@ -104,30 +106,33 @@ const Hero = () => {
           NITSMUN
         </h1>
         <h6 style={{ color: "#ffffff", textAlign: "center" }} className={styles.Herodes}>
-          The Delegates Symposium
+          The Loremsas  Ipsumasd
         </h6>
       </div>
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-around",
+          justifyContent: "center",
         }}
         className={styles.Herodetails}
-      >
-        <Link
-          style={{
-            padding: "1rem",
-            border: "0 solid transparent",
-            borderRadius: "1rem",
-            textDecoration: "none",
-          }}
-          className={styles.Heroreg}
-          to="/"
-        >
-          REGISTER
-        </Link>
-        <TimeLine />
+      >{eventActive === true ?
+        <>
+          <Link
+            style={{
+              padding: "1rem",
+              border: "0 solid transparent",
+              borderRadius: "1rem",
+              textDecoration: "none",
+            }}
+            className={styles.Heroreg}
+            to="/"
+          >
+            REGISTER
+          </Link>
+          <TimeLine />
+        </> : null
+        }
       </div>
     </div>
   );

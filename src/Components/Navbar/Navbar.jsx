@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
 const Navbar = (props) => {
+  const isEvents = false;
   const navLinks = [
     { name: "HOME", dest: "/" },
     { name: "COMMITTEES", dest: "" },
@@ -20,7 +21,7 @@ const Navbar = (props) => {
     // navpos === "0%" ? setNavpos("80%") : setNavpos("0%");
     // navtrans === "0" ? setNavtrans("1") : setNavtrans("0");
     if (navpos === "0%") {
-      setNavpos("80%");
+      setNavpos("100%");
     } else {
       setNavpos("0%");
     }
@@ -47,6 +48,7 @@ const Navbar = (props) => {
                 ? "https://res.cloudinary.com/dhry5xscm/image/upload/v1695653029/nitsmun/Group_2062_knm91j.svg"
                 : "https://res.cloudinary.com/dhry5xscm/image/upload/v1695653265/nitsmun/xmark-solid_bd3own.svg"
             }
+            style={{ filter: `invert(${navpos === '0%' ? '0%' : '100%'})` }}
             className={styles.menuBtn}
             alt="Hamburger icon"
           />
@@ -61,7 +63,7 @@ const Navbar = (props) => {
           alignItems: "center",
           padding: "2rem",
           rowGap: "1rem",
-          width: `${navpos}`,
+          height: `${navpos}`,
           opacity: `${navtrans}`,
         }}
       >
@@ -96,14 +98,19 @@ const Navbar = (props) => {
               {item.name}
             </Link>
           ))}
-          <select>
-            EVENTS
-            {events.map((item) => (
-              <option>
-                <Link to={item.dest}>{item.name}</Link>
-              </option>
-            ))}
-          </select>
+          {isEvents === true ?
+            <select>
+              EVENTS
+              {
+                events.map((item) => (
+                  <option>
+                    <Link to={item.dest}>{item.name}</Link>
+                  </option>
+                ))
+              }
+            </select> : null
+          }
+          <img src='https://res.cloudinary.com/dhry5xscm/image/upload/v1695653029/nitsmun/Group_2062_knm91j.svg' className={styles.deskHam} />
         </div>
       </div>
     </div>
