@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import styles from "./Hero.module.scss";
+
 const TimeLine = () => {
   return (
     <div className={styles.Herotimeline}>
@@ -79,7 +79,8 @@ const TimeLine = () => {
   );
 };
 const Hero = () => {
-  const [eventActive, seteventActive] = useState(false);
+  // const [eventActive, setEventActive] = useState(false);
+  const eventActive = false;
   return (
     <div className={styles.Herocard}>
       <div

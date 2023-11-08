@@ -114,6 +114,7 @@ const Navbar = (props) => {
         <img
           src="https://res.cloudinary.com/dhry5xscm/image/upload/v1695653029/nitsmun/Group_2062_knm91j.svg"
           className={styles.deskHam}
+          alt="img"
         />
       </div>
     </div>

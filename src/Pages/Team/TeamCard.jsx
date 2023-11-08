@@ -3,6 +3,17 @@ import styles from "./TeamCard.module.scss";
 
 const TeamCard = (props) => {
   const [details, setDetails] = useState(0);
+
+  const toggleMenu = () => {
+    setDetails(details === 0 ? 1 : 0);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "ArrowRight") {
+      toggleMenu();
+    }
+  };
+
   return (
     <div>
       <div
@@ -100,6 +111,8 @@ const TeamCard = (props) => {
         }}
         onClick={() => setDetails(details === 0 ? 1 : 0)}
         role="button"
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
       >
         <img
           className={styles.arrow}

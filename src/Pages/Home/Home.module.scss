@@ -20,6 +20,10 @@
   animation-name: goDown;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 @keyframes goDown {
