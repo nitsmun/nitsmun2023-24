@@ -7,9 +7,10 @@
   align-items: center;
   row-gap: 2rem;
   margin: 10vw;
-  padding: 25vw;
+  padding: 5vw;
   margin-top: 0;
-  background-color: var(--NITSMUN-navbar-blue);
+  background-color: #070826;
+  box-shadow: 0 0 0.5rem 0.5rem rgba(109, 109, 109, 0.70);
 }
 
 .Herodetails {
@@ -28,6 +29,7 @@
 
 .Herodes {
   font-size: 1rem;
+  font-weight: 400;
 }
 
 .Heroreg {
@@ -55,11 +57,18 @@
     flex-direction: column;
     column-gap: 3.5rem;
     border-radius: 20vw;
-    padding: 5rem;
+    padding: 0.5rem;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
   }
 
   .Heroorg {
-    font-size: 2.5rem;
+    font-size: 4.2rem;
+    letter-spacing: 4px;
+  }
+
+  .Herodes {
+    font-size: 1.5rem;
   }
 
   .Heroreg {
@@ -67,11 +76,13 @@
   }
 
   .Herologo {
-    scale: 2;
+    width: 25.5rem;
+    height: 22rem;
   }
 
   .Herodetails {
-    align-items: flex-start;
+    align-items: center;
+    row-gap: 0rem;
   }
 
   .timeBox {

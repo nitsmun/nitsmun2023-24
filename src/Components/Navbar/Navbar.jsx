@@ -73,7 +73,7 @@ const Navbar = (props) => {
           </Link>
         ))}
       </div>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div
           className={styles.deskNav}
           style={{
@@ -110,8 +110,8 @@ const Navbar = (props) => {
               }
             </select> : null
           }
-          <img src='https://res.cloudinary.com/dhry5xscm/image/upload/v1695653029/nitsmun/Group_2062_knm91j.svg' className={styles.deskHam} />
         </div>
+        <img src='https://res.cloudinary.com/dhry5xscm/image/upload/v1695653029/nitsmun/Group_2062_knm91j.svg' className={styles.deskHam} />
       </div>
     </div>
   );

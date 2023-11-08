@@ -4,7 +4,7 @@ import data from './db.json'
 const Reviews = () => {
   return (
     <div style={{ marginTop: "3rem" }} className={styles.reviews}>
-      <h1 style={{ color: "#000055", fontWeight: "300" }}>
+      <h1 style={{ color: "#000055", fontWeight: "600" }}>
         REVIEWS
       </h1>
       <div className={styles.reviewContainer}>

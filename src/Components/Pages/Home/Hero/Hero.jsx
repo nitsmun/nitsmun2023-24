@@ -103,7 +103,7 @@ const Hero = () => {
           }}
           className={styles.Heroorg}
         >
-          NITSMUN
+          NITS-MUN
         </h1>
         <h6 style={{ color: "#ffffff", textAlign: "center" }} className={styles.Herodes}>
           The Loremsas  Ipsumasd
