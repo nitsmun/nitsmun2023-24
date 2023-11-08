@@ -7,7 +7,7 @@ const ReviewCard = (props) => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "flex-start",
-        margin: '3rem'
+        margin: "3rem",
       }}
       className={styles.card}
     >

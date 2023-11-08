@@ -1,22 +1,22 @@
 .reviews {
-    margin: 0 auto;
-    text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(42, 49, 66);
-    border-radius: 10px;
+  background-color: rgb(42, 49, 66);
+  border-radius: 10px;
 }
 
 .reviewContainer {
-    overflow: auto;
+  overflow: auto;
 }
 
 .reviewContainer {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }

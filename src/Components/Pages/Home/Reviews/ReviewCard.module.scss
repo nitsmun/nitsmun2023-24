@@ -1,11 +1,11 @@
 .review {
   width: 90vw;
-  background-color: #9695C2;
+  background-color: #9695c2;
   transition-duration: 0.4s;
 }
 
 .review:hover {
-  background-color: #1D1C41;
+  background-color: #1d1c41;
   color: #ffffff;
   transition-duration: 0.4s;
 }
@@ -16,7 +16,7 @@
   }
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width: 1000px) {
   .review {
     width: 20vw;
   }

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import styles from "./Hero.module.scss";
-import { useState } from 'react';
 const TimeLine = () => {
   return (
     <div className={styles.Herotimeline}>
@@ -106,7 +106,7 @@ const Hero = () => {
           NITS-MUN
         </h1>
         <h6 style={{ color: "#ffffff", textAlign: "center" }} className={styles.Herodes}>
-          The Loremsas  Ipsumasd
+          The Loremsas Ipsumasd
         </h6>
       </div>
       <div
@@ -116,23 +116,24 @@ const Hero = () => {
           justifyContent: "center",
         }}
         className={styles.Herodetails}
-      >{eventActive === true ?
-        <>
-          <Link
-            style={{
-              padding: "1rem",
-              border: "0 solid transparent",
-              borderRadius: "1rem",
-              textDecoration: "none",
-            }}
-            className={styles.Heroreg}
-            to="/"
-          >
-            REGISTER
-          </Link>
-          <TimeLine />
-        </> : null
-        }
+      >
+        {eventActive === true ? (
+          <>
+            <Link
+              style={{
+                padding: "1rem",
+                border: "0 solid transparent",
+                borderRadius: "1rem",
+                textDecoration: "none",
+              }}
+              className={styles.Heroreg}
+              to="/"
+            >
+              REGISTER
+            </Link>
+            <TimeLine />
+          </>
+        ) : null}
       </div>
     </div>
   );

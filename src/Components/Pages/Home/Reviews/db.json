@@ -1,52 +1,52 @@
 [
-    {
-        "id": 1,
-        "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
-        "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    },
-    {
-        "id": 2,
-        "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
-        "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    },
-    {
-        "id": 3,
-        "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
-        "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    },
-    {
-        "id": 4,
-        "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
-        "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    },
-    {
-        "id": 5,
-        "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
-        "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    },
-    {
-        "id": 6,
-        "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
-        "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    },
-    {
-        "id": 7,
-        "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
-        "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    },
-    {
-        "id": 8,
-        "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
-        "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    },
-    {
-        "id": 9,
-        "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
-        "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    },
-    {
-        "id": 10,
-        "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
-        "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
-    }
+  {
+    "id": 1,
+    "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
+    "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+  },
+  {
+    "id": 2,
+    "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
+    "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+  },
+  {
+    "id": 3,
+    "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
+    "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+  },
+  {
+    "id": 4,
+    "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
+    "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+  },
+  {
+    "id": 5,
+    "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
+    "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+  },
+  {
+    "id": 6,
+    "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
+    "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+  },
+  {
+    "id": 7,
+    "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
+    "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+  },
+  {
+    "id": 8,
+    "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
+    "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+  },
+  {
+    "id": 9,
+    "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
+    "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+  },
+  {
+    "id": 10,
+    "img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1697798196/nitsmun/picture-profile-icon-human-people-260nw-1011304363_myafws.jpg",
+    "review": "Lorem ipsum dolor sit Amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+  }
 ]

@@ -48,7 +48,7 @@ const Navbar = (props) => {
                 ? "https://res.cloudinary.com/dhry5xscm/image/upload/v1695653029/nitsmun/Group_2062_knm91j.svg"
                 : "https://res.cloudinary.com/dhry5xscm/image/upload/v1695653265/nitsmun/xmark-solid_bd3own.svg"
             }
-            style={{ filter: `invert(${navpos === '0%' ? '0%' : '100%'})` }}
+            style={{ filter: `invert(${navpos === "0%" ? "0%" : "100%"})` }}
             className={styles.menuBtn}
             alt="Hamburger icon"
           />
@@ -73,7 +73,9 @@ const Navbar = (props) => {
           </Link>
         ))}
       </div>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div
+        style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}
+      >
         <div
           className={styles.deskNav}
           style={{
@@ -98,20 +100,21 @@ const Navbar = (props) => {
               {item.name}
             </Link>
           ))}
-          {isEvents === true ?
+          {isEvents === true ? (
             <select>
               EVENTS
-              {
-                events.map((item) => (
-                  <option>
-                    <Link to={item.dest}>{item.name}</Link>
-                  </option>
-                ))
-              }
-            </select> : null
-          }
+              {events.map((item) => (
+                <option>
+                  <Link to={item.dest}>{item.name}</Link>
+                </option>
+              ))}
+            </select>
+          ) : null}
         </div>
-        <img src='https://res.cloudinary.com/dhry5xscm/image/upload/v1695653029/nitsmun/Group_2062_knm91j.svg' className={styles.deskHam} />
+        <img
+          src="https://res.cloudinary.com/dhry5xscm/image/upload/v1695653029/nitsmun/Group_2062_knm91j.svg"
+          className={styles.deskHam}
+        />
       </div>
     </div>
   );

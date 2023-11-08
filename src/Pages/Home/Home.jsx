@@ -9,7 +9,11 @@ const Home = () => {
       <div className={styles.wholeContainer}>
         <Navbar active="home" />
         <Hero />
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><a className={styles.downscrollButton} ><img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699440208/nitsmun/scrollDownButton_gpwehg.svg" /></a></div>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <a className={styles.downscrollButton}>
+            <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699440208/nitsmun/scrollDownButton_gpwehg.svg" />
+          </a>
+        </div>
       </div>
       <Reviews />
     </div>
