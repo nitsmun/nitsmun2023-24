@@ -1,0 +1,18 @@
+.TeamContainer {
+  margin: 0 auto;
+  position: relative;
+  padding: 1.5rem;
+  top: 5rem;
+  row-gap: 5rem;
+  column-gap: 5rem;
+}
+
+.teamPage {
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 760px) {
+  .TeamContainer {
+    flex-direction: row;
+  }
+}

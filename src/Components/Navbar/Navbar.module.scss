@@ -1,0 +1,74 @@
+.menuBtn {
+  visibility: visible;
+  transition: ease 1000ms;
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  left: 80vw;
+  top: 1rem;
+  z-index: 6;
+}
+
+.mobileNav {
+  position: absolute;
+  visibility: visible;
+  background-color: var(--NITSMUN-navbar-blue);
+  transition: ease 500ms;
+  width: 100vw;
+  top: 0rem;
+  z-index: 5;
+}
+
+.mobileNav a {
+  color: #ffffff;
+}
+
+.deskNav {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.deskNav a {
+  background-color: transparent;
+  transition-duration: 0.5s;
+  padding: 1rem;
+  border: 0px solid transparent;
+  border-radius: 0.5rem;
+}
+
+.deskNav a:hover {
+  transition-duration: 0.5s;
+  border-radius: 1rem;
+  background-color: var(--NITSMUN-navbar-golden);
+}
+
+.deskHam {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 1051px) {
+  .mobileNav {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+  }
+
+  .menuBtn {
+    visibility: hidden;
+    width: 0vw;
+    height: 0vh;
+  }
+
+  .deskNav {
+    visibility: visible;
+    width: auto;
+    height: 4rem;
+  }
+
+  .deskHam {
+    visibility: visible;
+    width: 3rem;
+    height: 3rem;
+  }
+}
