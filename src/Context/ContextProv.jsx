@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { createContext, useState, useEffect, useMemo } from "react";
 import axios from "axios";
 
@@ -8,23 +9,20 @@ const ContextProvider = ({ children }) => {
   const [segments, setSegments] = useState([]);
 
   useEffect(() => {
-    try {
-      axios.get(`${import.meta.env.VITE_REACT_APP_API}/dashboard`).then((res) => {
-        setProfile(res.data);
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  }, []);
-
-  useEffect(() => {
-    try {
-      axios.get(`${import.meta.env.VITE_REACT_APP_API}/segments`).then((res) => {
-        setSegments(res.data);
-      });
-    } catch (err) {
-      console.error(err);
-    }
+    const fetchData = async () => {
+      try {
+        const [profileRes, segmentsRes] = await Promise.all([
+          axios.get(`${import.meta.env.VITE_REACT_APP_API}/dashboard`),
+          // axios.get(`https://jsonplaceholder.typicode.com/posts`),
+          axios.get(`${import.meta.env.VITE_REACT_APP_API}/segments`),
+        ]);
+        setProfile(profileRes.data);
+        setSegments(segmentsRes.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchData();
   }, []);
 
   const contextValue = useMemo(() => ({ profile, segments }), [profile, segments]);
