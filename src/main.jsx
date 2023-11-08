@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "./index.scss";
 import { ContextProvider } from "./Context/ContextProv.jsx";
 import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const queryClient = new QueryClient();
 
@@ -12,6 +13,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ContextProvider>
       <QueryClientProvider client={queryClient}>
         <App />
+        {import.meta.env.MODE !== "production" && (
+          <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+        )}
       </QueryClientProvider>
     </ContextProvider>
   </React.StrictMode>
