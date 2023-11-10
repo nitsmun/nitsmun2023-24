@@ -1,7 +1,7 @@
 .TeamCard {
-  margin: 0 auto;
+  margin: 2rem;
   padding: 2.5rem;
-  scale: 0.8;
+  scale: 1;
   transition-duration: 1s;
   clip-path: polygon(0% 0%, 0% 85%, 100% 100%, 100% 0%);
 }
@@ -43,6 +43,7 @@
 .photo {
   opacity: 1;
   transition-duration: 1s;
+  height: 6rem;
 }
 
 // .TeamCard:hover .photo {
@@ -103,6 +104,18 @@
   }
 }
 
+@media screen and (min-width:300px) {
+  .photo {
+    height: 10rem;
+  }
+}
+
+@media screen and (min-width:400px) {
+  .photo {
+    height: 12rem;
+  }
+}
+
 @media screen and (min-width: 760px) {
   .TeamCard {
     width: 20vw;
@@ -110,5 +123,29 @@
 
   .bottomCircle {
     top: -3.5rem;
+  }
+}
+
+@media screen and (min-width:600px) {
+  .photo {
+    height: 12rem;
+  }
+}
+
+@media screen and (min-width:770px) {
+  .photo {
+    height: 5rem;
+  }
+}
+
+@media screen and (min-width:850px) {
+  .photo {
+    height: 8rem;
+  }
+}
+
+@media screen and (min-width:1000px) {
+  .photo {
+    height: 14rem;
   }
 }

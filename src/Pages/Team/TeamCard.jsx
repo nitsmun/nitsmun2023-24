@@ -1,13 +1,14 @@
 import { useState } from "react";
 import styles from "./TeamCard.module.scss";
-
+import { Link } from 'react-router-dom';
 const TeamCard = (props) => {
   const [details, setDetails] = useState(0);
-
   const toggleMenu = () => {
     setDetails(details === 0 ? 1 : 0);
   };
-
+  const handleClick = () => {
+    toggleMenu();
+  };
   const handleKeyDown = (e) => {
     if (e.key === "ArrowRight") {
       toggleMenu();
@@ -74,21 +75,23 @@ const TeamCard = (props) => {
                   cursor: "pointer",
                 }}
               >
-                <img
+                <Link to={props.fb}><img
                   alt="Facebook icon Loading..."
-                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699125289/fb_icon_325x325_oaepmd.png"
-                  style={{ height: "2rem", width: "2rem" }}
-                />
-                <img
-                  alt="Instagram icon Loading..."
-                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699125213/nitsmun/768px-Instagram-Icon_v4llqe.png"
-                  style={{ height: "2rem", width: "2rem" }}
-                />
-                <img
-                  alt="Linkedin icon Loading..."
-                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699125365/nitsmun/6WtDIesg_400x400_rnallb.png"
-                  style={{ height: "2rem", width: "2rem" }}
-                />
+                  src={props.web === false ? "https://res.cloudinary.com/dhry5xscm/image/upload/v1699125289/fb_icon_325x325_oaepmd.png" : "https://res.cloudinary.com/dhry5xscm/image/upload/v1699642357/nitsmun/github_utw5mf.svg"}
+                  style={{ height: "2rem", width: "2rem", filter: `invert(${props.web === false ? 0 : 100}%)` }}
+                /></Link>
+                <Link to={props.mail}>
+                  <img
+                    alt="Mail icon Loading..."
+                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699636486/nitsmun/envelope-regular_sbnoql.svg"
+                    style={{ height: "2rem", width: "2rem", filter: 'invert(100%)' }}
+                  /></Link>
+                <Link to={props.linkedin}>
+                  <img
+                    alt="Linkedin icon Loading..."
+                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699125365/nitsmun/6WtDIesg_400x400_rnallb.png"
+                    style={{ height: "2rem", width: "2rem" }}
+                  /></Link>
               </div>
             </div>
           </div>
@@ -109,7 +112,7 @@ const TeamCard = (props) => {
           padding: "0.1rem",
           cursor: "pointer",
         }}
-        onClick={() => setDetails(details === 0 ? 1 : 0)}
+        onClick={handleClick}
         role="button"
         tabIndex={0}
         onKeyDown={handleKeyDown}
