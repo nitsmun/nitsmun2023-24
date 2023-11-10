@@ -706,7 +706,7 @@ export const Secretariatwebjr = [
         name: "Barnil Sarma",
         post: "Web Development Team",
         mail: "mailto:barnilsarma@gmail.com",
-        linkedin: "https://www.linkedin.com/in/ankit-upadhaya07",
+        linkedin: "https://www.linkedin.com/in/barnil-sarma-34383a255?trk=contact-info",
         fb: "https://github.com/barnilsarma",
         icon0: (
             <>
