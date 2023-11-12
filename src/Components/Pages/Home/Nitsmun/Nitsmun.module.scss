@@ -1,0 +1,152 @@
+.Nitsmun{
+    background-image: url("https://res.cloudinary.com/duom8ur6p/image/upload/v1699771089/nitsmun/rdf6lmp9ovftayupuxtw.png");
+    background-color: #1D1C41;
+    padding: 1rem;
+}
+.logoCont{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: center;
+    overflow: wrap;
+    text-align: center;
+    margin: 3rem auto;
+}
+.btnCont{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.btnCont .aboutBtn{
+    background-color: #C9984E;
+    color:#ffffff;
+    text-decoration: none;
+    padding:0.8rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border:0px solid transparent;
+    border-radius: 0.625rem;
+}
+.logoCont h1{
+    font-size: 0.8rem;
+}
+.logoCont h3{
+    font-size: 0.5rem;
+    width:60%;
+    overflow:wrap;
+}
+.info{
+    color:#C9984E;
+    background-image: url('https://res.cloudinary.com/duom8ur6p/image/upload/v1699771088/nitsmun/nhtlrpl0g6jion5synox.png');
+    background-size: 100% 100%;
+    width:40vw;
+    height:20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.description{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    color:#ffffff;
+    text-align: justify;
+}
+.description h1{
+    text-align: center;
+}
+.description p{
+    font-size: 0.8rem;
+    padding:1rem;
+}
+@media screen and (min-width:400px){
+    .info{
+        width:40vw;
+        height:25vh;
+    }
+    .logoCont h1{
+        font-size: 1rem;
+    }
+    .logoCont h3{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (min-width:560px){
+    .info{
+        width:40vw;
+        height:30vh;
+    }
+    .logoCont h1{
+        font-size: 1.2rem;
+    }
+    .logoCont h3{
+        font-size: 1rem;
+    }
+}
+@media screen and (min-width:620px){
+    .info{
+        width:15rem;
+        height:35vh;
+    }
+    .logoCont h1{
+        font-size: 1.4rem;
+    }
+    .logoCont h3{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (min-width:760px){
+    .info{
+        width:35vw;
+        height:40vh;
+    }
+    .logoCont h1{
+        font-size: 1.6rem;
+    }
+    .logoCont h3{
+        font-size: 1.4rem;
+    }
+    .description p{
+    font-size: 1.1rem;
+}
+.btnCont{
+    justify-content: flex-end;
+    width:80%;
+}
+}
+@media screen and (min-width:955px){
+    .info{
+    width:20vw;
+        height:30vh;
+    }
+    .logoCont{
+    width: 100%;}
+    .logoCont h1{
+        font-size: 2.2rem;
+    }
+    .logoCont h3{
+        font-size: 1rem;
+    }
+    .description p{
+    font-size: 1.15rem;
+    width:60%;
+    overflow: wrap;
+    margin:0 auto;
+}
+}
+@media screen and (min-width:1200px){
+    .info{
+        height:40vh;
+        width:20vw;
+    }
+    .logoCont h1{
+        font-size: 3rem;
+    }
+    .logoCont h3{
+        font-size: 1.6rem;
+    }
+    .description p{
+    font-size: 1.2rem;
+}
+}
