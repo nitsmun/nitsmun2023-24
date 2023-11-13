@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Montserrat:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Montserrat:wght@700&display=swap");
 
 .TeamContainer {
   margin: 0 auto;
@@ -7,12 +7,11 @@
   top: 5rem;
   row-gap: 5rem;
   column-gap: 5rem;
-
 }
 
 .teamHeading {
   font-size: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 800;
 }
 
@@ -27,7 +26,7 @@
 .fourthYear {
   width: 100%;
   text-align: center;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   display: flex;
   flex-wrap: wrap;

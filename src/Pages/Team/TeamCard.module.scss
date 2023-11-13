@@ -3,11 +3,14 @@
   padding: 2.5rem;
   scale: 1;
   transition-duration: 1s;
-  clip-path: polygon(0% 0%, 0% 85%, 100% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 0% 90%, 100% 100%, 100% 0%);
 }
 
 .socialCont {
   transition-duration: 1s;
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
 }
 
 .socialCont img {
@@ -39,6 +42,13 @@
 //   top: -8rem;
 //   transition-duration: 1s;
 // }
+.detailsCont {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  width: 80%;
+  margin: 0 auto;
+}
 
 .photo {
   opacity: 1;
@@ -104,13 +114,13 @@
   }
 }
 
-@media screen and (min-width:300px) {
+@media screen and (min-width: 300px) {
   .photo {
     height: 10rem;
   }
 }
 
-@media screen and (min-width:400px) {
+@media screen and (min-width: 400px) {
   .photo {
     height: 12rem;
   }
@@ -126,25 +136,25 @@
   }
 }
 
-@media screen and (min-width:600px) {
+@media screen and (min-width: 600px) {
   .photo {
     height: 12rem;
   }
 }
 
-@media screen and (min-width:770px) {
+@media screen and (min-width: 770px) {
   .photo {
     height: 5rem;
   }
 }
 
-@media screen and (min-width:850px) {
+@media screen and (min-width: 850px) {
   .photo {
     height: 8rem;
   }
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width: 1000px) {
   .photo {
     height: 14rem;
   }

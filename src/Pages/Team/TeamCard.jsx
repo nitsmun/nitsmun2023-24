@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./TeamCard.module.scss";
-import { Link } from 'react-router-dom';
 const TeamCard = (props) => {
   const [details, setDetails] = useState(0);
   const toggleMenu = () => {
@@ -59,9 +59,9 @@ const TeamCard = (props) => {
               opacity: `${details}`,
             }}
           >
-            <div style={{ margin: "0 auto" }}>
-              <h1 style={{ fontSize: "1rem" }}>{props.name}</h1>
-              <h4 style={{ fontSize: "0.8rem" }}>{props.designation}</h4>
+            <div style={{ margin: "0 auto" }} className={styles.detailsCont}>
+              <h1 style={{ fontSize: "1.5rem" }}>{props.name}</h1>
+              <h4 style={{ fontSize: "1rem" }}>{props.designation}</h4>
               <div
                 className={styles.socialCont}
                 style={{
@@ -75,23 +75,35 @@ const TeamCard = (props) => {
                   cursor: "pointer",
                 }}
               >
-                <Link to={props.fb}><img
-                  alt="Facebook icon Loading..."
-                  src={props.web === false ? "https://res.cloudinary.com/dhry5xscm/image/upload/v1699125289/fb_icon_325x325_oaepmd.png" : "https://res.cloudinary.com/dhry5xscm/image/upload/v1699642357/nitsmun/github_utw5mf.svg"}
-                  style={{ height: "2rem", width: "2rem", filter: `invert(${props.web === false ? 0 : 100}%)` }}
-                /></Link>
+                <Link to={props.fb}>
+                  <img
+                    alt="Facebook icon Loading..."
+                    src={
+                      props.web === false
+                        ? "https://res.cloudinary.com/dhry5xscm/image/upload/v1699125289/fb_icon_325x325_oaepmd.png"
+                        : "https://res.cloudinary.com/dhry5xscm/image/upload/v1699642357/nitsmun/github_utw5mf.svg"
+                    }
+                    style={{
+                      height: "2.5rem",
+                      width: "2.5rem",
+                      filter: `invert(${props.web === false ? 0 : 100}%)`,
+                    }}
+                  />
+                </Link>
                 <Link to={props.mail}>
                   <img
                     alt="Mail icon Loading..."
                     src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699636486/nitsmun/envelope-regular_sbnoql.svg"
-                    style={{ height: "2rem", width: "2rem", filter: 'invert(100%)' }}
-                  /></Link>
+                    style={{ height: "2.5rem", width: "2.5rem", filter: "invert(100%)" }}
+                  />
+                </Link>
                 <Link to={props.linkedin}>
                   <img
                     alt="Linkedin icon Loading..."
                     src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699125365/nitsmun/6WtDIesg_400x400_rnallb.png"
-                    style={{ height: "2rem", width: "2rem" }}
-                  /></Link>
+                    style={{ height: "2.5rem", width: "2.5rem" }}
+                  />
+                </Link>
               </div>
             </div>
           </div>
