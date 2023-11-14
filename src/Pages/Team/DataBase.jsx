@@ -305,7 +305,7 @@ export const Secretariatjr = [
     id: 14,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676475826/events/nitsmun/team/adityaRanjan_yetaiw.jpg",
+      "https://res.cloudinary.com/dp92qug2f/image/upload/v1681359339/perosnal/edited_aditya_ranjan_lyx5ns.webp",
     alt: "Aditya Ranjan",
     name: "Aditya Ranjan",
     post: "Deputy Director Technical Operations",
