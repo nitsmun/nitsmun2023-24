@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Montserrat:wght@700&display=swap");
+
 .TeamContainer {
   margin: 0 auto;
   position: relative;
@@ -7,6 +9,31 @@
   column-gap: 5rem;
 }
 
+.teamHeading {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+.posHeading {
+  font-size: 1rem;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.fourthYear {
+  width: 100%;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+}
+
 .teamPage {
   overflow-x: hidden;
 }
@@ -14,5 +41,13 @@
 @media screen and (min-width: 760px) {
   .TeamContainer {
     flex-direction: row;
+  }
+
+  .posHeading {
+    font-size: 2rem;
+  }
+
+  .teamHeading {
+    font-size: 1.8rem;
   }
 }
