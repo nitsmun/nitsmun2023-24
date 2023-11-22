@@ -6,7 +6,7 @@ const ReviewCard = (props) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "flex-start",
+        justifyContent: "space-around",
         margin: "3rem",
       }}
       className={styles.card}
@@ -15,7 +15,7 @@ const ReviewCard = (props) => {
         alt="loading review card..."
         src={props.image}
         style={{
-          boxShadow: "0 0.5rem 1rem #aaaaaa",
+          boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.25)",
           transform: "translateY(2.5rem)",
           height: "10rem",
           width: "10rem",
@@ -31,7 +31,22 @@ const ReviewCard = (props) => {
           borderRadius: "1.5rem",
         }}
       >
-        <p>{props.review}</p>
+        <h1>{props.name}</h1>
+        <p>
+          <img
+            alt="opening quote"
+            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1700678291/nitsmun/opening-quote_qbvlkg.svg"
+            className={styles.quote}
+            style={{ marginRight: "1rem", marginBottom: "1rem" }}
+          />
+          {props.review}
+          <img
+            alt="closing quote"
+            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1700678291/nitsmun/closing-quote_x20keo.svg"
+            className={styles.quote}
+            style={{ marginLeft: "1rem" }}
+          />
+        </p>
       </div>
     </div>
   );

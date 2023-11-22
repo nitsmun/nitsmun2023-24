@@ -7,7 +7,12 @@ const Reviews = () => {
       <h1 style={{ color: "#000055", fontWeight: "600" }}>REVIEWS</h1>
       <div className={styles.reviewContainer}>
         {data.map((item) => (
-          <ReviewCard image={item.img} review={item.review} index={item.id} />
+          <ReviewCard
+            image={item.img}
+            review={item.review}
+            index={item.id}
+            name={item.name}
+          />
         ))}
       </div>
     </div>
