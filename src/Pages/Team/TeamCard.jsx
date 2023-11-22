@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./TeamCard.module.scss";
+
 const TeamCard = (props) => {
   const [details, setDetails] = useState(0);
   const toggleMenu = () => {
@@ -74,7 +75,18 @@ const TeamCard = (props) => {
                   cursor: "pointer",
                 }}
               >
-                <Link to={props.fb}>
+                {/* Link converted to anchor tag so that we can add functionality to open links in new tab */}
+                <a
+                  href={props.fb}
+                  style={{
+                    height: "2.5rem",
+                    width: "2.5rem",
+                    filter: `invert(${props.web === false ? 0 : 100}%)`,
+                  }}
+                  alt="Facebook icon Loading..."
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img
                     alt="Facebook icon Loading..."
                     src={
@@ -85,10 +97,10 @@ const TeamCard = (props) => {
                     style={{
                       height: "2.5rem",
                       width: "2.5rem",
-                      filter: `invert(${props.web === false ? 0 : 100}%)`,
+                      // filter: `invert(${props.web === false ? 0 : 100}%)`,
                     }}
                   />
-                </Link>
+                </a>
                 <Link to={props.mail}>
                   <img
                     alt="Mail icon Loading..."
@@ -96,13 +108,14 @@ const TeamCard = (props) => {
                     style={{ height: "2.5rem", width: "2.5rem", filter: "invert(100%)" }}
                   />
                 </Link>
-                <Link to={props.linkedin}>
+
+                <a href={props.linkedin} target="_blank" rel="noreferrer">
                   <img
                     alt="Linkedin icon Loading..."
                     src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699125365/nitsmun/6WtDIesg_400x400_rnallb.png"
                     style={{ height: "2.5rem", width: "2.5rem" }}
                   />
-                </Link>
+                </a>
               </div>
             </div>
           </div>

@@ -25,3 +25,5 @@ dist-ssr
 *.sw?
 .env
 .build
+
+vite.config.js.timestamp*
