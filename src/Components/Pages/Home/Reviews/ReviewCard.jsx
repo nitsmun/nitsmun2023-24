@@ -15,12 +15,13 @@ const ReviewCard = (props) => {
         alt="loading review card..."
         src={props.image}
         style={{
+          objectFit: "contain",
           boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.25)",
           transform: "translateY(2.5rem)",
           height: "10rem",
           width: "10rem",
           border: "0 solid transparent",
-          borderRadius: "10rem",
+          borderRadius: "13rem",
         }}
       />
       <div
