@@ -1,7 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Montserrat:wght@400;700&display=swap");
+
 .review {
   width: 90vw;
+  height: 100vh;
   background-color: #9695c2;
   transition-duration: 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .review:hover {
@@ -10,14 +16,73 @@
   transition-duration: 0.4s;
 }
 
-@media screen and (min-width: 760px) {
+.review h1,
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.review h1 {
+  font-weight: 600;
+}
+
+.quote {
+  opacity: 0.6;
+  transition-duration: 0.4s;
+}
+
+.review:hover .quote {
+  opacity: 0.6;
+  filter: invert(100%);
+  transition-duration: 0.4s;
+}
+
+.parent__img__review_holder {
+  width: 10vw !important;
+  height: 10vw !important;
+}
+
+@media screen and (min-width: 300px) {
   .review {
-    width: 60vw;
+    height: 100vh;
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 370px) {
   .review {
-    width: 20vw;
+    height: 80vh;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .review {
+    height: 70vh;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .review {
+    height: 65vh;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .review {
+    width: 65vw;
+  }
+}
+
+@media screen and (min-width: 1000px) and (min-height: 500px) {
+  .review {
+    width: 40vw;
+    height: 45vh;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .parent__img__review_holder {
+    width: 30vw !important;
+    height: 30vw !important;
   }
 }

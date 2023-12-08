@@ -90,7 +90,7 @@ const Team = () => {
             />
           ))}
         </div>
-        <h1 className={styles.posHeading}>WEB DEVELOPMENT TEAM</h1>
+        <h1 className={styles.posHeading}>TECHNICAL TEAM</h1>
         <div className={styles.fourthYear}>
           {Secretariatwebjr.map((item) => (
             <TeamCard

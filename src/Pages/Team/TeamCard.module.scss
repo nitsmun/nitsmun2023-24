@@ -4,18 +4,34 @@
   scale: 1;
   transition-duration: 1s;
   clip-path: polygon(0% 0%, 0% 90%, 100% 100%, 100% 0%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.overview {
+  h1 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 0.8rem;
+  }
 }
 
 .socialCont {
   transition-duration: 1s;
   display: flex;
   flex-direction: row;
-  column-gap: 1rem;
+  align-items: center;
+  column-gap: 0rem;
 }
 
-.socialCont img {
-  transition-duration: 1s;
-}
+// .socialCont img {
+//   transition-duration: 1s;
+//   scale: 0.5;
+// }
 
 // .TeamCard:hover .socialCont img {
 //   (1filter: invert00%);
@@ -62,7 +78,7 @@
 // }
 
 .socialCont img {
-  scale: 1;
+  scale: 0.5;
   transition-duration: 0.5s;
 }
 
@@ -74,6 +90,10 @@
 .bottomCircle {
   position: relative;
   top: -4.5rem;
+  border: 0px solid transparent;
+  border-radius: 3rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 .lustre {
@@ -134,17 +154,56 @@
   .bottomCircle {
     top: -3.5rem;
   }
+
+  .socialCont img {
+    scale: 1;
+  }
 }
 
 @media screen and (min-width: 600px) {
   .photo {
     height: 12rem;
   }
+
+  .socialCont img {
+    scale: 1;
+  }
 }
 
 @media screen and (min-width: 770px) {
   .photo {
     height: 5rem;
+  }
+
+  .socialCont img {
+    scale: 1;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 450px) {
+  .cardCont {
+    width: 50%;
+  }
+
+  .TeamCard {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .photo {
+    height: 5rem;
+    width: 5rem;
+  }
+
+  .overview h1 {
+    font-size: 0.9rem;
+  }
+
+  .overview h4 {
+    font-size: 0.5rem;
   }
 }
 

@@ -3,10 +3,7 @@
 .TeamContainer {
   margin: 0 auto;
   position: relative;
-  padding: 1.5rem;
   top: 5rem;
-  row-gap: 5rem;
-  column-gap: 5rem;
 }
 
 .teamHeading {
@@ -30,8 +27,9 @@
   font-weight: 700;
   display: flex;
   flex-wrap: wrap;
-  align-items: start;
+  align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
 .teamPage {
@@ -48,6 +46,6 @@
   }
 
   .teamHeading {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
 }

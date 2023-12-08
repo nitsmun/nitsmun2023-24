@@ -17,7 +17,7 @@ const TeamCard = (props) => {
   };
 
   return (
-    <div>
+    <div className={styles.cardCont}>
       <div
         className={styles.TeamCard}
         role="button"
@@ -32,7 +32,6 @@ const TeamCard = (props) => {
           src={props.img}
           style={{
             textAlign: "center",
-            width: "100%",
             backgroundColor: "#000000",
           }}
           className={styles.photo}
@@ -47,8 +46,8 @@ const TeamCard = (props) => {
           }}
         >
           <div className={styles.overview}>
-            <h1 style={{ fontSize: "1rem" }}>{props.name}</h1>
-            <h4 style={{ fontSize: "0.8rem" }}>{props.designation}</h4>
+            <h1>{props.name}</h1>
+            <h4>{props.designation}</h4>
           </div>
           <div
             className={styles.details}
@@ -127,15 +126,13 @@ const TeamCard = (props) => {
         style={{
           position: "relative",
           left: "60%",
-          height: "3rem",
-          width: "3rem",
           border: "0 solid transparent",
-          borderRadius: "5rem",
           backgroundColor: "#C9984E",
           scale: `${details === 0 ? 1 : 1.05}`,
           transition: "ease 500ms",
           padding: "0.1rem",
           cursor: "pointer",
+          zIndex: "2",
         }}
         onClick={handleClick}
         role="button"
