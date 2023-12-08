@@ -11,19 +11,21 @@ const ReviewCard = (props) => {
       }}
       className={styles.card}
     >
-      <img
-        alt="loading review card..."
-        src={props.image}
-        style={{
-          objectFit: "contain",
-          boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.25)",
-          transform: "translateY(2.5rem)",
-          height: "10rem",
-          width: "10rem",
-          border: "0 solid transparent",
-          borderRadius: "13rem",
-        }}
-      />
+      <div className={styles.parent__img__review_holder}>
+        <img
+          alt="loading review card..."
+          src={props.image}
+          style={{
+            objectFit: "cover",
+            boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.25)",
+            transform: "translateY(2.5rem)",
+            height: "100%",
+            width: "100%",
+            border: "0 solid transparent",
+            borderRadius: "13rem",
+          }}
+        />
+      </div>
       <div
         className={styles.review}
         style={{
