@@ -60,6 +60,30 @@
     font-size: 0.8rem;
     padding:1rem;
 }
+@media screen and (min-width:220px){
+    .info{
+        width:55vw;
+        height:20vh;
+    }
+    .logoCont h1{
+        font-size: 1rem;
+    }
+    .logoCont h3{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (min-width:280px){
+    .info{
+        width:45vw;
+        height:20vh;
+    }
+    .logoCont h1{
+        font-size: 1rem;
+    }
+    .logoCont h3{
+        font-size: 0.8rem;
+    }
+}
 @media screen and (min-width:400px){
     .info{
         width:40vw;
