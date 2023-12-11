@@ -35,12 +35,18 @@
   padding: 1rem;
   border: 0px solid transparent;
   border-radius: 0.5rem;
+
 }
+
+a {
+  text-decoration: none;
+}
+
+
 
 .deskNav a:hover {
   transition-duration: 0.5s;
   border-radius: 1rem;
-  background-color: var(--NITSMUN-navbar-golden);
 }
 
 .deskHam {

@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.wholeContainer}>
-        <Navbar active="home" />
+        <Navbar page="HOME" />
         <Hero />
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
           <button onClick={handleScrollDown} className={styles.downscrollButton}>
