@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
 const Navbar = (props) => {
   const isEvents = false;
   const navLinks = [
-    { name: "HOME", dest: "/" },
-    { name: "COMMITTEES", dest: "" },
-    { name: "TEAM", dest: "/team" },
-    { name: "CONTACT", dest: "" },
-    { name: "FAQ", dest: "" },
+    { name: "HOME", dest: "/", id: "home" },
+    { name: "COMMITTEES", dest: "", id: "committees" },
+    { name: "TEAM", dest: "/team", id: "team" },
+    { name: "CONTACT", dest: "", id: "contact" },
+    { name: "FAQ", dest: "", id: "faq" },
   ];
   const events = [
     { name: "EVENT1", dest: "" },
@@ -68,9 +68,15 @@ const Navbar = (props) => {
         }}
       >
         {navLinks.map((item) => (
-          <Link to={item.dest} style={{ textDecoration: "none" }}>
+          <NavLink
+            to={item.dest}
+            style={{
+              backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
+              color: "#ffffff",
+            }}
+          >
             {item.name}
-          </Link>
+          </NavLink>
         ))}
       </div>
       <div
@@ -90,15 +96,15 @@ const Navbar = (props) => {
           }}
         >
           {navLinks.map((item) => (
-            <Link
+            <NavLink
               to={item.dest}
               style={{
-                textDecoration: "none",
-                color: props.active === "home" ? "#ffffff" : "#000000",
+                backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
+                color: props.page === "TEAM" ? "#1d1c41" : "#ffffff",
               }}
             >
               {item.name}
-            </Link>
+            </NavLink>
           ))}
           {isEvents === true ? (
             <select>

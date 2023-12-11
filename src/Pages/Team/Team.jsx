@@ -12,7 +12,7 @@ import {
 const Team = () => {
   return (
     <div className={styles.teamPage}>
-      <Navbar />
+      <Navbar page="TEAM" />
       <div
         style={{ display: "flex", flexWrap: "wrap", alignItems: "center" }}
         className={styles.TeamContainer}
