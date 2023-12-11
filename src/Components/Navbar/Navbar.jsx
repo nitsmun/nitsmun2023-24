@@ -1,9 +1,8 @@
-import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { NavLink, Link } from "react-router-dom";
+import { useState } from "react";
 import styles from "./Navbar.module.scss";
 const Navbar = (props) => {
   const isEvents = false;
-  const [page, setPage] = "HOME";
   const navLinks = [
     { name: "HOME", dest: "/", id: "home" },
     { name: "COMMITTEES", dest: "", id: "committees" },
@@ -69,8 +68,12 @@ const Navbar = (props) => {
         }}
       >
         {navLinks.map((item) => (
-          <NavLink to={item.dest}
-            style={{ backgroundColor: props.page === item.name ? '#c9984e' : 'transparent', color: props.page === 'TEAM' ? '#1d1c41' : '#ffffff' }}
+          <NavLink
+            to={item.dest}
+            style={{
+              backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
+              color: "#ffffff",
+            }}
           >
             {item.name}
           </NavLink>
@@ -95,7 +98,10 @@ const Navbar = (props) => {
           {navLinks.map((item) => (
             <NavLink
               to={item.dest}
-              style={{ backgroundColor: props.page === item.name ? '#c9984e' : 'transparent', color: props.page === 'TEAM' ? '#1d1c41' : '#ffffff' }}
+              style={{
+                backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
+                color: props.page === "TEAM" ? "#1d1c41" : "#ffffff",
+              }}
             >
               {item.name}
             </NavLink>
