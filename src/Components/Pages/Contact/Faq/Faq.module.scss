@@ -1,0 +1,52 @@
+.mainCont {
+  width: 80vw;
+  margin: 3rem auto;
+
+  .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    .line {
+      height: 1px;
+      background-color: #070826;
+      width: 40%;
+    }
+
+    .text {
+      font-size: 1.25rem;
+      color: #1d1c41;
+      font-weight: 700;
+    }
+  }
+}
+
+.cardsCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 2rem;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .col {
+      width: 40%;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .cardsCont {
+    flex-direction: row;
+  }
+}

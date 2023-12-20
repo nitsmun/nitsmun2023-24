@@ -2,12 +2,13 @@
 
 .review {
   width: 90vw;
-  height: 100vh;
+  height: 60vh;
   background-color: #9695c2;
   transition-duration: 0.4s;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: -1;
 }
 
 .review:hover {
@@ -41,29 +42,33 @@ p {
 .parent__img__review_holder {
   width: 10vw !important;
   height: 10vw !important;
+
+  .reviewerPhoto {
+    z-index: 0;
+  }
 }
 
 @media screen and (min-width: 300px) {
   .review {
-    height: 100vh;
+    height: 55vh;
   }
 }
 
 @media screen and (min-width: 370px) {
   .review {
-    height: 80vh;
+    height: 40vh;
   }
 }
 
 @media screen and (min-width: 400px) {
   .review {
-    height: 70vh;
+    height: 40vh;
   }
 }
 
 @media screen and (min-width: 500px) {
   .review {
-    height: 65vh;
+    height: 32vh;
   }
 }
 

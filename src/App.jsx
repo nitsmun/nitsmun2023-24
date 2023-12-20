@@ -10,8 +10,12 @@ import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Team from "./Pages/Team/Team";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import Contact from "./Components/Pages/ContactUs/Contact";
-
+import Contact from "./Pages/Contact/Contact";
+import Photo from "./Pages/PhotoGallery/Photo";
+import Wrapped from "./Pages/Wrapped/Wrapped";
+import Registration from "./Pages/Registration/Registration";
+import Login from "./Pages/Login/Login";
+import SignUp from "./Pages/SignUp/SignUp";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -21,8 +25,12 @@ const App = () => {
         {/* About */}
         <Route path="about" element={<About />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="contact" element={<Contact />} />
-
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/photo" element={<Photo />} />
+        <Route path="/wrapped" element={<Wrapped />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/SignUp" element={<SignUp />} />
         {/* 404 page */}
         <Route path="*" element={<NotFound />} />
       </Route>
