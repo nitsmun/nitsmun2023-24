@@ -4,6 +4,7 @@
   margin: 0 auto;
   position: relative;
   top: 5rem;
+  z-index: 0;
 }
 
 .teamHeading {
@@ -14,7 +15,7 @@
 
 .posHeading {
   font-size: 1rem;
-  margin: 0 auto;
+  margin: 4rem auto;
   width: 100%;
   text-align: center;
   text-decoration: underline;

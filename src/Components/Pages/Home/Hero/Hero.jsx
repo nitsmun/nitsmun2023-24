@@ -82,59 +82,65 @@ const Hero = () => {
   // const [eventActive, setEventActive] = useState(false);
   const eventActive = false;
   return (
-    <div className={styles.Herocard}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-        }}
-        className={styles.Herodetails}
-      >
-        <img
-          src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699293673/nitsmun/nitsmun_logo_otrutb.png"
-          className={styles.Herologo}
-          alt="logo"
-        />
-        <h1
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div className={styles.Herocard}>
+        <div
           style={{
-            color: "#ffffff",
-            borderBottom: "1px solid #ffffff",
-            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-around",
           }}
-          className={styles.Heroorg}
+          className={styles.Herodetails}
         >
-          NITS-MUN
-        </h1>
-        <h6 style={{ color: "#ffffff", textAlign: "center" }} className={styles.Herodes}>
-          The Loremsas Ipsumasd
-        </h6>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-        className={styles.Herodetails}
-      >
-        {eventActive === true ? (
-          <>
-            <Link
-              style={{
-                padding: "1rem",
-                border: "0 solid transparent",
-                borderRadius: "1rem",
-                textDecoration: "none",
-              }}
-              className={styles.Heroreg}
-              to="/"
-            >
-              REGISTER
-            </Link>
-            <TimeLine />
-          </>
-        ) : null}
+          <img
+            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699293673/nitsmun/nitsmun_logo_otrutb.png"
+            className={styles.Herologo}
+            alt="logo"
+          />
+          <h1
+            style={{
+              color: "#ffffff",
+              borderBottom: "1px solid #ffffff",
+              textAlign: "center",
+              fontFamily: "'Montserrat',sans-serif",
+            }}
+            className={styles.Heroorg}
+          >
+            NITS-MUN
+          </h1>
+          <h6
+            style={{ color: "#ffffff", textAlign: "center" }}
+            className={styles.Herodes}
+          >
+            The Loremsas Ipsumasd
+          </h6>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+          className={styles.Herodetails}
+        >
+          {eventActive === true ? (
+            <>
+              <Link
+                style={{
+                  padding: "1rem",
+                  border: "0 solid transparent",
+                  borderRadius: "1rem",
+                  textDecoration: "none",
+                }}
+                className={styles.Heroreg}
+                to="/"
+              >
+                REGISTER
+              </Link>
+              <TimeLine />
+            </>
+          ) : null}
+        </div>
       </div>
     </div>
   );

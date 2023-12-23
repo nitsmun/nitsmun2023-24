@@ -1,0 +1,159 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 4rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  .infoContParent {
+    width: 100%;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 80vw;
+
+    .subButton {
+      background-color: #c9984e;
+      border: 0px solid transparent;
+      color: #d9d9d9;
+      padding-top: 0.4675rem;
+      padding-bottom: 0.4675rem;
+      border-radius: 0.3125rem;
+    }
+
+    .field {
+      width: 100%;
+
+      .fieldHeading {
+        color: #070826;
+        font-size: 1rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+      }
+
+      .textBox {
+        background-color: #d9d9d9;
+        color: #000000;
+        font-size: 0.9375rem;
+        outline: 0;
+        height: auto;
+        border: 0px solid transparent;
+        border-radius: 0.3125rem;
+        font-family: "Inter", sans-serif;
+        width: 100%;
+        padding-top: 0.4375rem;
+        padding-bottom: 0.4375rem;
+        padding-left: 1rem;
+      }
+
+      .textArea {
+        height: 6rem;
+      }
+
+      .textBox::placeholder {
+        font-weight: lighter;
+        font-style: italic;
+      }
+    }
+  }
+
+  .mainHeading {
+    text-align: center;
+    color: #1d1c41;
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    visibility: visible;
+  }
+
+  .contactHeading {
+    visibility: hidden;
+  }
+
+  .infoCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      align-items: start;
+      row-gap: 0.4rem;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+
+      .detail {
+        display: flex;
+        flex-direction: row;
+        column-gap: 0.5rem;
+
+        .infoHeading {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    .logoCont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .logo {
+        scale: 0.8;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .mainHeading {
+      visibility: hidden;
+    }
+
+    .contactHeading {
+      visibility: visible;
+      font-size: 2rem;
+      color: #1d1c41;
+      font-weight: 900;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .infoContParent {
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .info {
+        width: 60%;
+
+        .detail {
+          .infoHeading {
+            font-size: 1.25rem;
+            font-weight: 500;
+            font-family: "Inter", sans-serif;
+          }
+        }
+      }
+    }
+
+    .form {
+      width: 50vw;
+    }
+  }
+}

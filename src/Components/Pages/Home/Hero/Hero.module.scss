@@ -6,9 +6,12 @@
   justify-content: space-around;
   align-items: center;
   row-gap: 2rem;
-  margin: 10vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vw;
+  height: 75vh;
+  width: 75vw;
   padding: 5vw;
-  margin-top: 0;
   background-color: #070826;
   box-shadow: 0 0 0.5rem 0.5rem rgba(109, 109, 109, 0.7);
 }
@@ -19,8 +22,8 @@
 }
 
 .Herologo {
-  width: 8.6rem;
-  height: 8.4rem;
+  width: 8.4rem;
+  height: 8.2rem;
 }
 
 .Heroorg {
@@ -76,8 +79,8 @@
   }
 
   .Herologo {
-    width: 25.5rem;
-    height: 22rem;
+    width: 15.5rem;
+    height: 13rem;
   }
 
   .Herodetails {

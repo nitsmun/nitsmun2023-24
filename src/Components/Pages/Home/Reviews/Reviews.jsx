@@ -8,6 +8,7 @@ const Reviews = () => {
       <div className={styles.reviewContainer}>
         {data.map((item) => (
           <ReviewCard
+            key={item.id}
             image={item.img}
             review={item.review}
             index={item.id}

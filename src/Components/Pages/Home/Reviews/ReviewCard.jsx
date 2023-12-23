@@ -2,6 +2,7 @@ import styles from "./ReviewCard.module.scss";
 const ReviewCard = (props) => {
   return (
     <div
+      key={props.key}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -24,6 +25,7 @@ const ReviewCard = (props) => {
             border: "0 solid transparent",
             borderRadius: "13rem",
           }}
+          className={styles.reviewerPhoto}
         />
       </div>
       <div

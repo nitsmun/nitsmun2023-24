@@ -1,26 +1,75 @@
-.menuBtn {
-  visibility: visible;
-  transition: ease 1000ms;
-  height: 3rem;
-  width: 3rem;
+.navCont {
+  position: sticky;
+  top: 0;
+  width: 90%;
+  margin-bottom: 0;
+  z-index: 0;
+}
+
+.deskhamPopun {
   position: absolute;
   left: 80vw;
-  top: 1rem;
-  z-index: 6;
+  top: 10vh;
+  background-color: #070826;
+  border: 0.5rem solid #c9984e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 0;
+  width: 0;
+  z-index: 1;
+
+  .eachOption {
+    padding: 1rem;
+    color: #ffffff;
+    border-bottom: 1px solid #c9984e;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.8px;
+    transition-duration: 0.5s;
+  }
+
+  .eachOption:hover {
+    color: #c9984e;
+    letter-spacing: 1px;
+    transition-duration: 0.5s;
+  }
+}
+
+.menuBtn {
+  position: absolute;
+  transition: ease 1000ms;
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  left: 80vw;
+  top: 1.2rem;
+  z-index: 4;
+  border: 0px solid transparent;
+
+  .img {
+    z-index: 5;
+  }
 }
 
 .mobileNav {
-  position: absolute;
-  visibility: visible;
+  position: fixed;
   background-color: var(--NITSMUN-navbar-blue);
   transition: ease 500ms;
   width: 100vw;
   top: 0rem;
-  z-index: 5;
+  z-index: 2;
 }
 
 .mobileNav a {
   color: #ffffff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 80%;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 .deskNav {

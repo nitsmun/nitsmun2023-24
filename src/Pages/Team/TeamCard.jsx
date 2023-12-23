@@ -31,8 +31,10 @@ const TeamCard = (props) => {
           alt="Loading team card..."
           src={props.img}
           style={{
+            opacity: `${1 - details}`,
             textAlign: "center",
             backgroundColor: "#000000",
+            zIndex: `${1 - details}`,
           }}
           className={styles.photo}
         />
@@ -60,16 +62,14 @@ const TeamCard = (props) => {
             }}
           >
             <div style={{ margin: "0 auto" }} className={styles.detailsCont}>
-              <h1 style={{ fontSize: "1.5rem" }}>{props.name}</h1>
-              <h4 style={{ fontSize: "1rem" }}>{props.designation}</h4>
+              <h1 className={styles.name}>{props.name}</h1>
+              <h4 className={styles.designation}>{props.designation}</h4>
               <div
                 className={styles.socialCont}
                 style={{
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
-                  width: "100%",
-                  justifyContent: "space-around",
                   paddingTop: "0.5rem",
                   paddingBottom: "0.5rem",
                   cursor: "pointer",
