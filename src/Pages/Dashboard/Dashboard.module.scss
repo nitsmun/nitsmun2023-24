@@ -3,7 +3,6 @@
   background-image: url("https://res.cloudinary.com/dhry5xscm/image/upload/v1703340283/nitsmun/oAuth-bg_qqtkp4.svg");
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .pageCont {
@@ -99,11 +98,31 @@
       font-size: 1.25rem;
     }
 
-    .p {
-      font-family: "inter", sans-serif;
-      font-weight: 100;
-      font-size: 0.75rem;
-      text-align: center;
+    .photoCont {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      .button {
+        width: 70%;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        transition-duration: 0.5s;
+        background-color: #c9c9c9;
+        font-family: "Inter", sans-serif;
+        font-weight: 200;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        transition-duration: 0.5s;
+        background-color: #444444;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+      }
     }
   }
 
@@ -115,6 +134,56 @@
     width: 80%;
     margin: 2rem auto;
     overflow-x: hidden;
+
+    .fromNits {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      .h1 {
+        font-size: 0.815rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+      }
+
+      @media screen and (min-width: 1051px) {
+        .h1 {
+          font-size: 1.565rem;
+        }
+      }
+
+      .radioCont {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 3rem;
+        align-items: center;
+
+        .radioInner {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          align-items: center;
+          flex-direction: row;
+
+          .input {
+            accent-color: #c9984e;
+            outline: none;
+          }
+
+          .label {
+            font-size: 0.8rem;
+          }
+
+          @media screen and (min-width: 1051px) {
+            .label {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
 
     .textBox {
       width: 100%;
@@ -141,7 +210,6 @@
         background-color: transparent;
         border: 0px solid transparent;
         font-style: italic;
-        color: #000000;
       }
     }
 
@@ -150,6 +218,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      width: 60%;
 
       .subBtn {
         background-color: #c9984e;

@@ -3,7 +3,7 @@ import ContactUs from "../../Components/Pages/Contact/ContactUs/ContactUs";
 import Faq from "../../Components/Pages/Contact/Faq/Faq";
 const Contact = () => {
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       <Navbar page="CONTACT" />
       <div>
         <ContactUs />

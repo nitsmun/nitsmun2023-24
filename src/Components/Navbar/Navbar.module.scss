@@ -18,7 +18,7 @@
   align-items: center;
   height: 0;
   width: 0;
-  z-index: 1;
+  z-index: 2;
 
   .eachOption {
     padding: 1rem;
@@ -100,6 +100,11 @@ a {
 }
 
 @media screen and (min-width: 1051px) {
+  .deskhamPopun {
+    width: 12rem;
+    height: auto;
+  }
+
   .mobileNav {
     visibility: hidden;
     height: 0;
