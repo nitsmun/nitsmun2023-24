@@ -1,36 +1,26 @@
-import { Link } from "react-router-dom";
-import Navbar from "../../Components/Navbar/Navbar";
-import styles from "./Login.module.scss";
+import Navbar from "../../../Components/Navbar/Navbar";
+import styles from "./ForgotPassword.module.scss";
 const FormCard = () => {
   return (
     <div className={styles.loginWrap}>
       <div className={styles.headingCont}>
-        <h1 className={styles.h1}>Welcome Back</h1>
-        <p className={styles.p}>Log in to access your NITS-MUN account</p>
+        <h1 className={styles.h1}>Forgot Password?</h1>
+        <p className={styles.p}>
+          Enter the email address you used when you joined and we will send you
+          instructions to rest your password
+        </p>
       </div>
       <form className={styles.form}>
-        <input type="text" placeholder="Enter Name" className={styles.textBox} />
+        <h1 className={styles.title}>Enter Email</h1>
         <input type="text" placeholder="Enter Email" className={styles.textBox} />
-        <input type="password" placeholder="Enter password" className={styles.textBox} />
-        <div className={styles.forgotCont}>
-          <Link to="/ForgotPassword" className={styles.button}>
-            Forgot Password?
-          </Link>
-        </div>
         <div className={styles.subCont}>
-          <input type="submit" value="Log In" className={styles.subBtn} />
-          <h6 className={styles.signupQuestion}>
-            Haven&apos; t signed up?{" "}
-            <Link to="/SignUp" className={styles.a}>
-              Sign Up Here
-            </Link>
-          </h6>
+          <input type="submit" value="Confirm" className={styles.subBtn} />
         </div>
       </form>
     </div>
   );
 };
-const Login = () => {
+const ForgotPassword = () => {
   return (
     <div className={styles.loginPage}>
       <Navbar page="CONTACT" />
@@ -54,4 +44,4 @@ const Login = () => {
     </div>
   );
 };
-export default Login;
+export default ForgotPassword;

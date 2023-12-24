@@ -85,20 +85,22 @@ const Navbar = (props) => {
             />
           </button>
         </div>
-        {navLinksMobile.map((item) => (
-          <NavLink
-            to={item.dest}
-            style={{
-              backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
-              color: "#ffffff",
-              fontSize: `${navtrans === "0" ? "0px" : "1rem"}`,
-            }}
-          >
-            {item.name}
-          </NavLink>
-        ))}
+        {navLinksMobile.map((item) =>
+          navtrans === "1" ? (
+            <NavLink
+              to={item.dest}
+              style={{
+                backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
+                color: "#ffffff",
+                fontSize: `${navtrans === "0" ? "0px" : "1rem"}`,
+              }}
+            >
+              {item.name}
+            </NavLink>
+          ) : null
+        )}
       </div>
-      <div className={styles.navCont}>
+      {deskHamState === 1 ? (
         <div
           className={styles.deskhamPopun}
           style={{
@@ -113,6 +115,8 @@ const Navbar = (props) => {
             </NavLink>
           ))}
         </div>
+      ) : null}
+      <div className={styles.navCont}>
         <div
           style={{
             display: "flex",
