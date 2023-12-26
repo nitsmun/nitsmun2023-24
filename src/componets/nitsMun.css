@@ -1,0 +1,142 @@
+.container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703488206/French_Parliament_Passes_Deep_Sleep_Bill_For_End_Of_Life_1_oqqasq.png);
+    background-color: #070826;
+    opacity: 1.2;
+    padding: 1vh 2vw;
+}
+.img1{
+    padding: 4vh 0;
+    width:100%;
+    height:20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+    /* border:2px solid black; */
+}
+.wing{
+    margin: 0 12vh;
+    color:#C9984E;
+    background-image: url('https://res.cloudinary.com/duom8ur6p/image/upload/v1699771088/nitsmun/nhtlrpl0g6jion5synox.png');
+    background-size: 100% 100%;
+    width:20vw;
+    height:20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    /* border:2px solid red; */
+    /* padding: 0 10vw; */
+}
+.wing .text{
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    color:#C9984E;
+    text-align: center;  
+}
+.wing .text h1{
+    margin-bottom: 0;
+    text-align: center;
+
+}
+.wing .text p{
+    font-size: 0.9rem;
+    padding:1rem;
+    margin-top: 0;
+    padding: 0.6vh 5vw;
+}
+.contant{
+    margin-top: 5vh;
+    width: 100%;
+    display: flex;
+    font: Inter;
+    font-weight: 400;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+.contant h1{
+    font-size: 3rem;
+}
+.contant p{
+    font-size: 2rem;
+}
+.btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:4vh;
+    width: 10vw;
+    border-radius: 16px;
+    outline: none;
+    background-color: #C9984E;
+    color: aliceblue;
+    border:0px solid transparent;
+    border-radius: 0.625rem;
+    cursor: pointer;
+}
+@media screen and (max-width:670px) {
+    .wing{
+        width:40vw;
+        height:20vh;
+        margin: 0 10vw;
+    }
+    .img3 .wing{
+        width:30vw;
+        height:20vh;
+    }
+}
+@media screen and (max-width:614px) {
+    .wing .text p{
+        font-size: 0.7rem;
+    }
+}
+@media screen and (max-width:550px) {
+    .contant h1{
+        font-size: 1.8rem;
+    }
+
+}
+@media screen and (max-width:480px) {
+    .wing .text p{
+        font-size: 0.6rem;
+    }
+    .btn button{
+        height:5vh;
+        width: 15vw;
+    }
+}
+@media screen and (max-width:400px) {
+    .wing .text h1{
+        font-size: 1.4rem;
+    }
+    .contant p{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width:350px) {
+    .wing{
+        margin: 0 6vw;
+    }
+    .img3 .wing{
+        width:35vw;
+        height:20vh;
+    }
+    .contant h1{
+        font-size: 1.5rem;
+    }
+
+    
+    .btn button{
+        height:5vh;
+        width: 20vw;
+    }
+}

@@ -1,0 +1,52 @@
+.letter{
+    /* width: 100VW; */
+    /* background: url(https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703449330/image_1_7_t4fv1y.png) no-repeat center center/cover ; */
+    background-size: cover;
+    margin: 0;
+}
+.header{
+    font-size: 1.5rem;
+}
+.main{
+    padding: 0 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main p{
+    /* font-family: Montserrat; */
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.fottor{
+    line-height: 1.8vh;
+    padding: 0 2vw;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+@media screen and (max-width:740px){
+    .header{
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width:530px){
+    .header{
+        font-size: 0.8rem;
+    }
+}
+/* @media screen and (max-width:477px){
+    .header{
+        font-size: 0.8rem;
+    }
+} */
+@media screen and (max-width:381px){
+    .header{
+        font-size: 0.7rem;
+    }
+}
+@media screen and (max-width:333px){
+    .header{
+        font-size: 0.6rem;
+    }
+}

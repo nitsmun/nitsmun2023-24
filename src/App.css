@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,7 @@
   to {
     transform: rotate(360deg);
   }
+} */
+.letter-container{
+  background: url(https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703449330/image_1_7_t4fv1y.png) no-repeat center center/cover ;
 }
