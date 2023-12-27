@@ -1,0 +1,44 @@
+.letter{
+    margin: 0;
+    margin-top: 2vh;
+
+}
+.header h1{
+    font-size: 1.5rem;
+}
+.main{
+    padding: 0 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main p{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.footer{
+    margin-top: 1vh;
+    line-height: 4vh;
+    padding: 0 2vw;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.footer p{
+    font-weight: 600;
+}
+@media screen and (max-width:740px){
+    /* .header h1{
+        font-size: 1.3rem;
+    } */
+}
+@media screen and (max-width:546px){
+    .header h1{
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width:400px){
+    .header h1{
+        font-size: 0.9rem;
+    }
+}
