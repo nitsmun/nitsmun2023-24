@@ -8,10 +8,16 @@ const Letter = props =>{
         <div className="header">
         <h1>Letters From {props.title}</h1>
         </div>      
-        <img src={props.src} alt="sec-gen" />
+
         <div className="pera">
-        <p>Dear Delegates, respected Faculty Advisors, and the Secretariat</p>
+        <div className="text-image-container">
+        <img src={props.src} alt="sec-gen" />  
+            <div>
+        <p className="pera-heading">Dear Delegates, respected Faculty Advisors, and the Secretariat</p>
         <p>Lorem ipsum dolor sit amet. A nisi nobis sed quia sapiente hic voluptas quos ut dolorem rerum sed quae animi hic     molestiae corrupti. Ea nisi maiores et internos praesentium et ipsa omnis est maiores repudiandae eos aspernatur pariatur et libero illo? Vel quis aliQui delectus unde cum dolor aliquid eum deleniti dolore. Vel qu voluptas quam et nemo quibusdam et explicabo voluptas eos earum quaerat ea dignissimos minima  et dolor galisum. </p>
+        </div>
+        
+        </div>
         <p>Lorem ipsum dolor sit amet. A nisi nobis sed quia sapiente hic voluptas quos ut dolorem rerum sed quae animi hic molestiae corrupti. Ea nisi maiores et internos praesentium et ipsa omnis est maiores repudiandae eos aspernatur pariatur et libero illo? Vel quis aliQui delectus unde cum dolor aliquid eum deleniti dolore. Vel quibusdam tempora hic voluptas quam et nemo quibusdam et explicabo voluptas eos earum quaerat ea dignissimos minima et dolor galisum.</p>
         <p>Lorem ipsum dolor sit amet. A nisi nobis sed quia sapiente hic voluptas quos ut dolorem rerum sed quae animi hic molestiae corrupti. Ea nisi maiores et internos praesentium et ipsa omnis est maiores repudiandae eos aspernatur pariatur et libero illo? Vel quis aliQui delectus unde cum dolor aliquid eum deleniti dolore. Vel quibusdam tempora hic voluptas quam et nemo quibusdam et explicabo voluptas eos earum quaerat ea dignissimos minima et dolor galisum.</p>
         </div>

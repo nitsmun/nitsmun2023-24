@@ -83,6 +83,7 @@
     border:0px solid transparent;
     border-radius: 0.625rem;
     cursor: pointer;
+    margin-top: 4vh;
 }
 @media screen and (max-width:670px) {
     .wing{
