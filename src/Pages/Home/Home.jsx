@@ -3,9 +3,10 @@ import styles from "./Home.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import Hero from "../../Components/Pages/Home/Hero/Hero";
 import Reviews from "../../Components/Pages/Home/Reviews/Reviews";
-import Letter from "../../Components/Letters/letters";
-import Nitsmun from "../../Components/WhatIsMUN/nitsMun";
+import Letter from "../../Components/Letters/Letters";
+import Nitsmun from "../../Components/WhatIsMUN/NitsMun";
 import Footer from "../../Components/Footer/Footer";
+import ABout from "../../Components/About/About";
 const Home = () => {
   const handleScrollDown = (e) => {
     e.preventDefault();
@@ -32,6 +33,7 @@ const Home = () => {
       </div>
       <Reviews />
       <Nitsmun/>
+      <ABout/>
       <Footer />
 
     </div>

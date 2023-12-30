@@ -1,7 +1,7 @@
 import React from "react";
-import "./nitsMun.css"
+import "./NitsMun.css"
 
-const Nitsmun = props =>{
+const Nitsmun = () =>{
     return(
         <div className="container">
         <div className="img1">
