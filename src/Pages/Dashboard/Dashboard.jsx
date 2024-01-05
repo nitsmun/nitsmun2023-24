@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 // import { useQuery } from "react-query";
 // import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
+import { useNavigate } from "react-router-dom";
 import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
+import { UserContext } from "../../Context/ContextProv";
+
 const Card = (props) => {
+  const { role } = useContext(UserContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (role === "admin") {
+      navigate("/admin");
+    } else if (role === "superadmin") {
+      navigate("/superadmin");
+    }
+  }, [role, navigate]);
+
   return (
     <div className={styles.loginWrap}>
       <div className={styles.headingCont}>
