@@ -3,6 +3,11 @@ import styles from "./Home.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import Hero from "../../Components/Pages/Home/Hero/Hero";
 import Reviews from "../../Components/Pages/Home/Reviews/Reviews";
+import Letter from "../../Components/Letters/Letters";
+import Nitsmun from "../../Components/WhatIsMUN/NitsMun";
+import Footer from "../../Components/Footer/Footer";
+import ABout from "../../Components/About/About";
+import Archive from "../../Components/Archiv/Archive";
 const Home = () => {
   const handleScrollDown = (e) => {
     e.preventDefault();
@@ -23,7 +28,15 @@ const Home = () => {
           </button>
         </div>
       </div>
+      <div className="letter-container" >
+      <Letter title="Secratory General" name="Maruf Padaya" src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703446281/image_1_3_azcue6.png"/>
+      <Letter title="Faculty Advisor" name="Dr. Wasim Arif" src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703446281/image_1_3_azcue6.png"/>
+      </div>
       <Reviews />
+      <Nitsmun/>
+      <ABout/>
+      <Footer />
+      <Archive />
     </div>
   );
 };
