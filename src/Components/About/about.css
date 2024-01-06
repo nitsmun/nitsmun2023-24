@@ -4,7 +4,7 @@
 .banner{
     margin-top: 10vh;
     display: flex; 
-     align-items: center;
+    align-items: center;
     justify-content: center;
     padding: 0;
     margin-bottom: 6vh;
@@ -30,21 +30,25 @@
 .list li{
     margin-right: 3vw;
     font-weight: 400;
-
 }
 .container1{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 6vh;
+
+    /* margin-left: 0; */
 }
 .heading{
-    color:  #1D1C41;;
+    color:  #1D1C41;
+    margin-bottom: 4vh;
 }
-.img-text{
+.container1 .img-text{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: justify;
+    margin: 0;
 }
 .container1 img{
    display: flex;
@@ -59,6 +63,9 @@
 .container2{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin: 0 4vw;
+    margin-bottom: 6vh;
 }
 .container2 img{
     display: flex;
@@ -67,24 +74,25 @@
     height: 50vh;
     width: 50vh;
     object-fit: cover;
-    margin-right: 4vw;
-}
-.container2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    margin-left: 4vw;
 }
 .container2 .img-text{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
+    text-align: justify;
+}
+.objective h1{
+    color:  #1D1C41;
 }
 @media screen and (max-width:1000px) {
     .img-text img{
         height: 60vh;
      }
-     .img-text .text p{
+     .img-text  p{
         font-size: 0.7rem;
+        margin-top: 4vh;
     }
 }
 @media screen and (max-width:700px){
@@ -96,17 +104,28 @@
         align-items: center;
         justify-content: center;   
     }
+    .img-text{
+        display: flex;
+        flex-direction: column;
+    }
     .container2 img{
         height: 20vh;
         margin-right: 0;
+        top: 0;
     }
     .container1 img{
+        top: 0;
         height: 20vh;
         margin-right: 0;
+        display: inline;
     }
-    .img-text{
+    .container2 .img-text{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .img-text .text p{
+        display: inline;
     }
 }

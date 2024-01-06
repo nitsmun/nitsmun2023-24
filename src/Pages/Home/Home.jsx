@@ -7,6 +7,7 @@ import Letter from "../../Components/Letters/Letters";
 import Nitsmun from "../../Components/WhatIsMUN/NitsMun";
 import Footer from "../../Components/Footer/Footer";
 import ABout from "../../Components/About/About";
+import Archive from "../../Components/Archiv/Archive";
 const Home = () => {
   const handleScrollDown = (e) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ const Home = () => {
       <Nitsmun/>
       <ABout/>
       <Footer />
-
+      <Archive />
     </div>
   );
 };

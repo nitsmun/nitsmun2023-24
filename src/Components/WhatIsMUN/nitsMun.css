@@ -67,9 +67,9 @@
 .contant h1{
     font-size: 2rem;
 }
-/* .contant p{
-    font-size: 1rem;
-} */
+.contant p{
+    text-align: justify;
+}
 .btn{
     display: flex;
     width: 100%;
