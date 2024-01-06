@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+
+import React, { useState, useEffect,useContext } from "react";
 // import { useQuery } from "react-query";
 // import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
+import { UserContext } from "../../Context/ContextProv";
 import { Link } from "react-router-dom";
 import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const WidePopup = (props) => {
   if (props.name === 'events registered') {
@@ -36,6 +39,8 @@ const WidePopup = (props) => {
   return null;
 
 }
+
+
 const Card = (props) => {
   const [choice, setChoice] = useState(null);
   const [option, setOption] = useState(false);
@@ -43,6 +48,17 @@ const Card = (props) => {
     setOption(i);
     setChoice(j);
   }
+  const { role } = useContext(UserContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (role === "admin") {
+      navigate("/admin");
+    } else if (role === "superadmin") {
+      navigate("/superadmin");
+    }
+  }, [role, navigate]);
+
+
   return (
     <>
       {
