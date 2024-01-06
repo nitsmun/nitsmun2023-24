@@ -4,8 +4,6 @@ import Cookies from "js-cookie";
 
 export const fetchProfile = async () => {
   try {
-    const res = await axios.get(`${import.meta.env.VITE_REACT_APP_API}/dashboard`)
-    // const res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
     const token = Cookies.get("authToken");
     const tokenConfig = {
       headers: {
