@@ -18,6 +18,7 @@ import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
 import ForgotPassword from "./Pages/Login/ForgotPassword/ForgotPassword";
 import Reset from "./Pages/Login/ForgotPassword/Reset/Reset";
+import Edit from "./Pages/Dashboard/EditProfile";
 import SuperAdminDashboard from "./Pages/SuperAdmin/SuperAdminDashboard";
 import AdminDashboard from "./Pages/Admin/AdminDashboard";
 import IndividualUser from "./Pages/SuperAdmin/IndividualUser";
@@ -36,6 +37,7 @@ const App = () => {
         {/* About */}
         <Route path="about" element={<About />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="dashboard/edit" element={<Edit />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/photo" element={<Photo />} />
         <Route path="/wrapped" element={<Wrapped />} />
