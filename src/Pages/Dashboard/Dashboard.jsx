@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-// import { useQuery } from "react-query";
-// import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
+import { useState, useEffect } from "react";
+import { useQuery } from "react-query";
+import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
 import { Link } from "react-router-dom";
 import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -50,61 +50,64 @@ const Card = (props) => {
           null : <WidePopup name={option} infos={choice} />
       }
       <div className={styles.cardWrap}>
+        {/* <h1 className={styles.h1}>USER DASHBOARD</h1> */}
         <div className={styles.details}>
-          <h1 className={styles.h1}>USER DASHBOARD</h1>
           <div className={styles.personalDetails}>
-            <div className={styles.outerCont}>
-              <div className={styles.photoCont}><img alt="loading.." className={styles.photo} src={props.src} /></div>
-              <div className={styles.userDetails}>
-                <h1 className={styles.h1}>User Details</h1>
-                <div className={styles.cont}>
+            <div className={styles.userDetails}>
+              <div className={styles.person}>
+                <div className={styles.photoParent}><img alt="loading.." src="https://res.cloudinary.com/dhry5xscm/image/upload/v1703354598/dashboard_photo_pdunq5.svg" /></div>
+                <div className={styles.bio}>
                   <div className={styles.field}>
-                    <label htmlFor="name" className={styles.label}>Name</label>
-                    <h2 className={styles.h2}>{props.name}</h2>
+                    <h1 className={styles.h1}>Name</h1>
+                    <h1 className={styles.desc}>{props.name}</h1>
                   </div>
-                  <div className={styles.field}>
-                    <label htmlFor="scholar ID" className={styles.label}>Scholar ID</label>
-                    <h2 className={styles.h2}>{props.scholarID}</h2>
-                  </div>
-                  <div className={styles.field}>
-                    <label htmlFor="branch" className={styles.label}>Branch</label>
-                    <h2 className={styles.h2}>{props.branch}</h2>
-                  </div>
+
+                  {props.isStudentOfNITS === true ?
+                    <><div className={styles.field}>
+                      <h1 className={styles.h1}>Scholar ID</h1>
+                      <h1 className={styles.desc}>{props.phone}</h1>
+                    </div>
+                      <div className={styles.field}>
+                        <h1 className={styles.h1}>Branch</h1>
+                        <h1 className={styles.desc}>{props.branch}</h1>
+                      </div></> : null}
                 </div>
               </div>
-            </div>
-            <div className={styles.outerCont}>
-              <div className={styles.contactDetails}>
-                <div className={styles.contactCol}>
-                  <h1 className={styles.h1}>Contact Details</h1>
-                  <div className={styles.phoneCont}>
-                    <label htmlFor="phone number" className={styles.label}>Phone Number</label>
-                    <h2 className={styles.h2}>
-                      {props.phone}
-                    </h2>
-                  </div>
-                  <div className={styles.emailCont}>
-                    <label htmlFor="Email" className={styles.label}>Email</label>
-                    <h2 className={styles.h2}>
-                      {props.email}
-                    </h2>
-                  </div>
-                </div>
-                <div className={styles.nitCol}>
-                  <h1 className={styles.h1}>Contact Details</h1>
-                  <div className={styles.phoneCont}>
-                    <label htmlFor="phone number" className={styles.label}>Phone Number</label>
-                    <h2 className={styles.h2}>
-                      {props.phone}
-                    </h2>
-                  </div>
-                  <div className={styles.instCont}>
-                    <label htmlFor="institute email" className={styles.label}>Institute Email</label>
-                    <h2 className={styles.h2}>
-                      {props.instId}
-                    </h2>
+              <div className={styles.contactSec}>
+                <div className={styles.personalContact}>
+                  <h1 className={styles.heading}>
+                    Contact Details
+                  </h1>
+                  <div className={styles.content}>
+                    <div className={styles.field}>
+                      <h1 className={styles.h1}>Phone Number</h1>
+                      <h1 className={styles.desc}>{props.phone}</h1>
+                    </div>
+
+                    <div className={styles.field}>
+                      <h1 className={styles.h1}>Email</h1>
+                      <h1 className={styles.desc}>{props.email}</h1>
+                    </div>
                   </div>
                 </div>
+                {props.isStudentOfNITS === true ?
+                  <div className={styles.instContact}>
+                    <h1 className={styles.heading}>
+                      Contact Details
+                    </h1>
+                    <div className={styles.content}>
+                      <div className={styles.field}>
+                        <h1 className={styles.h1}>Phone Number</h1>
+                        <h1 className={styles.desc}>{props.phone}</h1>
+                      </div>
+
+                      <div className={styles.field}>
+                        <h1 className={styles.h1}>Email</h1>
+                        <h1 className={styles.desc}>{props.instituteEmail}</h1>
+                      </div>
+                    </div>
+                  </div> : null
+                }
               </div>
             </div>
             <div className={styles.eventCol}>
@@ -132,24 +135,24 @@ const Card = (props) => {
         <div className={styles.options}>
           <div className={styles.col}>
             <button className={styles.btn}>
-              <div><img alt="icon loading..." src="" /><label htmlFor="dashboard">Dashboard</label></div>
+              <div><img alt="icon loading..." src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706499/nitsmun/dashboard_yynv9s.svg" /><label htmlFor="dashboard">Dashboard</label></div>
             </button>
             <button onClick={() => wideView('events registered', null)} className={styles.btn}>
-              <div><img alt="icon loading..." src="" /><label htmlFor="events registered">Events Registered</label></div>
+              <div><img alt="icon loading..." src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg" /><label htmlFor="events registered">Events Registered</label></div>
             </button>
             <button onClick={() => wideView('events information', null)} className={styles.btn}>
-              <div><img alt="icon loading..." src="" /><label htmlFor="upcoming events">Upcoming Events</label></div>
+              <div><img alt="icon loading..." src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg" /><label htmlFor="upcoming events">Upcoming Events</label></div>
             </button>
           </div>
           <div className={styles.col}>
             <Link to='/Dashboard/edit' className={styles.btn}>
-              <img alt="icon loading..." src="" /><label htmlFor="edit profile">Edit Profile</label>
+              <img alt="icon loading..." src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706541/nitsmun/Vector_kntss1.svg" /><label htmlFor="edit profile">Edit Profile</label>
             </Link>
             <button className={styles.btn}>
-              <div><img alt="icon loading..." src="" /><label htmlFor="logout">Log Out</label></div>
+              <div><img alt="icon loading..." src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706540/nitsmun/material-symbols_logout_wibfg1.svg" /><label htmlFor="logout">Log Out</label></div>
             </button>
             <button className={`${styles.btn}`}>
-              <div><img alt="icon loading..." src="" />
+              <div><img alt="icon loading..." src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706894/nitsmun/Vector_1_aprbcr.svg" />
                 <label htmlFor="queries">
                   <h1 className={styles.queries}>For queries contact</h1>
                   <h2 className={styles.queries}>12345-12345</h2>
@@ -163,23 +166,23 @@ const Card = (props) => {
   );
 };
 const Dashboard = () => {
-  // const { data, error, isLoading, isFetching } = useQuery("profile", fetchProfile, {
-  //   refetchOnWindowFocus: "always",
-  // });
-
-  // if (error) {
-  //   return <div>Something went wrong!</div>;
-  // }
-  // if (isLoading || isFetching) {
-  //   return <div>Loading...</div>;
-  // }
-
   const [events, setEvents] = useState(null);
   const [eventsInfo, setEventsinfo] = useState(null);
   useEffect(() => {
     setEvents(null);
     setEventsinfo(null);
   }, []);
+  const { data, error, isLoading, isFetching } = useQuery("profile", fetchProfile, {
+    refetchOnWindowFocus: "always",
+  });
+
+  if (error) {
+    return <div>Something went wrong!</div>;
+  }
+  if (isLoading || isFetching) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       {/* <main className={styles.mainCont}>
@@ -194,7 +197,12 @@ const Dashboard = () => {
       <div className={styles.dashPage}>
         <Navbar page="CONTACT" />
         <div className={styles.pageCont}>
-          <Card src="https://res.cloudinary.com/dhry5xscm/image/upload/v1703354598/dashboard_photo_pdunq5.svg" name="Barnil Sarma" scholarID="2214025" branch="ECE" events={events} eventsInfo={eventsInfo} />
+          {/* <ul>
+            {data.map((product) => (
+              <li key={product.id}>{product.title}</li>
+            ))}
+          </ul> */}
+          <Card src="https://res.cloudinary.com/dhry5xscm/image/upload/v1703354598/dashboard_photo_pdunq5.svg" name={data.data.name} scholarID={data.data.scholarID} email={data.data.email} branch={data.data.branch} phone={data.data.phone} isStudentOfNITS={data.data.isStudentOfNITS} events={events} eventsInfo={eventsInfo} />
         </div>
       </div>
     </>

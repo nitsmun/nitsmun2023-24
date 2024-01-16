@@ -21,6 +21,7 @@ const FormCard = () => {
         if (request.status === 200) {
           setMssg("Login successfull");
           console.log("Login successfull");
+          window.location.href = "/Dashboard";
         }
         else if (request.status === 401) {
           setMssg("Email or password incorrect");
