@@ -2,9 +2,8 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export const fetchProfile = async () => {
+export const fetchContactUsResponses = async () => {
   try {
-
     const token = Cookies.get("authToken");
     const tokenConfig = {
       headers: {
@@ -12,11 +11,11 @@ export const fetchProfile = async () => {
       },
     };
     const res = await axios.get(
-      `${import.meta.env.VITE_REACT_APP_API}/dashboard`,
+      `${import.meta.env.VITE_REACT_APP_API}/getcontactusres`,
       tokenConfig
     );
-    const profileData = res.data;
-    return profileData;
+    const contactUsData = res.data;
+    return contactUsData;
   } catch (err) {
     console.error(err);
     return null;

@@ -1,54 +1,59 @@
-import { useState, useEffect } from "react";
-import { useQuery } from "react-query";
-import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
-import { Link } from "react-router-dom";
+
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+// import { useQuery } from "react-query";
+// import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
+import { UserContext } from "../../Context/ContextProv"
 import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 
 const WidePopup = (props) => {
-  if (props.name === 'events registered') {
+  if (props.name === "events registered") {
     return (
       <div className={styles.widePop}>
-        {
-          props.infos === null ?
-            <h1>
-              No events registered
-            </h1> :
-            props.infos.map((item) => <li>{item}</li>)
-        }
+        {props.infos === null ? (
+          <h1>No events registered</h1>
+        ) : (
+          props.infos.map((item) => <li>{item}</li>)
+        )}
       </div>
     );
   }
-  if (props.name === 'events information') {
+  if (props.name === "events information") {
     return (
       <div className={styles.widePop}>
-        {
-          props.infos === null ?
-            <h1>
-              No upcoming events
-            </h1> :
-            props.infos.map((item) => <li>{item}</li>)
-        }
+        {props.infos === null ? (
+          <h1>No upcoming events</h1>
+        ) : (
+          props.infos.map((item) => <li>{item}</li>)
+        )}
       </div>
     );
   }
 
   return null;
+};
 
-}
 const Card = (props) => {
   const [choice, setChoice] = useState(null);
   const [option, setOption] = useState(false);
   const wideView = (i, j) => {
     setOption(i);
     setChoice(j);
-  }
+  };
+  const { role } = useContext(UserContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (role === "admin") {
+      navigate("/admin");
+    } else if (role === "superadmin") {
+      navigate("/superadmin");
+    }
+  }, [role, navigate]);
+
   return (
     <>
-      {
-        option === false ?
-          null : <WidePopup name={option} infos={choice} />
-      }
+      {option === false ? null : <WidePopup name={option} infos={choice} />}
       <div className={styles.cardWrap}>
         {/* <h1 className={styles.h1}>USER DASHBOARD</h1> */}
         <div className={styles.details}>
@@ -60,6 +65,7 @@ const Card = (props) => {
                   <div className={styles.field}>
                     <h1 className={styles.h1}>Name</h1>
                     <h1 className={styles.desc}>{props.name}</h1>
+
                   </div>
 
                   {props.isStudentOfNITS === true ?
@@ -88,6 +94,7 @@ const Card = (props) => {
                       <h1 className={styles.h1}>Email</h1>
                       <h1 className={styles.desc}>{props.email}</h1>
                     </div>
+
                   </div>
                 </div>
                 {props.isStudentOfNITS === true ?
@@ -113,20 +120,32 @@ const Card = (props) => {
             <div className={styles.eventCol}>
               <div className={styles.parent}>
                 <ul className={styles.eventsRegistered}>
-                  {props.events === null ? <h1 className={styles.h1}>No events registered yet</h1> : props.events.map((item) => <li>{item}</li>)}
+                  {props.events === null ? (
+                    <h1 className={styles.h1}>No events registered yet</h1>
+                  ) : (
+                    props.events.map((item) => <li>{item}</li>)
+                  )}
                 </ul>
               </div>
               <div className={styles.parent}>
                 <div className={styles.eventsUpcoming}>
-                  {props.eventsInfo === null ? <h1 className={styles.h1}>No upcoming events</h1> :
-                    props.eventsInfo.map((item) => <li>
-                      <h1>{item.name}</h1>
-                      <div className={styles.detailsCont}>
-                        <Link to={props.eventsTo} className={styles.knowMore}>Know more</Link>
-                        <Link to={props.regTo} className={styles.regNow}>Register Now</Link>
-                      </div>
-                    </li>)
-                  }
+                  {props.eventsInfo === null ? (
+                    <h1 className={styles.h1}>No upcoming events</h1>
+                  ) : (
+                    props.eventsInfo.map((item) => (
+                      <li>
+                        <h1>{item.name}</h1>
+                        <div className={styles.detailsCont}>
+                          <Link to={props.eventsTo} className={styles.knowMore}>
+                            Know more
+                          </Link>
+                          <Link to={props.regTo} className={styles.regNow}>
+                            Register Now
+                          </Link>
+                        </div>
+                      </li>
+                    ))
+                  )}
                 </div>
               </div>
             </div>
@@ -153,6 +172,7 @@ const Card = (props) => {
             </button>
             <button className={`${styles.btn}`}>
               <div><img alt="icon loading..." src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706894/nitsmun/Vector_1_aprbcr.svg" />
+
                 <label htmlFor="queries">
                   <h1 className={styles.queries}>For queries contact</h1>
                   <h2 className={styles.queries}>12345-12345</h2>
@@ -161,7 +181,7 @@ const Card = (props) => {
             </button>
           </div>
         </div>
-      </div >
+      </div>
     </>
   );
 };
@@ -203,6 +223,7 @@ const Dashboard = () => {
             ))}
           </ul> */}
           <Card src="https://res.cloudinary.com/dhry5xscm/image/upload/v1703354598/dashboard_photo_pdunq5.svg" name={data.data.name} scholarID={data.data.scholarID} email={data.data.email} branch={data.data.branch} phone={data.data.phone} isStudentOfNITS={data.data.isStudentOfNITS} events={events} eventsInfo={eventsInfo} />
+
         </div>
       </div>
     </>
