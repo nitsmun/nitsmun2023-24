@@ -2,7 +2,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export const fetchAllRegistrationsInAnEvent = async ({ eventName }) => {
+export const fetchAllRegistrationsInAnEvent = async () => {
   try {
     const token = Cookies.get("authToken");
     const tokenConfig = {
@@ -11,7 +11,7 @@ export const fetchAllRegistrationsInAnEvent = async ({ eventName }) => {
       },
     };
     const res = await axios.get(
-      `${import.meta.env.VITE_REACT_APP_API}/admin/getregistered/${eventName}`,
+      `${import.meta.env.VITE_REACT_APP_API}/admin/getregistered`,
       tokenConfig
     );
     const RegisteredEventData = res.data;
