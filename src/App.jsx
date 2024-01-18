@@ -4,6 +4,7 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
+import { Toaster } from "sonner";
 import NotFound from "./Pages/NotFound/NotFound";
 import RootLayout from "./Layout/RootLayout";
 import Home from "./Pages/Home/Home";
@@ -70,6 +71,7 @@ const App = () => {
   return (
     <main>
       <RouterProvider router={router} />
+      <Toaster />
     </main>
   );
 };

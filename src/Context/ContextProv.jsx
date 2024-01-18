@@ -11,7 +11,7 @@ const ContextProvider = ({ children }) => {
   const [fetching, setFetching] = useState(true);
 
   useEffect(() => {
-    const token = Cookies.get("authToken")
+    const token = Cookies.get("authToken");
     setFetching(false);
     if (fetching === true && token) {
       setIsLoggedIn(true);
@@ -26,17 +26,19 @@ const ContextProvider = ({ children }) => {
       },
     };
 
-    const fetchRole = async () => {
-      await axios
-        .get(`http://localhost:3880/v1/api/dashboard`, tokenConfig)
-        .then((res) => {
-          if (res.data) {
-            setRole(res.data.role);
-          }
-        });
-    };
+    if (token) {
+      const fetchRole = async () => {
+        await axios
+          .get(`${import.meta.env.VITE_REACT_APP_API}/dashboard`, tokenConfig)
+          .then((res) => {
+            if (res.data) {
+              setRole(res.data.role);
+            }
+          });
+      };
 
-    fetchRole();
+      fetchRole();
+    }
   }, []);
 
   const contextValue = useMemo(() => ({ isLoggedIn, role }), [isLoggedIn, role]);
