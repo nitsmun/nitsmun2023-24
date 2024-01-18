@@ -11,15 +11,12 @@ dependencies:
   axios:
     specifier: ^1.6.1
     version: 1.6.1
-
   cors:
     specifier: ^2.8.5
     version: 2.8.5
-
   js-cookie:
     specifier: ^3.0.5
     version: 3.0.5
-    
   lint:
     specifier: ^0.8.19
     version: 0.8.19

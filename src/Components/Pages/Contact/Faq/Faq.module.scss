@@ -40,13 +40,13 @@
 
   @media screen and (min-width: 1000px) {
     .col {
-      width: 40%;
+      width: 100%;
     }
   }
 }
 
 @media screen and (min-width: 1000px) {
   .cardsCont {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
