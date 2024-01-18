@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Monoton&family=Montserrat:wght@400;700&family=Nothing+You+Could+Do&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Monoton&family=Montserrat:wght@400;700&family=Nothing+You+Could+Do&family=Poppins&display=swap");
 
 .dashPage {
   overflow-x: hidden;
@@ -14,9 +14,7 @@
     }
   }
 
-
-
-  @media screen and (min-width:1051px) {
+  @media screen and (min-width: 1051px) {
     .details {
       flex-direction: row;
     }
@@ -33,7 +31,7 @@
   align-items: center;
   justify-content: space-around;
   box-shadow: 0px 0px 9.100000381469727px 0px #00000040;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   border-radius: 2rem;
   overflow: hidden;
 }
@@ -43,7 +41,7 @@
   position: absolute;
 }
 
-@media screen and (min-width:1051px) {
+@media screen and (min-width: 1051px) {
   .cardWrap {
     flex-direction: row-reverse;
   }
@@ -88,7 +86,7 @@
         column-gap: 1rem;
       }
 
-      @media screen and (min-width:1051px) {
+      @media screen and (min-width: 1051px) {
         .bio {
           flex-direction: column;
           align-items: start;
@@ -110,15 +108,13 @@
       }
     }
 
-    @media screen and (min-width:1051px) {
+    @media screen and (min-width: 1051px) {
       .person {
         flex-direction: row;
         justify-content: space-around;
         width: 80%;
       }
     }
-
-
 
     .field {
       display: flex;
@@ -161,21 +157,19 @@
     .emailCont {
       font-size: 0.625rem;
     }
-
   }
 
-  @media screen and (min-width:1051px) {
+  @media screen and (min-width: 1051px) {
     .outerCont {
       flex-direction: row;
     }
   }
 }
 
-@media screen and (min-width:1051px) {
+@media screen and (min-width: 1051px) {
   .personalDetails {
     flex-direction: row;
   }
-
 }
 
 .contactDetails {
@@ -197,7 +191,7 @@
   }
 }
 
-@media screen and (min-width:1051px) {
+@media screen and (min-width: 1051px) {
   .eventCol {
     flex-direction: column;
     row-gap: 6rem;
@@ -211,7 +205,7 @@
   align-items: center;
   width: 100%;
   height: 25rem;
-  background-color: #F6EEEE;
+  background-color: #f6eeee;
 
   .col {
     display: flex;
@@ -222,7 +216,7 @@
     height: 100%;
   }
 
-  @media screen and (min-width:1051px) {
+  @media screen and (min-width: 1051px) {
     .col {
       align-items: start;
       padding-left: 10%;
@@ -239,17 +233,17 @@
     border: 0px solid transparent;
     color: #333333;
     font-size: 0.5rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
   }
 
-  @media screen and (min-width:1051px) {
+  @media screen and (min-width: 1051px) {
     .btn {
       font-size: 1rem;
 
       .queries {
         font-size: 1rem;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-weight: 400;
       }
     }
@@ -260,7 +254,7 @@
   }
 }
 
-@media screen and (min-width:1051px) {
+@media screen and (min-width: 1051px) {
   .options {
     flex-direction: column;
     width: 40%;
