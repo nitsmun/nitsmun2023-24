@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { useQuery } from "react-query";
 import { useQuery } from "react-query";
+import Cookies from "js-cookie";
 import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
 import { UserContext } from "../../Context/ContextProv";
 import styles from "./Dashboard.module.scss";
@@ -50,6 +50,13 @@ const Card = (props) => {
       navigate("/superadmin");
     }
   }, [role, navigate]);
+
+  const handleSignout = (e) => {
+    e.preventDefault();
+    Cookies.remove("authToken");
+    window.location.reload();
+    navigate("/");
+  };
 
   return (
     <>
@@ -197,7 +204,7 @@ const Card = (props) => {
               />
               <label htmlFor="edit profile">Edit Profile</label>
             </Link>
-            <button className={styles.btn}>
+            <button className={styles.btn} onClick={handleSignout}>
               <div>
                 <img
                   alt="icon loading..."
@@ -225,6 +232,7 @@ const Card = (props) => {
     </>
   );
 };
+
 const Dashboard = () => {
   const [events, setEvents] = useState(null);
   const [eventsInfo, setEventsinfo] = useState(null);
@@ -236,14 +244,14 @@ const Dashboard = () => {
   const isTrue = useMemo(() => {
     return Boolean(role && isLoggedIn);
   }, [role, isLoggedIn]);
-  const { data, error, isLoading, isFetching } = useQuery("profile", fetchProfile, {
+  const { data, error, isLoading } = useQuery("profile", fetchProfile, {
     enabled: isTrue,
   });
 
   if (error) {
     return <div>Something went wrong!</div>;
   }
-  if (isLoading || isFetching) {
+  if (isLoading) {
     return <div>Loading...</div>;
   }
 

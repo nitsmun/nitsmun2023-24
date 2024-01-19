@@ -1,8 +1,12 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+/* eslint-disable no-underscore-dangle */
+import React, { useMemo, useContext, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useQuery } from "react-query";
+import { UserContext } from "../../Context/ContextProv";
+import { fetchAllCreatedAccounts } from "../../ReactQuery/Fetchers/SuperAdmin/GetAllSignups";
 
 const IndividualUser = () => {
   const { id } = useParams();
@@ -13,6 +17,35 @@ const IndividualUser = () => {
       Authorization: `Bearer ${token}`,
     },
   };
+
+  const navigate = useNavigate();
+
+  // fetch individual user details
+  const { role, isLoggedIn } = useContext(UserContext);
+
+  const isEnabled = useMemo(() => {
+    return Boolean(isLoggedIn && role === "superadmin");
+  }, [isLoggedIn, role]);
+
+  const queryKey = useMemo(() => ["allCreatedAccountData"], []);
+
+  const { data, error, isLoading } = useQuery(queryKey, fetchAllCreatedAccounts, {
+    enabled: isEnabled,
+  });
+
+  const individualUser = data?.allAccounts?.find((user) => user._id === accountID);
+  console.log(individualUser);
+  useEffect(() => {
+    document.title = `${individualUser?.name} | NITSMUN}`;
+    if (role !== "superadmin") {
+      navigate("/");
+    }
+  }, [individualUser, role, navigate]);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Something went wrong</div>;
+
+  // elevate role
   const handleElevate = async (e) => {
     e.preventDefault();
     try {
@@ -25,6 +58,7 @@ const IndividualUser = () => {
         .then((res) => {
           if (res.data.message === "Role elevated to admin") {
             toast("Role elevated to admin");
+            window.location.reload();
           }
         });
     } catch (err) {
@@ -49,6 +83,7 @@ const IndividualUser = () => {
     }
   };
 
+  // demote role
   const handleDemote = async (e) => {
     e.preventDefault();
     try {
@@ -61,6 +96,7 @@ const IndividualUser = () => {
         .then((res) => {
           if (res.data.message === "Role demoted to client") {
             toast("Role demoted to client");
+            window.location.reload();
           }
         });
     } catch (err) {
@@ -84,6 +120,8 @@ const IndividualUser = () => {
       }
     }
   };
+
+  // delete user
 
   const handleDelete = async (e) => {
     e.preventDefault();
@@ -122,13 +160,19 @@ const IndividualUser = () => {
 
   return (
     <div>
-      <h1>IndividualUser</h1>
-      <div>
-        <button onClick={handleElevate}>Elevate Role</button>
-      </div>
-      <div>
-        <button onClick={handleDemote}>Demote Role</button>
-      </div>
+      <h1>{individualUser?.name}</h1>
+      {individualUser.role === "client" && (
+        <div>
+          <button onClick={handleElevate}>Elevate Role</button>
+        </div>
+      )}
+
+      {individualUser.role === "admin" && (
+        <div>
+          <button onClick={handleDemote}>Demote Role</button>
+        </div>
+      )}
+
       <div>
         <button onClick={handleDelete}>Delete account</button>
       </div>

@@ -4,7 +4,6 @@ import Cookies from "js-cookie";
 
 export const fetchProfile = async () => {
   try {
-
     const token = Cookies.get("authToken");
     const tokenConfig = {
       headers: {

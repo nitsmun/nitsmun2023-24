@@ -29,6 +29,7 @@ import Scheduled from "./Pages/SuperAdmin/Scheduled";
 import AllEventRegistrations from "./Pages/Admin/AllEventRegistrations";
 import IndividualEventReg from "./Pages/Admin/IndividualEventReg";
 import RegistrationsBasedOnStatus from "./Pages/Admin/RegistrationsBasedOnStatus";
+import OneEventRegistrations from "./Pages/Admin/OneEventRegistrations";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -51,10 +52,11 @@ const App = () => {
         {/* Admin stuffs */}
         <Route exact path="/admin" element={<AdminDashboard />} />
         <Route exact path="/allreg" element={<AllEventRegistrations />} />
-        {/* event based on status */}
-        <Route path="/reg/:eventName/:status" element={<RegistrationsBasedOnStatus />} />
+        <Route path="/registrations/:event" element={<OneEventRegistrations />} />
         {/* Individual event */}
         <Route path="/eventreg/:eventID" element={<IndividualEventReg />} />
+        {/* event based on status */}
+        <Route path="/reg/:eventName/:status" element={<RegistrationsBasedOnStatus />} />
 
         {/* SuperAdmin stuffs */}
         <Route exact path="/superadmin" element={<SuperAdminDashboard />} />
