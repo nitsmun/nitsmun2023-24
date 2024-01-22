@@ -26,7 +26,7 @@ const Card = (props) => {
         <h1 className={styles.text}>{props.question}</h1>
         <button
           className={styles.desktopDropdown}
-          onClick={() => setOpened(`${opened === false ? true : false}`)}
+          onClick={() => setOpened(`${opened === false}`)}
         >
           .
           <img

@@ -19,6 +19,7 @@ import SignUp from "./Pages/SignUp/SignUp";
 import ForgotPassword from "./Pages/Login/ForgotPassword/ForgotPassword";
 import Reset from "./Pages/Login/ForgotPassword/Reset/Reset";
 import Edit from "./Pages/Dashboard/EditProfile";
+import MockMun24 from "./Pages/MockMun24/MockMun24";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/photo" element={<Photo />} />
         <Route path="/wrapped" element={<Wrapped />} />
+        <Route path="/mockmun24" element={<MockMun24 />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />

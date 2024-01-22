@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "react-query";
-import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
 import { Link } from "react-router-dom";
+import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
 import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 

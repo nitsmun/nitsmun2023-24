@@ -1,6 +1,6 @@
-import styles from "./ContactUs.module.scss";
 import { useState } from "react";
 import axios from "axios";
+import styles from "./ContactUs.module.scss";
 const Info = (props) => {
   const icons = {
     "NIT Silchar, Silchar, Assam, India":
@@ -28,9 +28,9 @@ const ContactUs = () => {
     e.preventDefault();
     const request = await axios.post("http://localhost:3880/v1/api/contactus",
       {
-        name: name,
-        email: email,
-        message: message
+        name,
+        email,
+        message
       });
     if (request) {
       setResponse("Thank you contacting us. We will get to you soon!!");
@@ -46,7 +46,7 @@ const ContactUs = () => {
           <input
             className={styles.textBox}
             type="text"
-            placeholder={"Name"}
+            placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -56,7 +56,7 @@ const ContactUs = () => {
           <input
             className={styles.textBox}
             type="email"
-            placeholder={"example@gmail.com"}
+            placeholder="example@gmail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -65,7 +65,7 @@ const ContactUs = () => {
           <h1 className={styles.fieldHeading}>Message</h1>
           <textarea
             className={`${styles.textBox} ${styles.textArea}`}
-            placeholder={"Your Message"}
+            placeholder="Your Message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
