@@ -3,21 +3,21 @@
 
 :root {
     --globalWidth: 80vw;
-    --img-width: 10rem;
-    --img-height: 10rem;
+    --img-width: 5rem;
+    --img-height: 5rem;
 }
 
 @media screen and (min-width:400px) {
     :root {
-        --img-width: 12rem;
-        --img-height: 12rem;
+        --img-width: 7rem;
+        --img-height: 7rem;
     }
 }
 
 @media screen and (min-width:500px) {
     :root {
-        --img-width: 18rem;
-        --img-height: 18rem;
+        --img-width: 15rem;
+        --img-height: 15rem;
     }
 }
 
