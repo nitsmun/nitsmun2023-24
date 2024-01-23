@@ -28,14 +28,14 @@ const ContactUs = () => {
     e.preventDefault();
     const request = await axios.post("http://localhost:3880/v1/api/contactus",
       {
-        name,
-        email,
-        message
+        name: name,
+        email: email,
+        message: message
       });
     if (request) {
       setResponse("Thank you contacting us. We will get to you soon!!");
     }
-  }
+  };
   return (
     <div className={styles.container}>
       <h1 className={styles.mainHeading}>CONTACT US</h1>
@@ -70,7 +70,12 @@ const ContactUs = () => {
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
         </div>
-        <input type="submit" className={styles.subButton} value="Send" onClick={sendMessage} />
+        <input
+          type="submit"
+          className={styles.subButton}
+          value="Send"
+          onClick={sendMessage}
+        />
       </form>
       <div className={styles.infoContParent}>
         <h1 className={styles.contactHeading}>CONTACT US</h1>

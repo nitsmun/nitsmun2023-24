@@ -33,7 +33,10 @@ const Card = (props) => {
             alt="toggler loading ...."
             src="https://res.cloudinary.com/dhry5xscm/image/upload/v1702408563/ecs-website/dropDownArrow_ndo5ey.svg"
             className={styles.image}
-            style={{ transform: `rotate(${opened === true ? '180deg' : '0deg'})`, transition: 'ease 500ms' }}
+            style={{
+              transform: `rotate(${opened === true ? "180deg" : "0deg"})`,
+              transition: "ease 500ms",
+            }}
           />
         </button>
       </div>
