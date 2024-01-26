@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
-import Cookies from "js-cookie";
 import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
+import Cookies from "js-cookie";
 import { UserContext } from "../../Context/ContextProv";
 import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
