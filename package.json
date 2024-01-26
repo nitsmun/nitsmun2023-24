@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .jsx --ext .js --fix",
@@ -16,6 +16,8 @@
   "dependencies": {
     "@vitejs/plugin-react": "^4.0.3",
     "axios": "^1.6.1",
+    "cors": "^2.8.5",
+    "js-cookie": "^3.0.5",
     "lint": "^0.8.19",
     "pretty": "^2.0.0",
     "react": "^18.2.0",
@@ -23,6 +25,7 @@
     "react-icons": "^4.12.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.16.0",
+    "sonner": "^1.3.1",
     "vite": "^4.4.5"
   },
   "devDependencies": {

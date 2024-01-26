@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
+
 :root {
-  --closed: 8rem;
+  --closed: 10rem;
   --opened: 20.5rem;
 }
 
 .desktopDropdown {
-  visibility: hidden;
+  visibility: visible;
   background-color: transparent;
   border: 0px solid transparent;
   width: 20%;
@@ -26,14 +28,21 @@
   width: 100%;
   background-color: #ffffff;
   color: #000000;
-  font-family: "Inter", sans-serif;
-  font-weight: 100;
+  overflow: hidden;
+
+  .text {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    text-align: left;
+  }
 
   .question {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: start;
+    align-items: center;
+    width: 100%;
 
     .image {
       width: 1.2rem;
@@ -45,7 +54,14 @@
     background-color: transparent;
     border: 0px solid transparent;
     cursor: pointer;
-    z-index: 7;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      width: 100%;
+    }
   }
 }
 

@@ -26,13 +26,17 @@ const Card = (props) => {
         <h1 className={styles.text}>{props.question}</h1>
         <button
           className={styles.desktopDropdown}
-          onClick={() => setOpened(opened === false)}
+          onClick={() => setOpened(`${opened === false}`)}
         >
           .
           <img
             alt="toggler loading ...."
             src="https://res.cloudinary.com/dhry5xscm/image/upload/v1702408563/ecs-website/dropDownArrow_ndo5ey.svg"
             className={styles.image}
+            style={{
+              transform: `rotate(${opened === true ? "180deg" : "0deg"})`,
+              transition: "ease 500ms",
+            }}
           />
         </button>
       </div>

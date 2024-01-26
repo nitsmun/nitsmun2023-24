@@ -2,7 +2,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export const fetchProfile = async () => {
+export const fetchAllCreatedAccounts = async () => {
   try {
     const token = Cookies.get("authToken");
     const tokenConfig = {
@@ -11,11 +11,11 @@ export const fetchProfile = async () => {
       },
     };
     const res = await axios.get(
-      `${import.meta.env.VITE_REACT_APP_API}/dashboard`,
+      `${import.meta.env.VITE_REACT_APP_API}/superadmin/getallaccounts`,
       tokenConfig
     );
-    const profileData = res.data;
-    return profileData;
+    const allCreatedAccountData = res.data;
+    return allCreatedAccountData;
   } catch (err) {
     console.error(err);
     return null;
