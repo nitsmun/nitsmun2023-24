@@ -37,9 +37,20 @@ const WidePopup = (props) => {
 const Card = (props) => {
   const [choice, setChoice] = useState(null);
   const [option, setOption] = useState(false);
-  const wideView = (i, j) => {
-    setOption(i);
-    setChoice(j);
+  const wideView = (i, j, setOption, setChoice, option, choice) => {
+    if (option === false) {
+      setOption(i);
+    }
+    else {
+      setOption(false);
+    }
+    if (choice) {
+      setChoice(j);
+    }
+    else {
+      setChoice(null);
+    }
+
   };
   const { role } = useContext(UserContext);
   const navigate = useNavigate();
@@ -69,6 +80,7 @@ const Card = (props) => {
               <div className={styles.person}>
                 <div className={styles.photoParent}>
                   <img
+                    className={styles.img}
                     alt="loading.."
                     src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706367691/prof_rg9g0w.jpg"
                   />
@@ -172,7 +184,7 @@ const Card = (props) => {
               </div>
             </button>
             <button
-              onClick={() => wideView("events registered", null)}
+              onClick={() => wideView("events registered", null, setOption, setChoice, option, choice)}
               className={styles.btn}
             >
               <div>
@@ -184,7 +196,7 @@ const Card = (props) => {
               </div>
             </button>
             <button
-              onClick={() => wideView("events information", null)}
+              onClick={() => wideView("events information", null, setOption, setChoice, option, choice)}
               className={styles.btn}
             >
               <div>
@@ -254,10 +266,10 @@ const Dashboard = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  if (Cookies.get("authToken")) {
-    return (
-      <>
-        {/* <main className={styles.mainCont}>
+  // if (Cookies.get("authToken")) {
+  return (
+    <>
+      {/* <main className={styles.mainCont}>
         <ul>
           {data.map((product) => (
             <li key={product.id}>{product.title}</li>
@@ -266,35 +278,34 @@ const Dashboard = () => {
 
       </main> */}
 
-        <div className={styles.dashPage}>
-          <Navbar page="CONTACT" />
-          <div className={styles.pageCont}>
-            {/* <ul>
+      <div className={styles.dashPage}>
+        <Navbar page="CONTACT" />
+        <div className={styles.pageCont}>
+          {/* <ul>
             {data.map((product) => (
               <li key={product.id}>{product.title}</li>
             ))}
           </ul> */}
-            <Card
-              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1703354598/dashboard_photo_pdunq5.svg"
-              name={data?.name}
-              scholarID={data?.scholarID}
-              email={data?.email}
-              branch={data?.branch}
-              phone={data?.phone}
-              isStudentOfNITS={data?.isStudentOfNITS}
-              events={events}
-              eventsInfo={eventsInfo}
-            />
-          </div>
+          <Card
+            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1703354598/dashboard_photo_pdunq5.svg"
+            name={data?.name}
+            scholarID={data?.scholarID}
+            email={data?.email}
+            branch={data?.branch}
+            phone={data?.phone}
+            isStudentOfNITS={data?.isStudentOfNITS}
+            events={events}
+            eventsInfo={eventsInfo}
+          />
         </div>
-      </>
-    );
-  }
-  
-    window.location.href = "/";
-    toast("You have not logged in!");
-    return null;
-  
-};
+      </div>
+    </>
+  );
+}
+
+// window.location.href = "/";
+// toast("You have not logged in!");
+// return null;
+
 
 export default Dashboard;

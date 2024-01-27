@@ -5,7 +5,7 @@ import styles from "./Navbar.module.scss";
 const Navbar = (props) => {
   const [deskHamState, setDeskHam] = useState(0);
   const deskHam = [
-    { id: "1", name: "ARCHIVE", dest: "/about" },
+    { id: "1", name: "ARCHIVE", dest: "/archive" },
     { id: "2", name: "APPLY NOW", dest: "/applynow" },
   ];
   const isEvents = false;
@@ -179,7 +179,7 @@ const Navbar = (props) => {
                     cursor: 'poiner',
                     backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
                     color:
-                      props.page === "HOME" || props.page === "WRAPPED" || props.page==="MOCKMUN24" || props.page==="APPLY"
+                      props.page === "HOME" || props.page === "WRAPPED" || props.page === "MOCKMUN24" || props.page === "APPLY"
                         ? "#ffffff"
                         : "#1d1c41",
                   }}
