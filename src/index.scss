@@ -50,6 +50,11 @@
   scroll-behavior: smooth;
 }
 
+#root {
+  background-image: url("https://res.cloudinary.com/dz2mlxltd/image/upload/v1706370659/spiralbg_mj8fzf.svg");
+  background-size: contain;
+}
+
 .active {
   color: #000000;
 }

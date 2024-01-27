@@ -77,7 +77,7 @@ const MockMun24 = () => {
           <div className={styles.innerCont}>
             <div className={styles.imgParent}>
               <img
-                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1705864086/nitsmun/committee_yehz0a.svg"
+                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp"
                 alt="loading..."
                 className={styles.img}
               />
@@ -91,15 +91,11 @@ const MockMun24 = () => {
                   emphasis on Afghanistan, Pakistan and Syria.
                 </p>
                 <p className={styles.innerPara}>
-                  Ea nisi maiores et internos praesentium et ipsa omnis est maiores
-                  repudiandae eos aspernatur pariatur et libero illo? Vel quis aliQui
-                  delectus unde cum dolor aliquid eum deleniti dolore. Vel quibusdam
-                  tempora hic voluptas quam et nemo quibusdam et explicabo voluptas eos
-                  earum quaerat ea dignissimos minima et dolor galisum..
+                  The United Nations Security Council maintains global peace, with 15 member nations addressing threats through resolutions,sanctions, and peacekeeping operations,aiming for collective security.
                 </p>
-                <div className={styles.bgCont}>
+                {/* <div className={styles.bgCont}>
                   <button className={styles.bgBtn}>Background Guide</button>
-                </div>
+                </div> */}
               </p>
             </div>
           </div>
