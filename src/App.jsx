@@ -32,7 +32,8 @@ import RegistrationsBasedOnStatus from "./Pages/Admin/RegistrationsBasedOnStatus
 import OneEventRegistrations from "./Pages/Admin/OneEventRegistrations";
 import Archive from "./Components/Archiv/Archive";
 import Apply from "./Components/ApplyNow/Apply";
-import About from "./Components/About/About"
+import About from "./Components/About/About";
+import Error from "./Pages/Error/Error";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -55,6 +56,7 @@ const App = () => {
         <Route path="/about" element ={<About/>} />
         <Route path="/archive" element ={<Archive/>} />
         <Route path="/applynow" element ={<Apply/>} />
+        <Route path="*" element ={<Error/>}/>
         {/* Admin stuffs */}
         <Route exact path="/admin" element={<AdminDashboard />} />
         <Route exact path="/allreg" element={<AllEventRegistrations />} />

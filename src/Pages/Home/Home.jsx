@@ -6,6 +6,7 @@ import Reviews from "../../Components/Pages/Home/Reviews/Reviews";
 import Letter from "../../Components/Letters/Letters";
 import Nitsmun from "../../Components/WhatIsMUN/NitsMun";
 import Footer from "../../Components/Footer/Footer";
+
 // import About from "../../Components/About/About";
 // import Archive from "../../Components/Archiv/Archive";
 // import Apply from "../../Components/ApplyNow/apply";
