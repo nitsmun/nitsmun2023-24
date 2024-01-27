@@ -53,7 +53,7 @@ const Photo = () => {
       setScrollPos(scrollPos - 100);
     }
     document.getElementById("photoViewer").scrollLeft = scrollPos;
-    console.log(scrollPos);
+    // console.log(scrollPos);
   };
   const photoClick = (photoId) => {
     setWideview(photoId);

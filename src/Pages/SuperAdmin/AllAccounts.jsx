@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useQuery } from "react-query";
 import React, { useContext, useMemo } from "react";
 import { UserContext } from "../../Context/ContextProv";

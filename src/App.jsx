@@ -53,10 +53,10 @@ const App = () => {
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Reset" element={<Reset />} />
-        <Route path="/about" element ={<About/>} />
-        <Route path="/archive" element ={<Archive/>} />
-        <Route path="/applynow" element ={<Apply/>} />
-        <Route path="*" element ={<Error/>}/>
+        <Route path="/about" element={<About />} />
+        <Route path="/archive" element={<Archive />} />
+        <Route path="/applynow" element={<Apply />} />
+        <Route path="*" element={<Error />} />
         {/* Admin stuffs */}
         <Route exact path="/admin" element={<AdminDashboard />} />
         <Route exact path="/allreg" element={<AllEventRegistrations />} />

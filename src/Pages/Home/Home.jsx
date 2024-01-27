@@ -35,11 +35,11 @@ const Home = () => {
         <Letter title="Secratory General" name="Maruf Padaya" src="https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676476439/events/nitsmun/team/marufPadaya_faj39h.jpg" />
       </div>
       <Reviews />
-      <Nitsmun/>
+      <Nitsmun />
       {/* <About/>
       <Archive />
       <Apply /> */}
-      <br/><br/><br/><br/>
+      <br /><br /><br /><br />
       <Footer />
     </div>
   );

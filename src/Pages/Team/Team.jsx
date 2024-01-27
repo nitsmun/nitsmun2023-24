@@ -10,6 +10,7 @@ import {
   Secretariatprjr,
   Secretariatwebjr,
 } from "./DataBase";
+
 const Team = () => {
   return (
     <div className={styles.teamPage}>

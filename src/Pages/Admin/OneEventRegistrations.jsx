@@ -19,7 +19,7 @@ const OneEventRegistrations = () => {
   const particularEventRegistrations = events?.filter(
     (item) => item?.eventName === event
   );
-  console.log(particularEventRegistrations);
+  // console.log(particularEventRegistrations);
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error fetching data</div>;
 
