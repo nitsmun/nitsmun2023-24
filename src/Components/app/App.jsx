@@ -3,17 +3,11 @@
 /* eslint-disable check-file/filename-naming-convention */
 /* eslint-disable check-file/folder-naming-convention */
 import React from "react";
-<<<<<<< HEAD:src/Components/app/App.jsx
+
 import Letter from "../Letters/Letters";
 import Nitsmun from "../WhatIsMUN/NitsMun";
 import "./App.css"
 import Footer from "../Footer/Footer";
-=======
-import Letter from "./componets/letters";
-import Nitsmun from "./componets/nitsMun";
-import "./App.css";
-import Footer from "./componets/Footer";
->>>>>>> c8ebd5a2064cefa00945cf7afd134e5f549b0225:src/Components/app/App.js
 
 const App = () => {
   return (

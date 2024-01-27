@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 import Cookies from "js-cookie";
-// import { toast } from "sonner";
+import { toast } from "sonner";
 import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
 import { UserContext } from "../../Context/ContextProv";
 import styles from "./Dashboard.module.scss";
@@ -302,10 +302,10 @@ const Dashboard = () => {
       </>
     );
   }
-  else {
-    window.location.href = "/";
-    toast("You have not logged in!");
-    return null;
-  }
+
+  window.location.href = "/";
+  toast("You have not logged in!");
+  return null;
+
 }
 export default Dashboard;
