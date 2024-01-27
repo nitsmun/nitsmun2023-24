@@ -1,6 +1,22 @@
 import Navbar from "../../../Components/Navbar/Navbar";
 import styles from "./ForgotPassword.module.scss";
+import { useState } from "react"
+import axios from "axios"
+import Cookies from "js-cookie";
 const FormCard = () => {
+  const [email, setEmail] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let response = axios.post(`${import.meta.env.VITE_REACT_APP_API}/sendlink`, { email },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${import.meta.env.JWT_SECRET_KEY}`
+        }
+      }
+    );
+    console.log(response);
+  }
   return (
     <div className={styles.loginWrap}>
       <div className={styles.headingCont}>
@@ -12,12 +28,12 @@ const FormCard = () => {
       </div>
       <form className={styles.form}>
         <h1 className={styles.title}>Enter Email</h1>
-        <input type="text" placeholder="Enter Email" className={styles.textBox} />
-        <div className={styles.subCont}>
-          <input type="submit" value="Confirm" className={styles.subBtn} />
+        <input type="text" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} className={styles.textBox} />
+        <div className={styles.subCont} >
+          <input type="submit" value="Confirm" onClick={handleSubmit} className={styles.subBtn} />
         </div>
-      </form>
-    </div>
+      </form >
+    </div >
   );
 };
 const ForgotPassword = () => {

@@ -30,12 +30,12 @@ const Home = () => {
         </div>
       </div>
       <div className="letter-container" >
-      <Letter title="Faculty Advisor" name="Dr. Wasim Arif" src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703446281/image_1_3_azcue6.png"/>
-      <Letter title="Secratory General" name="Maruf Padaya" src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703446281/image_1_3_azcue6.png"/>
+        <Letter title="Faculty Advisor" name="Dr. Wasim Arif" src="https://res.cloudinary.com/dhry5xscm/image/upload/v1701965729/ecs-website/wasim-img_orgqul.jpg" />
+        <Letter title="Secratory General" name="Maruf Padaya" src="https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676476439/events/nitsmun/team/marufPadaya_faj39h.jpg" />
       </div>
       <Reviews />
-      <Nitsmun/>
-      <About/>
+      <Nitsmun />
+      <About />
       <Archive />
       <Apply />
       <Footer />

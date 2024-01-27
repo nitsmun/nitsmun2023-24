@@ -505,7 +505,7 @@ export const Secretariatresearchjr = [
     name: "Barbi Chaliha",
     post: "Research and Development Team",
     linkedin: "https://www.linkedin.com/in/barbi-chaliha-395972254",
-    fb: "https://m.facebook.com/profile.php/?id=100014583841018&name=STSDirectNavUserDecorator",
+    fb: "https://www.facebook.com/profile.php?id=100087897555374",
     mail: "mailto:barbic_ug_22@ece.nits.ac.in",
   },
   {

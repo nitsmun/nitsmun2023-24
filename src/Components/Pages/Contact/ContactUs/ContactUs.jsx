@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import styles from "./ContactUs.module.scss";
+import { toast } from "sonner";
 const Info = (props) => {
   const icons = {
     "NIT Silchar, Silchar, Assam, India":
@@ -23,24 +24,25 @@ const ContactUs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [response, setResponse] = useState("");
   const sendMessage = async (e) => {
     e.preventDefault();
-    const request = await axios.post("http://localhost:3880/v1/api/contactus",
+    const request = await axios.post(`${import.meta.env.VITE_REACT_APP_API}/contactus`,
       {
         name: name,
         email: email,
         message: message
       });
-    if (request) {
-      setResponse("Thank you contacting us. We will get to you soon!!");
+    if (request.status === 200) {
+      toast("Thank you for contacting us. We will get to you soon!!");
+      setName("");
+      setMessage("");
+      setEmail("");
     }
   };
   return (
     <div className={styles.container}>
       <h1 className={styles.mainHeading}>CONTACT US</h1>
       <form method="POST" className={styles.form}>
-        <h1>{response}</h1>
         <div className={styles.field}>
           <h1 className={styles.fieldHeading}>Name</h1>
           <input
@@ -82,8 +84,8 @@ const ContactUs = () => {
         <div className={styles.infoCont}>
           <div className={styles.info}>
             <Info detail="NIT Silchar, Silchar, Assam, India" />
-            <Info detail="nits_mun.gmail.com" />
-            <Info detail="12345-12345" />
+            <Info detail="nitsmun@nits.ac.in" />
+            <Info detail="+91 7096597864" />
           </div>
           <div className={styles.logoCont}>
             <img

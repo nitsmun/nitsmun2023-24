@@ -3,7 +3,7 @@ import styles from "./Hero.module.scss";
 
 const TimeLine = () => {
   return (
-    <div className={styles.Herotimeline}>
+    <div className={styles.Herotimeline} id="home">
       <h3>Starts in:</h3>
       <div className={styles.container}>
         <div
@@ -112,7 +112,7 @@ const Hero = () => {
             style={{ color: "#ffffff", textAlign: "center" }}
             className={styles.Herodes}
           >
-            The Loremsas Ipsumasd
+
           </h6>
         </div>
         <div

@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import { UserContext } from "../../Context/ContextProv";
 import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
-
+import { toast } from "sonner";
 const WidePopup = (props) => {
   if (props.name === "events registered") {
     return (
@@ -254,10 +254,10 @@ const Dashboard = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
-  return (
-    <>
-      {/* <main className={styles.mainCont}>
+  if (Cookies.get("authToken")) {
+    return (
+      <>
+        {/* <main className={styles.mainCont}>
         <ul>
           {data.map((product) => (
             <li key={product.id}>{product.title}</li>
@@ -266,29 +266,34 @@ const Dashboard = () => {
 
       </main> */}
 
-      <div className={styles.dashPage}>
-        <Navbar page="CONTACT" />
-        <div className={styles.pageCont}>
-          {/* <ul>
+        <div className={styles.dashPage}>
+          <Navbar page="CONTACT" />
+          <div className={styles.pageCont}>
+            {/* <ul>
             {data.map((product) => (
               <li key={product.id}>{product.title}</li>
             ))}
           </ul> */}
-          <Card
-            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1703354598/dashboard_photo_pdunq5.svg"
-            name={data?.name}
-            scholarID={data?.scholarID}
-            email={data?.email}
-            branch={data?.branch}
-            phone={data?.phone}
-            isStudentOfNITS={data?.isStudentOfNITS}
-            events={events}
-            eventsInfo={eventsInfo}
-          />
+            <Card
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1703354598/dashboard_photo_pdunq5.svg"
+              name={data?.name}
+              scholarID={data?.scholarID}
+              email={data?.email}
+              branch={data?.branch}
+              phone={data?.phone}
+              isStudentOfNITS={data?.isStudentOfNITS}
+              events={events}
+              eventsInfo={eventsInfo}
+            />
+          </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
+  else {
+    window.location.href = "/";
+    toast("You have not logged in!");
+  }
 };
 
 export default Dashboard;

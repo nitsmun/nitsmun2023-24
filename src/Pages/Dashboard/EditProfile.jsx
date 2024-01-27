@@ -1,6 +1,38 @@
 import styles from "./EditProfile.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
+import { useState } from "react"
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "sonner";
+import Cookies from "js-cookie";
 const Card = (props) => {
+  //{ newName, newPwd, confirmNewPwd, phone }
+  const [newName, setnewName] = useState("");
+  const [newPwd, setPwd] = useState("");
+  const [confirmNewPwd, setconfirmNewPwd] = useState("");
+  const [phone, setPhone] = useState("");
+  const editProfile = async (e) => {
+    e.preventDefault();
+    const navigate = useNavigate();
+    try {
+      const response = await axios.put(`${import.meta.env.VITE_REACT_APP_API}/all/edit/profile`, {
+        newName: newName, newPwd: newPwd, confirmNewPwd: confirmNewPwd, phone: phone, photo: ""
+      }, {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("authToken")}`
+          ,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.status === 200) {
+        toast("Dashboard edited successfully!");
+        navigate('/dashboard');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
   return (
     <div className={styles.loginWrap}>
       <div className={styles.headingCont}>
@@ -10,17 +42,19 @@ const Card = (props) => {
           <button className={styles.button}>Change Photo</button>
         </div>
       </div>
-      <form className={styles.form}>
-        <input type="text" placeholder="Edit Name" className={styles.textBox} />
-        <input type="text" placeholder="Edit Phone Number" className={styles.textBox} />
-        <input type="text" placeholder="Change Password" className={styles.textBox} />
+      <form className={styles.form} method='PUT'>
+        <input type="text" placeholder="Edit Name" className={styles.textBox} value={newName} onChange={(e) => setnewName(e.target.value)} />
+        <input type="text" placeholder="Edit Phone Number" className={styles.textBox} value={phone} onChange={(e) => setPhone(e.target.value)} />
+        <input type="text" placeholder="Change Password" className={styles.textBox} value={newPwd} onChange={(e) => setPwd(e.target.value)} />
         <input
           type="text"
           placeholder="Confirm New Password"
           className={styles.textBox}
+          value={confirmNewPwd}
+          onChange={(e) => setconfirmNewPwd(e.target.value)}
         />
         <div className={styles.subCont}>
-          <input type="submit" value="Confirm" className={styles.subBtn} />
+          <input type="submit" value="Confirm" className={styles.subBtn} onClick={editProfile} />
         </div>
       </form>
     </div>
