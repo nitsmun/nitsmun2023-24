@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
 import React, { useContext, useEffect, useMemo } from "react";
 import { useQuery } from "react-query";

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
 import React, { useMemo, useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";

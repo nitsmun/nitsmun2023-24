@@ -20,6 +20,9 @@ dependencies:
   lint:
     specifier: ^0.8.19
     version: 0.8.19
+  pnpm:
+    specifier: ^8.14.3
+    version: 8.14.3
   pretty:
     specifier: ^2.0.0
     version: 2.0.0
@@ -30,8 +33,8 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   react-icons:
-    specifier: ^4.11.0
-    version: 4.11.0(react@18.2.0)
+    specifier: ^4.12.0
+    version: 4.12.0(react@18.2.0)
   react-query:
     specifier: ^3.39.3
     version: 3.39.3(react-dom@18.2.0)(react@18.2.0)
@@ -3074,6 +3077,12 @@ packages:
     hasBin: true
     dev: true
 
+  /pnpm@8.14.3:
+    resolution: {integrity: sha512-w+2A61g74+K37zHrlri5z6oFA+XUTscXUUEgtRh7L5M3NukDjFGlojrVgnkLpB1Kt4RhjIn6fiNl9mZWhdYS7g==}
+    engines: {node: '>=16.14'}
+    hasBin: true
+    dev: false
+
   /postcss@8.4.29:
     resolution: {integrity: sha512-cbI+jaqIeu/VGqXEarWkRCCffhjgXc0qjBtXpqJhTBohMUjUQnbBr0xqX3vEKudc4iviTewcJo5ajcec5+wdJw==}
     engines: {node: ^10 || ^12 || >=14}
@@ -3159,8 +3168,8 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-icons@4.11.0(react@18.2.0):
-    resolution: {integrity: sha512-V+4khzYcE5EBk/BvcuYRq6V/osf11ODUM2J8hg2FDSswRrGvqiYUYPRy4OdrWaQOBj4NcpJfmHZLNaD+VH0TyA==}
+  /react-icons@4.12.0(react@18.2.0):
+    resolution: {integrity: sha512-IBaDuHiShdZqmfc/TwHu6+d6k2ltNCf3AszxNmjJc1KUfXdEeRJOKyNvLmAHaarhzGmTSVygNdyu8/opXv2gaw==}
     peerDependencies:
       react: '*'
     dependencies:

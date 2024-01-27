@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useMemo, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
