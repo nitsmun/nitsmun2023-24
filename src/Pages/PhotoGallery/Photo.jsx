@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import styles from "./Photo.module.scss";
-import Footer from "../../Components/Footer/Footer"
+import Footer from "../../Components/Footer/Footer";
 const Photo = () => {
   const photos = [
     {
@@ -171,8 +171,12 @@ const Photo = () => {
             </button>
           </div>
         </div>
-      </button><br/><br/><br/><br/>
-      <Footer/>
+      </button>
+      <br />
+      <br />
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import Cookies from "js-cookie";
@@ -13,24 +13,31 @@ const Card = (props) => {
   const editProfile = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`${import.meta.env.VITE_REACT_APP_API}/all/edit/profile`, {
-        newName, newPwd, confirmNewPwd, phone, photo: ""
-      }, {
-        headers: {
-          Authorization: `Bearer ${Cookies.get("authToken")}`
-          ,
-          'Content-Type': 'application/json',
+      const response = await axios.put(
+        `${import.meta.env.VITE_REACT_APP_API}/all/edit/profile`,
+        {
+          newName,
+          newPwd,
+          confirmNewPwd,
+          phone,
+          photo: "",
         },
-      });
+        {
+          headers: {
+            Authorization: `Bearer ${Cookies.get("authToken")}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (response.status === 200) {
         toast("Dashboard edited successfully!");
-        window.location.href='/dashboard';
+        window.location.href = "/dashboard";
       }
     } catch (error) {
       toast(error.message);
     }
-  }
+  };
   return (
     <div className={styles.loginWrap}>
       <div className={styles.headingCont}>
@@ -40,10 +47,28 @@ const Card = (props) => {
           {/* <button className={styles.button}>Change Photo</button> */}
         </div>
       </div>
-      <form className={styles.form} method='PUT'>
-        <input type="text" placeholder="Edit Name" className={styles.textBox} value={newName} onChange={(e) => setnewName(e.target.value)} />
-        <input type="text" placeholder="Edit Phone Number" className={styles.textBox} value={phone} onChange={(e) => setPhone(e.target.value)} />
-        <input type="text" placeholder="Change Password" className={styles.textBox} value={newPwd} onChange={(e) => setPwd(e.target.value)} />
+      <form className={styles.form} method="PUT">
+        <input
+          type="text"
+          placeholder="Edit Name"
+          className={styles.textBox}
+          value={newName}
+          onChange={(e) => setnewName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Edit Phone Number"
+          className={styles.textBox}
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Change Password"
+          className={styles.textBox}
+          value={newPwd}
+          onChange={(e) => setPwd(e.target.value)}
+        />
         <input
           type="text"
           placeholder="Confirm New Password"
@@ -52,7 +77,12 @@ const Card = (props) => {
           onChange={(e) => setconfirmNewPwd(e.target.value)}
         />
         <div className={styles.subCont}>
-          <input type="submit" value="Confirm" className={styles.subBtn} onClick={editProfile} />
+          <input
+            type="submit"
+            value="Confirm"
+            className={styles.subBtn}
+            onClick={editProfile}
+          />
         </div>
       </form>
     </div>

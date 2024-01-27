@@ -111,9 +111,7 @@ const Hero = () => {
           <h6
             style={{ color: "#ffffff", textAlign: "center" }}
             className={styles.Herodes}
-          >
-
-          </h6>
+          ></h6>
         </div>
         <div
           style={{

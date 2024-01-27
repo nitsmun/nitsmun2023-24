@@ -1,7 +1,6 @@
 .letter {
   margin: 0;
   margin-top: 2vh;
-
 }
 
 .letterPhoto {
@@ -41,7 +40,6 @@
   // font-size: 1.2rem;
   margin: 2vh 0;
   text-align: justify;
-
 }
 
 .footer {
@@ -56,7 +54,7 @@
   font-weight: 600;
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width: 700px) {
   .textImageContainer {
     flex-direction: column;
     justify-content: center;
@@ -64,13 +62,13 @@
   }
 }
 
-@media screen and (max-width:814px) {
+@media screen and (max-width: 814px) {
   .main .peraHeading {
     font-size: 1rem;
   }
 }
 
-@media screen and (max-width:558px) {
+@media screen and (max-width: 558px) {
   .header .h1 {
     font-size: 1.1rem;
   }
@@ -84,7 +82,7 @@
   }
 }
 
-@media screen and (max-width:450px) {
+@media screen and (max-width: 450px) {
   .header .h1 {
     font-size: 0.9rem;
   }

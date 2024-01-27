@@ -83,7 +83,7 @@ const Navbar = (props) => {
         </div>
         {navLinksMobile.map((item) =>
           navtrans === "1" ? (
-            item.type === 'route' ?
+            item.type === "route" ? (
               <NavLink
                 to={item.dest}
                 style={{
@@ -93,18 +93,20 @@ const Navbar = (props) => {
                 }}
               >
                 {item.name}
-              </NavLink> :
+              </NavLink>
+            ) : (
               <div
                 style={{
                   backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
                   color: "#ffffff",
-                  width: '80%',
+                  width: "80%",
                   fontSize: `${navtrans === "0" ? "0px" : "1rem"}`,
                 }}
                 onClick={() => document.getElementById(item.id).scrollIntoView()}
               >
                 {item.name}
               </div>
+            )
           ) : null
         )}
       </div>
@@ -171,24 +173,28 @@ const Navbar = (props) => {
               padding: "1rem",
             }}
           >
-            {navLinks.map((item) => (
-              item.type === 'route' ?
+            {navLinks.map((item) =>
+              item.type === "route" ? (
                 <NavLink
                   to={item.dest}
                   style={{
-                    cursor: 'poiner',
+                    cursor: "poiner",
                     backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
                     color:
-                      props.page === "HOME" || props.page === "WRAPPED" || props.page === "MOCKMUN24" || props.page === "APPLY"
+                      props.page === "HOME" ||
+                      props.page === "WRAPPED" ||
+                      props.page === "MOCKMUN24" ||
+                      props.page === "APPLY"
                         ? "#ffffff"
                         : "#1d1c41",
                   }}
                 >
                   {item.name}
-                </NavLink> :
+                </NavLink>
+              ) : (
                 <div
                   style={{
-                    cursor: 'pointer',
+                    cursor: "pointer",
                     backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
                     color:
                       props.page === "HOME" || props.page === "WRAPPED"
@@ -199,7 +205,8 @@ const Navbar = (props) => {
                 >
                   {item.name}
                 </div>
-            ))}
+              )
+            )}
             {isEvents === true ? (
               <select>
                 EVENTS

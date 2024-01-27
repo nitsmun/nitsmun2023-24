@@ -26,12 +26,11 @@ const ContactUs = () => {
   const [message, setMessage] = useState("");
   const sendMessage = async (e) => {
     e.preventDefault();
-    const request = await axios.post(`${import.meta.env.VITE_REACT_APP_API}/contactus`,
-      {
-        name,
-        email,
-        message
-      });
+    const request = await axios.post(`${import.meta.env.VITE_REACT_APP_API}/contactus`, {
+      name,
+      email,
+      message,
+    });
     if (request.status === 200) {
       toast("Thank you for contacting us. We will get to you soon!!");
       setName("");

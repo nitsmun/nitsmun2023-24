@@ -6,7 +6,7 @@ import React from "react";
 
 import Letter from "../Letters/Letters";
 import Nitsmun from "../WhatIsMUN/NitsMun";
-import "./App.css"
+import "./App.css";
 import Footer from "../Footer/Footer";
 
 const App = () => {

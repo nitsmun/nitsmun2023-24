@@ -1,7 +1,7 @@
 import Navbar from "../../Components/Navbar/Navbar";
 import TeamCard from "./TeamCard";
 import styles from "./Team.module.scss";
-import Footer from "../../Components/Footer/Footer"
+import Footer from "../../Components/Footer/Footer";
 import {
   Secretariat,
   Secretariatjr,
@@ -106,8 +106,12 @@ const Team = () => {
             />
           ))}
         </div>
-      </div><br/><br/><br/><br/>
-      <Footer/>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 };

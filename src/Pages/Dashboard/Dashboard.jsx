@@ -40,17 +40,14 @@ const Card = (props) => {
   const wideView = (i, j, setoption, setchoice, Option, Choice) => {
     if (Option === false) {
       setoption(i);
-    }
-    else {
+    } else {
       setoption(false);
     }
     if (Choice) {
       setchoice(j);
-    }
-    else {
+    } else {
       setChoice(null);
     }
-
   };
   const { role } = useContext(UserContext);
   const navigate = useNavigate();
@@ -184,7 +181,9 @@ const Card = (props) => {
               </div>
             </button>
             <button
-              onClick={() => wideView("events registered", null, setOption, setChoice, option, choice)}
+              onClick={() =>
+                wideView("events registered", null, setOption, setChoice, option, choice)
+              }
               className={styles.btn}
             >
               <div>
@@ -196,7 +195,9 @@ const Card = (props) => {
               </div>
             </button>
             <button
-              onClick={() => wideView("events information", null, setOption, setChoice, option, choice)}
+              onClick={() =>
+                wideView("events information", null, setOption, setChoice, option, choice)
+              }
               className={styles.btn}
             >
               <div>
@@ -306,6 +307,5 @@ const Dashboard = () => {
   window.location.href = "/";
   toast("You have not logged in!");
   return null;
-
-}
+};
 export default Dashboard;
