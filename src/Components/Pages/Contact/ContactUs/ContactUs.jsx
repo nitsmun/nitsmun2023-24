@@ -26,12 +26,11 @@ const ContactUs = () => {
   const [response, setResponse] = useState("");
   const sendMessage = async (e) => {
     e.preventDefault();
-    const request = await axios.post("http://localhost:3880/v1/api/contactus",
-      {
-        name: name,
-        email: email,
-        message: message
-      });
+    const request = await axios.post("http://localhost:3880/v1/api/contactus", {
+      name,
+      email,
+      message,
+    });
     if (request) {
       setResponse("Thank you contacting us. We will get to you soon!!");
     }

@@ -8,7 +8,7 @@ import { Toaster } from "sonner";
 import NotFound from "./Pages/NotFound/NotFound";
 import RootLayout from "./Layout/RootLayout";
 import Home from "./Pages/Home/Home";
-import About from "./Pages/About/About";
+import About from "./Components/About/About";
 import Team from "./Pages/Team/Team";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Contact from "./Pages/Contact/Contact";
@@ -31,6 +31,8 @@ import AllEventRegistrations from "./Pages/Admin/AllEventRegistrations";
 import IndividualEventReg from "./Pages/Admin/IndividualEventReg";
 import RegistrationsBasedOnStatus from "./Pages/Admin/RegistrationsBasedOnStatus";
 import OneEventRegistrations from "./Pages/Admin/OneEventRegistrations";
+import Archive from "./Components/Archiv/Archive";
+import Apply from "./Components/ApplyNow/Apply";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -39,7 +41,9 @@ const App = () => {
         <Route path="/team" element={<Team />} />
         {/* About */}
         <Route path="about" element={<About />} />
+        <Route path="archive" element={<Archive />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="apply" element={<Apply />} />
         <Route path="dashboard/edit" element={<Edit />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/photo" element={<Photo />} />

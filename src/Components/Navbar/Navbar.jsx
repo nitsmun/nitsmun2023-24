@@ -6,25 +6,25 @@ const Navbar = (props) => {
   const deskHam = [
     { id: "1", name: "SEGMENTS", dest: "" },
     { id: "2", name: "PHOTO GALLERY", dest: "/photo" },
-    { id: "3", name: "ARCHIVE", dest: "" },
-    { id: "4", name: "APPLY NOW", dest: "" },
+    { id: "3", name: "ARCHIVE", dest: "/archive" },
+    { id: "4", name: "APPLY NOW", dest: "/apply" },
   ];
   const isEvents = false;
   const navLinks = [
     { name: "HOME", dest: "/", id: "home" },
-    { name: "ABOUT", dest: "", id: "committees" },
+    { name: "ABOUT", dest: "/about", id: "committees" },
     { name: "TEAM", dest: "/team", id: "team" },
     { name: "CONTACT", dest: "/contact", id: "contact" },
-    { name: "PHOTO GALLERY", dest: "", id: "faq" },
+    { name: "PHOTO GALLERY", dest: "/photo", id: "faq" },
   ];
   const navLinksMobile = [
     { name: "HOME", dest: "/", id: "home" },
-    { name: "ABOUT", dest: "", id: "about" },
+    { name: "ABOUT", dest: "/about", id: "about" },
     { name: "SEGMENTS", dest: "", id: "segments" },
     { name: "TEAM", dest: "/team", id: "team" },
     { name: "PHOTO GALLERY", dest: "/photo", id: "photo" },
     { name: "CONTACT", dest: "/contact", id: "contact" },
-    { name: "ARCHIVE", dest: "", id: "archive" },
+    { name: "ARCHIVE", dest: "/archive", id: "archive" },
   ];
   const events = [
     { name: "EVENT1", dest: "" },
@@ -125,7 +125,7 @@ const Navbar = (props) => {
         >
           <button
             onClick={menuClick}
-            style={{ backgroundColor: "transparent" }}
+            style={{ backgroundColor: "transparent", cursor: "pointer" }}
             className={styles.menuBtn}
           >
             <img
