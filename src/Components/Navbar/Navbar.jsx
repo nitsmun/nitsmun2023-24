@@ -1,30 +1,28 @@
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
+
 const Navbar = (props) => {
   const [deskHamState, setDeskHam] = useState(0);
   const deskHam = [
-    { id: "1", name: "SEGMENTS", dest: "" },
-    { id: "2", name: "PHOTO GALLERY", dest: "/photo" },
-    { id: "3", name: "ARCHIVE", dest: "" },
-    { id: "4", name: "APPLY NOW", dest: "" },
+    { id: "1", name: "ARCHIVE", dest: "/about" },
+    { id: "2", name: "APPLY NOW", dest: "/applynow" },
   ];
   const isEvents = false;
   const navLinks = [
-    { name: "HOME", dest: "/", id: "home" },
-    { name: "ABOUT", dest: "", id: "committees" },
-    { name: "TEAM", dest: "/team", id: "team" },
-    { name: "CONTACT", dest: "/contact", id: "contact" },
-    { name: "PHOTO GALLERY", dest: "", id: "faq" },
+    { name: "HOME", dest: "/", id: "home", type: "route" },
+    { name: "ABOUT", dest: "/about", id: "about", type: "route" },
+    { name: "TEAM", dest: "/team", id: "team", type: "route" },
+    { name: "CONTACT", dest: "/contact", id: "contact", type: "route" },
+    { name: "PHOTO GALLERY", dest: "/photo", id: "photo", type: "route" },
   ];
   const navLinksMobile = [
-    { name: "HOME", dest: "/", id: "home" },
-    { name: "ABOUT", dest: "", id: "about" },
-    { name: "SEGMENTS", dest: "", id: "segments" },
-    { name: "TEAM", dest: "/team", id: "team" },
-    { name: "PHOTO GALLERY", dest: "/photo", id: "photo" },
-    { name: "CONTACT", dest: "/contact", id: "contact" },
-    { name: "ARCHIVE", dest: "", id: "archive" },
+    { name: "HOME", dest: "/", id: "home", type: "route" },
+    { name: "ABOUT", dest: "/about", id: "about", type: "route" },
+    { name: "TEAM", dest: "/team", id: "team", type: "route" },
+    { name: "PHOTO GALLERY", dest: "/photo", id: "photo", type: "route" },
+    { name: "CONTACT", dest: "/contact", id: "contact", type: "route" },
+    { name: "ARCHIVE", dest: "/about", id: "archive", type: "route" },
   ];
   const events = [
     { name: "EVENT1", dest: "" },
@@ -85,16 +83,28 @@ const Navbar = (props) => {
         </div>
         {navLinksMobile.map((item) =>
           navtrans === "1" ? (
-            <NavLink
-              to={item.dest}
-              style={{
-                backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
-                color: "#ffffff",
-                fontSize: `${navtrans === "0" ? "0px" : "1rem"}`,
-              }}
-            >
-              {item.name}
-            </NavLink>
+            item.type === 'route' ?
+              <NavLink
+                to={item.dest}
+                style={{
+                  backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
+                  color: "#ffffff",
+                  fontSize: `${navtrans === "0" ? "0px" : "1rem"}`,
+                }}
+              >
+                {item.name}
+              </NavLink> :
+              <div
+                style={{
+                  backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
+                  color: "#ffffff",
+                  width: '80%',
+                  fontSize: `${navtrans === "0" ? "0px" : "1rem"}`,
+                }}
+                onClick={() => document.getElementById(item.id).scrollIntoView()}
+              >
+                {item.name}
+              </div>
           ) : null
         )}
       </div>
@@ -162,18 +172,33 @@ const Navbar = (props) => {
             }}
           >
             {navLinks.map((item) => (
-              <NavLink
-                to={item.dest}
-                style={{
-                  backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
-                  color:
-                    props.page === "HOME" || props.page === "WRAPPED"
-                      ? "#ffffff"
-                      : "#1d1c41",
-                }}
-              >
-                {item.name}
-              </NavLink>
+              item.type === 'route' ?
+                <NavLink
+                  to={item.dest}
+                  style={{
+                    cursor: 'poiner',
+                    backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
+                    color:
+                      props.page === "HOME" || props.page === "WRAPPED" || props.page==="MOCKMUN24" || props.page==="APPLY"
+                        ? "#ffffff"
+                        : "#1d1c41",
+                  }}
+                >
+                  {item.name}
+                </NavLink> :
+                <div
+                  style={{
+                    cursor: 'pointer',
+                    backgroundColor: props.page === item.name ? "#c9984e" : "transparent",
+                    color:
+                      props.page === "HOME" || props.page === "WRAPPED"
+                        ? "#ffffff"
+                        : "#1d1c41",
+                  }}
+                  onClick={() => document.getElementById(item.id).scrollIntoView()}
+                >
+                  {item.name}
+                </div>
             ))}
             {isEvents === true ? (
               <select>

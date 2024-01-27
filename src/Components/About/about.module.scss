@@ -1,5 +1,5 @@
 .about{
-    margin: 3vh 4vw;
+    overflow-x: hidden;
 }
 
 .list-container{
@@ -21,6 +21,7 @@
     flex-direction: column;
     justify-content: center;
     margin-bottom: 6vh;
+    padding: 3rem;
 
     /* margin-left: 0; */
 }

@@ -3,7 +3,7 @@ import styles from "./Home.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import Hero from "../../Components/Pages/Home/Hero/Hero";
 import Reviews from "../../Components/Pages/Home/Reviews/Reviews";
-import Letter from "../../Components/Letters/letters";
+import Letter from "../../Components/Letters/Letters";
 import Nitsmun from "../../Components/WhatIsMUN/NitsMun";
 import Footer from "../../Components/Footer/Footer";
 // import About from "../../Components/About/About";
@@ -12,7 +12,7 @@ import Footer from "../../Components/Footer/Footer";
 const Home = () => {
   const handleScrollDown = (e) => {
     e.preventDefault();
-    document.getElementById("re").scrollIntoView(); // add id of below section
+    document.getElementById("letter").scrollIntoView(); // add id of below section
   };
 
   return (
@@ -29,15 +29,16 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="letter-container" >
-      <Letter title="Faculty Advisor" name="Dr. Wasim Arif" src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703446281/image_1_3_azcue6.png"/>
-      <Letter title="Secratory General" name="Maruf Padaya" src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703446281/image_1_3_azcue6.png"/>
+      <div className="letter-container" id="letter">
+        <Letter title="Faculty Advisor" name="Dr. Wasim Arif" src="https://res.cloudinary.com/dhry5xscm/image/upload/v1701965729/ecs-website/wasim-img_orgqul.jpg" />
+        <Letter title="Secratory General" name="Maruf Padaya" src="https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676476439/events/nitsmun/team/marufPadaya_faj39h.jpg" />
       </div>
       <Reviews />
       <Nitsmun/>
       {/* <About/>
       <Archive />
       <Apply /> */}
+      <br/><br/><br/><br/>
       <Footer />
     </div>
   );

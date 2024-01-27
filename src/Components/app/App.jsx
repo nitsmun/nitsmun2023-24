@@ -1,8 +1,8 @@
 import React from "react";
-import Letter from "./componets/letters";
-import Nitsmun from "./componets/nitsMun";
+import Letter from "../Letters/Letters";
+import Nitsmun from "../WhatIsMUN/NitsMun";
 import "./App.css"
-import Footer from "./componets/Footer";
+import Footer from "../Footer/Footer";
 
 const App = () =>{
   return(

@@ -97,6 +97,7 @@
     .contactSec {
       display: flex;
       flex-direction: row;
+      justify-content: space-around;
       column-gap: 2rem;
       width: 100%;
 
@@ -112,7 +113,7 @@
       .person {
         flex-direction: row;
         justify-content: space-around;
-        width: 80%;
+        width: 100%;
       }
     }
 
@@ -225,6 +226,7 @@
   }
 
   .btn {
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -235,6 +237,7 @@
     font-size: 0.5rem;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+    margin-left: 1rem;
   }
 
   @media screen and (min-width: 1051px) {

@@ -82,11 +82,12 @@ const FormCard = () => {
           name="password"
           onChange={(e) => setUser({ email: user.email, password: e.target.value })}
         />
+{/*         
         <div className={styles.forgotCont}>
           <Link to="/ForgotPassword" className={styles.button}>
             Forgot Password?
           </Link>
-        </div>
+        </div> */}
         <div className={styles.subCont}>
           <input
             type="submit"

@@ -1,9 +1,10 @@
 .navCont {
-  position: sticky;
+  position: fixed;
   top: 0;
-  width: 90%;
+  width: 100%;
   margin-bottom: 0;
-  z-index: 0;
+  z-index: 4;
+  background: linear-gradient(180deg, #07082675 20%, transparent);
 }
 
 .deskhamPopun {

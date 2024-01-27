@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./NitsMun.module.scss"
 
 const Nitsmun = () =>{
+    const gotoAbout=()=>{
+        window.location.href='/about';
+        return null;
+    }
     return(
         <div className={styles.container}>
         <div className={styles.img1}>
@@ -29,10 +33,10 @@ const Nitsmun = () =>{
         </div>
         <div className={styles.contant}>
             <h1 className={styles.contantH1}>What is NITS MUN?</h1>
-            <p className={styles.contantpera}>Lorem ipsum dolor sit amet. Vel culpa rerum ut consequatur saepe et aperiam laboriosam non quis voluptatibus rem sint libero. Et recusandae assumenda et autem unde ut debitis Quis? In dolor omnis sit rerum autem et dolores molestiae ut nihil reprehenderit ab quas assumenda vel rerum officia ad nostrum dolores. Qui quidem placeat eum obcaecati dolores sed consequatur quia. Et quasi similique eum inventore explicabo et veniam culpa aut galisum voluptas aut cumque veritatis aut laboriosam molestiae ea dolor laborum. Et autem consequatur aut ullam accusamus et voluptates quidem quo aliquam corrupti!</p>
+            <p className={styles.contantpera}>NITSMUN, the National Institute of Technology Model United Nations Club, is a dynamic platform cultivating global leaders. Committed to fostering diplomacy, critical thinking, and public speaking, NITSMUN provides students with opportunities to engage in enriching discussions, simulations, and conferences, shaping informed and empowered individuals for active participation in international affairs.</p>
         </div>
         <div className={styles.btn}>
-            <button className={styles.button}>About</button>
+            <button className={styles.button} onClick={gotoAbout} >About</button>
         </div>
         </div>
     );

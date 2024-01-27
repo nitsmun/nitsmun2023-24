@@ -1,6 +1,7 @@
 import styles from "./MockMun24.module.scss"
 import Faq from "../../Components/Pages/Contact/Faq/Faq"
 import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer"
 const Hero = () => {
     return (
         <div className={styles.hero}>
@@ -57,7 +58,7 @@ const Glimpses = () => {
 const MockMun24 = () => {
     return (
         <div className={styles.MockMunPage}>
-            <Navbar />
+            <Navbar page="MOCKMUN24" />
             <Hero />
             <About />
             <Card>
@@ -91,14 +92,14 @@ const MockMun24 = () => {
                     <h1 className={styles.h1}>EXECUTIVE BOARD</h1>
                     <div className={styles.innerCont}>
                         <div className={styles.imgParent}>
-                            <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1705864082/nitsmun/person_temp_uegudo.svg" alt="loading..." className={styles.img} />
+                            <img src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706364601/IMG-20240102-WA0084_elvgyy.jpg" alt="loading..." className={styles.img} />
                         </div>
                         <div className={styles.content}>
                             <div className={styles.innerParent}>
-                                <h1 className={styles.h1}>LOREM IPSUM</h1>
+                                <h1 className={styles.h1}>MAYURAKHI KHAUND</h1>
                                 <p className={styles.p}>
                                     <p className={styles.innerPara}>
-                                        Lorem ipsum dolor sit amet. A nisi nobis sed quia sapiente hic voluptas quos ut dolorem rerum sed quae animi hic molestiae corrupti. Ea nisi maiores et internos praesentium et ipsa omnis est maiores repudiandae eos aspernatur pariatur et libero illo? Vel quis aliQui delectus unde cum dolor aliquid eum deleniti dolore. Vel quibusdam tempora hic voluptas quam et nemo quibusdam et explicabo voluptas eos earum quaerat ea dignissimos minima et dolor galisum..
+                                    Hey! I am Mayurakhi Khaund. I am 2nd year Civil Undergraduate student at NITS. Also, I work as a content writer and as a marketing executive for various clubs. MUN has always been something that intrigues me and it&apos;s just an incredible platform to furnish skills in an individual. I am really grateful to NITSMUN for giving me the opportunity to participate and organise amazing conferences and now, to chair one! Looking forward to creating unforgettable memories in here. See you at the next upcoming session!
                                     </p>
                                 </p>
                             </div>
@@ -108,6 +109,7 @@ const MockMun24 = () => {
             </Card>
             <Glimpses />
             <Faq />
+            <Footer/>
         </div>
     );
 }
