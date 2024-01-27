@@ -1,5 +1,4 @@
 import React from 'react';
-import { IoLocationOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
 import { IoLogoYoutube } from "react-icons/io";
 import { FaInstagram,FaFacebook,FaPhoneAlt,FaLinkedin } from "react-icons/fa";
@@ -27,7 +26,7 @@ const Footer = () =>{
                 <div className={styles.contact}>
                     <h2 className={styles.h2}>Contact us</h2>
                     <div className={styles.option}>
-                        <IoLocationOutline className={styles.phone}/>
+                        <img src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706355502/Vector_5_qhs1q3.png" alt="logo" className={styles.phone}/>
                         <p className={styles.optionText}>xdhgfgshfiuhhwh.com</p>
                     </div>
                     <div className={styles.option}>

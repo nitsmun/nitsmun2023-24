@@ -31,6 +31,8 @@ import AllEventRegistrations from "./Pages/Admin/AllEventRegistrations";
 import IndividualEventReg from "./Pages/Admin/IndividualEventReg";
 import RegistrationsBasedOnStatus from "./Pages/Admin/RegistrationsBasedOnStatus";
 import OneEventRegistrations from "./Pages/Admin/OneEventRegistrations";
+import Archive from "./Components/Archiv/Archive";
+import Apply from "./Components/ApplyNow/apply";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -38,7 +40,6 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/team" element={<Team />} />
         {/* About */}
-        <Route path="about" element={<About />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="dashboard/edit" element={<Edit />} />
         <Route path="/contact" element={<Contact />} />
@@ -50,7 +51,8 @@ const App = () => {
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Reset" element={<Reset />} />
-
+        <Route path="/about" element ={<Archive/>} />
+        <Route path="/applynow" element ={<Apply/>} />
         {/* Admin stuffs */}
         <Route exact path="/admin" element={<AdminDashboard />} />
         <Route exact path="/allreg" element={<AllEventRegistrations />} />

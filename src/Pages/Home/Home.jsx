@@ -6,9 +6,9 @@ import Reviews from "../../Components/Pages/Home/Reviews/Reviews";
 import Letter from "../../Components/Letters/letters";
 import Nitsmun from "../../Components/WhatIsMUN/NitsMun";
 import Footer from "../../Components/Footer/Footer";
-import About from "../../Components/About/About";
-import Archive from "../../Components/Archiv/Archive";
-import Apply from "../../Components/ApplyNow/apply";
+// import About from "../../Components/About/About";
+// import Archive from "../../Components/Archiv/Archive";
+// import Apply from "../../Components/ApplyNow/apply";
 const Home = () => {
   const handleScrollDown = (e) => {
     e.preventDefault();
@@ -35,9 +35,9 @@ const Home = () => {
       </div>
       <Reviews />
       <Nitsmun/>
-      <About/>
+      {/* <About/>
       <Archive />
-      <Apply />
+      <Apply /> */}
       <Footer />
     </div>
   );

@@ -2,10 +2,11 @@ import React from "react";
 import Faq from "../Pages/Contact/Faq/Faq";
 import styles from"./Archive.module.scss";
 import Banner from "./Banner";
-
+import Navbar from "../../Components/Navbar/Navbar"
 const Archive = () =>{
     return (
         <div className={styles.archiveContainer}>
+            <Navbar page="archive"/>
         <Banner/>
         <div className={styles.Header}>
             <p className={styles.p}>Archive</p>
