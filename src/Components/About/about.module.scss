@@ -1,116 +1,116 @@
-.about{
-    margin: 3vh 4vw;
+.about {
+  margin: 3vh 4vw;
 }
 
-.list-container{
-    display: flex;
-    justify-content: space-between;
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list {
+  display: flex;
+  list-style: none;
+  /* margin-left: 2vw; */
+}
+.list li {
+  margin-right: 3vw;
+  font-weight: 400;
+}
+.container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 6vh;
+
+  /* margin-left: 0; */
+}
+.heading {
+  color: #1d1c41;
+  margin-bottom: 4vh;
+}
+.container1 .imgText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: justify;
+  margin: 0;
+}
+.container1 .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 50vh;
+  object-fit: cover;
+  margin-right: 4vw;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 4vw;
+  margin-bottom: 6vh;
+}
+.container2 .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 50vh;
+  object-fit: cover;
+  margin-left: 4vw;
+}
+.container2 .imgText {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  text-align: justify;
+}
+.objective .h1 {
+  color: #1d1c41;
+}
+@media screen and (max-width: 1000px) {
+  .imgText .img {
+    height: 60vh;
+  }
+  .imgText .p {
+    font-size: 0.7rem;
+    margin-top: 4vh;
+  }
+}
+@media screen and (max-width: 700px) {
+  .container1 {
     align-items: center;
-}
-.list{
+    justify-content: center;
+  }
+  .container2 {
+    align-items: center;
+    justify-content: center;
+  }
+  .imgText {
     display: flex;
-    list-style: none;
-    /* margin-left: 2vw; */
-}
-.list li{
-    margin-right: 3vw;
-    font-weight: 400;
-}
-.container1{
+    flex-direction: column;
+  }
+  .container2 .img {
+    height: 20vh;
+    margin-right: 0;
+    top: 0;
+  }
+  .container1 .img {
+    top: 0;
+    height: 20vh;
+    margin-right: 0;
+    display: inline;
+  }
+  .container2 .imgText {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 6vh;
-
-    /* margin-left: 0; */
-}
-.heading{
-    color:  #1D1C41;
-    margin-bottom: 4vh;
-}
-.container1 .imgText{
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    text-align: justify;
-    margin: 0;
-}
-.container1 .img{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 50vh;
-   width: 50vh;
-   object-fit: cover;
-   margin-right: 4vw;
-}
-
-.container2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 4vw;
-    margin-bottom: 6vh;
-}
-.container2 .img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    width: 50vh;
-    object-fit: cover;
-    margin-left: 4vw;
-}
-.container2 .imgText{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    text-align: justify;
-}
-.objective .h1{
-    color:  #1D1C41;
-}
-@media screen and (max-width:1000px) {
-    .imgText .img{
-        height: 60vh;
-     }
-     .imgText  .p{
-        font-size: 0.7rem;
-        margin-top: 4vh;
-    }
-}
-@media screen and (max-width:700px){
-    .container1{
-        align-items: center;
-        justify-content: center;
-    }
-    .container2{
-        align-items: center;
-        justify-content: center;   
-    }
-    .imgText{
-        display: flex;
-        flex-direction: column;
-    }
-    .container2 .img{
-        height: 20vh;
-        margin-right: 0;
-        top: 0;
-    }
-    .container1 .img{
-        top: 0;
-        height: 20vh;
-        margin-right: 0;
-        display: inline;
-    }
-    .container2 .imgText{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .imgText .text .p{
-        display: inline;
-    }
+  }
+  .imgText .text .p {
+    display: inline;
+  }
 }
