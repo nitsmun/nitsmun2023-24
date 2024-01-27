@@ -1,4 +1,4 @@
-.footer-container{
+.footerContainer{
     background-color: #070826;
     padding-top: 6vh;
     padding: 0 4vw;
@@ -8,7 +8,7 @@
     align-items: center; */
 }
 
-.image-container1{
+.imageContainer1{
     margin-top: 4vh;
     display: flex;
     align-items: center;
@@ -25,7 +25,7 @@
     width: 40vw;
     border: 2px solid red ;
 } */
-.image-container1 .icon{
+.imageContainer1 .icon{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,9 +47,9 @@
     align-items:flex-start;
     justify-content: center;
     margin-right: 4vw;
-    color: aliceblue;
+    color: aliceblue;  
 }
-.contact h2{
+.contact .h2{
     margin-bottom: 2vh;
 }
 .option{
@@ -61,11 +61,11 @@
     margin-bottom: 2vh;
 }
 
-.option img{
-    height: 2.5vh;
-    width: 2.5vw;
-}
-.option p{
+// .option img{
+//     height: 2.5vh;
+//     width: 2.5vw;
+// }
+.option .optionText{
     margin-left: 3vw;
     text-align: right;  
     font-size: 1rem;
@@ -75,13 +75,14 @@
     height: 100%;
     align-items: center;
 }
-.logo-icon{
+.logoIcon{
     width: 25vh;
     height: 25vh;
     /* border: 2px solid red; */
 }
 .logo .line{
-    height: 30vh;
+    margin-top: 2vh;
+    height: 28vh;
     width: 0.1vw;
 }
 .logo .text{
@@ -97,11 +98,11 @@
 .explore{
     color: white;
 }
-hr{
+.hr{
     margin: 4vh 4vh 0 4vh;
 
 }
-.copyright-sec{ 
+.copyrightSec{ 
     /* margin-top: 2vh; */
     display: flex;
     color: white;
@@ -110,16 +111,16 @@ hr{
     padding: 0.5vh 4vw;
     padding-bottom: 4vh;
 }
-.copyright p{
+.copyright .copyrightText{
     font-size: 0.7rem;
 }
-.image-container{
+.imageContainer{
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
     width: 20vw;
 }
-.image-container .icon{
+.imageContainer .icon{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,7 +131,7 @@ hr{
 }
 @media screen and (min-width:700px){
 
-    .image-container1{
+    .imageContainer1{
         display: none;
     }
 }
@@ -138,13 +139,13 @@ hr{
     .explore{
         display: none;
     }
-    hr{
+    .hr{
         display: none;
     }
-    .image-container{
+    .imageContainer{
         display: none;
     }
-    .footer-container{
+    .footerContainer{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -159,32 +160,32 @@ hr{
     }
 }
 @media screen and (max-width:850px){
-    .contact h2{
+    .contact .h2{
         font-size: 1.2rem;
     }
-    .explore h2{
+    .explore .h2{
         font-size: 1.2rem;
     }
-    .option p{  
+    .option .optionText{  
         font-size: 0.8rem;
     }
-    .explore li{
+    .explore .li{
         font-size: 0.8rem;
     }
-    .image-container .icon{
+    .imageContainer .icon{
         width: 4vw;
         height: 4vw;
     }
 }
 @media screen and (max-width:600px){
-    .image-container1 .icon{
+    .imageContainer1 .icon{
         height: 6vw;
         width: 6vw;
     }
-    .image-container1{
+    .imageContainer1{
         width: 100vw;
     }
-    .logo-icon{
+    .logoIcon{
         width: 20vh;
         height: 20vh;
         /* border: 2px solid red; */
@@ -196,21 +197,21 @@ hr{
     .logo .text{
         font-size: 2.6rem;
     }
-    .contact h2{
+    .contact .h2{
         margin-bottom: 1.5vh;
     }
-    .option p{
+    .option .optionText{
         font-size: 0.8rem;
     }
 }
 @media screen and (max-width:450px){
-    .contact h2{
+    .contact .h2{
         font-size: 1rem;
     }
-    .contact p{
+    .contact .optionText{
         font-size: 0.8rem;
     }
-    .logo-icon{
+    .logoIcon{
         width: 15vh;
         height: 15vh;
         /* border: 2px solid red; */
@@ -220,7 +221,7 @@ hr{
     }
 }
 @media screen and (max-width:400px){
-    .logo-icon{
+    .logoIcon{
         width: 12vh;
         height: 12vh;
         /* border: 2px solid red; */

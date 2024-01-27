@@ -12,20 +12,18 @@ const Navbar = (props) => {
   const isEvents = false;
   const navLinks = [
     { name: "HOME", dest: "/", id: "home" },
-    { name: "COMMITTEES", dest: "", id: "committees" },
+    { name: "ABOUT", dest: "", id: "committees" },
     { name: "TEAM", dest: "/team", id: "team" },
     { name: "CONTACT", dest: "/contact", id: "contact" },
-    { name: "FAQ", dest: "", id: "faq" },
+    { name: "PHOTO GALLERY", dest: "", id: "faq" },
   ];
   const navLinksMobile = [
     { name: "HOME", dest: "/", id: "home" },
+    { name: "ABOUT", dest: "", id: "about" },
     { name: "SEGMENTS", dest: "", id: "segments" },
     { name: "TEAM", dest: "/team", id: "team" },
-    { name: "COMMITTEES", dest: "", id: "committees" },
     { name: "PHOTO GALLERY", dest: "/photo", id: "photo" },
-    { name: "ABOUT", dest: "", id: "about" },
     { name: "CONTACT", dest: "/contact", id: "contact" },
-    { name: "FAQ", dest: "", id: "faq" },
     { name: "ARCHIVE", dest: "", id: "archive" },
   ];
   const events = [

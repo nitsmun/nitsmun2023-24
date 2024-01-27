@@ -1,0 +1,143 @@
+.parent{
+    background-color: #000000;
+}
+.applyContainer{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703488206/French_Parliament_Passes_Deep_Sleep_Bill_For_End_Of_Life_1_oqqasq.png"); 
+    z-index: -1;
+}
+.innerContainerApply{
+    backdrop-filter: blur(2px);
+    background-blend-mode: darken;
+    padding: 1vh 2vw;
+}
+.applyHeader{
+    margin-top: 4vw;
+    padding: 0 12vw;
+    width: 100%;
+    display:flex;
+}
+.applyPera{
+    width:50%;
+}
+.applyPera .p{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+.applyImage{
+    width: 20%;
+    margin-left: 5vw;
+}
+.applyImage .img{
+    width: 100%;
+}
+.applyBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.applyBtn .button{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:5.5vh;
+    width: 10vw;
+    border-radius: 16px;
+    outline: none;
+    background-color: #C9984E;
+    color: aliceblue;
+    border:0px solid transparent;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    margin-top: 4vh;
+    font-size: 1.22rem;
+}
+@media screen and (max-width:1165px){
+    .applyPera .p{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .applyBtn .button{
+        height:5.5vh;
+        width: 15vw;
+    }
+}
+@media screen and (max-width:926px){
+    .applyPera .p{
+        font-size: 1.85rem;
+        font-weight: bold;
+    }
+    .applyImage{
+        margin-top: 0;
+        width: 30%;
+    }
+    .applyBtn .button{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:800px){
+    .applyPera .p{
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+    .applyImage{
+        width: 25%;
+        margin-left: 5vw;
+    }
+    .applyImage .img{
+        width: 100%;
+    }
+}
+@media screen and (max-width:700px){
+    .applyHeader{
+        padding: 0 12vw;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .applyPera{
+        width:100%;
+        display: flex;
+        justify-content: center;
+    }
+    .applyPera .p{
+        font-size: 2rem;
+    }
+    .applyImage{
+        width: 30%;
+        margin-left: 0;
+    }
+}
+@media screen and (max-width:663px){
+    .applyPera .p{
+        font-size: 1.8rem;
+    }
+    .applyBtn .button{
+        height:5.5vh;
+        width: 20vw;
+    }
+
+}
+@media screen and (max-width:600px){
+    .applyPera .p{
+        font-size: 1.6rem;
+    }
+
+}
+@media screen and (max-width:536px){
+    .applyPera .p{
+        font-size: 1.3rem;
+    }
+    .applyBtn .button{
+        height:5.5vh;
+        width: 25vw;
+    }
+
+}

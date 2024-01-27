@@ -1,22 +1,7 @@
 .about{
     margin: 3vh 4vw;
 }
-.banner{
-    margin-top: 10vh;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin-bottom: 6vh;
-    height: 80vh;
-    width: 92vw;
-}
-.banner img{
-    margin: 0;
-    height: 100%;
-    width: 92vw;
-    object-fit: cover;
-}
+
 .list-container{
     display: flex;
     justify-content: space-between;
@@ -43,14 +28,14 @@
     color:  #1D1C41;
     margin-bottom: 4vh;
 }
-.container1 .img-text{
+.container1 .imgText{
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: justify;
     margin: 0;
 }
-.container1 img{
+.container1 .img{
    display: flex;
    align-items: center;
    justify-content: center;
@@ -67,7 +52,7 @@
     margin: 0 4vw;
     margin-bottom: 6vh;
 }
-.container2 img{
+.container2 .img{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,21 +61,21 @@
     object-fit: cover;
     margin-left: 4vw;
 }
-.container2 .img-text{
+.container2 .imgText{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     text-align: justify;
 }
-.objective h1{
+.objective .h1{
     color:  #1D1C41;
 }
 @media screen and (max-width:1000px) {
-    .img-text img{
+    .imgText .img{
         height: 60vh;
      }
-     .img-text  p{
+     .imgText  .p{
         font-size: 0.7rem;
         margin-top: 4vh;
     }
@@ -104,28 +89,28 @@
         align-items: center;
         justify-content: center;   
     }
-    .img-text{
+    .imgText{
         display: flex;
         flex-direction: column;
     }
-    .container2 img{
+    .container2 .img{
         height: 20vh;
         margin-right: 0;
         top: 0;
     }
-    .container1 img{
+    .container1 .img{
         top: 0;
         height: 20vh;
         margin-right: 0;
         display: inline;
     }
-    .container2 .img-text{
+    .container2 .imgText{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .img-text .text p{
+    .imgText .text .p{
         display: inline;
     }
 }

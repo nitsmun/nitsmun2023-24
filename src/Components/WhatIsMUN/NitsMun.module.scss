@@ -41,12 +41,12 @@
     color:#C9984E;
     text-align: center;  
 }
-.wing .text h1{
+.wing .text .h1{
     margin-bottom: 0;
     text-align: center;
 
 }
-.wing .text p{
+.wing .text .imgPera{
     font-size: 0.9rem;
     padding:1rem;
     margin-top: 0;
@@ -64,10 +64,10 @@
     color: aliceblue;
     padding: 0 8vw;
 }
-.contant h1{
+.contant .contantH1{
     font-size: 2rem;
 }
-.contant p{
+.contant .contantpera{
     text-align: justify;
 }
 .btn{
@@ -78,7 +78,7 @@
     justify-content: end;
     padding: 0 8vw;
 }
-.btn button{
+.btn .button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,7 @@
     }
 }
 @media screen and (max-width:614px) {
-    .wing .text p{
+    .wing .text .imgPera{
         font-size: 0.7rem;
     }
 }
@@ -121,16 +121,16 @@
 
 }
 @media screen and (max-width:480px) {
-    .wing .text p{
+    .wing .text .imgPera{
         font-size: 0.6rem;
     }
-    .btn button{
+    .btn .button{
         height:5vh;
         width: 15vw;
     }
 }
 @media screen and (max-width:400px) {
-    .wing .text h1{
+    .wing .text .h1{
         font-size: 1.4rem;
     }
     /* .contant p{
@@ -145,7 +145,7 @@
         width:35vw;
         height:20vh;
     }
-    .contant h1{
+    .contant .h1{
         font-size: 1.5rem;
     }
 

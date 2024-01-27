@@ -8,10 +8,7 @@
     height: 55vh;
     width: 100%;
     padding: 0 4vw;
-}
-.banner img{
-    width: 100%;
-    height: 100%;
+    /* border: 2px solid red; */
 }
 .Header{
     display: flex;
@@ -19,15 +16,16 @@
     justify-content: center;
     margin-bottom: 6vh;
 }
-.Header p{
+.Header .p{
     font-size: 1.6rem;
     font-weight: 700;
 }
 .container1{
     width: 100%;
     padding: 0 4vw;
+    margin: 4vh 0;
 }
-.mun-container{
+.munContainer{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,21 +33,21 @@
     padding: 3vh 4vw;
     color: #E6DDCF;
     border-radius: 0.625rem;
+    // margin-bottom: 4vh ;
 }
 .image{
-
     width: 10vw;
 }
-.image img{
+.image .conatainerImg{
     height: 100%;
     width: 100%;
     
 }
-.text p{
+.text .conatainerPera{
     font-size: 1.2rem;
     font-weight: 800;
 }
-.mun-container2{
+.munContainer2{
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -60,10 +58,10 @@
     border-radius: 0.625rem;
 }
 @media screen and (max-width:700px) {
-    .mun-container2{
+    .munContainer2{
         width: 100%;
     }
-    .mun-container{
+    .munContainer{
         width: 100%;
     }
 
