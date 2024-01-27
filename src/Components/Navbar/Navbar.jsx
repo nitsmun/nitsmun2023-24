@@ -4,8 +4,8 @@ import styles from "./Navbar.module.scss";
 const Navbar = (props) => {
   const [deskHamState, setDeskHam] = useState(0);
   const deskHam = [
-    { id: "1", name: "SEGMENTS", dest: "" },
-    { id: "2", name: "PHOTO GALLERY", dest: "/photo" },
+    { id: "1", name: "CONTACT", dest: "/contact" },
+    // { id: "2", name: "PHOTO GALLERY", dest: "/photo" },
     { id: "3", name: "ARCHIVE", dest: "/archive" },
     { id: "4", name: "APPLY NOW", dest: "/apply" },
   ];
@@ -14,13 +14,13 @@ const Navbar = (props) => {
     { name: "HOME", dest: "/", id: "home" },
     { name: "ABOUT", dest: "/about", id: "committees" },
     { name: "TEAM", dest: "/team", id: "team" },
-    { name: "CONTACT", dest: "/contact", id: "contact" },
+    { name: "MOCK MUN 2024 ", dest: "/mockmun24", id: "mockmun2024" },
     { name: "PHOTO GALLERY", dest: "/photo", id: "faq" },
   ];
   const navLinksMobile = [
     { name: "HOME", dest: "/", id: "home" },
     { name: "ABOUT", dest: "/about", id: "about" },
-    { name: "SEGMENTS", dest: "", id: "segments" },
+    // { name: "SEGMENTS", dest: "", id: "segments" },
     { name: "TEAM", dest: "/team", id: "team" },
     { name: "PHOTO GALLERY", dest: "/photo", id: "photo" },
     { name: "CONTACT", dest: "/contact", id: "contact" },

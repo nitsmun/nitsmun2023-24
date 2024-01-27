@@ -1,6 +1,7 @@
 import styles from "./MockMun24.module.scss";
 import Faq from "../../Components/Pages/Contact/Faq/Faq";
 import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 const Hero = () => {
   return <div className={styles.hero}>.</div>;
 };
@@ -136,6 +137,7 @@ const MockMun24 = () => {
       </Card>
       <Glimpses />
       <Faq />
+      <Footer />
     </div>
   );
 };
