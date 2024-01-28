@@ -91,7 +91,9 @@ const MockMun24 = () => {
                   emphasis on Afghanistan, Pakistan and Syria.
                 </p>
                 <p className={styles.innerPara}>
-                  The United Nations Security Council maintains global peace, with 15 member nations addressing threats through resolutions,sanctions, and peacekeeping operations,aiming for collective security.
+                  The United Nations Security Council maintains global peace, with 15
+                  member nations addressing threats through resolutions,sanctions, and
+                  peacekeeping operations,aiming for collective security.
                 </p>
                 {/* <div className={styles.bgCont}>
                   <button className={styles.bgBtn}>Background Guide</button>

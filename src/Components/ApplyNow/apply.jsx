@@ -1,7 +1,7 @@
 /* eslint-disable check-file/filename-naming-convention */
 import React from "react";
 import { toast } from "sonner";
-import styles from "./Apply.module.scss";
+import styles from "./apply.module.scss";
 import Faq from "../Pages/Contact/Faq/Faq";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
