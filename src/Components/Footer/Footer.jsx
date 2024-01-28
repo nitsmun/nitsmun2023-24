@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from "react";
 import { IoLogoYoutube } from "react-icons/io";
+import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import styles from "./Footer.module.scss";
 const Footer = () => {
@@ -30,7 +32,14 @@ const Footer = () => {
               alt="logo"
               className={styles.phone}
             />
-            <p className={styles.optionText}>NIT Silchar, Silchar, Assam, India</p>
+            <p className={styles.optionText}>
+              <a
+                href="https://www.google.com/maps/place/National+Institute+Of+Technology,+Silchar/@24.7577192,92.789718,17z/data=!3m1!4b1!4m6!3m5!1s0x374e49dcb63bae9b:0x81efa836714a289b!8m2!3d24.7577144!4d92.7922929!16zL20vMDhfMWhk?entry=ttu"
+                target="_blank"
+              >
+                NIT SILCHAR, Silchar, Assam, India
+              </a>
+            </p>
           </div>
           <div className={styles.option}>
             <img
@@ -38,7 +47,9 @@ const Footer = () => {
               alt="logo"
               className={styles.phone}
             />
-            <p className={styles.optionText}>nitsmun@nits.ac.in</p>
+            <p className={styles.optionText}>
+              <a href="mailto:nitsmun@nits.ac.in">nitsmun@nits.ac.in</a>
+            </p>
           </div>
           <div className={styles.option}>
             <img
@@ -46,23 +57,37 @@ const Footer = () => {
               alt="logo"
               className={styles.phone}
             />
-            <p className={styles.optionText}>+91 7096597864</p>
+            <p className={styles.optionText}>
+              <a href="tel:+91 7096597864">+91 7096597864</a>
+            </p>
           </div>
         </div>
         <div className={styles.explore}>
           <h2 className={styles.h2}>Explore</h2>
-          <li className={styles.li}>Home</li>
-          <li className={styles.li}>Events</li>
-          <li className={styles.li}>Team</li>
-          <li className={styles.li}>About</li>
-          <li className={styles.li}>Segments</li>
+          <li className={styles.li}>
+            <Link to="/">Home</Link>
+          </li>
+          <li className={styles.li}>
+            <Link to="/mockmun24">Mock MUN 2024</Link>
+          </li>
+          <li className={styles.li}>
+            <Link to="/team">Team</Link>
+          </li>
+          <li className={styles.li}>
+            <Link to="/about">About</Link>
+          </li>
+          <li className={styles.li}>
+            <Link to="/photo">Photo Gallery</Link>
+          </li>
         </div>
         <div className={styles.logo}>
-          <img
-            src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703528939/nitsmun_fjkrzp_3_hgu7rx.png"
-            alt="logo"
-            className={styles.logoIcon}
-          />
+          <Link to="/">
+            <img
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699293673/nitsmun/nitsmun_logo_otrutb.png"
+              alt="logo"
+              className={styles.logoIcon}
+            />
+          </Link>
           <img
             src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703529308/Line_2_xjolyp.png"
             alt="line"
@@ -84,17 +109,30 @@ const Footer = () => {
         <div className={styles.imageContainer}>
           <div className={styles.icon}>
             <h3>
-              <IoLogoYoutube size={15} color="white" />{" "}
+              <a href="https://www.youtube.com/@nitsmun384" target="_blank">
+                {" "}
+                <IoLogoYoutube size={15} color="white" />{" "}
+              </a>
             </h3>
           </div>
           <div className={styles.icon}>
-            <FaInstagram size={15} color="white" />
+            <a href="https://www.instagram.com/nitsmun/" target="_blank">
+              <FaInstagram size={15} color="white" />
+            </a>
           </div>
           <div className={styles.icon}>
-            <FaFacebook size={15} color="white" />
+            <a href="https://www.facebook.com/NITSMUN" target="_blank">
+              {" "}
+              <FaFacebook size={15} color="white" />
+            </a>
           </div>
           <div className={styles.icon}>
-            <FaLinkedin size={15} color="white" />
+            <a
+              href="https://www.linkedin.com/company/nit-silchar-model-united-nations/mycompany/"
+              target="_blank"
+            >
+              <FaLinkedin size={15} color="white" />
+            </a>
           </div>
         </div>
       </div>
