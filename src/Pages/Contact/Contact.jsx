@@ -8,7 +8,7 @@ const Contact = () => {
       <Navbar page="CONTACT" />
       <div>
         <ContactUs />
-        <Faq />
+        <Faq color="#1d1c41" />
       </div>
       <Footer />
     </div>

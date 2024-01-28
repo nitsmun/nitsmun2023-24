@@ -1,11 +1,25 @@
 .about {
   overflow-x: hidden;
+  background-image: url("https://res.cloudinary.com/dz2mlxltd/image/upload/v1706370659/spiralbg_mj8fzf.svg");
+  background-size: contain;
+
+
+  .innerChild {
+    backdrop-filter: blur(2px);
+  }
 }
 
 .list-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.imgText .p {
+  font-size: 1.4rem;
+  margin-top: 4vh;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .list {
@@ -80,6 +94,7 @@
 
 .objective .h1 {
   color: #1d1c41;
+  padding-left: 3rem;
 }
 
 @media screen and (max-width: 1000px) {

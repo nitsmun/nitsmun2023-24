@@ -2,6 +2,12 @@
 
 .dashPage {
   overflow-x: hidden;
+  background-image: url("https://res.cloudinary.com/dz2mlxltd/image/upload/v1706370659/spiralbg_mj8fzf.svg");
+  background-size: contain;
+
+  .pageCont {
+    backdrop-filter: blur(2px);
+  }
 
   .details {
     padding: 2rem;

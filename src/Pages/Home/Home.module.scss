@@ -4,6 +4,12 @@
   margin: 0 auto;
   width: 100vw;
   overflow-x: hidden;
+  background-image: url("https://res.cloudinary.com/dz2mlxltd/image/upload/v1706370659/spiralbg_mj8fzf.svg");
+  background-size: contain;
+
+  .innerCont {
+    backdrop-filter: blur(2px);
+  }
 }
 
 .wholeContainer {

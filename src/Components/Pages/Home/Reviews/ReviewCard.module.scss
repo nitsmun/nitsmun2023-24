@@ -2,7 +2,7 @@
 
 .review {
   width: 90vw;
-  height: 70vh;
+  height: 90vh;
   background-color: #9695c2;
   transition-duration: 0.4s;
   display: flex;
@@ -68,7 +68,7 @@ p {
 
 @media screen and (min-width: 500px) {
   .review {
-    height: 45vh;
+    height: 65vh;
   }
 }
 
