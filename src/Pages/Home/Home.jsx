@@ -18,19 +18,19 @@ const Home = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.innerCont}>
-        <div className={styles.wholeContainer}>
-          <Navbar page="HOME" />
-          <Hero />
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <button onClick={handleScrollDown} className={styles.downscrollButton}>
-              <img
-                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699440208/nitsmun/scrollDownButton_gpwehg.svg"
-                alt="img"
-              />
-            </button>
-          </div>
+      <div className={styles.wholeContainer}>
+        <Navbar page="HOME" />
+        <Hero />
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <button onClick={handleScrollDown} className={styles.downscrollButton}>
+            <img
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1699440208/nitsmun/scrollDownButton_gpwehg.svg"
+              alt="img"
+            />
+          </button>
         </div>
+      </div>
+      <div className={styles.innerCont}>
         <div className="letter-container" id="letter">
           <Letter
             title="Faculty Advisor"
