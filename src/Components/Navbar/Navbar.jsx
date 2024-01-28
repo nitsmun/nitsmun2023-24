@@ -7,18 +7,20 @@ const Navbar = (props) => {
   const deskHam = [
     { id: "1", name: "ARCHIVE", dest: "/archive" },
     { id: "2", name: "APPLY NOW", dest: "/applynow" },
+    { id: "3", name: "CONTACT", dest: "/contact" },
   ];
   const isEvents = false;
   const navLinks = [
     { name: "HOME", dest: "/", id: "home", type: "route" },
     { name: "ABOUT", dest: "/about", id: "about", type: "route" },
     { name: "TEAM", dest: "/team", id: "team", type: "route" },
-    { name: "CONTACT", dest: "/contact", id: "contact", type: "route" },
+    { name: "MOCK MUN 2024  ", dest: "/mockmun24", id: "MOCKMUN24", type: "route" },
     { name: "PHOTO GALLERY", dest: "/photo", id: "photo", type: "route" },
   ];
   const navLinksMobile = [
     { name: "HOME", dest: "/", id: "home", type: "route" },
     { name: "ABOUT", dest: "/about", id: "about", type: "route" },
+    { name: "MOCK MUN 2024", dest: "/mockmun24", id: "MOKCMUN24", type: "route" },
     { name: "TEAM", dest: "/team", id: "team", type: "route" },
     { name: "PHOTO GALLERY", dest: "/photo", id: "photo", type: "route" },
     { name: "CONTACT", dest: "/contact", id: "contact", type: "route" },
