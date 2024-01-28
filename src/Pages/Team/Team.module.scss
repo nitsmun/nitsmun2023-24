@@ -5,6 +5,7 @@
   position: relative;
   top: 5rem;
   z-index: 0;
+  backdrop-filter: blur(2px);
 }
 
 .teamHeading {
@@ -35,6 +36,8 @@
 
 .teamPage {
   overflow-x: hidden;
+  background-image: url("https://res.cloudinary.com/dz2mlxltd/image/upload/v1706370659/spiralbg_mj8fzf.svg");
+  background-size: contain;
 }
 
 @media screen and (min-width: 760px) {

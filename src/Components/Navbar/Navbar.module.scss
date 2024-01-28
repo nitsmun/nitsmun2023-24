@@ -8,7 +8,7 @@
 }
 
 .deskhamPopun {
-  position: absolute;
+  position: fixed;
   left: 80vw;
   top: 10vh;
   background-color: #070826;
@@ -22,6 +22,7 @@
   z-index: 2;
 
   .eachOption {
+    visibility: hidden;
     padding: 1rem;
     color: #ffffff;
     border-bottom: 1px solid #c9984e;
@@ -100,10 +101,15 @@ a {
   visibility: hidden;
 }
 
-@media screen and (min-width: 1051px) {
+@media screen and (min-width: 1054px) {
   .deskhamPopun {
+    left: 82vw;
     width: 12rem;
     height: auto;
+
+    .eachOption {
+      visibility: visible;
+    }
   }
 
   .mobileNav {
@@ -128,5 +134,35 @@ a {
     visibility: visible;
     width: 3rem;
     height: 3rem;
+  }
+}
+
+@media screen and (min-width: 1148px) {
+  .deskhamPopun {
+    left: 83vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .deskhamPopun {
+    left: 84vw;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .deskhamPopun {
+    left: 85vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .deskhamPopun {
+    left: 86vw;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .deskhamPopun {
+    left: 87vw;
   }
 }

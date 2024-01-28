@@ -8,8 +8,9 @@
   background-image: url(https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703488206/French_Parliament_Passes_Deep_Sleep_Bill_For_End_Of_Life_1_oqqasq.png);
   background-color: #070826;
   opacity: 1.2;
-  padding: 1vh 2vw;
+  padding: 20vh 2vw;
 }
+
 .img1 {
   margin-top: 2vh;
   padding: 4vh 0;
@@ -20,13 +21,12 @@
   align-items: center;
   color: aliceblue;
 }
+
 .wing {
   margin: 0 12vh;
   color: #c9984e;
   background-image: url("https://res.cloudinary.com/duom8ur6p/image/upload/v1699771088/nitsmun/nhtlrpl0g6jion5synox.png");
   background-size: 100% 100%;
-  width: 20vw;
-  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,6 +34,7 @@
   /* border:2px solid red; */
   /* padding: 0 10vw; */
 }
+
 .wing .text {
   width: 100%;
   margin-top: 2rem;
@@ -41,16 +42,19 @@
   color: #c9984e;
   text-align: center;
 }
+
 .wing .text .h1 {
   margin-bottom: 0;
   text-align: center;
 }
+
 .wing .text .imgPera {
   font-size: 0.9rem;
   padding: 1rem;
   margin-top: 0;
   padding: 0.6vh 5vw;
 }
+
 .contant {
   margin-top: 5vh;
   width: 100%;
@@ -63,12 +67,15 @@
   color: aliceblue;
   padding: 0 8vw;
 }
+
 .contant .contantH1 {
   font-size: 2rem;
 }
+
 .contant .contantpera {
   text-align: justify;
 }
+
 .btn {
   display: flex;
   width: 100%;
@@ -77,6 +84,7 @@
   justify-content: end;
   padding: 0 8vw;
 }
+
 .btn .button {
   display: flex;
   justify-content: center;
@@ -91,58 +99,71 @@
   border-radius: 0.625rem;
   cursor: pointer;
   margin-top: 4vh;
+  padding: 1rem 3rem;
 }
+
 @media screen and (max-width: 700px) {
   .btn {
     justify-content: center;
   }
 }
+
 @media screen and (max-width: 670px) {
   .wing {
     width: 40vw;
     height: 20vh;
     margin: 0 10vw;
   }
+
   .img3 .wing {
     width: 30vw;
     height: 20vh;
   }
 }
+
 @media screen and (max-width: 614px) {
   .wing .text .imgPera {
     font-size: 0.7rem;
   }
 }
+
 @media screen and (max-width: 550px) {
   .contant h1 {
     font-size: 1.8rem;
   }
 }
+
 @media screen and (max-width: 480px) {
   .wing .text .imgPera {
     font-size: 0.6rem;
   }
+
   .btn .button {
     height: 5vh;
     width: 15vw;
   }
 }
+
 @media screen and (max-width: 400px) {
   .wing .text .h1 {
     font-size: 1.4rem;
   }
+
   /* .contant p{
         font-size: 1.5rem;
     } */
 }
+
 @media screen and (max-width: 350px) {
   .wing {
     margin: 0 6vw;
   }
+
   .img3 .wing {
     width: 35vw;
     height: 20vh;
   }
+
   .contant .h1 {
     font-size: 1.5rem;
   }

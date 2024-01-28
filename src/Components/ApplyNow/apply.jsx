@@ -33,7 +33,7 @@ const apply = () => {
               Apply Now
             </button>
           </div>
-          <Faq />
+          <Faq color="#ffffff" />
         </div>
       </div>
       <Footer />
