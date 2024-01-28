@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useEffect, useContext, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
@@ -7,6 +8,7 @@ import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
 import { UserContext } from "../../Context/ContextProv";
 import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
+import { fetchAllStudentRegistrations } from "../../ReactQuery/Fetchers/StudentRegisteredEvent";
 const WidePopup = (props) => {
   if (props.name === "events registered") {
     return (
@@ -66,6 +68,10 @@ const Card = (props) => {
     window.location.reload();
   };
 
+  const handleDashboard = (e) => {
+    e.preventDefault();
+    navigate("/dashboard");
+  };
   return (
     <>
       {option === false ? null : <WidePopup name={option} infos={choice} />}
@@ -76,11 +82,7 @@ const Card = (props) => {
             <div className={styles.userDetails}>
               <div className={styles.person}>
                 <div className={styles.photoParent}>
-                  <img
-                    className={styles.img}
-                    alt="loading.."
-                    src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706367691/prof_rg9g0w.jpg"
-                  />
+                  <img className={styles.img} alt="loading.." src={props.photo} />
                 </div>
                 <div className={styles.bio}>
                   <div className={styles.field}>
@@ -171,13 +173,19 @@ const Card = (props) => {
         </div>
         <div className={styles.options}>
           <div className={styles.col}>
-            <button className={styles.btn}>
+            <button
+              onClick={handleDashboard}
+              style={{ cursor: "pointer" }}
+              className={styles.btn}
+            >
               <div>
                 <img
                   alt="icon loading..."
                   src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706499/nitsmun/dashboard_yynv9s.svg"
                 />
-                <label htmlFor="dashboard">Dashboard</label>
+                <label style={{ cursor: "pointer" }} htmlFor="dashboard">
+                  Dashboard
+                </label>
               </div>
             </button>
             <button
@@ -191,7 +199,9 @@ const Card = (props) => {
                   alt="icon loading..."
                   src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg"
                 />
-                <label htmlFor="events registered">Events Registered</label>
+                <label style={{ cursor: "pointer" }} htmlFor="events registered">
+                  Events Registered
+                </label>
               </div>
             </button>
             <button
@@ -205,17 +215,21 @@ const Card = (props) => {
                   alt="icon loading..."
                   src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg"
                 />
-                <label htmlFor="upcoming events">Upcoming Events</label>
+                <label style={{ cursor: "pointer" }} htmlFor="upcoming events">
+                  Upcoming Events
+                </label>
               </div>
             </button>
           </div>
           <div className={styles.col}>
-            <Link to="/Dashboard/edit" className={styles.btn}>
+            <Link to="/dashboard/edit" className={styles.btn}>
               <img
                 alt="icon loading..."
                 src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706541/nitsmun/Vector_kntss1.svg"
               />
-              <label htmlFor="edit profile">Edit Profile</label>
+              <label style={{ cursor: "pointer" }} htmlFor="edit profile">
+                Edit Profile
+              </label>
             </Link>
             <button className={styles.btn} onClick={handleSignout}>
               <div>
@@ -237,7 +251,10 @@ const Card = (props) => {
 
                 <label htmlFor="queries">
                   <h1 className={styles.queries}>For queries contact</h1>
-                  <h2 className={styles.queries}>12345-12345</h2>
+                  <a style={{ color: "#333333" }} href="tel:1234512345">
+                    {" "}
+                    <h2 className={styles.queries}>12345-12345</h2>
+                  </a>
                 </label>
               </div>
             </button>
@@ -259,14 +276,36 @@ const Dashboard = () => {
   const isTrue = useMemo(() => {
     return Boolean(role && isLoggedIn);
   }, [role, isLoggedIn]);
-  const { data, error, isLoading } = useQuery("profile", fetchProfile, {
+
+  const isStudentTrue = useMemo(() => {
+    return Boolean(role === "client" && isLoggedIn);
+  }, [role, isLoggedIn]);
+  const profileKey = useMemo(() => ["profile"], []);
+  const eventsKey = useMemo(() => ["studentEventRegs"], []);
+  const { data, error, isLoading } = useQuery(profileKey, fetchProfile, {
     enabled: isTrue,
   });
 
-  if (error) {
+  const {
+    data: eventsData,
+    error: eventsError,
+    isLoading: eventsLoading,
+  } = useQuery(eventsKey, fetchAllStudentRegistrations, {
+    enabled: isStudentTrue,
+  });
+  const allData = eventsData?.ypEvents;
+  const pendingStatusEvent = allData?.filter((item) => item.status === "pending");
+  const confirmedStatusEvent = allData?.filter((item) => item.status === "confirmed");
+  const declinedStatusEvent = allData?.filter((item) => item.status === "declined");
+  console.log(allData);
+  console.log(pendingStatusEvent);
+  console.log(confirmedStatusEvent);
+  console.log(declinedStatusEvent);
+
+  if (error || eventsError) {
     return <div>Something went wrong!</div>;
   }
-  if (isLoading) {
+  if (isLoading || eventsLoading) {
     return <div>Loading...</div>;
   }
   if (Cookies.get("authToken")) {
@@ -299,6 +338,7 @@ const Dashboard = () => {
               isStudentOfNITS={data?.isStudentOfNITS}
               events={events}
               eventsInfo={eventsInfo}
+              photo={data?.photo}
             />
           </div>
         </div>
