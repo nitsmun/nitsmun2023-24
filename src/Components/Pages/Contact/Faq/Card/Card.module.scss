@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
+
+:root {
+  --closed: 10rem;
+  --opened: 20.5rem;
+}
+
+.desktopDropdown {
+  visibility: visible;
+  background-color: transparent;
+  border: 0px solid transparent;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card {
+  font-size: 0.5625rem;
+  margin: 1rem;
+  box-shadow: 0px 4px 20px 0px #00000040;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  border: 0px solid transparent;
+  border-radius: 0.2875rem;
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  overflow: hidden;
+
+  .text {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    text-align: left;
+  }
+
+  .question {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    .image {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+
+  .toggle {
+    background-color: transparent;
+    border: 0px solid transparent;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 300px) {
+  :root {
+    --closed: 8rem;
+    --opened: 17.5rem;
+  }
+}
+
+@media screen and (min-width: 350px) {
+  :root {
+    --closed: 8rem;
+    --opened: 14.5rem;
+  }
+}
+
+@media screen and (min-width: 390px) {
+  :root {
+    --closed: 5rem;
+    --opened: 12.5rem;
+  }
+}
+
+@media screen and (min-width: 465px) {
+  :root {
+    --closed: 5rem;
+    --opened: 10.5rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    --closed: 4.5rem;
+    --opened: 11rem;
+  }
+
+  .desktopDropdown {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  :root {
+    --closed: 4.5rem;
+    --opened: 14.5rem;
+  }
+
+  .card {
+    background-color: #ffffff;
+  }
+}

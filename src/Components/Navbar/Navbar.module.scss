@@ -1,0 +1,132 @@
+.navCont {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-bottom: 0;
+  z-index: 4;
+  background: linear-gradient(180deg, #07082675 20%, transparent);
+}
+
+.deskhamPopun {
+  position: absolute;
+  left: 80vw;
+  top: 10vh;
+  background-color: #070826;
+  border: 0.5rem solid #c9984e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 0;
+  width: 0;
+  z-index: 2;
+
+  .eachOption {
+    padding: 1rem;
+    color: #ffffff;
+    border-bottom: 1px solid #c9984e;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.8px;
+    transition-duration: 0.5s;
+  }
+
+  .eachOption:hover {
+    color: #c9984e;
+    letter-spacing: 1px;
+    transition-duration: 0.5s;
+  }
+}
+
+.menuBtn {
+  position: absolute;
+  transition: ease 1000ms;
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  left: 80vw;
+  top: 1.2rem;
+  z-index: 4;
+  border: 0px solid transparent;
+
+  .img {
+    z-index: 5;
+  }
+}
+
+.mobileNav {
+  position: fixed;
+  background-color: var(--NITSMUN-navbar-blue);
+  transition: ease 500ms;
+  width: 100vw;
+  top: 0rem;
+  z-index: 2;
+}
+
+.mobileNav a {
+  color: #ffffff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 80%;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.deskNav {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.deskNav a {
+  background-color: transparent;
+  transition-duration: 0.5s;
+  padding: 1rem;
+  border: 0px solid transparent;
+  border-radius: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.deskNav a:hover {
+  transition-duration: 0.5s;
+  border-radius: 1rem;
+}
+
+.deskHam {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 1051px) {
+  .deskhamPopun {
+    width: 12rem;
+    height: auto;
+  }
+
+  .mobileNav {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+  }
+
+  .menuBtn {
+    visibility: hidden;
+    width: 0vw;
+    height: 0vh;
+  }
+
+  .deskNav {
+    visibility: visible;
+    width: auto;
+    height: 4rem;
+  }
+
+  .deskHam {
+    visibility: visible;
+    width: 3rem;
+    height: 3rem;
+  }
+}

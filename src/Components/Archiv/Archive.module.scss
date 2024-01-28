@@ -1,0 +1,66 @@
+.banner {
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 4vh;
+  height: 55vh;
+  width: 100%;
+  padding: 0 4vw;
+  /* border: 2px solid red; */
+}
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6vh;
+}
+.Header .p {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.container1 {
+  width: 100%;
+  padding: 0 4vw;
+  margin: 4vh 0;
+}
+.munContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #1d1c41 0%, #e6ddcf 100%);
+  padding: 3vh 4vw;
+  color: #e6ddcf;
+  border-radius: 0.625rem;
+  // margin-bottom: 4vh ;
+}
+.image {
+  width: 10vw;
+}
+.image .conatainerImg {
+  height: 100%;
+  width: 100%;
+}
+.text .conatainerPera {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.munContainer2 {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #1d1c41 0%, #e6ddcf 100%);
+  padding: 3vh 4vw;
+  color: #e6ddcf;
+  border-radius: 0.625rem;
+}
+@media screen and (max-width: 700px) {
+  .munContainer2 {
+    width: 100%;
+  }
+  .munContainer {
+    width: 100%;
+  }
+}

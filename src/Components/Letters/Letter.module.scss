@@ -1,0 +1,89 @@
+.letter {
+  margin: 0;
+  margin-top: 2vh;
+}
+
+.letterPhoto {
+  height: 12rem;
+  width: 12rem;
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+}
+
+.header .h1 {
+  font-size: 1.5rem;
+  margin-bottom: 6vh;
+}
+
+.main {
+  padding: 0 8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.textImageContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .peraHeading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2vh;
+}
+
+.main .p {
+  // font-size: 1.2rem;
+  margin: 2vh 0;
+  text-align: justify;
+}
+
+.footer {
+  margin-top: 1vh;
+  line-height: 4vh;
+  padding: 0 8vw;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.footer p {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 700px) {
+  .textImageContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 814px) {
+  .main .peraHeading {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 558px) {
+  .header .h1 {
+    font-size: 1.1rem;
+  }
+
+  .main .peraHeading {
+    font-size: 0.9rem;
+  }
+
+  .main p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header .h1 {
+    font-size: 0.9rem;
+  }
+}

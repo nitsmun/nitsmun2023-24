@@ -1,0 +1,263 @@
+.loginPage {
+  overflow-x: hidden;
+  background-image: url("https://res.cloudinary.com/dhry5xscm/image/upload/v1703340283/nitsmun/oAuth-bg_qqtkp4.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.pageCont {
+  margin-top: 1rem;
+  overflow-x: hidden;
+  width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+
+  .innerCont {
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .logoCont {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      color: #ffffff;
+      margin: 0 auto;
+      width: 50%;
+
+      .img {
+        scale: 0.8;
+      }
+
+      .h1 {
+        font-size: 1rem;
+        width: 40%;
+        text-align: center;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1051px) {
+    .innerCont {
+      flex-direction: row-reverse;
+      background-color: transparent;
+
+      .logoCont {
+        justify-content: center;
+        column-gap: 1.5rem;
+        flex-direction: column;
+        row-gap: 2.5rem;
+
+        .h1 {
+          font-size: 1.5rem;
+        }
+
+        .img {
+          scale: 2;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1051px) {
+  .loginPage {
+    background-position: right;
+    background-size: 100vh 50vw;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+}
+
+.loginWrap {
+  background-color: #d9d9d9;
+  box-shadow: 0 0 0.5rem #00000040;
+  border: 0px solid transparent;
+  border-radius: 1rem;
+  width: 70%;
+  padding: 1.5rem;
+  overflow-x: hidden;
+  margin: 0 auto;
+
+  .headingCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+
+    width: auto;
+
+    .h1 {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .photoCont {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      .photo {
+        width: 10rem;
+        height: 10rem;
+        border: 0 solid transparent;
+        border-radius: 100%;
+      }
+
+      .button {
+        width: 70%;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        transition-duration: 0.5s;
+        background-color: #c9c9c9;
+        font-family: "Inter", sans-serif;
+        font-weight: 200;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        transition-duration: 0.5s;
+        background-color: #444444;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+      }
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+    width: 80%;
+    margin: 2rem auto;
+    overflow-x: hidden;
+
+    .fromNits {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      .h1 {
+        font-size: 0.815rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+      }
+
+      @media screen and (min-width: 1051px) {
+        .h1 {
+          font-size: 1.565rem;
+        }
+      }
+
+      .radioCont {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 3rem;
+        align-items: center;
+
+        .radioInner {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          align-items: center;
+          flex-direction: row;
+
+          .input {
+            accent-color: #c9984e;
+            outline: none;
+          }
+
+          .label {
+            font-size: 0.8rem;
+          }
+
+          @media screen and (min-width: 1051px) {
+            .label {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .textBox {
+      width: 100%;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #00000069;
+      border-radius: 10px;
+    }
+
+    .textBox::placeholder {
+      color: #000000;
+      font-family: "Inter", sans-serif;
+      font-weight: 100;
+    }
+
+    .forgotCont {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      width: 100%;
+
+      .button {
+        background-color: transparent;
+        border: 0px solid transparent;
+        font-style: italic;
+      }
+    }
+
+    .subCont {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+
+      .subBtn {
+        background-color: #c9984e;
+        color: #ffffff;
+        border: 0px solid transparent;
+        padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+        width: 100%;
+        border-radius: 2.5rem;
+      }
+
+      .signupQuestion {
+        font-family: "Inter", sans-serif;
+        font-weight: 200;
+      }
+
+      .a {
+        font-family: "Inter", sans-serif;
+        font-weight: 200;
+        color: #2d6bc8;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1051px) {
+  .loginWrap {
+    width: 40%;
+
+    .headingCont {
+      .h1 {
+        font-size: 1.875rem;
+      }
+    }
+  }
+}

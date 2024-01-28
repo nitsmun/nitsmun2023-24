@@ -1,4 +1,42 @@
 .wrapper {
-  background-color: aqua;
   height: 100vh;
+  padding: 0;
+  margin: 0 auto;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.wholeContainer {
+  background-image: url("https://res.cloudinary.com/dhry5xscm/image/upload/v1695661179/nitsmun/French_Parliament_Passes_Deep_Sleep_Bill_For_End_Of_Life_1_spshum.svg");
+  background-color: var(--NITSMUN-navbar-blue);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding-bottom: 0.2rem;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.downscrollButton {
+  animation-name: goDown;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@keyframes goDown {
+  0% {
+    transform: translateY(0%);
+  }
+
+  80% {
+    transform: translateY(30%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
 }
