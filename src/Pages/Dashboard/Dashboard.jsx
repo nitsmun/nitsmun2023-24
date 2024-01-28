@@ -62,8 +62,8 @@ const Card = (props) => {
   const handleSignout = (e) => {
     e.preventDefault();
     Cookies.remove("authToken");
-    window.location.reload();
     navigate("/");
+    window.location.reload();
   };
 
   return (
@@ -223,7 +223,9 @@ const Card = (props) => {
                   alt="icon loading..."
                   src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706540/nitsmun/material-symbols_logout_wibfg1.svg"
                 />
-                <label htmlFor="logout">Log Out</label>
+                <label style={{ cursor: "pointer" }} htmlFor="logout">
+                  Log Out
+                </label>
               </div>
             </button>
             <button className={`${styles.btn}`}>

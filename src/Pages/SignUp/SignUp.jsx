@@ -1,10 +1,12 @@
 /* eslint-disable no-console */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
 import Navbar from "../../Components/Navbar/Navbar";
 import styles from "./SignUp.module.scss";
+import Footer from "../../Components/Footer/Footer";
+import { UserContext } from "../../Context/ContextProv";
 const FormCard = () => {
   const [user, setUser] = useState({
     // common inputs
@@ -22,6 +24,12 @@ const FormCard = () => {
     year: "",
   });
   const navigate = useNavigate();
+  const { isLoggedIn } = useContext(UserContext);
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    }
+  }, [navigate, isLoggedIn]);
   const {
     name,
     email,
@@ -35,8 +43,72 @@ const FormCard = () => {
     year,
   } = user;
 
+  const isButtonEnabled = useMemo(() => {
+    if (user.isStudentOfNITS) {
+      return Boolean(
+        user.name &&
+          user.email &&
+          user.phone &&
+          user.password &&
+          user.confirmPassword &&
+          user.scholarID &&
+          user.branch &&
+          user.instituteEmail &&
+          user.year
+      );
+    }
+    return Boolean(
+      user.name && user.email && user.phone && user.password && user.confirmPassword
+    );
+  }, [
+    user.name,
+    user.email,
+    user.phone,
+    user.password,
+    user.confirmPassword,
+    user.scholarID,
+    user.branch,
+    user.instituteEmail,
+    user.year,
+    user.isStudentOfNITS,
+  ]);
+
   const handleSub = async (e) => {
     e.preventDefault();
+
+    if (isStudentOfNITS === true) {
+      if (!email.includes("nits.ac.in")) {
+        toast("Please enter a valid institute email");
+        return;
+      }
+    } else if (isStudentOfNITS === false) {
+      if (email.includes("nits.ac.in")) {
+        toast("Please enter your personal email ID");
+        return;
+      }
+    }
+
+    if (isStudentOfNITS === false) {
+      if (!email.includes("@")) {
+        toast("Please enter a valid email");
+        return;
+      }
+    }
+
+    if (password.length < 8) {
+      toast("Password must be atleast 8 characters long");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      toast("Passwords do not match");
+      return;
+    }
+
+    if (phone.length < 10) {
+      toast("Invalid phone number");
+      return;
+    }
 
     try {
       await axios
@@ -362,12 +434,14 @@ const FormCard = () => {
           <input
             type="submit"
             value="Sign Up"
+            disabled={!isButtonEnabled}
+            style={{ cursor: isButtonEnabled ? "pointer" : "not-allowed" }}
             onClick={handleSub}
             className={styles.subBtn}
           />
           <h6 className={styles.signupQuestion}>
             Already&apos; t signed up?{" "}
-            <Link to="/Login" className={styles.a}>
+            <Link to="/login" className={styles.a}>
               Log in Here
             </Link>
           </h6>
@@ -397,6 +471,7 @@ const Login = () => {
           <FormCard />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

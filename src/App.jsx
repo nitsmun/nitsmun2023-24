@@ -49,10 +49,10 @@ const App = () => {
         <Route path="/wrapped" element={<Wrapped />} />
         <Route path="/mockmun24" element={<MockMun24 />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/Reset" element={<Reset />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/reset" element={<Reset />} />
         <Route path="/about" element={<About />} />
         <Route path="/archive" element={<Archive />} />
         <Route path="/applynow" element={<Apply />} />
