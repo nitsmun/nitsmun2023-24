@@ -69,73 +69,75 @@ const MockMun24 = () => {
   return (
     <div className={styles.MockMunPage}>
       <Navbar page="MOCKMUN24" />
-      <Hero />
-      <About />
-      <Card>
-        <div className={styles.mainHeading}>
-          <h1 className={styles.h1}>COMMITTEES</h1>
-          <div className={styles.innerCont}>
-            <div className={styles.imgParent}>
-              <img
-                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp"
-                alt="loading..."
-                className={styles.img}
-              />
-            </div>
-            <div className={styles.content}>
-              <h1 className={styles.h1}>United Nations Security Council</h1>
-              <p className={styles.p}>
-                <p className={styles.innerPara}>
-                  <b>Agenda:</b> Addressing State-Sponsored terrorism: examining
-                  allegations and promoting regional stability in Asia with special
-                  emphasis on Afghanistan, Pakistan and Syria.
-                </p>
-                <p className={styles.innerPara}>
-                  The United Nations Security Council maintains global peace, with 15
-                  member nations addressing threats through resolutions,sanctions, and
-                  peacekeeping operations,aiming for collective security.
-                </p>
-                {/* <div className={styles.bgCont}>
-                  <button className={styles.bgBtn}>Background Guide</button>
-                </div> */}
-              </p>
-            </div>
-          </div>
-        </div>
-      </Card>
-      <Card>
-        <div className={styles.mainHeading}>
-          <h1 className={styles.h1}>EXECUTIVE BOARD</h1>
-          <div className={styles.innerCont}>
-            <div className={styles.imgParent}>
-              <img
-                src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706364601/IMG-20240102-WA0084_elvgyy.jpg"
-                alt="loading..."
-                className={styles.img}
-              />
-            </div>
-            <div className={styles.content}>
-              <div className={styles.innerParent}>
-                <h1 className={styles.h1}>MAYURAKHI KHAUND</h1>
+      <div className={styles.innerChild}>
+        <Hero />
+        <About />
+        <Card>
+          <div className={styles.mainHeading}>
+            <h1 className={styles.h1}>COMMITTEES</h1>
+            <div className={styles.innerCont}>
+              <div className={styles.imgParent}>
+                <img
+                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp"
+                  alt="loading..."
+                  className={styles.img}
+                />
+              </div>
+              <div className={styles.content}>
+                <h1 className={styles.h1}>United Nations Security Council</h1>
                 <p className={styles.p}>
                   <p className={styles.innerPara}>
-                    Hey! I am Mayurakhi Khaund. I am 2nd year Civil Undergraduate student
-                    at NITS. Also, I work as a content writer and as a marketing executive
-                    for various clubs. MUN has always been something that intrigues me and
-                    it&apos;s just an incredible platform to furnish skills in an
-                    individual. I am really grateful to NITSMUN for giving me the
-                    opportunity to participate and organise amazing conferences and now,
-                    to chair one! Looking forward to creating unforgettable memories in
-                    here. See you at the next upcoming session!
+                    <b>Agenda:</b> Addressing State-Sponsored terrorism: examining
+                    allegations and promoting regional stability in Asia with special
+                    emphasis on Afghanistan, Pakistan and Syria.
                   </p>
+                  <p className={styles.innerPara}>
+                    The United Nations Security Council maintains global peace, with 15
+                    member nations addressing threats through resolutions,sanctions, and
+                    peacekeeping operations,aiming for collective security.
+                  </p>
+                  {/* <div className={styles.bgCont}>
+                  <button className={styles.bgBtn}>Background Guide</button>
+                </div> */}
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </Card>
-      <Glimpses />
-      <Faq />
+        </Card>
+        <Card>
+          <div className={styles.mainHeading}>
+            <h1 className={styles.h1}>EXECUTIVE BOARD</h1>
+            <div className={styles.innerCont}>
+              <div className={styles.imgParent}>
+                <img
+                  src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706364601/IMG-20240102-WA0084_elvgyy.jpg"
+                  alt="loading..."
+                  className={styles.img}
+                />
+              </div>
+              <div className={styles.content}>
+                <div className={styles.innerParent}>
+                  <h1 className={styles.h1}>MAYURAKHI KHAUND</h1>
+                  <p className={styles.p}>
+                    <p className={styles.innerPara}>
+                      Hey! I am Mayurakhi Khaund. I am 2nd year Civil Undergraduate student
+                      at NITS. Also, I work as a content writer and as a marketing executive
+                      for various clubs. MUN has always been something that intrigues me and
+                      it&apos;s just an incredible platform to furnish skills in an
+                      individual. I am really grateful to NITSMUN for giving me the
+                      opportunity to participate and organise amazing conferences and now,
+                      to chair one! Looking forward to creating unforgettable memories in
+                      here. See you at the next upcoming session!
+                    </p>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+        <Glimpses />
+        <Faq color="#1d1c41" />
+      </div>
       <Footer />
     </div>
   );
