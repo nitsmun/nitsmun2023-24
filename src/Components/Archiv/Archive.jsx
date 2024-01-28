@@ -7,7 +7,7 @@ import Footer from "../Footer/Footer";
 const Archive = () => {
   return (
     <div className={styles.archiveContainer}>
-      <Navbar page="ABOUT" />
+      <Navbar page="ARCHIVE" />
       <Banner />
       <div className={styles.Header}>
         <p className={styles.p}>Archive</p>

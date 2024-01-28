@@ -1,11 +1,12 @@
 /* eslint-disable check-file/filename-naming-convention */
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./NitsMun.module.scss";
 
 const Nitsmun = () => {
+  const navigate = useNavigate();
   const gotoAbout = () => {
-    window.location.href = "/about";
-    return null;
+    navigate("/about");
   };
   return (
     <div className={styles.container}>
