@@ -1,8 +1,6 @@
 import React from "react";
-import { IoLocationOutline } from "react-icons/io5";
-import { TfiEmail } from "react-icons/tfi";
 import { IoLogoYoutube } from "react-icons/io";
-import { FaInstagram, FaFacebook, FaPhoneAlt, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import styles from "./Footer.module.scss";
 const Footer = () => {
   return (
@@ -10,16 +8,16 @@ const Footer = () => {
       <div className={styles.imageContainer1}>
         {/* <div className="image"> */}
         <div className={styles.icon}>
-          <IoLogoYoutube size={15} color="white" />
+          <IoLogoYoutube color="white" />
         </div>
         <div className={styles.icon}>
-          <FaInstagram size={15} color="white" />
+          <FaInstagram color="white" />
         </div>
         <div className={styles.icon}>
-          <FaFacebook size={15} color="white" />
+          <FaFacebook color="white" />
         </div>
         <div className={styles.icon}>
-          <FaLinkedin size={15} color="white" />
+          <FaLinkedin color="white" />
         </div>
         {/* </div> */}
       </div>
@@ -27,16 +25,28 @@ const Footer = () => {
         <div className={styles.contact}>
           <h2 className={styles.h2}>Contact us</h2>
           <div className={styles.option}>
-            <IoLocationOutline className={styles.phone} />
-            <p className={styles.optionText}>xdhgfgshfiuhhwh.com</p>
+            <img
+              src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706355502/Vector_5_qhs1q3.png"
+              alt="logo"
+              className={styles.phone}
+            />
+            <p className={styles.optionText}>NIT Silchar, Silchar, Assam, India</p>
           </div>
           <div className={styles.option}>
-            <TfiEmail className={styles.phone} />
-            <p className={styles.optionText}>dhagdajkhdjkhgemail.com</p>
+            <img
+              src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706356743/Group_1_mmmfxq.png"
+              alt="logo"
+              className={styles.phone}
+            />
+            <p className={styles.optionText}>nitsmun@nits.ac.in</p>
           </div>
           <div className={styles.option}>
-            <FaPhoneAlt className={styles.phone} />
-            <p className={styles.optionText}>12345-12345</p>
+            <img
+              src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706356577/Vector_6_ele06d.png"
+              alt="logo"
+              className={styles.phone}
+            />
+            <p className={styles.optionText}>+91 7096597864</p>
           </div>
         </div>
         <div className={styles.explore}>

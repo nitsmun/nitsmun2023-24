@@ -48,7 +48,9 @@ const Card = (props) => {
           transition: "ease 500ms",
         }}
       >
-        <h1 className={styles.text}>{props.answer}</h1>
+        <h1 className={styles.text} style={{ marginTop: "1rem" }}>
+          {props.answer}
+        </h1>
       </div>
     </button>
   );

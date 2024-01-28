@@ -104,6 +104,13 @@
       align-items: center;
       justify-content: space-around;
 
+      .photo {
+        width: 10rem;
+        height: 10rem;
+        border: 0 solid transparent;
+        border-radius: 100%;
+      }
+
       .button {
         width: 70%;
         padding-top: 0.5rem;

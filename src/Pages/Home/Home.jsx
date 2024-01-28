@@ -6,13 +6,14 @@ import Reviews from "../../Components/Pages/Home/Reviews/Reviews";
 import Letter from "../../Components/Letters/letters";
 import Nitsmun from "../../Components/WhatIsMUN/nitsMun";
 import Footer from "../../Components/Footer/Footer";
+
 // import About from "../../Components/About/About";
 // import Archive from "../../Components/Archiv/Archive";
-// import Apply from "../../Components/ApplyNow/Apply";
+// import Apply from "../../Components/ApplyNow/apply";
 const Home = () => {
   const handleScrollDown = (e) => {
     e.preventDefault();
-    document.getElementById("ltrr").scrollIntoView(); // add id of below section
+    document.getElementById("letter").scrollIntoView(); // add id of below section
   };
 
   return (
@@ -29,23 +30,27 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div id="ltrr" className="letter-container">
+      <div className="letter-container" id="letter">
         <Letter
           title="Faculty Advisor"
           name="Dr. Wasim Arif"
-          src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703446281/image_1_3_azcue6.png"
+          src="https://res.cloudinary.com/dhry5xscm/image/upload/v1701965729/ecs-website/wasim-img_orgqul.jpg"
         />
         <Letter
           title="Secratory General"
           name="Maruf Padaya"
-          src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703446281/image_1_3_azcue6.png"
+          src="https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676476439/events/nitsmun/team/marufPadaya_faj39h.jpg"
         />
       </div>
       <Reviews />
       <Nitsmun />
       {/* <About/>
-      <Archive /> */}
-      {/* <Apply /> */}
+      <Archive />
+      <Apply /> */}
+      <br />
+      <br />
+      <br />
+      <br />
       <Footer />
     </div>
   );

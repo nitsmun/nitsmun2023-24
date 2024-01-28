@@ -38,12 +38,33 @@
 
 .widePop {
   margin: 0 auto;
-  position: absolute;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 30vw;
+  top: 20vh;
+  background-color: #ffffff;
+  padding: 2rem;
+  height: 15rem;
+  z-index: 2;
+  box-shadow: 0 0 1rem #000000;
+  border: 0 solid transparent;
+  border-radius: 1rem;
 }
 
 @media screen and (min-width: 1051px) {
   .cardWrap {
     flex-direction: row-reverse;
+  }
+}
+
+.photoParent {
+  .img {
+    width: 10rem;
+    height: 10rem;
+    border: 0 solid transparent;
+    border-radius: 100%;
   }
 }
 
@@ -97,6 +118,7 @@
     .contactSec {
       display: flex;
       flex-direction: row;
+      justify-content: space-around;
       column-gap: 2rem;
       width: 100%;
 
@@ -112,7 +134,7 @@
       .person {
         flex-direction: row;
         justify-content: space-around;
-        width: 80%;
+        width: 100%;
       }
     }
 
@@ -225,6 +247,7 @@
   }
 
   .btn {
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -235,6 +258,7 @@
     font-size: 0.5rem;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+    margin-left: 1rem;
   }
 
   @media screen and (min-width: 1051px) {

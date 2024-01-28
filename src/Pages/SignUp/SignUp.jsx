@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -21,7 +21,7 @@ const FormCard = () => {
     branch: "",
     year: "",
   });
-
+  const navigate = useNavigate();
   const {
     name,
     email,
@@ -34,6 +34,7 @@ const FormCard = () => {
     isStudentOfNITS,
     year,
   } = user;
+
   const handleSub = async (e) => {
     e.preventDefault();
 
@@ -54,6 +55,7 @@ const FormCard = () => {
         .then((res) => {
           if (res.data.message === "User account created successfully") {
             toast("User account created successfully");
+            navigate("/Login");
           }
         });
     } catch (err) {

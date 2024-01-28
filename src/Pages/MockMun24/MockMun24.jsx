@@ -68,7 +68,7 @@ const Glimpses = () => {
 const MockMun24 = () => {
   return (
     <div className={styles.MockMunPage}>
-      <Navbar />
+      <Navbar page="MOCKMUN24" />
       <Hero />
       <About />
       <Card>
@@ -77,7 +77,7 @@ const MockMun24 = () => {
           <div className={styles.innerCont}>
             <div className={styles.imgParent}>
               <img
-                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1705864086/nitsmun/committee_yehz0a.svg"
+                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp"
                 alt="loading..."
                 className={styles.img}
               />
@@ -91,15 +91,13 @@ const MockMun24 = () => {
                   emphasis on Afghanistan, Pakistan and Syria.
                 </p>
                 <p className={styles.innerPara}>
-                  Ea nisi maiores et internos praesentium et ipsa omnis est maiores
-                  repudiandae eos aspernatur pariatur et libero illo? Vel quis aliQui
-                  delectus unde cum dolor aliquid eum deleniti dolore. Vel quibusdam
-                  tempora hic voluptas quam et nemo quibusdam et explicabo voluptas eos
-                  earum quaerat ea dignissimos minima et dolor galisum..
+                  The United Nations Security Council maintains global peace, with 15
+                  member nations addressing threats through resolutions,sanctions, and
+                  peacekeeping operations,aiming for collective security.
                 </p>
-                <div className={styles.bgCont}>
+                {/* <div className={styles.bgCont}>
                   <button className={styles.bgBtn}>Background Guide</button>
-                </div>
+                </div> */}
               </p>
             </div>
           </div>
@@ -111,23 +109,24 @@ const MockMun24 = () => {
           <div className={styles.innerCont}>
             <div className={styles.imgParent}>
               <img
-                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1705864082/nitsmun/person_temp_uegudo.svg"
+                src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706364601/IMG-20240102-WA0084_elvgyy.jpg"
                 alt="loading..."
                 className={styles.img}
               />
             </div>
             <div className={styles.content}>
               <div className={styles.innerParent}>
-                <h1 className={styles.h1}>LOREM IPSUM</h1>
+                <h1 className={styles.h1}>MAYURAKHI KHAUND</h1>
                 <p className={styles.p}>
                   <p className={styles.innerPara}>
-                    Lorem ipsum dolor sit amet. A nisi nobis sed quia sapiente hic
-                    voluptas quos ut dolorem rerum sed quae animi hic molestiae corrupti.
-                    Ea nisi maiores et internos praesentium et ipsa omnis est maiores
-                    repudiandae eos aspernatur pariatur et libero illo? Vel quis aliQui
-                    delectus unde cum dolor aliquid eum deleniti dolore. Vel quibusdam
-                    tempora hic voluptas quam et nemo quibusdam et explicabo voluptas eos
-                    earum quaerat ea dignissimos minima et dolor galisum..
+                    Hey! I am Mayurakhi Khaund. I am 2nd year Civil Undergraduate student
+                    at NITS. Also, I work as a content writer and as a marketing executive
+                    for various clubs. MUN has always been something that intrigues me and
+                    it&apos;s just an incredible platform to furnish skills in an
+                    individual. I am really grateful to NITSMUN for giving me the
+                    opportunity to participate and organise amazing conferences and now,
+                    to chair one! Looking forward to creating unforgettable memories in
+                    here. See you at the next upcoming session!
                   </p>
                 </p>
               </div>
