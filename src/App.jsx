@@ -31,7 +31,7 @@ import IndividualEventReg from "./Pages/Admin/IndividualEventReg";
 import RegistrationsBasedOnStatus from "./Pages/Admin/RegistrationsBasedOnStatus";
 import OneEventRegistrations from "./Pages/Admin/OneEventRegistrations";
 import Archive from "./Components/Archiv/Archive";
-import Apply from "./Components/ApplyNow/Apply";
+import Apply from "./Components/ApplyNow/apply";
 import About from "./Components/About/About";
 import Error from "./Pages/Error/Error";
 

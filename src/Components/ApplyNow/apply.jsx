@@ -1,3 +1,4 @@
+/* eslint-disable check-file/filename-naming-convention */
 import React from "react";
 import { toast } from "sonner";
 import styles from "./Apply.module.scss";

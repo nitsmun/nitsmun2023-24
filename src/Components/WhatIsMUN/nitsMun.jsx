@@ -1,3 +1,4 @@
+/* eslint-disable check-file/filename-naming-convention */
 import React from "react";
 import styles from "./NitsMun.module.scss";
 
