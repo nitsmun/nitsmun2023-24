@@ -34,6 +34,7 @@ import Archive from "./Components/Archiv/Archive";
 import Apply from "./Components/ApplyNow/apply";
 import About from "./Components/About/About";
 import Error from "./Pages/Error/Error";
+import VerifyEmail from "./Pages/VerifyEmail/VerifyEmail";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -55,6 +56,7 @@ const App = () => {
         <Route path="/reset" element={<Reset />} />
         <Route path="/about" element={<About />} />
         <Route path="/archive" element={<Archive />} />
+        <Route path="/verifyemail/:token" element={<VerifyEmail />} />
         <Route path="/applynow" element={<Apply />} />
         <Route path="*" element={<Error />} />
         {/* Admin stuffs */}

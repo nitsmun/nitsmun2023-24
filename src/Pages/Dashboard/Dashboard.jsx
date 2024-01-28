@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useContext, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
+import axios from "axios";
 import Cookies from "js-cookie";
 import { toast } from "sonner";
 import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
@@ -72,6 +73,58 @@ const Card = (props) => {
     e.preventDefault();
     navigate("/dashboard");
   };
+  const [sending, setSending] = useState(false);
+  const handleSendVerificationLink = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    try {
+      await axios
+        .post(
+          `${import.meta.env.VITE_REACT_APP_API}/sendlink`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${Cookies.get("authToken")}`,
+            },
+          }
+        )
+        .then((res) => {
+          if (res.data.message === "Verification link sent successfully") {
+            toast("Verification link sent successfully");
+          }
+        });
+    } catch (ee) {
+      if (ee.response) {
+        switch (ee.response.data.error) {
+          case "Server Error":
+            toast("Server Error");
+            break;
+          case "Unauthorized":
+            toast("Unauthorized");
+            break;
+          case "User not found":
+            toast("User not found");
+            break;
+          default:
+            toast("Something went wrong");
+            console.error(ee);
+            break;
+        }
+
+        switch (ee.response.data.message) {
+          case "Either token or tokenExpires at is missing":
+            toast("Either token or tokenExpires at is missing");
+            break;
+          default:
+            toast("Something went wrong");
+            break;
+        }
+      }
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <>
       {option === false ? null : <WidePopup name={option} infos={choice} />}
@@ -173,21 +226,36 @@ const Card = (props) => {
         </div>
         <div className={styles.options}>
           <div className={styles.col}>
-            <button
-              onClick={handleDashboard}
-              style={{ cursor: "pointer" }}
-              className={styles.btn}
-            >
-              <div>
-                <img
-                  alt="icon loading..."
-                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706499/nitsmun/dashboard_yynv9s.svg"
-                />
-                <label style={{ cursor: "pointer" }} htmlFor="dashboard">
-                  Dashboard
-                </label>
-              </div>
-            </button>
+            {props?.isVerified ? (
+              <button
+                onClick={handleDashboard}
+                style={{ cursor: "pointer" }}
+                className={styles.btn}
+              >
+                <div>
+                  <img
+                    alt="icon loading..."
+                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706499/nitsmun/dashboard_yynv9s.svg"
+                  />
+                  <label style={{ cursor: "pointer" }} htmlFor="dashboard">
+                    Dashboard
+                  </label>
+                </div>
+              </button>
+            ) : (
+              <button
+                style={{
+                  cursor: sending ? "not-allowed" : "pointer",
+                  opacity: sending ? "0.5" : "1",
+                }}
+                disabled={sending}
+                className={styles.btn}
+                onClick={handleSendVerificationLink}
+              >
+                {sending ? "Sending..." : "Send Verification link"}
+              </button>
+            )}
+
             <button
               onClick={() =>
                 wideView("events registered", null, setOption, setChoice, option, choice)
@@ -339,6 +407,7 @@ const Dashboard = () => {
               events={events}
               eventsInfo={eventsInfo}
               photo={data?.photo}
+              isVerified={data?.isVerified}
             />
           </div>
         </div>
