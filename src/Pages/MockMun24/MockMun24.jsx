@@ -120,14 +120,14 @@ const MockMun24 = () => {
                   <h1 className={styles.h1}>MAYURAKHI KHAUND</h1>
                   <p className={styles.p}>
                     <p className={styles.innerPara}>
-                      Hey! I am Mayurakhi Khaund. I am 2nd year Civil Undergraduate student
-                      at NITS. Also, I work as a content writer and as a marketing executive
-                      for various clubs. MUN has always been something that intrigues me and
-                      it&apos;s just an incredible platform to furnish skills in an
-                      individual. I am really grateful to NITSMUN for giving me the
-                      opportunity to participate and organise amazing conferences and now,
-                      to chair one! Looking forward to creating unforgettable memories in
-                      here. See you at the next upcoming session!
+                      Hey! I am Mayurakhi Khaund. I am 2nd year Civil Undergraduate
+                      student at NITS. Also, I work as a content writer and as a marketing
+                      executive for various clubs. MUN has always been something that
+                      intrigues me and it&apos;s just an incredible platform to furnish
+                      skills in an individual. I am really grateful to NITSMUN for giving
+                      me the opportunity to participate and organise amazing conferences
+                      and now, to chair one! Looking forward to creating unforgettable
+                      memories in here. See you at the next upcoming session!
                     </p>
                   </p>
                 </div>

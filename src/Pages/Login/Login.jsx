@@ -12,6 +12,7 @@ const FormCard = () => {
     email: "",
     password: "",
   });
+  const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
   const { isLoggedIn } = useContext(UserContext);
   useEffect(() => {
@@ -34,7 +35,7 @@ const FormCard = () => {
       toast("Password must be atleast 8 characters long");
       return;
     }
-
+    setSubmitting(true);
     try {
       await axios
         .post(`${import.meta.env.VITE_REACT_APP_API}/login`, {
@@ -74,6 +75,8 @@ const FormCard = () => {
             break;
         }
       }
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -110,10 +113,13 @@ const FormCard = () => {
         <div className={styles.subCont}>
           <input
             type="submit"
-            value="Log In"
+            value={submitting ? "Submitting..." : "Log In"}
             className={styles.subBtn}
-            disabled={!isLoginEnabled}
-            style={{ cursor: isLoginEnabled ? "pointer" : "not-allowed" }}
+            disabled={!isLoginEnabled || submitting}
+            style={{
+              cursor: !isLoginEnabled || submitting ? "not-allowed" : "pointer",
+              opacity: submitting || !isLoginEnabled ? "0.5" : "1",
+            }}
             onClick={handleSub}
           />
           <h6 className={styles.signupQuestion}>

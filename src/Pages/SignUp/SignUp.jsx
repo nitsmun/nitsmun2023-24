@@ -8,6 +8,7 @@ import styles from "./SignUp.module.scss";
 import Footer from "../../Components/Footer/Footer";
 import { UserContext } from "../../Context/ContextProv";
 const FormCard = () => {
+  const [submitting, setSubmitting] = useState(false);
   const [user, setUser] = useState({
     // common inputs
     name: "",
@@ -77,6 +78,13 @@ const FormCard = () => {
     e.preventDefault();
 
     if (isStudentOfNITS === true) {
+      if (scholarID?.length !== 7) {
+        toast("Please enter a valid scholar ID");
+        return;
+      }
+    }
+
+    if (isStudentOfNITS === true) {
       if (!email.includes("nits.ac.in")) {
         toast("Please enter a valid institute email");
         return;
@@ -109,7 +117,7 @@ const FormCard = () => {
       toast("Invalid phone number");
       return;
     }
-
+    setSubmitting(true);
     try {
       await axios
         .post(`${import.meta.env.VITE_REACT_APP_API}/signup`, {
@@ -169,6 +177,8 @@ const FormCard = () => {
             break;
         }
       }
+    } finally {
+      setSubmitting(false);
     }
   };
   useEffect(() => {
@@ -433,9 +443,12 @@ const FormCard = () => {
         <div className={styles.subCont}>
           <input
             type="submit"
-            value="Sign Up"
-            disabled={!isButtonEnabled}
-            style={{ cursor: isButtonEnabled ? "pointer" : "not-allowed" }}
+            value={submitting ? "Submitting..." : "Sign Up"}
+            disabled={!isButtonEnabled || submitting}
+            style={{
+              cursor: !isButtonEnabled || submitting ? "not-allowed" : "pointer",
+              opacity: submitting || !isButtonEnabled ? "0.5" : "1",
+            }}
             onClick={handleSub}
             className={styles.subBtn}
           />
