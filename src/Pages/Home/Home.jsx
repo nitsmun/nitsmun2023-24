@@ -3,8 +3,8 @@ import styles from "./Home.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import Hero from "../../Components/Pages/Home/Hero/Hero";
 import Reviews from "../../Components/Pages/Home/Reviews/Reviews";
-import Letter from "../../Components/Letters/Letters";
-import Nitsmun from "../../Components/WhatIsMUN/NitsMun";
+import Letter from "../../Components/Letters/letters";
+import Nitsmun from "../../Components/WhatIsMUN/nitsMun";
 import Footer from "../../Components/Footer/Footer";
 
 // import About from "../../Components/About/About";
