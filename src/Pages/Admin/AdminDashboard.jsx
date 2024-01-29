@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import Cookies from "js-cookie";
 import { useNavigate, Link } from "react-router-dom";
 import { UserContext } from "../../Context/ContextProv";
 import styles from "../SuperAdmin/Styles.module.scss";
@@ -14,6 +15,12 @@ const AdminDashboard = () => {
   }, [navigate, role]);
 
   // const eventName = "yp";
+  const handleSignout = (e) => {
+    e.preventDefault();
+    Cookies.remove("authToken");
+    window.location.href = "/";
+  };
+
   return (
     <div className={styles.top}>
       <h1>Admin Dashboard</h1>
@@ -32,6 +39,12 @@ const AdminDashboard = () => {
         {" "}
         <Link to={`/reg/${eventName}/declined`}>Declined registrations</Link>
       </div> */}
+
+      <div>
+        <button style={{ cursor: "pointer" }} onClick={handleSignout}>
+          Signout
+        </button>
+      </div>
     </div>
   );
 };
