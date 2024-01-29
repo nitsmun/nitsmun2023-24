@@ -77,28 +77,16 @@ const FormCard = () => {
   const handleSub = async (e) => {
     e.preventDefault();
 
-    if (isStudentOfNITS === true) {
-      if (scholarID?.length !== 7) {
-        toast("Please enter a valid scholar ID");
-        return;
-      }
-    }
-
-    if (isStudentOfNITS === true) {
-      if (!email.includes("nits.ac.in")) {
-        toast("Please enter a valid institute email");
-        return;
-      }
-    } else if (isStudentOfNITS === false) {
+    if (isStudentOfNITS === false) {
       if (email.includes("nits.ac.in")) {
-        toast("Please enter your personal email ID");
+        toast.error("Please enter your personal email ID");
         return;
       }
     }
 
     if (isStudentOfNITS === false) {
       if (!email.includes("@")) {
-        toast("Please enter a valid email");
+        toast.error("Please enter a valid email");
         return;
       }
     }
@@ -270,7 +258,7 @@ const FormCard = () => {
         />
         <input
           type="text"
-          placeholder="Enter Email"
+          placeholder="Enter Personal Email"
           onChange={(e) =>
             setUser({
               name,

@@ -123,21 +123,6 @@ const IndividualEventReg = () => {
   const handleAssign = async (e) => {
     e.preventDefault();
 
-    if (
-      impData.portfolio &&
-      !particularEventDetails[0]?.portfolioPreference.includes(impData.portfolio)
-    ) {
-      toast.error("Portfolio not in the preference list");
-      return;
-    }
-
-    if (
-      impData.committee &&
-      !particularEventDetails[0]?.committeePreference.includes(impData.committee)
-    ) {
-      toast.error("committee not in the preference list");
-      return;
-    }
     setAssigning(true);
     try {
       await axios

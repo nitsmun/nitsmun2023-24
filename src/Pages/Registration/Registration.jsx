@@ -184,7 +184,6 @@ const Registration = () => {
     ]);
   }, [ibPortfolio, unhrcPortfolio, mahaPortfolio, ipcPortfolio]);
 
-  console.log(portfolioPreference);
   const handleSelect = (event) => {
     const { value } = event.target;
     if (ibPortfolio.length >= 3) {
@@ -221,7 +220,7 @@ const Registration = () => {
 
   const handleSelectUnhrc = (event) => {
     const { value } = event.target;
-    if (mahaPortfolio.length >= 3) {
+    if (unhrcPortfolio.length >= 3) {
       setUnhrcPortfolio((prevSelected) =>
         prevSelected.includes(value)
           ? prevSelected.filter((item) => item !== value)
@@ -238,7 +237,7 @@ const Registration = () => {
 
   const handleSelectMaha = (event) => {
     const { value } = event.target;
-    if (unhrcPortfolio.length >= 3) {
+    if (mahaPortfolio.length >= 3) {
       setMahaPortfolio((prevSelected) =>
         prevSelected.includes(value)
           ? prevSelected.filter((item) => item !== value)
@@ -443,7 +442,7 @@ const Registration = () => {
 
               <div className={styles.inputCont}>
                 <div className={styles.field}>
-                  <h2 className={styles.h2}>Preference 1: </h2>
+                  <h2 className={styles.h2}>Choice 1: </h2>
                   <label className="radioinpt">
                     <input
                       type="checkbox"
@@ -456,7 +455,7 @@ const Registration = () => {
                   </label>
                 </div>
                 <div className={styles.field}>
-                  <h2 className={styles.h2}>Preference 2: </h2>
+                  <h2 className={styles.h2}>Choice 2: </h2>
                   <label className="radioinpt">
                     <input
                       type="checkbox"
@@ -469,7 +468,7 @@ const Registration = () => {
                   </label>
                 </div>
                 <div className={styles.field}>
-                  <h2 className={styles.h2}>Preference 3: </h2>
+                  <h2 className={styles.h2}>Choice 3: </h2>
                   <label className="radioinpt">
                     <input
                       type="checkbox"
@@ -483,7 +482,7 @@ const Registration = () => {
                 </div>
 
                 <div className={styles.field}>
-                  <h2 className={styles.h2}>Preference 4: </h2>
+                  <h2 className={styles.h2}>Choice 4: </h2>
                   <label className="radioinpt">
                     <input
                       type="checkbox"
@@ -743,7 +742,7 @@ const Registration = () => {
                       <div className={styles.screenshot}>
                         <div>
                           Insert screenshot of the payment (size should be less than
-                          300KB) * :
+                          500KB) * :
                         </div>
                         <FileBase64
                           multiple={false}
@@ -754,7 +753,7 @@ const Registration = () => {
                                 file.type === "image/jpg" ||
                                 file.type === "image/webp" ||
                                 file.type === "image/avif") &&
-                              file.size <= 300 * 1024
+                              file.size <= 500 * 1024
                             ) {
                               handleImgChange(base64);
                             } else {
