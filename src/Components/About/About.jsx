@@ -25,15 +25,16 @@ const About = () => {
             <p className={styles.p}>
               NITSMUN aspires to involve youth in international dialogue, deliberate upon
               the dire issues of the world and shape them into strong individuals
-              who&apos;ll become the leaders of tomorrow.International Model United Nations
-              (IMUN) brings youth together from around the world to learn and share ideas
-              from a diverse set of experiences and backgrounds where the Executive board,
-              International Press and International Delegates consolidate to learn about
-              diplomacy, international relations, and the United Nations International Model
-              United Nations (IMUN) brings youth together from around the world to learn and
+              who&apos;ll become the leaders of tomorrow.International Model United
+              Nations (IMUN) brings youth together from around the world to learn and
               share ideas from a diverse set of experiences and backgrounds where the
               Executive board, International Press and International Delegates consolidate
               to learn about diplomacy, international relations, and the United Nations
+              International Model United Nations (IMUN) brings youth together from around
+              the world to learn and share ideas from a diverse set of experiences and
+              backgrounds where the Executive board, International Press and International
+              Delegates consolidate to learn about diplomacy, international relations, and
+              the United Nations
             </p>
           </div>
         </div>
@@ -48,9 +49,9 @@ const About = () => {
               alt="img"
             />
             <p className={styles.p}>
-              The National Institute of Technology Model United Nations Club aims to empower
-              students by providing a platform to enhance their understanding of global
-              affairs, diplomacy, and leadership. Through engaging conferences and
+              The National Institute of Technology Model United Nations Club aims to
+              empower students by providing a platform to enhance their understanding of
+              global affairs, diplomacy, and leadership. Through engaging conferences and
               activities, we foster critical thinking, public speaking, and teamwork,
               preparing members for active participation in international discourse and
               promoting a sense of global citizenship.
@@ -68,10 +69,10 @@ const About = () => {
               alt="img"
             />
             <p className={styles.p}>
-              NITSMUN, the National Institute of Technology Model United Nations Club, is a
-              dynamic platform cultivating future leaders. Committed to fostering diplomacy,
-              critical thinking, and public speaking, NITSMUN provides students with
-              opportunities to engage in enriching discussions, simulations, and
+              NITSMUN, the National Institute of Technology Model United Nations Club, is
+              a dynamic platform cultivating future leaders. Committed to fostering
+              diplomacy, critical thinking, and public speaking, NITSMUN provides students
+              with opportunities to engage in enriching discussions, simulations, and
               conferences, shaping informed and empowered individuals for active
               participation in international affairs.
             </p>

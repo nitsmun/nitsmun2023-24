@@ -1,0 +1,39 @@
+#img_hlder {
+  width: 40vw;
+  height: 40vw;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.topmar {
+  margin-top: 2.5vw;
+  margin-bottom: 2.5vw;
+}
+
+#margindedo {
+  margin: 2.5vw 0;
+}
+
+#fixheight {
+  min-height: 100vh;
+  padding: 0 2vw;
+}
+
+@media (max-width: 660px) {
+  #img_hlder {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .topmar {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+  }
+
+  #margindedo {
+    margin: 5vw 0;
+  }
+}

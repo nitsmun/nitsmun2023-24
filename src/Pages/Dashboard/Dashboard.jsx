@@ -1,12 +1,16 @@
+/* eslint-disable no-console */
 import React, { useState, useEffect, useContext, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
+import axios from "axios";
 import Cookies from "js-cookie";
 import { toast } from "sonner";
 import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
 import { UserContext } from "../../Context/ContextProv";
 import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
+import { fetchAllStudentRegistrations } from "../../ReactQuery/Fetchers/StudentRegisteredEvent";
+
 const WidePopup = (props) => {
   if (props.name === "events registered") {
     return (
@@ -62,8 +66,64 @@ const Card = (props) => {
   const handleSignout = (e) => {
     e.preventDefault();
     Cookies.remove("authToken");
-    window.location.reload();
     navigate("/");
+    window.location.reload();
+  };
+
+  const handleDashboard = (e) => {
+    e.preventDefault();
+    navigate("/dashboard");
+  };
+  const [sending, setSending] = useState(false);
+  const handleSendVerificationLink = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    try {
+      await axios
+        .post(
+          `${import.meta.env.VITE_REACT_APP_API}/sendlink`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${Cookies.get("authToken")}`,
+            },
+          }
+        )
+        .then((res) => {
+          if (res.data.message === "Verification link sent successfully") {
+            toast("Verification link sent successfully");
+          }
+        });
+    } catch (ee) {
+      if (ee.response) {
+        switch (ee.response.data.error) {
+          case "Server Error":
+            toast("Server Error");
+            break;
+          case "Unauthorized":
+            toast("Unauthorized");
+            break;
+          case "User not found":
+            toast("User not found");
+            break;
+          default:
+            toast("Something went wrong");
+            console.error(ee);
+            break;
+        }
+
+        switch (ee.response.data.message) {
+          case "Either token or tokenExpires at is missing":
+            toast("Either token or tokenExpires at is missing");
+            break;
+          default:
+            toast("Something went wrong");
+            break;
+        }
+      }
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -76,11 +136,7 @@ const Card = (props) => {
             <div className={styles.userDetails}>
               <div className={styles.person}>
                 <div className={styles.photoParent}>
-                  <img
-                    className={styles.img}
-                    alt="loading.."
-                    src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706367691/prof_rg9g0w.jpg"
-                  />
+                  <img className={styles.img} alt="loading.." src={props.photo} />
                 </div>
                 <div className={styles.bio}>
                   <div className={styles.field}>
@@ -171,15 +227,36 @@ const Card = (props) => {
         </div>
         <div className={styles.options}>
           <div className={styles.col}>
-            <button className={styles.btn}>
-              <div>
-                <img
-                  alt="icon loading..."
-                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706499/nitsmun/dashboard_yynv9s.svg"
-                />
-                <label htmlFor="dashboard">Dashboard</label>
-              </div>
-            </button>
+            {props?.isVerified ? (
+              <button
+                onClick={handleDashboard}
+                style={{ cursor: "pointer" }}
+                className={styles.btn}
+              >
+                <div>
+                  <img
+                    alt="icon loading..."
+                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706499/nitsmun/dashboard_yynv9s.svg"
+                  />
+                  <label style={{ cursor: "pointer" }} htmlFor="dashboard">
+                    Dashboard
+                  </label>
+                </div>
+              </button>
+            ) : (
+              <button
+                style={{
+                  cursor: sending ? "not-allowed" : "pointer",
+                  opacity: sending ? "0.5" : "1",
+                }}
+                disabled={sending}
+                className={styles.btn}
+                onClick={handleSendVerificationLink}
+              >
+                {sending ? "Sending..." : "Send Verification link"}
+              </button>
+            )}
+
             <button
               onClick={() =>
                 wideView("events registered", null, setOption, setChoice, option, choice)
@@ -191,7 +268,9 @@ const Card = (props) => {
                   alt="icon loading..."
                   src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg"
                 />
-                <label htmlFor="events registered">Events Registered</label>
+                <label style={{ cursor: "pointer" }} htmlFor="events registered">
+                  Events Registered
+                </label>
               </div>
             </button>
             <button
@@ -205,17 +284,21 @@ const Card = (props) => {
                   alt="icon loading..."
                   src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg"
                 />
-                <label htmlFor="upcoming events">Upcoming Events</label>
+                <label style={{ cursor: "pointer" }} htmlFor="upcoming events">
+                  Upcoming Events
+                </label>
               </div>
             </button>
           </div>
           <div className={styles.col}>
-            <Link to="/Dashboard/edit" className={styles.btn}>
+            <Link to="/dashboard/edit" className={styles.btn}>
               <img
                 alt="icon loading..."
                 src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706541/nitsmun/Vector_kntss1.svg"
               />
-              <label htmlFor="edit profile">Edit Profile</label>
+              <label style={{ cursor: "pointer" }} htmlFor="edit profile">
+                Edit Profile
+              </label>
             </Link>
             <button className={styles.btn} onClick={handleSignout}>
               <div>
@@ -223,7 +306,9 @@ const Card = (props) => {
                   alt="icon loading..."
                   src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706540/nitsmun/material-symbols_logout_wibfg1.svg"
                 />
-                <label htmlFor="logout">Log Out</label>
+                <label style={{ cursor: "pointer" }} htmlFor="logout">
+                  Log Out
+                </label>
               </div>
             </button>
             <button className={`${styles.btn}`}>
@@ -235,7 +320,10 @@ const Card = (props) => {
 
                 <label htmlFor="queries">
                   <h1 className={styles.queries}>For queries contact</h1>
-                  <h2 className={styles.queries}>12345-12345</h2>
+                  <a style={{ color: "#333333" }} href="tel:1234512345">
+                    {" "}
+                    <h2 className={styles.queries}>12345-12345</h2>
+                  </a>
                 </label>
               </div>
             </button>
@@ -252,19 +340,42 @@ const Dashboard = () => {
   useEffect(() => {
     setEvents(null);
     setEventsinfo(null);
+    document.title = "Dashboard | NITSMUN";
   }, []);
   const { role, isLoggedIn } = useContext(UserContext);
   const isTrue = useMemo(() => {
     return Boolean(role && isLoggedIn);
   }, [role, isLoggedIn]);
-  const { data, error, isLoading } = useQuery("profile", fetchProfile, {
+
+  const isStudentTrue = useMemo(() => {
+    return Boolean(role === "client" && isLoggedIn);
+  }, [role, isLoggedIn]);
+  const profileKey = useMemo(() => ["profile"], []);
+  const eventsKey = useMemo(() => ["studentEventRegs"], []);
+  const { data, error, isLoading } = useQuery(profileKey, fetchProfile, {
     enabled: isTrue,
   });
 
-  if (error) {
+  const {
+    data: eventsData,
+    error: eventsError,
+    isLoading: eventsLoading,
+  } = useQuery(eventsKey, fetchAllStudentRegistrations, {
+    enabled: isStudentTrue,
+  });
+  const allData = eventsData?.ypEvents;
+  const pendingStatusEvent = allData?.filter((item) => item.status === "pending");
+  const confirmedStatusEvent = allData?.filter((item) => item.status === "confirmed");
+  const declinedStatusEvent = allData?.filter((item) => item.status === "declined");
+  console.log(allData);
+  console.log(pendingStatusEvent);
+  console.log(confirmedStatusEvent);
+  console.log(declinedStatusEvent);
+
+  if (error || eventsError) {
     return <div>Something went wrong!</div>;
   }
-  if (isLoading) {
+  if (isLoading || eventsLoading) {
     return <div>Loading...</div>;
   }
   if (Cookies.get("authToken")) {
@@ -297,6 +408,8 @@ const Dashboard = () => {
               isStudentOfNITS={data?.isStudentOfNITS}
               events={events}
               eventsInfo={eventsInfo}
+              photo={data?.photo}
+              isVerified={data?.isVerified}
             />
           </div>
         </div>

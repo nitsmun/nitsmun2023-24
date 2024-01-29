@@ -1,11 +1,14 @@
 /* eslint-disable no-console */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import axios from "axios";
 import Navbar from "../../Components/Navbar/Navbar";
 import styles from "./SignUp.module.scss";
+import Footer from "../../Components/Footer/Footer";
+import { UserContext } from "../../Context/ContextProv";
 const FormCard = () => {
+  const [submitting, setSubmitting] = useState(false);
   const [user, setUser] = useState({
     // common inputs
     name: "",
@@ -22,6 +25,12 @@ const FormCard = () => {
     year: "",
   });
   const navigate = useNavigate();
+  const { isLoggedIn } = useContext(UserContext);
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    }
+  }, [navigate, isLoggedIn]);
   const {
     name,
     email,
@@ -35,9 +44,75 @@ const FormCard = () => {
     year,
   } = user;
 
+  const isButtonEnabled = useMemo(() => {
+    if (user.isStudentOfNITS) {
+      return Boolean(
+        user.name &&
+          user.email &&
+          user.phone &&
+          user.password &&
+          user.confirmPassword &&
+          user.scholarID &&
+          user.branch &&
+          user.instituteEmail &&
+          user.year
+      );
+    }
+    return Boolean(
+      user.name && user.email && user.phone && user.password && user.confirmPassword
+    );
+  }, [
+    user.name,
+    user.email,
+    user.phone,
+    user.password,
+    user.confirmPassword,
+    user.scholarID,
+    user.branch,
+    user.instituteEmail,
+    user.year,
+    user.isStudentOfNITS,
+  ]);
+
   const handleSub = async (e) => {
     e.preventDefault();
 
+    if (isStudentOfNITS === false) {
+      if (email.includes("nits.ac.in")) {
+        toast.error("Please enter your personal email ID");
+        return;
+      }
+    }
+
+    if (isStudentOfNITS === true) {
+      if (email.includes("nits.ac.in")) {
+        toast.error("You need to enter your personal email in the second input field");
+        return;
+      }
+    }
+
+    if (isStudentOfNITS === false) {
+      if (!email.includes("@")) {
+        toast.error("Please enter a valid email");
+        return;
+      }
+    }
+
+    if (password.length < 8) {
+      toast("Password must be atleast 8 characters long");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      toast("Passwords do not match");
+      return;
+    }
+
+    if (phone.length < 10) {
+      toast("Invalid phone number");
+      return;
+    }
+    setSubmitting(true);
     try {
       await axios
         .post(`${import.meta.env.VITE_REACT_APP_API}/signup`, {
@@ -70,11 +145,17 @@ const FormCard = () => {
           case "Please fill all required fields":
             toast("Please fill all required fields");
             break;
+          case "NITS Institute Email is required":
+            toast("NITS Institute Email is required");
+            break;
           case "Password should not be less than 8 characters":
             toast("Password should not be less than 8 characters");
             break;
           case "Passwords do not match":
             toast("Passwords do not match");
+            break;
+          case "not valid nits institute email":
+            toast("not valid nits institute email");
             break;
           case "Please fill all additional NITS related required fields":
             toast("Please fill all additional NITS related required fields");
@@ -97,6 +178,8 @@ const FormCard = () => {
             break;
         }
       }
+    } finally {
+      setSubmitting(false);
     }
   };
   useEffect(() => {
@@ -188,7 +271,7 @@ const FormCard = () => {
         />
         <input
           type="text"
-          placeholder="Enter Email"
+          placeholder="Enter Personal Email"
           onChange={(e) =>
             setUser({
               name,
@@ -361,13 +444,18 @@ const FormCard = () => {
         <div className={styles.subCont}>
           <input
             type="submit"
-            value="Sign Up"
+            value={submitting ? "Submitting..." : "Sign Up"}
+            disabled={!isButtonEnabled || submitting}
+            style={{
+              cursor: !isButtonEnabled || submitting ? "not-allowed" : "pointer",
+              opacity: submitting || !isButtonEnabled ? "0.5" : "1",
+            }}
             onClick={handleSub}
             className={styles.subBtn}
           />
           <h6 className={styles.signupQuestion}>
-            Already&apos; t signed up?{" "}
-            <Link to="/Login" className={styles.a}>
+            Already&apos;t have an account?{" "}
+            <Link to="/login" className={styles.a}>
               Log in Here
             </Link>
           </h6>
@@ -397,6 +485,7 @@ const Login = () => {
           <FormCard />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

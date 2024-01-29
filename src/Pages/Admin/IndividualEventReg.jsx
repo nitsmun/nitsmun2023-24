@@ -1,15 +1,17 @@
 /* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
-import React, { useMemo, useContext, useState } from "react";
+import React, { useMemo, useContext, useState, useEffect } from "react";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { toast } from "sonner";
 import { UserContext } from "../../Context/ContextProv";
 import { fetchAllRegistrationsInAnEvent } from "../../ReactQuery/Fetchers/Admin/GetRegisteredEvents";
+import styles from "./Styles.module.scss";
 
 const IndividualEventReg = () => {
+  const navigate = useNavigate();
   const { role, isLoggedIn } = useContext(UserContext);
   const { eventID } = useParams();
   const regID = eventID;
@@ -25,7 +27,6 @@ const IndividualEventReg = () => {
   });
   const events = data?.allSuchEvents;
   const particularEventDetails = events?.filter((item) => item?._id === eventID);
-  console.log(particularEventDetails);
 
   const token = Cookies.get("authToken");
   const tokenConfig = {
@@ -33,6 +34,10 @@ const IndividualEventReg = () => {
       Authorization: `Bearer ${token}`,
     },
   };
+
+  useEffect(() => {
+    document.title = `${particularEventDetails[0]?.email} | NITSMUN`;
+  }, [particularEventDetails]);
 
   // confirm registration
   const handleConfirm = async (e) => {
@@ -44,7 +49,7 @@ const IndividualEventReg = () => {
         .then((res) => {
           if (res.data.message === "Registration confirmed") {
             toast("Registration confirmed");
-            window.location.reload();
+            window.location.href = "/allreg";
           }
         });
     } catch (err) {
@@ -117,6 +122,7 @@ const IndividualEventReg = () => {
 
   const handleAssign = async (e) => {
     e.preventDefault();
+
     setAssigning(true);
     try {
       await axios
@@ -131,7 +137,8 @@ const IndividualEventReg = () => {
           } else if (res.data.message === "Committee already assigned") {
             toast("Committee already assigned");
           } else if (res.data.message === "Portfolio and committee updated") {
-            toast("Portfolio and committee updated");
+            toast("Portfolio, committee updated and email sent");
+            navigate("/allreg");
           }
         });
     } catch (ee) {
@@ -161,105 +168,151 @@ const IndividualEventReg = () => {
       setAssigning(false);
     }
   };
+
+  const isButtonActive = useMemo(() => {
+    return Boolean(impData.portfolio === "" || impData.committee === "");
+  }, [impData]);
+  // console.log(isButtonActive)
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error fetching data</div>;
 
+  if (!events) {
+    return <p>loading...</p>;
+  }
   return (
-    <>
-      <h1>{particularEventDetails?.name}</h1>
-      <h1>{particularEventDetails?.email}</h1>
-      <h1>{particularEventDetails?.college}</h1>
-      <h1>{particularEventDetails?.scholarid}</h1>
-      <h1>{particularEventDetails?.batch}</h1>
-      <div>
-        <img src={particularEventDetails?.payment} alt="" />
+    <main id={styles.fixheight}>
+      <h1>Name: {particularEventDetails[0]?.name}</h1>
+      <h1>Email: {particularEventDetails[0]?.email}</h1>
+      <h1>College: {particularEventDetails[0]?.college}</h1>
+      <h1>Phone: {particularEventDetails[0]?.phone}</h1>
+      {particularEventDetails[0]?.college === "NIT Silchar" && (
+        <main>
+          <h1>Scholar ID: {particularEventDetails[0]?.scholarid}</h1>
+          <h1>Batch: {particularEventDetails[0]?.batch}</h1>
+        </main>
+      )}
+
+      <div id={styles.img_hlder}>
+        <img src={particularEventDetails[0]?.payment} alt="" />
       </div>
-      <p>{particularEventDetails?.regsiteredat}</p>
-      <p>{particularEventDetails?.status}</p>
-      {particularEventDetails?.status === "pending" && (
-        <button
-          disabled={confirming}
-          style={{
-            cursor: confirming ? "not-allowed" : "cursor",
-            opacity: confirming ? "0.5" : "1",
-          }}
-          onClick={handleConfirm}
-        >
-          Confirm the registration
-        </button>
+      <h1>Registered at: {particularEventDetails[0]?.regsiteredat}</h1>
+      <h1>Status: {particularEventDetails[0]?.status}</h1>
+      <h1>Committee preference by the user: </h1>
+      {particularEventDetails[0]?.committeePreference && (
+        <ul>
+          <li>{particularEventDetails[0]?.committeePreference[0]}</li>
+          <li>{particularEventDetails[0]?.committeePreference[1]}</li>
+          <li>{particularEventDetails[0]?.committeePreference[2]}</li>
+        </ul>
       )}
 
-      {particularEventDetails?.status === "pending" && (
-        <button
-          disabled={declining}
-          style={{
-            cursor: declining ? "not-allowed" : "cursor",
-            opacity: declining ? "0.5" : "1",
-          }}
-          onClick={handleDecline}
-        >
-          Decline the registration
-        </button>
+      <h1>Portfolio preference by the user: </h1>
+      {particularEventDetails[0]?.portfolioPreference && (
+        <ul>
+          <li>{particularEventDetails[0]?.portfolioPreference[0]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[1]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[2]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[3]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[4]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[5]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[6]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[7]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[8]}</li>
+        </ul>
       )}
-
-      <p>
-        {particularEventDetails?.cofirmedRegistrationAt && (
-          <p>{particularEventDetails?.cofirmedRegistrationAt}</p>
+      <div>
+        {particularEventDetails[0]?.status === "pending" && (
+          <button
+            disabled={confirming}
+            style={{
+              cursor: confirming ? "not-allowed" : "pointer",
+              opacity: confirming ? "0.5" : "1",
+            }}
+            onClick={handleConfirm}
+          >
+            Confirm the registration
+          </button>
         )}
-      </p>
-      <p>{particularEventDetails?.assignedPortfolio}</p>
-      <p>{particularEventDetails?.assignedCommittee}</p>
+      </div>
 
-      {particularEventDetails?.status === "confirmed" &&
-        particularEventDetails?.assignedPortfolio === "" &&
-        particularEventDetails?.assignedCommittee === "" && (
-          <main>
-            <label htmlFor="portfolio">Assign Portfolio</label>
-            <input
-              type="text"
-              id="portfolio"
-              placeholder="enter assigned portfolio"
-              value={impData.portfolio}
-              onChange={(e) =>
-                setImpData({
-                  portfolio: e.target.value,
-                  committee: impData.committee,
-                })
-              }
-            />
+      <div className={styles.topmar}>
+        {particularEventDetails[0]?.status === "pending" && (
+          <button
+            disabled={declining}
+            style={{
+              cursor: declining ? "not-allowed" : "pointer",
+              opacity: declining ? "0.5" : "1",
+            }}
+            onClick={handleDecline}
+          >
+            Decline the registration
+          </button>
+        )}
+      </div>
 
-            <label htmlFor="committee">Assign Committee</label>
-            <input
-              type="text"
-              id="committee"
-              value={impData.committee}
-              onChange={(e) => {
-                setImpData({
-                  portfolio: impData.portfolio,
-                  committee: e.target.value,
-                });
-              }}
-            />
+      {particularEventDetails[0]?.cofirmedRegistrationAt && (
+        <h1>
+          cofirmedRegistrationAt: {particularEventDetails[0]?.cofirmedRegistrationAt}
+        </h1>
+      )}
+
+      {particularEventDetails[0]?.assignedPortfolio && (
+        <h1>assignedPortfolio: {particularEventDetails[0]?.assignedPortfolio}</h1>
+      )}
+
+      {particularEventDetails[0]?.assignedCommittee && (
+        <h1>assignedCommittee: {particularEventDetails[0]?.assignedCommittee}</h1>
+      )}
+
+      {particularEventDetails[0]?.status === "confirmed" &&
+        particularEventDetails[0]?.assignedPortfolio === "" &&
+        particularEventDetails[0]?.assignedCommittee === "" && (
+          <main id={styles.margindedo}>
+            <div>
+              <label htmlFor="portfolio">Assign Portfolio</label>
+              <input
+                type="text"
+                id="portfolio"
+                placeholder="enter assigned portfolio"
+                value={impData.portfolio}
+                onChange={(e) =>
+                  setImpData({
+                    portfolio: e.target.value,
+                    committee: impData.committee,
+                  })
+                }
+              />
+            </div>
+
+            <div>
+              <label htmlFor="committee">Assign Committee</label>
+              <input
+                type="text"
+                id="committee"
+                value={impData.committee}
+                placeholder="enter assigned Committee"
+                onChange={(e) => {
+                  setImpData({
+                    portfolio: impData.portfolio,
+                    committee: e.target.value,
+                  });
+                }}
+              />
+            </div>
 
             <button
-              disabled={assigning || impData.portfolio === "" || impData.committee === ""}
+              disabled={assigning || isButtonActive}
               style={{
-                cursor:
-                  assigning || impData.portfolio === "" || impData.committee === ""
-                    ? "not-allowed"
-                    : "cursor",
-                opacity:
-                  assigning || impData.portfolio === "" || impData.committee === ""
-                    ? "0.5"
-                    : "1",
+                cursor: assigning || isButtonActive ? "not-allowed" : "pointer",
+                opacity: assigning || isButtonActive ? "0.5" : "1",
               }}
               onClick={handleAssign}
             >
-              Assign
+              {assigning ? "Assigning..." : "Assign"}
             </button>
           </main>
         )}
-    </>
+    </main>
   );
 };
 

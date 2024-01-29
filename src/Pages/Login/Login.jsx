@@ -1,21 +1,41 @@
-import { useState } from "react";
+import { useState, useMemo, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { toast } from "sonner";
 import Navbar from "../../Components/Navbar/Navbar";
 import styles from "./Login.module.scss";
+import { UserContext } from "../../Context/ContextProv";
 
 const FormCard = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+  const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
-
+  const { isLoggedIn } = useContext(UserContext);
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    }
+  }, [navigate, isLoggedIn]);
   // const [mssg, setMssg] = useState("");
+  const isLoginEnabled = useMemo(() => {
+    return Boolean(user.email && user.password);
+  }, [user.email, user.password]);
   const handleSub = async (e) => {
     e.preventDefault();
+    if (!user.email.includes("@")) {
+      toast("Please enter a valid email");
+      return;
+    }
+
+    if (user.password.length < 8) {
+      toast("Password must be atleast 8 characters long");
+      return;
+    }
+    setSubmitting(true);
     try {
       await axios
         .post(`${import.meta.env.VITE_REACT_APP_API}/login`, {
@@ -55,6 +75,8 @@ const FormCard = () => {
             break;
         }
       }
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -69,7 +91,7 @@ const FormCard = () => {
       <form className={styles.form}>
         <input
           type="text"
-          placeholder="Enter Email"
+          placeholder="Enter Personal Email"
           className={styles.textBox}
           name="email"
           value={user.email}
@@ -91,13 +113,18 @@ const FormCard = () => {
         <div className={styles.subCont}>
           <input
             type="submit"
-            value="Log In"
+            value={submitting ? "Submitting..." : "Log In"}
             className={styles.subBtn}
+            disabled={!isLoginEnabled || submitting}
+            style={{
+              cursor: !isLoginEnabled || submitting ? "not-allowed" : "pointer",
+              opacity: submitting || !isLoginEnabled ? "0.5" : "1",
+            }}
             onClick={handleSub}
           />
           <h6 className={styles.signupQuestion}>
             Haven&apos; t signed up?{" "}
-            <Link to="/SignUp" className={styles.a}>
+            <Link to="/signup" className={styles.a}>
               Sign Up Here
             </Link>
           </h6>

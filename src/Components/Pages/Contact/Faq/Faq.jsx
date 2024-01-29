@@ -48,9 +48,15 @@ const Faq = (props) => {
   return (
     <div className={styles.mainCont}>
       <div className={styles.heading}>
-        <div className={styles.line} style={{ backgroundColor: `${props.color}` }}>.</div>
-        <h1 className={styles.text} style={{ color: `${props.color}` }}>FAQ</h1>
-        <div className={styles.line} style={{ backgroundColor: `${props.color}` }}>.</div>
+        <div className={styles.line} style={{ backgroundColor: `${props.color}` }}>
+          .
+        </div>
+        <h1 className={styles.text} style={{ color: `${props.color}` }}>
+          FAQ
+        </h1>
+        <div className={styles.line} style={{ backgroundColor: `${props.color}` }}>
+          .
+        </div>
       </div>
       <div className={styles.cardsCont}>
         <div className={styles.col}>

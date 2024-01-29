@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Home.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import Hero from "../../Components/Pages/Home/Hero/Hero";
@@ -15,7 +15,9 @@ const Home = () => {
     e.preventDefault();
     document.getElementById("letter").scrollIntoView(); // add id of below section
   };
-
+  useEffect(() => {
+    document.title = "NITSMUN";
+  }, []);
   return (
     <div className={styles.wrapper}>
       <div className={styles.wholeContainer}>
