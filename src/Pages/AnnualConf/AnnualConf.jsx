@@ -1,9 +1,9 @@
+import { toast } from "sonner";
+import { useState } from "react";
 import styles from "./AnnualConf.module.scss";
 import Faq from "../../Components/Pages/Contact/Faq/Faq";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import { toast } from "sonner";
-import { useState } from "react";
 
 const Hero = () => {
   return <div className={styles.hero}>.</div>;
@@ -21,11 +21,11 @@ const About = () => {
           `` After conducting numerous conferences, both online and offline, and hosting delegates from different schools and colleges from across the country, NITSMUN is all set for its conference scheduled to be held on the 12 and 13 March, 2024. Owing to the current situation, this conference will be conducted online, giving a chance to students from any nook and corner of the country or around the world to participate.
           We will be having three committees this year:
 
-          UNSC (United Nations Security Council), with the agenda “The Occupation of major water ways for strong military presence overseas and it's impact on overseas trade.”
+          UNSC (United Nations Security Council), with the agenda “The Occupation of major water ways for strong military presence overseas and it&apos;ls impact on overseas trade.”
 
           UNEP (United Nations Environment Programme), with the agenda “Eliminating the domestic and international trafficking and illegal trade of wildlife ”.
 
-          IPC (International Press Corps) which will allow participants to act as unbiased journalists, reporting on the proceedings of each simulation in the Conference. They will get a chance to investigate committee debates, conduct interviews, edit articles, and cover press conferences. "If you prefer writing over speaking, be a member of the International Press and keep a check on the delegates!"
+          IPC (International Press Corps) which will allow participants to act as unbiased journalists, reporting on the proceedings of each simulation in the Conference. They will get a chance to investigate committee debates, conduct interviews, edit articles, and cover press conferences. &quot;If you prefer writing over speaking, be a member of the International Press and keep a check on the delegates!&quot;
         </p>
         <p className={styles.para}>
           UNSC (United Nations Security Council), with the agenda “The Occupation of major
@@ -125,7 +125,7 @@ const AnnualConf = () => {
                   <h1 className={styles.h1}>Hastinapur Special Council</h1>
                   <p className={styles.p}>
                     <p className={styles.innerPara}>
-                      <b>Agenda:</b> Ethical Maze in Mahabharata: Unveiling the Intrigues of "Cheer Haran" and the Moral Labyrinth Faced by Characters.
+                      <b>Agenda:</b> Ethical Maze in Mahabharata: Unveiling the Intrigues of &quot;Cheer Haran&quot; and the Moral Labyrinth Faced by Characters.
                     </p>
                     {/* <p className={styles.innerPara}>
                       Ea nisi maiores et internos praesentium et ipsa omnis est maiores repudiandae eos aspernatur pariatur et libero illo? Vel quis aliQui delectus unde cum dolor aliquid eum deleniti dolore.
