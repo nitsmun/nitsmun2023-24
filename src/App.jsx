@@ -34,7 +34,7 @@ import Archive from "./Components/Archiv/Archive";
 import Apply from "./Components/ApplyNow/apply";
 import About from "./Components/About/About";
 import Error from "./Pages/Error/Error";
-
+import AnnualConf from "./Pages/AnnualConf/AnnualConf";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -48,6 +48,7 @@ const App = () => {
         <Route path="/photo" element={<Photo />} />
         <Route path="/wrapped" element={<Wrapped />} />
         <Route path="/mockmun24" element={<MockMun24 />} />
+        <Route path="/annualconf" element={<AnnualConf />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
