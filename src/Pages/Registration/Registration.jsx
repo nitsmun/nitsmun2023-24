@@ -45,7 +45,11 @@ const Registration = () => {
     if (!isStudentTrue) {
       navigate("/");
     }
-  }, [isStudentTrue, navigate]);
+    if (data?.isVerified === false) {
+      navigate("/dashboard");
+      toast.error("You need to verify your email first");
+    }
+  }, [isStudentTrue, navigate, data?.isVerified]);
 
   const eventName = "Annual Conference 2024";
 

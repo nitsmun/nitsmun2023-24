@@ -16,7 +16,7 @@ const Apply = () => {
     if (isLoggedIn === true) {
       navigate("/registration");
     } else {
-      navigate("/login");
+      navigate("/signup");
       toast.error("Please login or signup to register for the event");
     }
   };

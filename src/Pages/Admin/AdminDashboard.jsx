@@ -7,12 +7,13 @@ const AdminDashboard = () => {
   const { role } = useContext(UserContext);
   const navigate = useNavigate();
   useEffect(() => {
+    document.title = "Admin Dashboard | NITSMUN";
     if (role !== "admin") {
       navigate("/");
     }
   }, [navigate, role]);
 
-  const eventName = "yp";
+  // const eventName = "yp";
   return (
     <div className={styles.top}>
       <h1>Admin Dashboard</h1>
@@ -20,7 +21,7 @@ const AdminDashboard = () => {
         {" "}
         <Link to="/allreg">All registrations</Link>
       </div>
-      <div>
+      {/* <div>
         {" "}
         <Link to={`/reg/${eventName}/confirmed`}>Confirmed registrations</Link>
       </div>
@@ -30,7 +31,7 @@ const AdminDashboard = () => {
       <div>
         {" "}
         <Link to={`/reg/${eventName}/declined`}>Declined registrations</Link>
-      </div>
+      </div> */}
     </div>
   );
 };

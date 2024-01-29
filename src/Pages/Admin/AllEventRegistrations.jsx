@@ -1,9 +1,12 @@
 /* eslint-disable no-underscore-dangle */
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const AllEventRegistrations = () => {
-  const allEvents = ["conference2024", "youthParliament", "diplomat"];
+  useEffect(() => {
+    document.title = "All Event Registrations | NITSMUN";
+  }, []);
+  const allEvents = ["Annual Conference 2024"];
 
   return (
     <>
