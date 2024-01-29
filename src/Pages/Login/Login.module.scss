@@ -101,7 +101,7 @@
 
     .p {
       font-family: "inter", sans-serif;
-      font-weight: 100;
+      font-weight: 600;
       font-size: 0.75rem;
       text-align: center;
     }
@@ -190,5 +190,14 @@
 @media (max-width: 660px) {
   .signupQuestion {
     margin-top: 3vw !important;
+  }
+
+  .logoCont {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .h1 {
+    margin-top: 5vw;
   }
 }
