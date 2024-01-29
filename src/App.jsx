@@ -59,6 +59,7 @@ const App = () => {
         <Route path="/verifyemail/:token" element={<VerifyEmail />} />
         <Route path="/applynow" element={<Apply />} />
         <Route path="*" element={<Error />} />
+
         {/* Admin stuffs */}
         <Route exact path="/admin" element={<AdminDashboard />} />
         <Route exact path="/allreg" element={<AllEventRegistrations />} />
