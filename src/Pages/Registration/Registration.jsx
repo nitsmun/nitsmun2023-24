@@ -477,7 +477,7 @@ const Registration = () => {
                       checked={committeePreference.includes("Mahabharat")}
                       onChange={handleCommiteeSelection}
                     />
-                    Mahabharat
+                    Hastinapur Special Council
                   </label>
                 </div>
 

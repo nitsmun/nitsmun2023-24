@@ -256,8 +256,13 @@ const IndividualEventReg = () => {
         </h1>
       )}
 
-      <h1>assignedPortfolio: {particularEventDetails[0]?.assignedPortfolio}</h1>
-      <h1>assignedCommittee: {particularEventDetails[0]?.assignedCommittee}</h1>
+      {particularEventDetails[0]?.assignedPortfolio && (
+        <h1>assignedPortfolio: {particularEventDetails[0]?.assignedPortfolio}</h1>
+      )}
+
+      {particularEventDetails[0]?.assignedCommittee && (
+        <h1>assignedCommittee: {particularEventDetails[0]?.assignedCommittee}</h1>
+      )}
 
       {particularEventDetails[0]?.status === "confirmed" &&
         particularEventDetails[0]?.assignedPortfolio === "" &&
