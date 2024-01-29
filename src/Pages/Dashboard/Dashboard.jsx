@@ -10,6 +10,7 @@ import { UserContext } from "../../Context/ContextProv";
 import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import { fetchAllStudentRegistrations } from "../../ReactQuery/Fetchers/StudentRegisteredEvent";
+
 const WidePopup = (props) => {
   if (props.name === "events registered") {
     return (
@@ -339,6 +340,7 @@ const Dashboard = () => {
   useEffect(() => {
     setEvents(null);
     setEventsinfo(null);
+    document.title = "Dashboard | NITSMUN";
   }, []);
   const { role, isLoggedIn } = useContext(UserContext);
   const isTrue = useMemo(() => {

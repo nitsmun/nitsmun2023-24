@@ -37,16 +37,17 @@ const Registration = () => {
   const { data, error, isLoading } = useQuery(profileKey, fetchProfile, {
     enabled: isStudentTrue,
   });
-  console.log(data);
+
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Registration form | NITSMUN";
     if (!isStudentTrue) {
       navigate("/");
     }
   }, [isStudentTrue, navigate]);
 
-  const eventName = "annualConference2024";
+  const eventName = "Annual Conference 2024";
 
   const [payment, setPayment] = useState("");
   const [college, setCollege] = useState("");

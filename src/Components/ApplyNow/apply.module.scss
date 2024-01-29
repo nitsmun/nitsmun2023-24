@@ -59,6 +59,13 @@
   margin-top: 4vh;
   font-size: 1.22rem;
 }
+
+#regopen {
+  font-size: 1.2vw;
+  color: white;
+  text-align: center;
+}
+
 @media screen and (max-width: 1165px) {
   .applyPera .p {
     font-size: 2rem;
@@ -123,6 +130,11 @@
     height: 5.5vh;
     width: 20vw;
   }
+
+  #regopen {
+    margin-top: 8vw;
+    font-size: 4vw;
+  }
 }
 @media screen and (max-width: 600px) {
   .applyPera .p {
@@ -134,7 +146,7 @@
     font-size: 1.3rem;
   }
   .applyBtn .button {
-    height: 5.5vh;
-    width: 25vw;
+    height: 6vh;
+    width: 50vw;
   }
 }
