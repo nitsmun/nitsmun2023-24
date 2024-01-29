@@ -91,7 +91,7 @@ const FormCard = () => {
       <form className={styles.form}>
         <input
           type="text"
-          placeholder="Enter Email"
+          placeholder="Enter Personal Email"
           className={styles.textBox}
           name="email"
           value={user.email}

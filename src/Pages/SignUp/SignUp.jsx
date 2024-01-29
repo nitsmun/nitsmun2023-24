@@ -84,6 +84,13 @@ const FormCard = () => {
       }
     }
 
+    if (isStudentOfNITS === true) {
+      if (email.includes("nits.ac.in")) {
+        toast.error("You need to enter your personal email in the second input field");
+        return;
+      }
+    }
+
     if (isStudentOfNITS === false) {
       if (!email.includes("@")) {
         toast.error("Please enter a valid email");
@@ -138,11 +145,17 @@ const FormCard = () => {
           case "Please fill all required fields":
             toast("Please fill all required fields");
             break;
+          case "NITS Institute Email is required":
+            toast("NITS Institute Email is required");
+            break;
           case "Password should not be less than 8 characters":
             toast("Password should not be less than 8 characters");
             break;
           case "Passwords do not match":
             toast("Passwords do not match");
+            break;
+          case "not valid nits institute email":
+            toast("not valid nits institute email");
             break;
           case "Please fill all additional NITS related required fields":
             toast("Please fill all additional NITS related required fields");
