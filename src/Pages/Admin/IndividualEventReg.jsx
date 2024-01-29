@@ -195,7 +195,7 @@ const IndividualEventReg = () => {
     return <p>loading...</p>;
   }
   return (
-    <>
+    <main id={styles.fixheight}>
       <h1>Name: {particularEventDetails[0]?.name}</h1>
       <h1>Email: {particularEventDetails[0]?.email}</h1>
       <h1>College: {particularEventDetails[0]?.college}</h1>
@@ -227,6 +227,12 @@ const IndividualEventReg = () => {
           <li>{particularEventDetails[0]?.portfolioPreference[0]}</li>
           <li>{particularEventDetails[0]?.portfolioPreference[1]}</li>
           <li>{particularEventDetails[0]?.portfolioPreference[2]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[3]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[4]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[5]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[6]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[7]}</li>
+          <li>{particularEventDetails[0]?.portfolioPreference[8]}</li>
         </ul>
       )}
       <div>
@@ -316,7 +322,7 @@ const IndividualEventReg = () => {
             </button>
           </main>
         )}
-    </>
+    </main>
   );
 };
 

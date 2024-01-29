@@ -90,10 +90,10 @@ const OneEventRegistrations = () => {
               );
             })}
 
-        <h1>All registration who have allotted Committee 1: </h1>
+        <h1>All registration who have allotted IB: </h1>
         {particularEventRegistrations?.length > 0 &&
           particularEventRegistrations
-            ?.filter((item) => item?.assignedCommittee === "Committee 1")
+            ?.filter((item) => item?.assignedCommittee === "IB")
             ?.map((item, index) => {
               return (
                 <div key={item?._id}>
@@ -104,10 +104,10 @@ const OneEventRegistrations = () => {
                 </div>
               );
             })}
-        <h1>All registration who have allotted Committee 2: </h1>
+        <h1>All registration who have allotted IPC: </h1>
         {particularEventRegistrations?.length > 0 &&
           particularEventRegistrations
-            ?.filter((item) => item?.assignedCommittee === "Committee 2")
+            ?.filter((item) => item?.assignedCommittee === "IPC")
             ?.map((item, index) => {
               return (
                 <div key={item?._id}>
@@ -118,10 +118,10 @@ const OneEventRegistrations = () => {
                 </div>
               );
             })}
-        <h1>All registration who have allotted Committee 3: </h1>
+        <h1>All registration who have allotted UNHRC: </h1>
         {particularEventRegistrations?.length > 0 &&
           particularEventRegistrations
-            ?.filter((item) => item?.assignedCommittee === "Committee 3")
+            ?.filter((item) => item?.assignedCommittee === "UNHRC")
             ?.map((item, index) => {
               return (
                 <div key={item?._id}>
@@ -133,10 +133,10 @@ const OneEventRegistrations = () => {
               );
             })}
 
-        <h1>All registration who have allotted Committee 4: </h1>
+        <h1>All registration who have allotted Mahabharat: </h1>
         {particularEventRegistrations?.length > 0 &&
           particularEventRegistrations
-            ?.filter((item) => item?.assignedCommittee === "Committee 4")
+            ?.filter((item) => item?.assignedCommittee === "Mahabharat")
             ?.map((item, index) => {
               return (
                 <div key={item?._id}>

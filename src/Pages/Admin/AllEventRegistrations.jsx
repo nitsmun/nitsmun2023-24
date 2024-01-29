@@ -6,7 +6,7 @@ const AllEventRegistrations = () => {
   useEffect(() => {
     document.title = "All Event Registrations | NITSMUN";
   }, []);
-  const allEvents = ["Annual Conference 2024", "annualConference2024"];
+  const allEvents = ["Annual Conference 2024"];
 
   return (
     <>
