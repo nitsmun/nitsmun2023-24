@@ -49,7 +49,7 @@ const IndividualEventReg = () => {
         .then((res) => {
           if (res.data.message === "Registration confirmed") {
             toast("Registration confirmed");
-            window.location.reload();
+            window.location.href = "/allreg";
           }
         });
     } catch (err) {

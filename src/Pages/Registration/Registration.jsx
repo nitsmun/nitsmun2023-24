@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-console */
 import { useState, useMemo, useEffect, useContext } from "react";
 import FileBase64 from "react-file-base64";
@@ -10,6 +11,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import styles from "./Registration.module.scss";
 import { UserContext } from "../../Context/ContextProv";
 import { fetchProfile } from "../../ReactQuery/Fetchers/Profile";
+import Footer from "../../Components/Footer/Footer";
 
 const FieldName = (props) => {
   return (
@@ -69,14 +71,186 @@ const Registration = () => {
     }
   };
 
-  const handlePortfolioSelection = (event) => {
-    const { value, checked } = event.target;
+  const ibOptions = [
+    "Prime minister",
+    "Amit Shah",
+    "Director of IB",
+    "Director General, Central Reserve Police Force",
+    "Director General, Central Industrial Security Force",
+    "Director General, National Security Guard",
+    "Director General, National Investigation Agency",
+    "Secretary , RAW (Ravi Sinha, IPS)",
+    "DGP UP Police",
+    "ADGP UP Police",
+    "Cabinet Secretary (Rajiv Gauba, IAS)",
+    "Home Secretary (Ajay Kumar Bhalla, IAS)",
+    "Foreign secretary",
+    "Defence Secretary",
+    "National Security Advisor",
+    "National Cyber Security Coordinator",
+    "Chairman NTRO",
+    "Head of NIA",
+    "DNSA",
+    "Himanta Biswa Sarma",
+    "Pramod Sawant",
+    "Bhupendra Patel",
+    "Manik Saha",
+    "Pushkar Singh Dhami",
+    "Yogi Adityanath",
+  ];
 
-    if (checked) {
-      setPortfolioPreference((prevPOrt) => [...prevPOrt, value]);
-    } else {
-      setPortfolioPreference((prevPort) => prevPort.filter((port) => port !== value));
+  const unhrcOptions = [
+    "Afghanistan",
+    "Algeria",
+    "Argentina",
+    "Australia",
+    "Bangaldesh",
+    "Belgium",
+    "Bolivia",
+    "Brazil",
+    "Burkina Faso",
+    "Canada",
+    "Chile",
+    "China",
+    "Democratic Republic of Congo",
+    "Denmark",
+    "France",
+    "Germany",
+    "Greece",
+    "India",
+    "Iran",
+    "Iraq",
+    "Israel",
+    "Italy",
+    "Japan",
+    "Jordan",
+    "Kuwait",
+    "Libya",
+    "Malaysia",
+    "Mexico",
+    "Morocco",
+    "Netherlands",
+    "Nigeria",
+    "Pakistan",
+    "Palestine",
+    "Poland",
+    "Qatar",
+    "Russian Federation",
+    "Saudi Arabia",
+    "Senegal",
+    "South Africa",
+    "South Korea",
+    "Spain",
+    "Srilanka",
+    "Sudan",
+    "Switzerland",
+    "Turkey",
+    "Ukraine",
+    "United Arab Emirates",
+    "United Kingdom",
+    "United States Of America",
+    "Uruguay",
+    "Vietnam",
+  ];
+
+  const ipcOptions = [
+    "Al-Jazeera",
+    "Australian Broadcasting Corporation",
+    "BBC",
+    "DAWN",
+    "Reuters",
+    "The Guardian",
+    "The Hindu",
+    "The Independent",
+    "The Indian Express",
+    "The Spectator",
+    "The Washington Post",
+    "Xinhua News Agency",
+  ];
+
+  const mahaOptions = ["abc"];
+
+  const [ibPortfolio, setIbPortfolio] = useState([]);
+  const [unhrcPortfolio, setUnhrcPortfolio] = useState([]);
+  const [mahaPortfolio, setMahaPortfolio] = useState([]);
+  const [ipcPortfolio, setIpcPortfolio] = useState([]);
+
+  useEffect(() => {
+    setPortfolioPreference([
+      ...ibPortfolio,
+      ...unhrcPortfolio,
+      ...mahaPortfolio,
+      ...ipcPortfolio,
+    ]);
+  }, [ibPortfolio, unhrcPortfolio, mahaPortfolio, ipcPortfolio]);
+
+  console.log(portfolioPreference);
+  const handleSelect = (event) => {
+    const { value } = event.target;
+    if (ibPortfolio.length >= 3) {
+      setIbPortfolio((prevSelected) =>
+        prevSelected.includes(value)
+          ? prevSelected.filter((item) => item !== value)
+          : prevSelected
+      );
+      return;
     }
+    setIbPortfolio((prevSelected) =>
+      prevSelected.includes(value)
+        ? prevSelected.filter((item) => item !== value)
+        : [...prevSelected, value]
+    );
+  };
+
+  const handleSelectIpc = (event) => {
+    const { value } = event.target;
+    if (ipcPortfolio.length >= 3) {
+      setIpcPortfolio((prevSelected) =>
+        prevSelected.includes(value)
+          ? prevSelected.filter((item) => item !== value)
+          : prevSelected
+      );
+      return;
+    }
+    setIpcPortfolio((prevSelected) =>
+      prevSelected.includes(value)
+        ? prevSelected.filter((item) => item !== value)
+        : [...prevSelected, value]
+    );
+  };
+
+  const handleSelectUnhrc = (event) => {
+    const { value } = event.target;
+    if (mahaPortfolio.length >= 3) {
+      setUnhrcPortfolio((prevSelected) =>
+        prevSelected.includes(value)
+          ? prevSelected.filter((item) => item !== value)
+          : prevSelected
+      );
+      return;
+    }
+    setUnhrcPortfolio((prevSelected) =>
+      prevSelected.includes(value)
+        ? prevSelected.filter((item) => item !== value)
+        : [...prevSelected, value]
+    );
+  };
+
+  const handleSelectMaha = (event) => {
+    const { value } = event.target;
+    if (unhrcPortfolio.length >= 3) {
+      setMahaPortfolio((prevSelected) =>
+        prevSelected.includes(value)
+          ? prevSelected.filter((item) => item !== value)
+          : prevSelected
+      );
+      return;
+    }
+    setMahaPortfolio((prevSelected) =>
+      prevSelected.includes(value)
+        ? prevSelected.filter((item) => item !== value)
+        : [...prevSelected, value]
+    );
   };
 
   useEffect(() => {
@@ -85,8 +259,8 @@ const Registration = () => {
       setCommitteePreference([]);
     }
 
-    if (portfolioPreference?.length > 3) {
-      toast("Please select 1-3 portfolios");
+    if (portfolioPreference?.length > 9) {
+      toast("You can select maximum of 9 Portfolios");
       setPortfolioPreference([]);
     }
   }, [committeePreference, portfolioPreference]);
@@ -183,7 +357,7 @@ const Registration = () => {
         payment &&
           previousMunExperience &&
           portfolioPreference?.length > 1 &&
-          portfolioPreference?.length < 4 &&
+          portfolioPreference?.length < 10 &&
           committeePreference?.length > 1 &&
           committeePreference?.length < 4
       );
@@ -193,7 +367,7 @@ const Registration = () => {
         previousMunExperience &&
         college &&
         portfolioPreference?.length > 1 &&
-        portfolioPreference?.length < 4 &&
+        portfolioPreference?.length < 10 &&
         committeePreference?.length > 1 &&
         committeePreference?.length < 4
     );
@@ -220,7 +394,7 @@ const Registration = () => {
       <div className={styles.regCont}>
         <div className={styles.heading}>
           <div className={styles.textCont}>
-            <h1 className={styles.title}>Youth Parliament Online Registration Form</h1>
+            <h1 className={styles.title}>NITSMUN 2024 Online Registration Form</h1>
             <h4 className={styles.tagline}>
               Please fill in the form below. We&apos;ll contact you as soon as possible.
             </h4>
@@ -235,7 +409,7 @@ const Registration = () => {
         </div>
         <form className={styles.form}>
           <div className={`${styles.partitions} ${styles.prevExp}`}>
-            <FieldName compulsory name="Previous MUN experiences (if any)" />
+            <FieldName compulsory name="Previous MUN experiences" />
             <textarea
               value={previousMunExperience}
               onChange={(e) => {
@@ -264,15 +438,9 @@ const Registration = () => {
 
             <div className={styles.partitionChild}>
               <h6 className={styles.disclaimer}>
-                (Due to limited capacity, delegates are informed that the committee
-                preference are not always met and are not guaranteed.)
+                Chose any three committees in order of preference :
               </h6>
-              <ul className={styles.prefTags}>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-              </ul>
+
               <div className={styles.inputCont}>
                 <div className={styles.field}>
                   <h2 className={styles.h2}>Preference 1: </h2>
@@ -280,11 +448,11 @@ const Registration = () => {
                     <input
                       type="checkbox"
                       name="committee"
-                      value="Committee 1"
-                      checked={committeePreference.includes("Committee 1")}
+                      value="UNHRC"
+                      checked={committeePreference.includes("UNHRC")}
                       onChange={handleCommiteeSelection}
                     />
-                    Committee 1
+                    UNHRC
                   </label>
                 </div>
                 <div className={styles.field}>
@@ -293,11 +461,11 @@ const Registration = () => {
                     <input
                       type="checkbox"
                       name="committee"
-                      value="Committee 2"
-                      checked={committeePreference.includes("Committee 2")}
+                      value="IB"
+                      checked={committeePreference.includes("IB")}
                       onChange={handleCommiteeSelection}
                     />
-                    Committee 2
+                    IB
                   </label>
                 </div>
                 <div className={styles.field}>
@@ -306,11 +474,11 @@ const Registration = () => {
                     <input
                       type="checkbox"
                       name="committee"
-                      value="Committee 3"
-                      checked={committeePreference.includes("Committee 3")}
+                      value="Mahabharat"
+                      checked={committeePreference.includes("Mahabharat")}
                       onChange={handleCommiteeSelection}
                     />
-                    Committee 3
+                    Mahabharat
                   </label>
                 </div>
 
@@ -320,28 +488,19 @@ const Registration = () => {
                     <input
                       type="checkbox"
                       name="committee"
-                      value="Committee 4"
-                      checked={committeePreference.includes("Committee 4")}
+                      value="IPC"
+                      checked={committeePreference.includes("IPC")}
                       onChange={handleCommiteeSelection}
                     />
-                    Committee 4
+                    IPC
                   </label>
                 </div>
               </div>
 
               {/* Portfoilio preference */}
               <FieldName compulsory name="Portfolio Preferences" />
-              <h6 className={styles.disclaimer}>
-                (Due to limited capacity, delegates are informed that the committee
-                preference are not always met and are not guaranteed.)
-              </h6>
-              <ul className={styles.prefTags}>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-              </ul>
-              <div className={styles.inputCont}>
+
+              {/* <div className={styles.inputCont}>
                 <div className={styles.field}>
                   <h2 className={styles.h2}>Preference 1: </h2>
                   <label className="radioinpt">
@@ -395,38 +554,197 @@ const Registration = () => {
                     Portfolio 4
                   </label>
                 </div>
+              </div> */}
+
+              {/* IB PORTFOLIO */}
+              <div id={styles.flex}>
+                {committeePreference.includes("IB") && (
+                  <main id={styles.maxoptionwidth}>
+                    <p id={styles.portfoliotitle}>
+                      Portfolio list for{" "}
+                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span> :
+                      (you can select max 3 portfolios for each Committee){" "}
+                    </p>
+                    <select multiple onChange={handleSelect} value={ibPortfolio}>
+                      {ibOptions.map((option, index) => (
+                        <option key={index} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div>
+                      <h3>
+                        Selected Portfolios for{" "}
+                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span>:
+                      </h3>
+                      <ul>
+                        {ibPortfolio.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </main>
+                )}
+
+                {/* UNHRC PORTFOLIO */}
+                {committeePreference.includes("UNHRC") && (
+                  <main id={styles.maxoptionwidth}>
+                    <p>
+                      Portfolio list for{" "}
+                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>UNHRC</span>{" "}
+                      : (you can select max 3 portfolios for each Committee){" "}
+                    </p>
+                    <select multiple onChange={handleSelectUnhrc} value={unhrcPortfolio}>
+                      {unhrcOptions.map((option, index) => (
+                        <option key={index} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div>
+                      <h3>
+                        Selected Portfolios for{" "}
+                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>
+                          UNHRC
+                        </span>
+                        :
+                      </h3>
+                      <ul>
+                        {unhrcPortfolio.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </main>
+                )}
+
+                {/* IPC PORTFOLIO */}
+                {committeePreference.includes("IPC") && (
+                  <main id={styles.maxoptionwidth}>
+                    <p>
+                      Portfolio list for{" "}
+                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IPC</span> :
+                      (you can select max 3 portfolios for each Committee)
+                    </p>
+                    <select multiple onChange={handleSelectIpc} value={ipcPortfolio}>
+                      {ipcOptions.map((option, index) => (
+                        <option key={index} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div>
+                      <h3>
+                        Selected Portfolios for{" "}
+                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IPC</span>:
+                      </h3>
+                      <ul>
+                        {ipcPortfolio.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </main>
+                )}
+
+                {/* MAHABhARAT PORTFOLIO */}
+                {committeePreference.includes("Mahabharat") && (
+                  <main id={styles.maxoptionwidth}>
+                    <p>
+                      Portfolio list for{" "}
+                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>
+                        Mahabharat
+                      </span>{" "}
+                      : (you can select max 3 portfolios for each Committee)
+                    </p>
+                    <select multiple onChange={handleSelectMaha} value={mahaPortfolio}>
+                      {mahaOptions.map((option, index) => (
+                        <option key={index} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div>
+                      <h3>
+                        Selected Portfolios for{" "}
+                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>
+                          Mahabharat
+                        </span>{" "}
+                        :{" "}
+                      </h3>
+                      <ul>
+                        {mahaPortfolio.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </main>
+                )}
               </div>
 
               <div className={styles.payment}>
                 <FieldName compulsory name="Payment" />
                 <div className={styles.payCont}>
                   <p className={styles.p}>
-                    To participate in the NITS- MUN Youth Parliament 2023, a registration
+                    To participate in the NITSMUN Annual Conference 2024, a registration
                     fee of Rs 349 is needed to be paid by every delegate which will
-                    include Lorem ipsum dolor sit amet. A nisi nobis sed quia sapiente
+                    include
                   </p>
                   <div className={styles.payInfoMaster}>
                     <div className={styles.paymentInfoCont}>
                       <div className={styles.paymentInfo}>
                         <h1 className={styles.h1}>
                           <span className={`${styles.h1} ${styles.bolded}`}>
-                            UPI No.:
+                            Account Number:
                           </span>
-                          12345 12345
+                          3263 01 0000 4144
+                        </h1>
+
+                        <h1 className={styles.h1}>
+                          <span className={`${styles.h1} ${styles.bolded}`}>IFSC:</span>
+                          BARB0MENGRO
                         </h1>
                         <h1 className={styles.h1}>
                           <span className={`${styles.h1} ${styles.bolded}`}>UPI ID:</span>
-                          abcde-12345
+                          marufpadaya@barodampay , marufpadaya786@okaxis
                         </h1>
-                        <span
+                        {/* <span
                           className={`${styles.h1} ${styles.bolded}`}
                           style={{ color: "#000000" }}
                         >
                           Scan QR code to pay :
-                        </span>
+                        </span> */}
+                      </div>
+
+                      <div className={styles.paymentInfo}>
+                        <h1 className={styles.h1}>
+                          <span className={`${styles.h1} ${styles.bolded}`}>
+                            Account Holder&apos;s Name:
+                          </span>
+                          Maruf A Kadar Padaya
+                        </h1>
+
+                        <h1 className={styles.h1}>
+                          <span className={`${styles.h1} ${styles.bolded}`}>Or,</span>
+                          Scan the QR code given below :
+                        </h1>
+                      </div>
+
+                      <div id={styles.qrcodehldr}>
+                        <img
+                          src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706533667/WhatsApp_Image_2024-01-29_at_18.25.22_oaxkqa.jpg"
+                          alt=""
+                        />
                       </div>
                       <div className={styles.screenshot}>
-                        <div>Insert screenshot of the payment * :</div>
+                        <div>
+                          Insert screenshot of the payment (size should be less than
+                          300KB) * :
+                        </div>
                         <FileBase64
                           multiple={false}
                           onDone={({ base64, file }) => {
@@ -447,12 +765,12 @@ const Registration = () => {
                         />
                       </div>
                     </div>
-                    <div>
+                    {/* <div>
                       <img
                         alt="logo loading..."
                         src="https://res.cloudinary.com/dhry5xscm/image/upload/v1702679499/Rickrolling_QR_code_1_bic0zd.png"
                       />
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* submit button  */}
@@ -475,12 +793,18 @@ const Registration = () => {
             </div>
           </div>
           <div className={styles.contactInfoCont}>
-            <h2 className={styles.bolded}>For any queries contact:</h2>
-            <h2 className={styles.normal}>1. Lorem Ipsum dolor (69420-69420)</h2>
-            <h2 className={styles.normal}>2. Lorem Ipsum dolor (42069-420-69)</h2>
+            <h2 className={styles.bolded}>For any general queries contact:</h2>
+            <h2 className={styles.normal}>1. Ronak Jain (+91 84028 22820)</h2>
+            <h2 className={styles.normal}>2. Aditi (+91 84865 00973)</h2>
+          </div>
+          <div className={styles.contactInfoCont}>
+            <h2 className={styles.bolded}>For any form related queries contact:</h2>
+            <h2 className={styles.normal}>1. Aditya (+91 8210610167)</h2>
+            <h2 className={styles.normal}>2. Ankit (+91 9431875819)</h2>
           </div>
         </form>
       </div>
+      <Footer />
     </div>
   );
 };

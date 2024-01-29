@@ -90,6 +90,64 @@ const OneEventRegistrations = () => {
               );
             })}
 
+        <h1>All registration who have allotted Committee 1: </h1>
+        {particularEventRegistrations?.length > 0 &&
+          particularEventRegistrations
+            ?.filter((item) => item?.assignedCommittee === "Committee 1")
+            ?.map((item, index) => {
+              return (
+                <div key={item?._id}>
+                  <span>{index + 1}. </span>
+                  <Link to={`/eventreg/${item._id}`}>
+                    <span>{item?.email}</span>
+                  </Link>
+                </div>
+              );
+            })}
+        <h1>All registration who have allotted Committee 2: </h1>
+        {particularEventRegistrations?.length > 0 &&
+          particularEventRegistrations
+            ?.filter((item) => item?.assignedCommittee === "Committee 2")
+            ?.map((item, index) => {
+              return (
+                <div key={item?._id}>
+                  <span>{index + 1}. </span>
+                  <Link to={`/eventreg/${item._id}`}>
+                    <span>{item?.email}</span>
+                  </Link>
+                </div>
+              );
+            })}
+        <h1>All registration who have allotted Committee 3: </h1>
+        {particularEventRegistrations?.length > 0 &&
+          particularEventRegistrations
+            ?.filter((item) => item?.assignedCommittee === "Committee 3")
+            ?.map((item, index) => {
+              return (
+                <div key={item?._id}>
+                  <span>{index + 1}. </span>
+                  <Link to={`/eventreg/${item._id}`}>
+                    <span>{item?.email}</span>
+                  </Link>
+                </div>
+              );
+            })}
+
+        <h1>All registration who have allotted Committee 4: </h1>
+        {particularEventRegistrations?.length > 0 &&
+          particularEventRegistrations
+            ?.filter((item) => item?.assignedCommittee === "Committee 4")
+            ?.map((item, index) => {
+              return (
+                <div key={item?._id}>
+                  <span>{index + 1}. </span>
+                  <Link to={`/eventreg/${item._id}`}>
+                    <span>{item?.email}</span>
+                  </Link>
+                </div>
+              );
+            })}
+
         <div>
           <Link to="/admin">Go Back</Link>
         </div>
