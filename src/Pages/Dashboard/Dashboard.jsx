@@ -11,21 +11,55 @@ import styles from "./Dashboard.module.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import { fetchAllStudentRegistrations } from "../../ReactQuery/Fetchers/StudentRegisteredEvent";
 
+const wideView = (i, j, setoption, setchoice, Option, Choice) => {
+  if (Option === false) {
+    setoption(i);
+  } else {
+    setoption(false);
+  }
+  if (Choice) {
+    setchoice(j);
+  } else {
+    setchoice(null);
+  }
+};
+
 const WidePopup = (props) => {
+
   if (props.name === "events registered") {
     return (
       <div className={styles.widePop}>
-        {props.infos === null ? (
-          <h1>No events registered</h1>
-        ) : (
-          props.infos.map((item) => <li>{item}</li>)
-        )}
+        <div className={styles.exitCont}>
+          <button onClick={() => wideView("events registered", null, props.setOption, props.setChoice, props.option, props.choice)} className={styles.exit}>
+            <img
+              className={styles.cross}
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1695653265/nitsmun/xmark-solid_bd3own.svg"
+              alt="cross"
+            />
+          </button>
+        </div>
+        <div className={styles.innerCont}>
+          {props.infos === null ? (
+            <h1>No events registered</h1>
+          ) : (
+            props.infos.map((item) => <li>{item}</li>)
+          )}
+        </div>
       </div>
     );
   }
   if (props.name === "events information") {
     return (
       <div className={styles.widePop}>
+        <div className={styles.exitCont}>
+          <button onClick={() => wideView("events registered", null, props.setOption, props.setChoice, props.option, props.choice)} className={styles.exit}>
+            <img
+              className={styles.cross}
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1695653265/nitsmun/xmark-solid_bd3own.svg"
+              alt="cross"
+            />
+          </button>
+        </div>
         {props.infos === null ? (
           <h1>No upcoming events</h1>
         ) : (
@@ -41,18 +75,6 @@ const WidePopup = (props) => {
 const Card = (props) => {
   const [choice, setChoice] = useState(null);
   const [option, setOption] = useState(false);
-  const wideView = (i, j, setoption, setchoice, Option, Choice) => {
-    if (Option === false) {
-      setoption(i);
-    } else {
-      setoption(false);
-    }
-    if (Choice) {
-      setchoice(j);
-    } else {
-      setChoice(null);
-    }
-  };
   const { role } = useContext(UserContext);
   const navigate = useNavigate();
   useEffect(() => {
@@ -131,7 +153,7 @@ const Card = (props) => {
 
   return (
     <>
-      {option === false ? null : <WidePopup name={option} infos={choice} />}
+      {option === false ? null : <WidePopup name={option} infos={choice} option={option} choice={choice} setOption={setOption} setChoice={setChoice} />}
       <div className={styles.cardWrap}>
         {/* <h1 className={styles.h1}>USER DASHBOARD</h1> */}
         <div className={styles.details}>

@@ -394,11 +394,11 @@ const AnnualConf = () => {
               <h1 className={styles.h1}>EXECUTIVE BOARD</h1>
               <div className={styles.innerCont1}>
                 <div className={styles.imgParent}>
-                  <img
+                  {/* <img
                     src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706367691/prof_rg9g0w.jpg"
                     alt="loading..."
                     className={styles.img}
-                  />
+                  /> */}
                 </div>
                 <div className={styles.content}>
                   <div className={styles.innerParent}>
