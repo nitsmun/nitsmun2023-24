@@ -5,34 +5,34 @@ const Faq = (props) => {
     {
       sl: 1,
       question: `What is NITSMUN?`,
-      answer: `NITSMUN is a club in NIT Silchar, which from its inception has been trying to develop a culture of MUNs in the campus`,
+      answer: `NITSMUN is a club in NIT Silchar, which from its inception has been trying to develop a culture of MUNs in the campus.`,
     },
     {
       sl: 2,
       question: `What is Model United Nations?`,
-      answer: `Model United Nations is an academic simulation of the United Nations that aims to educate and encourage participants to discuss about major issues concerning the world`,
+      answer: `Model United Nations is an academic simulation of the United Nations that aims to educate and encourage participants to discuss about major issues concerning the world.`,
     },
     {
       sl: 3,
       question: `When does NITSMUN organises conferences?`,
-      answer: `The annual conference will be held during the time of incandescence`,
+      answer: `The annual conference will be held during the time of Incandescence`,
     },
     {
       sl: 4,
       question: `What is coming up next?`,
-      answer: `The annual conference of NITSMUN`,
+      answer: `The annual conference of NITSMUN and Mr and Mrs Diplomat.`,
     },
   ];
   const data2 = [
     {
       sl: 1,
-      question: `Are outside people allowed in NITSMUN conference?`,
-      answer: `Eligible students will be able to participate with a nominal fee`,
+      question: `Can individuals not belonging to NITS participate in the conference?`,
+      answer: `Yes, the conference is open to everyone, irrespective of their institute.  `,
     },
     {
       sl: 2,
-      question: `Who can participate in NITSMUN 2024 ?`,
-      answer: `Individual participation from Engineering students, MBA students and Undergraduates are allowed`,
+      question: `Who can participate in the NITSMUN Annual Conference 2024?`,
+      answer: `Anyone from any institute with an interest in MUNs can take part`,
     },
     {
       sl: 3,
@@ -41,8 +41,8 @@ const Faq = (props) => {
     },
     {
       sl: 4,
-      question: `What is the dress code for NITSMUN 2024?`,
-      answer: `Western Formals`,
+      question: `What will be the dress code for the annual conference?`,
+      answer: ` Information regarding the dress code will be shared prior to the conference.`,
     },
   ];
   return (
