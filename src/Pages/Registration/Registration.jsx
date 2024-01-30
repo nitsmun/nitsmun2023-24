@@ -68,6 +68,15 @@ const Registration = () => {
       setCommitteePreference((prevCOmt) => [...prevCOmt, value]);
     } else {
       setCommitteePreference((prevComt) => prevComt.filter((comt) => comt !== value));
+      if (value === "IB") {
+        setIbPortfolio([]);
+      } else if (value === "UNHRC") {
+        setUnhrcPortfolio([]);
+      } else if (value === "IPC") {
+        setIpcPortfolio([]);
+      } else if (value === "Mahabharat") {
+        setMahaPortfolio([]);
+      }
     }
   };
 
@@ -311,11 +320,20 @@ const Registration = () => {
     if (committeePreference?.length > 3) {
       toast("Please select 1-3 committees");
       setCommitteePreference([]);
+      setIbPortfolio([]);
+      setUnhrcPortfolio([]);
+      setIpcPortfolio([]);
+      setMahaPortfolio([]);
+      setPortfolioPreference([]);
     }
 
     if (portfolioPreference?.length > 9) {
       toast("You can select maximum of 9 Portfolios");
       setPortfolioPreference([]);
+      setIbPortfolio([]);
+      setUnhrcPortfolio([]);
+      setIpcPortfolio([]);
+      setMahaPortfolio([]);
     }
   }, [committeePreference, portfolioPreference]);
 
@@ -350,7 +368,7 @@ const Registration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-
+    // console.log(payload)
     try {
       await axios
         .post(`${import.meta.env.VITE_REACT_APP_API}/reg/yp`, payload, {
@@ -410,20 +428,16 @@ const Registration = () => {
       return Boolean(
         payment &&
           previousMunExperience &&
-          portfolioPreference?.length > 1 &&
-          portfolioPreference?.length < 10 &&
-          committeePreference?.length > 1 &&
-          committeePreference?.length < 4
+          portfolioPreference?.length > 0 &&
+          committeePreference?.length > 0
       );
     }
     return Boolean(
       payment &&
         previousMunExperience &&
         college &&
-        portfolioPreference?.length > 1 &&
-        portfolioPreference?.length < 10 &&
-        committeePreference?.length > 1 &&
-        committeePreference?.length < 4
+        portfolioPreference?.length > 0 &&
+        committeePreference?.length > 0
     );
   }, [
     payment,
@@ -440,7 +454,8 @@ const Registration = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
+  // console.log(committeePreference)
+  // console.log(portfolioPreference)
   return (
     <div>
       <Navbar page="REGISTRATION" />
