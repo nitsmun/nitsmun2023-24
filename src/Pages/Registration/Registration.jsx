@@ -59,6 +59,7 @@ const Registration = () => {
 
   const [payment, setPayment] = useState("");
   const [college, setCollege] = useState("");
+  const [accomodation, setAccomodation] = useState("");
   const [previousMunExperience, setPreviousMunExperience] = useState("");
   const [committeePreference, setCommitteePreference] = useState([]);
   const [portfolioPreference, setPortfolioPreference] = useState([]);
@@ -358,6 +359,7 @@ const Registration = () => {
     committeePreference,
     portfolioPreference,
     college,
+    accomodation,
   };
 
   const payload =
@@ -439,7 +441,8 @@ const Registration = () => {
         previousMunExperience &&
         college &&
         portfolioPreference?.length > 0 &&
-        committeePreference?.length > 0
+        committeePreference?.length > 0 &&
+        accomodation
     );
   }, [
     payment,
@@ -448,6 +451,7 @@ const Registration = () => {
     portfolioPreference,
     committeePreference,
     data?.isStudentOfNITS,
+    accomodation,
   ]);
 
   if (error) {
@@ -458,6 +462,7 @@ const Registration = () => {
   }
   // console.log(committeePreference)
   // console.log(portfolioPreference)
+  // console.log(accomodation)
   return (
     <div>
       <Navbar page="REGISTRATION" />
@@ -921,6 +926,7 @@ const Registration = () => {
                         />
                       </div>
                     </div>
+
                     {/* <div>
                       <img
                         alt="logo loading..."
@@ -928,6 +934,50 @@ const Registration = () => {
                       />
                     </div> */}
                   </div>
+
+                  {data?.isStudentOfNITS === false && (
+                    <>
+                      <FieldName
+                        compulsory
+                        name="Do you want to avail the accomodation facility?"
+                      />
+                      <h6>
+                        Note: There will be separate charges for availing the accomodation
+                        facility.
+                      </h6>
+                      <main id={styles.extramarginaccom}>
+                        <div>
+                          <label className="radioinpt">
+                            <input
+                              type="radio"
+                              name="accomodation"
+                              value="Yes"
+                              checked={accomodation === "Yes"}
+                              onChange={(event) => {
+                                setAccomodation(event.target.value);
+                              }}
+                            />
+                            Yes
+                          </label>
+                        </div>
+
+                        <div>
+                          <label className="radioinpt">
+                            <input
+                              type="radio"
+                              name="accomodation"
+                              value="No"
+                              checked={accomodation === "No"}
+                              onChange={(event) => {
+                                setAccomodation(event.target.value);
+                              }}
+                            />
+                            No
+                          </label>
+                        </div>
+                      </main>
+                    </>
+                  )}
 
                   {/* submit button  */}
                   <div className={styles.subCont}>
