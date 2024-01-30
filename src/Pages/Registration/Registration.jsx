@@ -634,7 +634,12 @@ const Registration = () => {
                       <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span> :
                       (you can select max 3 portfolios for each Committee){" "}
                     </p>
-                    <select multiple onChange={handleSelect} value={ibPortfolio}>
+                    <select
+                      multiple
+                      onChange={handleSelect}
+                      value={ibPortfolio}
+                      size={ibOptions.length}
+                    >
                       {ibOptions.map((option, index) => (
                         <option key={index} value={option}>
                           {option}
@@ -664,7 +669,12 @@ const Registration = () => {
                       <span style={{ fontWeight: 900, fontFamily: "Inter" }}>UNHRC</span>{" "}
                       : (you can select max 3 portfolios for each Committee){" "}
                     </p>
-                    <select multiple onChange={handleSelectUnhrc} value={unhrcPortfolio}>
+                    <select
+                      multiple
+                      onChange={handleSelectUnhrc}
+                      value={unhrcPortfolio}
+                      size={unhrcOptions.length}
+                    >
                       {unhrcOptions.map((option, index) => (
                         <option key={index} value={option}>
                           {option}
@@ -697,7 +707,12 @@ const Registration = () => {
                       <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IPC</span> :
                       (you can select max 3 portfolios for each Committee)
                     </p>
-                    <select multiple onChange={handleSelectIpc} value={ipcPortfolio}>
+                    <select
+                      multiple
+                      onChange={handleSelectIpc}
+                      value={ipcPortfolio}
+                      size={ipcOptions.length}
+                    >
                       {ipcOptions.map((option, index) => (
                         <option key={index} value={option}>
                           {option}
@@ -729,7 +744,12 @@ const Registration = () => {
                       </span>{" "}
                       : (you can select max 3 portfolios for each Committee)
                     </p>
-                    <select multiple onChange={handleSelectMaha} value={mahaPortfolio}>
+                    <select
+                      multiple
+                      onChange={handleSelectMaha}
+                      value={mahaPortfolio}
+                      size={mahaOptions.length}
+                    >
                       {mahaOptions.map((option, index) => (
                         <option key={index} value={option}>
                           {option}
