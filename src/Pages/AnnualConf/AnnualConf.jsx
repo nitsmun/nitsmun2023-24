@@ -1,12 +1,21 @@
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { useState } from "react";
 import styles from "./AnnualConf.module.scss";
 import Faq from "../../Components/Pages/Contact/Faq/Faq";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
+import { UserContext } from "../../Context/ContextProv";
 
 const Hero = () => {
-  return <div className={styles.hero}>.</div>;
+  return (
+    <div className={styles.hero}>
+      <img
+        src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706616784/off_poster_f8mjht.webp"
+        alt=""
+      />
+    </div>
+  );
 };
 
 const About = () => {
@@ -18,32 +27,70 @@ const About = () => {
       </div>
       <div className={styles.paraCont}>
         <p className={styles.para}>
-          `` After conducting numerous conferences, both online and offline, and hosting delegates from different schools and colleges from across the country, NITSMUN is all set for its conference scheduled to be held on the 12 and 13 March, 2024. Owing to the current situation, this conference will be conducted online, giving a chance to students from any nook and corner of the country or around the world to participate.
-          We will be having three committees this year:
+          Step into a world where ideas dance, perspectives collide, and innovation takes
+          center stage! We&apos;re thrilled to unveil the theme of our upcoming
+          conference: &apos;Hues of Harmony&apos;! Picture this as a vibrant canvas of
+          ideas, perspectives, and talents colliding to create something extraordinary.
+          It&apos;s like a lively painting where each color plays a crucial role. This
+          isn&apos;t your typical conference, it&apos;s a fusion of minds, a celebration
+          of diversity, and a journey into the art of collaboration. We&apos;re not just
+          talking about it, we&apos;re living it! Join us for an adventure where every
+          voice counts, connections spark, and brilliance shines. Are you ready to become
+          a part of it?
+          <br />
+          <br />
+          Step into the realm of strategy and security with the{" "}
+          <span id={styles.specialbold}>Intelligence Bureau</span> (IB) Committee at
+          NITSMUN Annual Conference 2024! Join us on a journey to analyze, plan, and
+          safeguard important events, all in the mission to protect the country and its
+          integrity. Your voice matters in addressing concerns and playing a pivotal role
+          in ensuring security. Join the conference to contribute your perspective to the
+          strategic discussions.
+          <br />
+          <br />
+          The{" "}
+          <span id={styles.specialbold}>
+            &quot;Special Council of Hastinapur&quot; (Mahabharat){" "}
+          </span>{" "}
+          committee is designed to simulate pivotal diplomatic events from the Mahabharat,
+          offering delegates a platform to navigate intricate political landscapes, forge
+          alliances, and strategize for the kingdom of Hastinapur. Prepare for intense
+          debates, historical intricacies, and an immersive diplomatic experience. Secure
+          your spot, and let&apos;s write history together!
+          <br />
+          <br />
+          The{" "}
+          <span id={styles.specialbold}>
+            United Nations Human Rights Council (UNHRC)&quot;
+          </span>
+          &quot; committee is a cornerstone of intellectual discourse in the vibrant
+          tapestry of Incandescence! This committee is crafted to emulate the dynamic
+          realm of international diplomacy, where delegates will grapple with pressing
+          human rights issues, engage in diplomatic maneuvers, and work towards
+          collaborative solutions. Get ready for impassioned debates, diplomatic
+          intricacies, and a profound exploration of global affairs. Embrace the
+          opportunity to be a part of this consequential council, where your voice shapes
+          the discourse on human rights. Secure your spot, and let the spirit of diplomacy
+          illuminate the path to constructive resolutions. Together, let&apos;s embark on
+          a journey to make a lasting impact on the world stage!
+          <br />
+          <br />
+          The <span id={styles.specialbold}>International Press Corps(IPC)</span> is a
+          committee where people who love writing, taking pictures, and fair journalism
+          come together. Each journalist is teamed up with a famous news agency and given
+          the job of watching and reporting on debates in other committees. They have to
+          capture interesting moments and send reports every day. And you know what&apos;s
+          cool? It&apos;s not just serious stuff; there&apos;s a lot of fun too! Imagine
+          enjoying the lively discussions on the house floor – journalism with a dose of
+          fun!
+        </p>
+      </div>
 
-          UNSC (United Nations Security Council), with the agenda “The Occupation of major water ways for strong military presence overseas and it&apos;ls impact on overseas trade.”
-
-          UNEP (United Nations Environment Programme), with the agenda “Eliminating the domestic and international trafficking and illegal trade of wildlife ”.
-
-          IPC (International Press Corps) which will allow participants to act as unbiased journalists, reporting on the proceedings of each simulation in the Conference. They will get a chance to investigate committee debates, conduct interviews, edit articles, and cover press conferences. &quot;If you prefer writing over speaking, be a member of the International Press and keep a check on the delegates!&quot;
-        </p>
-        <p className={styles.para}>
-          UNSC (United Nations Security Council), with the agenda “The Occupation of major
-          water ways for strong military presence overseas and it&pos;s impact on overseas
-          trade.”
-        </p>
-        <p className={styles.para}>
-          UNEP (United Nations Environment Programme), with the agenda “Eliminating the
-          domestic and international trafficking and illegal trade of wildlife ”.
-        </p>
-        <p className={styles.para}>
-          IPC (International Press Corps) which will allow participants to act as unbiased
-          journalists, reporting on the proceedings of each simulation in the Conference.
-          They will get a chance to investigate committee debates, conduct interviews,
-          edit articles, and cover press conferences. &quot;If you prefer writing over
-          speaking, be a member of the International Press and keep a check on the
-          delegates!&quot;
-        </p>
+      <div id={styles.posterconfoff}>
+        <img
+          src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706614577/hues_of_harmony_copy_lp7kcl.webp"
+          alt=""
+        />
       </div>
     </div>
   );
@@ -72,39 +119,75 @@ const Glimpses = () => {
 
 const AnnualConf = () => {
   const [wideview, setWideview] = useState(false);
-  const [wide, setWide] = useState({ title: "", agenda: "", banner: "", desc: "", bg: "", register: "" });
+  const [wide, setWide] = useState({
+    title: "",
+    agenda: "",
+    banner: "",
+    desc: "",
+    bg: "",
+    register: "",
+  });
   const moreDetails = (Title, Agenda, Banner, Desc) => {
     setWideview((prev) => !prev);
-    setWide(
-      {
-        title: Title, agenda: Agenda, banner: Banner, desc: Desc, bg: "", register: ""
-      }
-    );
-  }
+    setWide({
+      title: Title,
+      agenda: Agenda,
+      banner: Banner,
+      desc: Desc,
+      bg: "",
+      register: "",
+    });
+  };
   const wideClick = () => {
     setWideview(false);
-  }
+  };
+
+  const navigate = useNavigate();
+  const { isLoggedIn } = useContext(UserContext);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    if (isLoggedIn === true) {
+      navigate("/registration");
+    } else {
+      navigate("/signup");
+      toast.error("Please login or signup to register for the event");
+    }
+  };
   return (
     <>
-      {wideview &&
+      {wideview && (
         <div className={styles.wideview}>
           <div className={styles.wideCard}>
-            <div className={styles.exitCont}><button onClick={wideClick} className={styles.exit}><img className={styles.cross} src="https://res.cloudinary.com/dhry5xscm/image/upload/v1695653265/nitsmun/xmark-solid_bd3own.svg" alt="cross" /></button></div>
+            <div className={styles.exitCont}>
+              <button onClick={wideClick} className={styles.exit}>
+                <img
+                  className={styles.cross}
+                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1695653265/nitsmun/xmark-solid_bd3own.svg"
+                  alt="cross"
+                />
+              </button>
+            </div>
             <h1 className={styles.h1}>{wide.title}</h1>
-            <h2 className={styles.h2}><b>Agenda: </b>{wide.agenda}</h2>
+            <h2 className={styles.h2}>
+              <b>Agenda: </b>
+              {wide.agenda}
+            </h2>
             <img src={wide.banner} alt="loading.." className={styles.bannerImg} />
             <p className={styles.desc}>{wide.desc}</p>
             <div className={styles.infoBtnContPopup}>
-              <button className={styles.infoBtnPopup} onClick={() => toast("Link has not been activated yet!")}>
+              <button className={styles.infoBtnPopup} onClick={handleRegister}>
                 Register Now
               </button>
-              <button className={styles.infoBtnPopup} onClick={() => toast("Link has not been activated yet!")} >
+              <button
+                className={styles.infoBtnPopup}
+                onClick={() => toast("Link has not been activated yet!")}
+              >
                 Background Guide
               </button>
             </div>
           </div>
         </div>
-      }
+      )}
       <div className={styles.MockMunPage}>
         <Navbar page="MOCKMUN24" />
         <div className={styles.innerChild}>
@@ -116,8 +199,8 @@ const AnnualConf = () => {
               <div className={styles.innerCont1}>
                 <div className={styles.imgParent}>
                   <img
-                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp"
-                    alt="loading..."
+                    src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/hastinapur_x7vijo.jpg"
+                    alt=""
                     className={styles.img}
                   />
                 </div>
@@ -125,33 +208,47 @@ const AnnualConf = () => {
                   <h1 className={styles.h1}>Hastinapur Special Council</h1>
                   <p className={styles.p}>
                     <p className={styles.innerPara}>
-                      <b>Agenda:</b> Ethical Maze in Mahabharata: Unveiling the Intrigues of &quot;Cheer Haran&quot; and the Moral Labyrinth Faced by Characters.
+                      <b>Agenda:</b> Ethical Maze in Mahabharata: Unveiling the Intrigues
+                      of &quot;Cheer Haran&quot; and the Moral Labyrinth Faced by
+                      Characters.
                     </p>
                     {/* <p className={styles.innerPara}>
                       Ea nisi maiores et internos praesentium et ipsa omnis est maiores repudiandae eos aspernatur pariatur et libero illo? Vel quis aliQui delectus unde cum dolor aliquid eum deleniti dolore.
                     </p> */}
                   </p>
                   <div className={styles.infoBtnCont}>
-                    <button className={styles.infoBtn} onClick={() => toast("Link has not been activated yet!")}>
+                    <button className={styles.infoBtn} onClick={handleRegister}>
                       Register Now
                     </button>
-                    <button className={styles.infoBtn} onClick={() => toast("Link has not been activated yet!")} >
+                    <button
+                      className={styles.infoBtn}
+                      onClick={() => toast("Link has not been activated yet!")}
+                    >
                       Background Guide
                     </button>
-                    <button className={styles.detailsBtn} onClick={() => moreDetails("Hastinapur Special Council", "Ethical Maze in Mahabharata: Unveiling the Intrigues of 'Cheer Haran' and the Moral Labyrinth Faced by Characters.", "https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp", "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin. Richard McClintock, a Latin scholar from Hampden-Sydney College, is  overing the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his interest was piqued by consectetur—a genuine, albeit rare, Latin word. Consulting a Latin dictionary led McClintock to a passage from De Finibus Bonorum et Malorum (“On the Extremes of Good and Evil”), a first-century B.C. text from the Roman philosopher Cicero.")}>
+                    <button
+                      className={styles.detailsBtn}
+                      onClick={() =>
+                        moreDetails(
+                          "Hastinapur Special Council",
+                          "Ethical Maze in Mahabharata: Unveiling the Intrigues of 'Cheer Haran' and the Moral Labyrinth Faced by Characters.",
+                          "https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/hastinapur_x7vijo.jpg",
+                          "Welcome to the 'Special Council of Hastinapur' at NITSMUN! This committee is designed to simulate pivotal diplomatic events from the Mahabharat, offering delegates a platform to navigate intricate political landscapes, forge alliances, and strategize for the kingdom of Hastinapur. Prepare for intense debates, historical intricacies, and an immersive diplomatic experience. Secure your spot, and let's write history together!"
+                        )
+                      }
+                    >
                       Read More
                     </button>
                   </div>
                 </div>
               </div>
-
             </div>
             <div className={styles.mainHeading}>
               <div className={styles.innerCont2}>
                 <div className={styles.imgParent}>
                   <img
-                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp"
-                    alt="loading..."
+                    src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/unhrc_24_qvqtzx.jpg"
+                    alt=""
                     className={styles.img}
                   />
                 </div>
@@ -159,22 +256,34 @@ const AnnualConf = () => {
                   <h1 className={styles.h1}>UNHRC</h1>
                   <p className={styles.p}>
                     <p className={styles.innerPara}>
-                      <b>Agenda:</b> Addressing the Ongoing Atrocities in Israel-Palestine with Main Focus On Violence Against Women and childern
-
+                      <b>Agenda:</b> Addressing the Ongoing Atrocities in Israel-Palestine
+                      with Main Focus On Violence Against Women and childern
                     </p>
                     {/* <p className={styles.innerPara}>
                       Ea nisi maiores et internos praesentium et ipsa omnis est maiores repudiandae eos aspernatur pariatur et libero illo? Vel quis aliQui delectus unde cum dolor aliquid eum deleniti dolore. .
                     </p> */}
-
                   </p>
                   <div className={styles.infoBtnCont}>
-                    <button className={styles.infoBtn} onClick={() => toast("Link has not been activated yet!")}>
+                    <button className={styles.infoBtn} onClick={handleRegister}>
                       Register Now
                     </button>
-                    <button className={styles.infoBtn} onClick={() => toast("Link has not been activated yet!")} >
+                    <button
+                      className={styles.infoBtn}
+                      onClick={() => toast("Link has not been activated yet!")}
+                    >
                       Background Guide
                     </button>
-                    <button className={styles.detailsBtn} onClick={() => moreDetails("United Nations Security Council", "Lorem Ipsum", "https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp", "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin. Richard McClintock, a Latin scholar from Hampden-Sydney College, is  overing the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his interest was piqued by consectetur—a genuine, albeit rare, Latin word. Consulting a Latin dictionary led McClintock to a passage from De Finibus Bonorum et Malorum (“On the Extremes of Good and Evil”), a first-century B.C. text from the Roman philosopher Cicero.")}>
+                    <button
+                      className={styles.detailsBtn}
+                      onClick={() =>
+                        moreDetails(
+                          "UNHRC",
+                          "Addressing the Ongoing Atrocities in Israel-Palestine with Main Focus On Violence Against Women and childern",
+                          "https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/unhrc_24_qvqtzx.jpg",
+                          "Welcome to the 'United Nations Human Rights Council (UNHRC)' at NITSMUN, a cornerstone of intellectual discourse in the vibrant tapestry of Incandescence! This committee is crafted to emulate the dynamic realm of international diplomacy, where delegates will grapple with pressing human rights issues, engage in diplomatic maneuvers, and work towards collaborative solutions. Get ready for impassioned debates, diplomatic intricacies, and a profound exploration of global affairs. Embrace the opportunity to be a part of this consequential council, where your voice shapes the discourse on human rights. Secure your spot, and let the spirit of diplomacy illuminate the path to constructive resolutions. Together, let's embark on a journey to make a lasting impact on the world stage!"
+                        )
+                      }
+                    >
                       Read More
                     </button>
                   </div>
@@ -185,8 +294,8 @@ const AnnualConf = () => {
               <div className={styles.innerCont1}>
                 <div className={styles.imgParent}>
                   <img
-                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp"
-                    alt="loading..."
+                    src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/ipc_2024_ajldq6.jpg"
+                    alt=""
                     className={styles.img}
                   />
                 </div>
@@ -203,13 +312,26 @@ const AnnualConf = () => {
                     </p> */}
                   </p>
                   <div className={styles.infoBtnCont}>
-                    <button className={styles.infoBtn} onClick={() => toast("Link has not been activated yet!")}>
+                    <button className={styles.infoBtn} onClick={handleRegister}>
                       Register Now
                     </button>
-                    <button className={styles.infoBtn} onClick={() => toast("Link has not been activated yet!")} >
+                    <button
+                      className={styles.infoBtn}
+                      onClick={() => toast("Link has not been activated yet!")}
+                    >
                       Background Guide
                     </button>
-                    <button className={styles.detailsBtn} onClick={() => moreDetails("United Nations Security Council", "Lorem Ipsum", "https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp", "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin. Richard McClintock, a Latin scholar from Hampden-Sydney College, is  overing the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his interest was piqued by consectetur—a genuine, albeit rare, Latin word. Consulting a Latin dictionary led McClintock to a passage from De Finibus Bonorum et Malorum (“On the Extremes of Good and Evil”), a first-century B.C. text from the Roman philosopher Cicero.")}>
+                    <button
+                      className={styles.detailsBtn}
+                      onClick={() =>
+                        moreDetails(
+                          "IPC- International Press Conferences",
+                          "",
+                          "https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/ipc_2024_ajldq6.jpg",
+                          "The International Press Corps(IPC) is a committee where people who love writing, taking pictures, and fair journalism come together. Each journalist is teamed up with a famous news agency and given the job of watching and reporting on debates in other committees. They have to capture interesting moments and send reports every day. And you know what's cool? It's not just serious stuff; there's a lot of fun too! Imagine enjoying the lively discussions on the house floor – journalism with a dose of fun!"
+                        )
+                      }
+                    >
                       Read More
                     </button>
                   </div>
@@ -220,8 +342,8 @@ const AnnualConf = () => {
               <div className={styles.innerCont2}>
                 <div className={styles.imgParent}>
                   <img
-                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp"
-                    alt="loading..."
+                    src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/ib_wbiqww.jpg"
+                    alt=""
                     className={styles.img}
                   />
                 </div>
@@ -229,7 +351,9 @@ const AnnualConf = () => {
                   <h1 className={styles.h1}>IB- Intelligence Bureau</h1>
                   <p className={styles.p}>
                     <p className={styles.innerPara}>
-                      <b>Agenda:</b>  Analysing Security Measures for the Ram Mandir Inauguration – Evaluating Concerns, Crowd Logistics, and Precautionary Protocols.
+                      <b>Agenda:</b> Analysing Security Measures for the Ram Mandir
+                      Inauguration – Evaluating Concerns, Crowd Logistics, and
+                      Precautionary Protocols.
                     </p>
                     {/* <p className={styles.innerPara}>
                       The United Nations Security Council maintains global peace, with 15
@@ -238,13 +362,26 @@ const AnnualConf = () => {
                     </p> */}
                   </p>
                   <div className={styles.infoBtnCont}>
-                    <button className={styles.infoBtn} onClick={() => toast("Link has not been activated yet!")}>
+                    <button className={styles.infoBtn} onClick={handleRegister}>
                       Register Now
                     </button>
-                    <button className={styles.infoBtn} onClick={() => toast("Link has not been activated yet!")} >
+                    <button
+                      className={styles.infoBtn}
+                      onClick={() => toast("Link has not been activated yet!")}
+                    >
                       Background Guide
                     </button>
-                    <button className={styles.detailsBtn} onClick={() => moreDetails("United Nations Security Council", "Lorem Ipsum", "https://res.cloudinary.com/dhry5xscm/image/upload/v1706381382/nitsmun/unsc_rkvged.webp", "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin. Richard McClintock, a Latin scholar from Hampden-Sydney College, is  overing the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his interest was piqued by consectetur—a genuine, albeit rare, Latin word. Consulting a Latin dictionary led McClintock to a passage from De Finibus Bonorum et Malorum (“On the Extremes of Good and Evil”), a first-century B.C. text from the Roman philosopher Cicero.")}>
+                    <button
+                      className={styles.detailsBtn}
+                      onClick={() =>
+                        moreDetails(
+                          "IB- Intelligence Bureau",
+                          "Analysing Security Measures for the Ram Mandir Inauguration – Evaluating Concerns, Crowd Logistics, and Precautionary Protocols.",
+                          "https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/ib_wbiqww.jpg",
+                          "Step into the realm of strategy and security with the Intelligence Bureau (IB) Committee at NITSMUN Annual Conference 2024! Join us on a journey to analyze, plan, and safeguard important events, all in the mission to protect the country and its integrity. Your voice matters in addressing concerns and playing a pivotal role in ensuring security. Join the conference to contribute your perspective to the strategic discussions."
+                        )
+                      }
+                    >
                       Read More
                     </button>
                   </div>
@@ -285,9 +422,9 @@ const AnnualConf = () => {
           </Card>
           <Glimpses />
           <Faq color="#1d1c41" />
-        </div >
+        </div>
         <Footer />
-      </div >
+      </div>
     </>
   );
 };

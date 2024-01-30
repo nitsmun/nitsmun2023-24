@@ -1,6 +1,23 @@
 .parent {
   background-color: #000000;
+  overflow: hidden;
 }
+
+#topexebanner,
+#topexebanner0 {
+  width: 80vw;
+  margin: 2vw auto;
+  overflow: hidden;
+  height: auto;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 0.9375rem;
+  }
+}
+
 .applyContainer {
   margin: 0;
   padding: 0;
@@ -47,8 +64,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5.5vh;
-  width: 10vw;
+  padding: 1vw;
   border-radius: 16px;
   outline: none;
   background-color: #c9984e;
@@ -71,10 +87,10 @@
     font-size: 2rem;
     font-weight: bold;
   }
-  .applyBtn .button {
-    height: 5.5vh;
-    width: 15vw;
-  }
+  // .applyBtn .button {
+  //   height: 5.5vh;
+  //   width: 15vw;
+  // }
 }
 @media screen and (max-width: 926px) {
   .applyPera .p {
@@ -126,13 +142,13 @@
   .applyPera .p {
     font-size: 1.8rem;
   }
-  .applyBtn .button {
-    height: 5.5vh;
-    width: 20vw;
-  }
+  // .applyBtn .button {
+  //   height: 5.5vh;
+  //   width: 20vw;
+  // }
 
   #regopen {
-    margin-top: 8vw;
+    margin-top: 15vw;
     font-size: 4vw;
   }
 }
@@ -140,13 +156,45 @@
   .applyPera .p {
     font-size: 1.6rem;
   }
+
+  .button {
+    padding: 4vw !important;
+  }
 }
 @media screen and (max-width: 536px) {
   .applyPera .p {
     font-size: 1.3rem;
   }
-  .applyBtn .button {
-    height: 6vh;
-    width: 50vw;
+  // .applyBtn .button {
+  //   height: 6vh;
+  //   width: 50vw;
+  // }
+}
+
+.moremarginttop {
+  margin: 1vw !important;
+  text-align: center;
+  color: white;
+  font-size: 1.2vw;
+}
+
+@media (max-width: 660px) {
+  .moremarginttop {
+    margin-top: 8vw !important;
+    font-size: 4vw;
+  }
+
+  #topexebanner {
+    width: 85vw;
+    margin: 4vw auto;
+    overflow: hidden;
+    height: auto;
+  }
+
+  #topexebanner0 {
+    width: 85vw;
+    margin: 10vw auto 4vw auto;
+    overflow: hidden;
+    height: auto;
   }
 }

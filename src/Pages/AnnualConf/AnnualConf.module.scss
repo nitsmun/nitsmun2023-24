@@ -32,14 +32,10 @@
   background-color: #8b8b8b46;
   backdrop-filter: blur(5px);
 
-  .desc {
-    line-height: 1.3rem;
-  }
-
   .wideCard {
     position: absolute;
     top: 5rem;
-    background-color: #EBEAEA;
+    background-color: #ebeaea;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,6 +49,10 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
+
+    .desc {
+      line-height: 1rem;
+    }
 
     .h2 {
       font-size: 0.8rem;
@@ -84,7 +84,6 @@
       margin: 1rem;
     }
 
-
     .desc {
       font-size: 0.7rem;
     }
@@ -114,7 +113,7 @@
   }
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width: 1000px) {
   .wideview {
     visibility: visible;
     display: flex;
@@ -181,12 +180,14 @@
 }
 
 .hero {
-  background-image: url("https://res.cloudinary.com/dhry5xscm/image/upload/v1706532079/nitsmun/annualConf_ygysnj.webp");
-  min-height: 60vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: transparent;
+  width: 100%;
+  height: auto;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .about {
@@ -200,10 +201,14 @@
     .name {
       color: #1d1c41;
       font-family: "Inter", sans-serif;
+      font-size: 3.5vw;
+      margin: 2vw 0;
     }
 
     .h3 {
       font-family: "Nothing You Could Do", cursive;
+      font-size: 1.15vw;
+      margin-bottom: 1vw;
     }
   }
 }
@@ -230,15 +235,18 @@
   border: none;
   border-radius: 1.25rem;
 
-
   .mainHeading {
     margin-top: 2rem;
+    padding-bottom: 5vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
 
     .mainh1 {
-      color: #1D1C41;
+      color: #1d1c41;
       font-weight: 500;
       text-shadow: 0 2px 3px #000000;
       text-align: center;
+      margin-bottom: 2vw;
     }
 
     .infoBtnCont {
@@ -259,13 +267,13 @@
         font-size: 0.4rem;
       }
 
-      @media screen and (min-width:400px) {
+      @media screen and (min-width: 400px) {
         .infoBtn {
           font-size: 0.6rem;
         }
       }
 
-      @media screen and (min-width:500px) {
+      @media screen and (min-width: 500px) {
         .infoBtn {
           font-size: 1rem;
         }
@@ -285,7 +293,7 @@
       font-size: 0.3rem;
     }
 
-    @media screen and (min-width:1000px) {
+    @media screen and (min-width: 1000px) {
       .infoBtn {
         visibility: hidden;
         display: none;
@@ -301,6 +309,7 @@
     .h1 {
       font-size: 1rem;
       text-align: center;
+      margin-bottom: 0.75vw;
     }
 
     @media screen and (min-width: 300px) {
@@ -349,31 +358,27 @@
         }
       }
 
-      .imgParent {
-        width: 100%;
+      .imgParent .img {
+        width: var(--img-width);
+        height: var(--img-height);
         display: flex;
-
-        .img {
-          width: var(--img-width);
-          height: var(--img-height);
-          display: flex;
-          object-fit: cover;
-          justify-content: center;
-          align-items: center;
-        }
+        object-fit: cover;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 0 0.9375rem;
       }
 
       @media screen and (min-width: 800px) {
         .imgParent {
-          align-items: start;
+          scale: 0.9;
+          width: 80%;
         }
       }
 
       .content {
-
         .h1 {
           font-size: 0.8rem;
-
         }
 
         .bgCont {
@@ -503,5 +508,82 @@
       border: none;
       border-radius: 3.5rem;
     }
+  }
+}
+
+.para {
+  line-height: 1.6;
+  font-size: 1.25vw;
+}
+
+#specialbold {
+  font-weight: 900;
+  font-family: "Inter", sans-serif;
+}
+
+#posterconfoff {
+  width: 70vw;
+  height: auto;
+  margin: 2vw auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 0.9375rem;
+  }
+}
+
+@media (max-width: 660px) {
+  .mainHeading {
+    padding: 0 4vw 4vw 4vw !important;
+  }
+
+  .para {
+    font-size: 4vw;
+  }
+
+  .name {
+    font-size: 8vw !important;
+    margin: 6vw 0 !important;
+  }
+
+  .h3 {
+    font-size: 4vw !important;
+  }
+
+  .mainh1 {
+    font-size: 8vw;
+    margin-bottom: 8vw !important;
+  }
+
+  .card {
+    padding: 1.5vw;
+    width: 90% !important;
+    margin: 20vw auto !important;
+  }
+
+  .h1 {
+    margin: 5vw !important;
+  }
+
+  .innerPara {
+    margin-bottom: 5vw !important;
+  }
+
+  .infoBtnCont {
+    justify-content: space-between !important;
+  }
+
+  .infoBtn {
+    font-size: 3vw !important;
+    padding: 3vw 5vw !important;
+  }
+
+  #posterconfoff {
+    width: 80vw;
+    height: auto;
+    margin: 15vw auto 5vw auto;
   }
 }

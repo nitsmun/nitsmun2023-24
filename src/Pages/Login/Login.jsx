@@ -45,7 +45,7 @@ const FormCard = () => {
         .then((res) => {
           if (res.data.message === "Login successful") {
             Cookies.set("authToken", res.data.token);
-            navigate("/dashboard");
+            navigate("/registration");
             window.location.reload();
           }
         });

@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Monoton&family=Montserrat:wght@400;700&family=Nothing+You+Could+Do&family=Poppins&display=swap");
 
+.exitCont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  .exit {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    .cross {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
 .dashPage {
   overflow-x: hidden;
   background-image: url("https://res.cloudinary.com/dz2mlxltd/image/upload/v1706370659/spiralbg_mj8fzf.svg");
@@ -47,7 +65,7 @@
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   left: 30vw;
   top: 20vh;
   background-color: #ffffff;
@@ -57,6 +75,28 @@
   box-shadow: 0 0 1rem #000000;
   border: 0 solid transparent;
   border-radius: 1rem;
+  flex-direction: column;
+  animation-name: popup;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  .innerCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+  }
+}
+
+@keyframes popup {
+  0% {
+    scale: 0;
+  }
+
+  100% {
+    scale: 1;
+  }
 }
 
 @media screen and (min-width: 1051px) {

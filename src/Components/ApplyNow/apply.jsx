@@ -21,9 +21,15 @@ const Apply = () => {
     }
   };
 
+  const handleApplyToExe = (e) => {
+    e.preventDefault();
+    window.open("https://forms.gle/2sEyFRTPrXTBSt288", "_blank");
+  };
+
   return (
     <div className={styles.parent}>
       <Navbar page="APPLY" />
+
       <div className={styles.applyContainer}>
         <div className={styles.innerContainerApply}>
           <div className={styles.applyHeader}>
@@ -40,12 +46,36 @@ const Apply = () => {
               />
             </div>
           </div>
+
+          <div id={styles.topexebanner0}>
+            <img
+              src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706616784/off_poster_f8mjht.webp"
+              alt=""
+            />
+          </div>
+
+          <div id={styles.topexebanner}>
+            <img
+              src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706616455/exe_application_cbufrm.webp"
+              alt=""
+            />
+          </div>
           <h2 id={styles.regopen}>
             Registration for Annual Conference 2024 is now Open!
           </h2>
+
+          <h2 id={`${styles.regopen} `} className={styles.moremarginttop}>
+            Registration for Executive board is now Open!
+          </h2>
           <div className={styles.applyBtn}>
             <button className={styles.button} onClick={handleApply}>
-              Apply Now
+              Register now for Annual Conference 2024
+            </button>
+          </div>
+
+          <div className={styles.applyBtn}>
+            <button className={styles.button} onClick={handleApplyToExe}>
+              Apply Now for the Executive Board
             </button>
           </div>
           <Faq color="#ffffff" />

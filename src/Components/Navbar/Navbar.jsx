@@ -1,31 +1,66 @@
 import { NavLink, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styles from "./Navbar.module.scss";
+import { UserContext } from "../../Context/ContextProv";
 
 const Navbar = (props) => {
   const [deskHamState, setDeskHam] = useState(0);
+  const { isLoggedIn } = useContext(UserContext);
   const deskHam = [
     { id: "1", name: "ARCHIVE", dest: "/archive" },
-    { id: "2", name: "APPLY NOW", dest: "/applynow" },
-    { id: "3", name: "CONTACT", dest: "/contact" },
+    { id: "2", name: "CONTACT", dest: "/contact" },
+    { id: "3", name: "PHOTO GALLERY", dest: "/photo" },
   ];
   const isEvents = false;
   const navLinks = [
     { name: "HOME", dest: "/", id: "home", type: "route" },
     { name: "ABOUT", dest: "/about", id: "about", type: "route" },
     { name: "TEAM", dest: "/team", id: "team", type: "route" },
+    {
+      name: "Annual Conference 2024",
+      dest: "/annualconf",
+      id: "annualconf",
+      type: "route",
+    },
     { name: "MOCK MUN 2024  ", dest: "/mockmun24", id: "MOCKMUN24", type: "route" },
-    { name: "PHOTO GALLERY", dest: "/photo", id: "photo", type: "route" },
+    { name: "APPLY", dest: "/applynow", id: "applynow", type: "route" },
   ];
+  if (isLoggedIn) {
+    navLinks.push({
+      name: "Dashboard",
+      dest: "/dashboard",
+      id: "dashboard",
+      type: "route",
+    });
+    const applyIndex = navLinks.findIndex((item) => item.name === "APPLY");
+    navLinks.splice(applyIndex, 1);
+    deskHam.push({ id: "2", name: "APPLY NOW", dest: "/applynow" });
+  }
+
   const navLinksMobile = [
     { name: "HOME", dest: "/", id: "home", type: "route" },
     { name: "ABOUT", dest: "/about", id: "about", type: "route" },
+    {
+      name: "Annual Conference 2024",
+      dest: "/annualconf",
+      id: "annualconf",
+      type: "route",
+    },
     { name: "MOCK MUN 2024", dest: "/mockmun24", id: "MOKCMUN24", type: "route" },
     { name: "TEAM", dest: "/team", id: "team", type: "route" },
+    { name: "Apply", dest: "/applynow", id: "applynow", type: "route" },
     { name: "PHOTO GALLERY", dest: "/photo", id: "photo", type: "route" },
     { name: "CONTACT", dest: "/contact", id: "contact", type: "route" },
     { name: "ARCHIVE", dest: "/about", id: "archive", type: "route" },
   ];
+  if (isLoggedIn) {
+    navLinksMobile.push({
+      name: "Dashboard",
+      dest: "/dashboard",
+      id: "dashboard",
+      type: "route",
+    });
+  }
   const events = [
     { name: "EVENT1", dest: "" },
     { name: "EVENT2", dest: "" },

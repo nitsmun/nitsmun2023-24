@@ -3,7 +3,14 @@ import Faq from "../../Components/Pages/Contact/Faq/Faq";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 const Hero = () => {
-  return <div className={styles.hero}>.</div>;
+  return (
+    <div className={styles.hero}>
+      <img
+        src="https://res.cloudinary.com/dhry5xscm/image/upload/v1705864089/nitsmun/mock_mun_24_zesqbb.svg"
+        alt=""
+      />
+    </div>
+  );
 };
 
 const About = () => {

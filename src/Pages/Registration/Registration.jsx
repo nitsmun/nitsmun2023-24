@@ -60,7 +60,7 @@ const Registration = () => {
   const [previousMunExperience, setPreviousMunExperience] = useState("");
   const [committeePreference, setCommitteePreference] = useState([]);
   const [portfolioPreference, setPortfolioPreference] = useState([]);
-
+  // console.log(portfolioPreference)
   const handleCommiteeSelection = (event) => {
     const { value, checked } = event.target;
 
@@ -168,7 +168,62 @@ const Registration = () => {
     "Xinhua News Agency",
   ];
 
-  const mahaOptions = ["abc"];
+  const mahaOptions = [
+    "Abhimanyu",
+    "Arjuna",
+    "Bhima",
+    "Chekitana",
+    "Dhrishtadyumna",
+    "Dhrishtaketu",
+    "Draupadi",
+    "Drupada",
+    "Ghatotkacha",
+    "Iravan",
+    "Kaikeyi",
+    "Krishna",
+    "Kunti",
+    "Madri",
+    "Malaydhwaja",
+    "Nakula",
+    "Sahadeva",
+    "Satyaki",
+    "Shalya",
+    "Shankha",
+    "Shikhandi",
+    "Sreniman",
+    "Uttara",
+    "Virata",
+    "Yudhishthira",
+    "Alambusha",
+    "Ashwatthama",
+    "Bahlika",
+    "Bhagadatta",
+    "Bhishma",
+    "Brihadbala",
+    "Dhritarashtra",
+    "Dronacharya",
+    "Durmukha",
+    "Duryodhana",
+    "Dushasana",
+    "Dushkarna",
+    "Gandhari",
+    "Jarasandha",
+    "Jayadratha",
+    "Karna",
+    "Kripacharya",
+    "Laxman Kumara",
+    "Shakuni",
+    "Shishupala",
+    "Sudakshina",
+    "Susharma",
+    "Uluka",
+    "Vikarna",
+    "Vrishaketu",
+    "Vrishasena",
+    "Shalya",
+    "Vidur",
+    "Yuyutsu",
+  ];
 
   const [ibPortfolio, setIbPortfolio] = useState([]);
   const [unhrcPortfolio, setUnhrcPortfolio] = useState([]);
@@ -655,7 +710,7 @@ const Registration = () => {
                     <p>
                       Portfolio list for{" "}
                       <span style={{ fontWeight: 900, fontFamily: "Inter" }}>
-                        Mahabharat
+                        Hastinapur Special Council
                       </span>{" "}
                       : (you can select max 3 portfolios for each Committee)
                     </p>
@@ -671,7 +726,7 @@ const Registration = () => {
                       <h3>
                         Selected Portfolios for{" "}
                         <span style={{ fontWeight: 900, fontFamily: "Inter" }}>
-                          Mahabharat
+                          Hastinapur Special Council
                         </span>{" "}
                         :{" "}
                       </h3>
