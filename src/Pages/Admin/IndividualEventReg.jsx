@@ -192,6 +192,12 @@ const IndividualEventReg = () => {
         </main>
       )}
 
+      {particularEventDetails[0]?.accomodation && (
+        <h1>
+          want to take accomodation facility: {particularEventDetails[0]?.accomodation}
+        </h1>
+      )}
+
       <div id={styles.img_hlder}>
         <img src={particularEventDetails[0]?.payment} alt="" />
       </div>

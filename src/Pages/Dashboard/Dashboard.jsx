@@ -106,6 +106,9 @@ const Card = (props) => {
           case "User not found":
             toast("User not found");
             break;
+          case "Email already verified":
+            toast("Email already verified");
+            break;
           default:
             toast("Something went wrong");
             console.error(ee);
