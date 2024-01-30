@@ -642,7 +642,7 @@ const Registration = () => {
                         multiple
                         onChange={handleSelect}
                         value={ibPortfolio}
-                        size={ibOptions.length}
+                        // size={ibOptions.length}
                       >
                         {ibOptions.map((option, index) => (
                           <option key={index} value={option}>
@@ -742,18 +742,32 @@ const Registration = () => {
                       <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IPC</span> :
                       (you can select max 3 portfolios for each Committee)
                     </p>
-                    <select
-                      multiple
-                      onChange={handleSelectIpc}
-                      value={ipcPortfolio}
-                      size={ipcOptions.length}
-                    >
-                      {ipcOptions.map((option, index) => (
-                        <option key={index} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
+                    {window.innerWidth > 768 && (
+                      <select
+                        multiple
+                        onChange={handleSelectIpc}
+                        value={ipcPortfolio}
+                        // size={ipcOptions.length}
+                      >
+                        {ipcOptions.map((option, index) => (
+                          <option key={index} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {window.innerWidth < 768 && (
+                      <main id={styles.heightfixed}>
+                        <label multiple onClick={handleSelectIpc} value={ipcPortfolio}>
+                          {ipcOptions.map((option, index) => (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </label>
+                      </main>
+                    )}
 
                     <div>
                       <h3>
@@ -779,18 +793,37 @@ const Registration = () => {
                       </span>{" "}
                       : (you can select max 3 portfolios for each Committee)
                     </p>
-                    <select
-                      multiple
-                      onChange={handleSelectMaha}
-                      value={mahaPortfolio}
-                      size={mahaOptions.length}
-                    >
-                      {mahaOptions.map((option, index) => (
-                        <option key={index} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
+                    {window.innerWidth > 768 && (
+                      <select
+                        multiple
+                        onChange={handleSelectMaha}
+                        value={mahaPortfolio}
+                        // size={mahaOptions.length}
+                      >
+                        {mahaOptions.map((option, index) => (
+                          <option key={index} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {window.innerWidth < 768 && (
+                      <main id={styles.heightfixed}>
+                        <label
+                          multiple
+                          onClick={handleSelectMaha}
+                          value={mahaPortfolio}
+                          // size={mahaOptions.length}
+                        >
+                          {mahaOptions.map((option, index) => (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </label>
+                      </main>
+                    )}
 
                     <div>
                       <h3>
