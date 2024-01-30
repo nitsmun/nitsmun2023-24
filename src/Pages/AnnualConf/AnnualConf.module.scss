@@ -32,6 +32,10 @@
   background-color: #8b8b8b46;
   backdrop-filter: blur(5px);
 
+  .desc {
+    line-height: 1.3rem;
+  }
+
   .wideCard {
     position: absolute;
     top: 5rem;
@@ -77,7 +81,7 @@
 
     .bannerImg {
       height: 8rem;
-      margin: 0;
+      margin: 1rem;
     }
 
 
@@ -345,19 +349,24 @@
         }
       }
 
-      .imgParent .img {
-        width: var(--img-width);
-        height: var(--img-height);
+      .imgParent {
+        width: 100%;
         display: flex;
-        object-fit: cover;
-        justify-content: center;
-        align-items: center;
+
+        .img {
+          width: var(--img-width);
+          height: var(--img-height);
+          display: flex;
+          object-fit: cover;
+          justify-content: center;
+          align-items: center;
+        }
       }
 
       @media screen and (min-width: 800px) {
-        // .imgParent {
-        //     scale: 0.9;
-        // }
+        .imgParent {
+          align-items: start;
+        }
       }
 
       .content {
