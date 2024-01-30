@@ -484,4 +484,9 @@
     overflow: hidden;
     flex-wrap: wrap;
   }
+
+  #heightfixed {
+    height: 50vh !important;
+    overflow: scroll;
+  }
 }

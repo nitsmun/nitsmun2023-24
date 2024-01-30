@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-console */
 import { useState, useMemo, useEffect, useContext } from "react";
@@ -634,18 +636,33 @@ const Registration = () => {
                       <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span> :
                       (you can select max 3 portfolios for each Committee){" "}
                     </p>
-                    <select
-                      multiple
-                      onChange={handleSelect}
-                      value={ibPortfolio}
-                      size={ibOptions.length}
-                    >
-                      {ibOptions.map((option, index) => (
-                        <option key={index} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
+
+                    {window.innerWidth > 768 && (
+                      <select
+                        multiple
+                        onChange={handleSelect}
+                        value={ibPortfolio}
+                        size={ibOptions.length}
+                      >
+                        {ibOptions.map((option, index) => (
+                          <option key={index} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {window.innerWidth < 768 && (
+                      <main id={styles.heightfixed}>
+                        <label multiple onClick={handleSelect} value={ibPortfolio}>
+                          {ibOptions.map((option, index) => (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </label>
+                      </main>
+                    )}
 
                     <div>
                       <h3>
@@ -669,18 +686,36 @@ const Registration = () => {
                       <span style={{ fontWeight: 900, fontFamily: "Inter" }}>UNHRC</span>{" "}
                       : (you can select max 3 portfolios for each Committee){" "}
                     </p>
-                    <select
-                      multiple
-                      onChange={handleSelectUnhrc}
-                      value={unhrcPortfolio}
-                      size={unhrcOptions.length}
-                    >
-                      {unhrcOptions.map((option, index) => (
-                        <option key={index} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
+                    {window.innerWidth > 768 && (
+                      <select
+                        multiple
+                        onChange={handleSelectUnhrc}
+                        value={unhrcPortfolio}
+                      >
+                        {unhrcOptions.map((option, index) => (
+                          <option key={index} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {window.innerWidth < 768 && (
+                      <main id={styles.heightfixed}>
+                        <label
+                          multiple
+                          onClick={handleSelectUnhrc}
+                          value={unhrcPortfolio}
+                          className={styles.limitedheight}
+                        >
+                          {unhrcOptions.map((option, index) => (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </label>
+                      </main>
+                    )}
 
                     <div>
                       <h3>
