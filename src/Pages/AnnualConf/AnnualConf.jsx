@@ -8,7 +8,14 @@ import Footer from "../../Components/Footer/Footer";
 import { UserContext } from "../../Context/ContextProv";
 
 const Hero = () => {
-  return <div className={styles.hero}>.</div>;
+  return (
+    <div className={styles.hero}>
+      <img
+        src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706616784/off_poster_f8mjht.webp"
+        alt=""
+      />
+    </div>
+  );
 };
 
 const About = () => {
@@ -77,6 +84,13 @@ const About = () => {
           enjoying the lively discussions on the house floor – journalism with a dose of
           fun!
         </p>
+      </div>
+
+      <div id={styles.posterconfoff}>
+        <img
+          src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706614577/hues_of_harmony_copy_lp7kcl.webp"
+          alt=""
+        />
       </div>
     </div>
   );

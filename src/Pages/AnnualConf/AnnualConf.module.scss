@@ -176,12 +176,13 @@
 }
 
 .hero {
-  background-image: url("https://res.cloudinary.com/dhry5xscm/image/upload/v1706532079/nitsmun/annualConf_ygysnj.webp");
-  min-height: 60vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: transparent;
+  width: 100%;
+  height: auto;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .about {
@@ -513,6 +514,19 @@
   font-family: "Inter", sans-serif;
 }
 
+#posterconfoff {
+  width: 70vw;
+  height: auto;
+  margin: 2vw auto;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 0.9375rem;
+  }
+}
+
 @media (max-width: 660px) {
   .mainHeading {
     padding: 0 4vw 4vw 4vw !important;
@@ -555,5 +569,11 @@
   .infoBtn {
     font-size: 3vw !important;
     padding: 3vw 5vw !important;
+  }
+
+  #posterconfoff {
+    width: 80vw;
+    height: auto;
+    margin: 15vw auto 5vw auto;
   }
 }

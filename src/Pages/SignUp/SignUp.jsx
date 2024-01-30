@@ -454,7 +454,7 @@ const FormCard = () => {
             className={styles.subBtn}
           />
           <h6 className={styles.signupQuestion}>
-            Already&apos;t have an account?{" "}
+            Already have an account?{" "}
             <Link to="/login" className={styles.a}>
               Log in Here
             </Link>

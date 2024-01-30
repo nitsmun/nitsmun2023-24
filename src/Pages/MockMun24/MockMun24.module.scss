@@ -67,12 +67,13 @@
 }
 
 .hero {
-  background-image: url("https://res.cloudinary.com/dhry5xscm/image/upload/v1705864089/nitsmun/mock_mun_24_zesqbb.svg");
-  min-height: 60vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: transparent;
+  width: 100%;
+  height: auto;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .about {
