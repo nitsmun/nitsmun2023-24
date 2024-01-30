@@ -475,4 +475,13 @@
       object-fit: cover;
     }
   }
+
+  #columnflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
 }

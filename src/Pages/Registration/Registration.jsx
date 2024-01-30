@@ -760,8 +760,7 @@ const Registration = () => {
                 <div className={styles.payCont}>
                   <p className={styles.p}>
                     To participate in the NITSMUN Annual Conference 2024, a registration
-                    fee of Rs 349 is needed to be paid by every delegate which will
-                    include
+                    fee of Rs 349 is to be paid by every delegate.
                   </p>
                   <div className={styles.payInfoMaster}>
                     <div className={styles.paymentInfoCont}>
@@ -861,15 +860,16 @@ const Registration = () => {
               </div>
             </div>
           </div>
-          <div className={styles.contactInfoCont}>
+          <div className={styles.contactInfoCont} id={styles.columnflex}>
             <h2 className={styles.bolded}>For any general queries contact:</h2>
             <h2 className={styles.normal}>1. Ronak Jain (+91 84028 22820)</h2>
             <h2 className={styles.normal}>2. Aditi (+91 84865 00973)</h2>
           </div>
-          <div className={styles.contactInfoCont}>
+          <div className={styles.contactInfoCont} id={styles.columnflex}>
             <h2 className={styles.bolded}>For any form related queries contact:</h2>
             <h2 className={styles.normal}>1. Aditya (+91 8210610167)</h2>
-            <h2 className={styles.normal}>2. Ankit (+91 9431875819)</h2>
+            <h2 className={styles.normal}>2. Ankit (+91 88129 59563)</h2>
+            <h2 className={styles.normal}>3. Dorothy (+91 81330 72305)</h2>
           </div>
         </form>
       </div>
