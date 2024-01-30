@@ -20,7 +20,7 @@ const VerifyEmail = () => {
             toast("Email verified successfully");
             setTimeout(() => {
               window.location.href = "/registration";
-            }, 4500);
+            }, 2500);
           }
         })
 
@@ -64,7 +64,13 @@ const VerifyEmail = () => {
 
   return (
     <div>
-      {verified === true ? <h1>Email verified.</h1> : <h1>Somehting went wrong</h1>}
+      {verified === true ? (
+        <h1>
+          Email verified...redirecting to event registration page after 2 seconds...
+        </h1>
+      ) : (
+        <h1>Somehting went wrong</h1>
+      )}
     </div>
   );
 };
