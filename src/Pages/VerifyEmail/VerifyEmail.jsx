@@ -17,6 +17,10 @@ const VerifyEmail = () => {
           if (res.data.message === "Email verified successfully") {
             setVerified(true);
             setVerifying(false);
+            toast("Email verified successfully");
+            setTimeout(() => {
+              window.location.href = "/registration";
+            }, 4500);
           }
         })
 
