@@ -17,7 +17,12 @@ const VerifyEmail = () => {
           if (res.data.message === "Email verified successfully") {
             setVerified(true);
             setVerifying(false);
-            toast("Email verified successfully");
+            toast(
+              "Email verified successfully, redirecting to registration page after 2sec or alternatively you can go to applynow page to register for the Annual Conference 2024",
+              {
+                duration: 10000,
+              }
+            );
             setTimeout(() => {
               window.location.href = "/registration";
             }, 2500);

@@ -91,7 +91,9 @@ const Card = (props) => {
         )
         .then((res) => {
           if (res.data.message === "Verification link sent successfully") {
-            toast("Verification link sent successfully");
+            toast.success("Verification link sent to your personal email", {
+              duration: 10000,
+            });
           }
         });
     } catch (ee) {
@@ -132,52 +134,38 @@ const Card = (props) => {
   return (
     <>
       {option === false ? null : <WidePopup name={option} infos={choice} />}
-      <div className={styles.cardWrap}>
-        {/* <h1 className={styles.h1}>USER DASHBOARD</h1> */}
-        <div className={styles.details}>
-          <div className={styles.personalDetails}>
-            <div className={styles.userDetails}>
-              <div className={styles.person}>
-                <div className={styles.photoParent}>
-                  <img className={styles.img} alt="loading.." src={props.photo} />
-                </div>
-                <div className={styles.bio}>
-                  <div className={styles.field}>
-                    <h1 className={styles.h1}>Name</h1>
-                    <h1 className={styles.desc}>{props.name}</h1>
+      {props.isVerified === true ? (
+        <div className={styles.cardWrap}>
+          {/* <h1 className={styles.h1}>USER DASHBOARD</h1> */}
+          <div className={styles.details}>
+            <div className={styles.personalDetails}>
+              <div className={styles.userDetails}>
+                <div className={styles.person}>
+                  <div className={styles.photoParent}>
+                    <img className={styles.img} alt="loading.." src={props.photo} />
                   </div>
-
-                  {props.isStudentOfNITS === true ? (
-                    <>
-                      <div className={styles.field}>
-                        <h1 className={styles.h1}>Scholar ID</h1>
-                        <h1 className={styles.desc}>{props.phone}</h1>
-                      </div>
-                      <div className={styles.field}>
-                        <h1 className={styles.h1}>Branch</h1>
-                        <h1 className={styles.desc}>{props.branch}</h1>
-                      </div>
-                    </>
-                  ) : null}
-                </div>
-              </div>
-              <div className={styles.contactSec}>
-                <div className={styles.personalContact}>
-                  <h1 className={styles.heading}>Contact Details</h1>
-                  <div className={styles.content}>
+                  <div className={styles.bio}>
                     <div className={styles.field}>
-                      <h1 className={styles.h1}>Phone Number</h1>
-                      <h1 className={styles.desc}>{props.phone}</h1>
+                      <h1 className={styles.h1}>Name</h1>
+                      <h1 className={styles.desc}>{props.name}</h1>
                     </div>
 
-                    <div className={styles.field}>
-                      <h1 className={styles.h1}>Email</h1>
-                      <h1 className={styles.desc}>{props.email}</h1>
-                    </div>
+                    {props.isStudentOfNITS === true ? (
+                      <>
+                        <div className={styles.field}>
+                          <h1 className={styles.h1}>Scholar ID</h1>
+                          <h1 className={styles.desc}>{props.phone}</h1>
+                        </div>
+                        <div className={styles.field}>
+                          <h1 className={styles.h1}>Branch</h1>
+                          <h1 className={styles.desc}>{props.branch}</h1>
+                        </div>
+                      </>
+                    ) : null}
                   </div>
                 </div>
-                {props.isStudentOfNITS === true ? (
-                  <div className={styles.instContact}>
+                <div className={styles.contactSec}>
+                  <div className={styles.personalContact}>
                     <h1 className={styles.heading}>Contact Details</h1>
                     <div className={styles.content}>
                       <div className={styles.field}>
@@ -187,152 +175,217 @@ const Card = (props) => {
 
                       <div className={styles.field}>
                         <h1 className={styles.h1}>Email</h1>
-                        <h1 className={styles.desc}>{props.instituteEmail}</h1>
+                        <h1 className={styles.desc}>{props.email}</h1>
                       </div>
                     </div>
                   </div>
-                ) : null}
-              </div>
-            </div>
-            <div className={styles.eventCol}>
-              <div className={styles.parent}>
-                <ul className={styles.eventsRegistered}>
-                  {props.events === null ? (
-                    <h1 className={styles.h1}>No events registered yet</h1>
-                  ) : (
-                    props.events.map((item) => <li>{item}</li>)
-                  )}
-                </ul>
-              </div>
-              <div className={styles.parent}>
-                <div className={styles.eventsUpcoming}>
-                  {props.eventsInfo === null ? (
-                    <h1 className={styles.h1}>No upcoming events</h1>
-                  ) : (
-                    props.eventsInfo.map((item) => (
-                      <li>
-                        <h1>{item.name}</h1>
-                        <div className={styles.detailsCont}>
-                          <Link to={props.eventsTo} className={styles.knowMore}>
-                            Know more
-                          </Link>
-                          <Link to={props.regTo} className={styles.regNow}>
-                            Register Now
-                          </Link>
+                  {props.isStudentOfNITS === true ? (
+                    <div className={styles.instContact}>
+                      <h1 className={styles.heading}>Contact Details</h1>
+                      <div className={styles.content}>
+                        <div className={styles.field}>
+                          <h1 className={styles.h1}>Phone Number</h1>
+                          <h1 className={styles.desc}>{props.phone}</h1>
                         </div>
-                      </li>
-                    ))
-                  )}
+
+                        <div className={styles.field}>
+                          <h1 className={styles.h1}>Email</h1>
+                          <h1 className={styles.desc}>{props.instituteEmail}</h1>
+                        </div>
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+              <div className={styles.eventCol}>
+                <div className={styles.parent}>
+                  <ul className={styles.eventsRegistered}>
+                    {props.events === null ? (
+                      <h1 className={styles.h1}>No events registered yet</h1>
+                    ) : (
+                      props.events.map((item) => <li>{item}</li>)
+                    )}
+                  </ul>
+                </div>
+                <div className={styles.parent}>
+                  <div className={styles.eventsUpcoming}>
+                    {props.eventsInfo === null ? (
+                      <h1 className={styles.h1}>No upcoming events</h1>
+                    ) : (
+                      props.eventsInfo.map((item) => (
+                        <li>
+                          <h1>{item.name}</h1>
+                          <div className={styles.detailsCont}>
+                            <Link to={props.eventsTo} className={styles.knowMore}>
+                              Know more
+                            </Link>
+                            <Link to={props.regTo} className={styles.regNow}>
+                              Register Now
+                            </Link>
+                          </div>
+                        </li>
+                      ))
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.options}>
-          <div className={styles.col}>
-            {props?.isVerified ? (
+          <div className={styles.options}>
+            <div className={styles.col}>
+              {props?.isVerified ? (
+                <button
+                  onClick={handleDashboard}
+                  style={{ cursor: "pointer" }}
+                  className={styles.btn}
+                >
+                  <div>
+                    <img
+                      alt="icon loading..."
+                      src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706499/nitsmun/dashboard_yynv9s.svg"
+                    />
+                    <label style={{ cursor: "pointer" }} htmlFor="dashboard">
+                      Dashboard
+                    </label>
+                  </div>
+                </button>
+              ) : (
+                <button
+                  style={{
+                    cursor: sending ? "not-allowed" : "pointer",
+                    opacity: sending ? "0.5" : "1",
+                  }}
+                  disabled={sending}
+                  className={styles.btn}
+                  onClick={handleSendVerificationLink}
+                >
+                  {sending ? "Sending..." : "Send Verification link"}
+                </button>
+              )}
+
               <button
-                onClick={handleDashboard}
-                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  wideView(
+                    "events registered",
+                    null,
+                    setOption,
+                    setChoice,
+                    option,
+                    choice
+                  )
+                }
                 className={styles.btn}
               >
                 <div>
                   <img
                     alt="icon loading..."
-                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706499/nitsmun/dashboard_yynv9s.svg"
+                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg"
                   />
-                  <label style={{ cursor: "pointer" }} htmlFor="dashboard">
-                    Dashboard
+                  <label style={{ cursor: "pointer" }} htmlFor="events registered">
+                    Events Registered
                   </label>
                 </div>
               </button>
-            ) : (
+              <button
+                onClick={() =>
+                  wideView(
+                    "events information",
+                    null,
+                    setOption,
+                    setChoice,
+                    option,
+                    choice
+                  )
+                }
+                className={styles.btn}
+              >
+                <div>
+                  <img
+                    alt="icon loading..."
+                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg"
+                  />
+                  <label style={{ cursor: "pointer" }} htmlFor="upcoming events">
+                    Upcoming Events
+                  </label>
+                </div>
+              </button>
+            </div>
+            <div className={styles.col}>
+              <Link to="/dashboard/edit" className={styles.btn}>
+                <img
+                  alt="icon loading..."
+                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706541/nitsmun/Vector_kntss1.svg"
+                />
+                <label style={{ cursor: "pointer" }} htmlFor="edit profile">
+                  Edit Profile
+                </label>
+              </Link>
+              <button className={styles.btn} onClick={handleSignout}>
+                <div>
+                  <img
+                    alt="icon loading..."
+                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706540/nitsmun/material-symbols_logout_wibfg1.svg"
+                  />
+                  <label style={{ cursor: "pointer" }} htmlFor="logout">
+                    Log Out
+                  </label>
+                </div>
+              </button>
+              <button className={`${styles.btn}`}>
+                <div>
+                  <img
+                    alt="icon loading..."
+                    src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706894/nitsmun/Vector_1_aprbcr.svg"
+                  />
+
+                  <label htmlFor="queries">
+                    <h1 className={styles.queries}>For queries contact</h1>
+                    <a style={{ color: "#333333" }} href="tel:1234512345">
+                      {" "}
+                      <h2 className={styles.queries}>12345-12345</h2>
+                    </a>
+                  </label>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <main id={styles.verificationparent}>
+          <h1>
+            You need to verify your email first to register for the Annual Conference 2024
+          </h1>
+          <h3>It&apos;s a very simple step. Follow the quick easy steps listed below:</h3>
+          <ul>
+            <li>
+              Click on the below Send Email verification link button to send the
+              Verification link to your{" "}
+              <span id={styles.boldss}>
+                &quot;Personal Email&quot; that you provided during the signup process
+              </span>
+            </li>
+            <li>
               <button
                 style={{
                   cursor: sending ? "not-allowed" : "pointer",
                   opacity: sending ? "0.5" : "1",
                 }}
                 disabled={sending}
-                className={styles.btn}
+                id={styles.btn}
                 onClick={handleSendVerificationLink}
               >
-                {sending ? "Sending..." : "Send Verification link"}
+                {sending ? "Sending..." : "Send Email Verification link"}
               </button>
-            )}
-
-            <button
-              onClick={() =>
-                wideView("events registered", null, setOption, setChoice, option, choice)
-              }
-              className={styles.btn}
-            >
-              <div>
-                <img
-                  alt="icon loading..."
-                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg"
-                />
-                <label style={{ cursor: "pointer" }} htmlFor="events registered">
-                  Events Registered
-                </label>
-              </div>
-            </button>
-            <button
-              onClick={() =>
-                wideView("events information", null, setOption, setChoice, option, choice)
-              }
-              className={styles.btn}
-            >
-              <div>
-                <img
-                  alt="icon loading..."
-                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg"
-                />
-                <label style={{ cursor: "pointer" }} htmlFor="upcoming events">
-                  Upcoming Events
-                </label>
-              </div>
-            </button>
-          </div>
-          <div className={styles.col}>
-            <Link to="/dashboard/edit" className={styles.btn}>
-              <img
-                alt="icon loading..."
-                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706541/nitsmun/Vector_kntss1.svg"
-              />
-              <label style={{ cursor: "pointer" }} htmlFor="edit profile">
-                Edit Profile
-              </label>
-            </Link>
-            <button className={styles.btn} onClick={handleSignout}>
-              <div>
-                <img
-                  alt="icon loading..."
-                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706540/nitsmun/material-symbols_logout_wibfg1.svg"
-                />
-                <label style={{ cursor: "pointer" }} htmlFor="logout">
-                  Log Out
-                </label>
-              </div>
-            </button>
-            <button className={`${styles.btn}`}>
-              <div>
-                <img
-                  alt="icon loading..."
-                  src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706894/nitsmun/Vector_1_aprbcr.svg"
-                />
-
-                <label htmlFor="queries">
-                  <h1 className={styles.queries}>For queries contact</h1>
-                  <a style={{ color: "#333333" }} href="tel:1234512345">
-                    {" "}
-                    <h2 className={styles.queries}>12345-12345</h2>
-                  </a>
-                </label>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
+            </li>
+            <li>Check your personal email&apos;s inbox and spam folder too</li>
+            <li>
+              After sucessful verification simply refresh the page, and click on{" "}
+              <span id={styles.boldss}>Apply</span> in Navbar to register for the Annual
+              Conference 2024
+            </li>
+          </ul>
+        </main>
+      )}
     </>
   );
 };

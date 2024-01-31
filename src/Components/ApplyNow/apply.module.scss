@@ -198,3 +198,35 @@
     height: auto;
   }
 }
+
+#ulliprocess {
+  width: 50%;
+  margin: 2vw auto;
+  h2 {
+    color: white;
+    text-decoration: underline;
+    margin-bottom: 1vw;
+  }
+  ul li {
+    color: white;
+    line-height: 1.6;
+    margin: 0.75vw 0;
+  }
+}
+
+@media (max-width: 660px) {
+  #ulliprocess {
+    width: 90%;
+    margin: 5vw auto;
+    h2 {
+      color: white;
+      text-decoration: underline;
+      margin-bottom: 5vw;
+    }
+    ul li {
+      color: white;
+      line-height: 1.6;
+      margin: 2vw 0;
+    }
+  }
+}

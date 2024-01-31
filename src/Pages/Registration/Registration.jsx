@@ -47,11 +47,16 @@ const Registration = () => {
   useEffect(() => {
     document.title = "Registration form | NITSMUN";
     if (!isStudentTrue) {
-      navigate("/");
+      navigate("/applynow");
+      toast.error("You need to login first to register for the event", {
+        duration: 10000,
+      });
     }
     if (data?.isVerified === false) {
       navigate("/dashboard");
-      toast.error("You need to verify your email first");
+      toast.error("You need to verify your email first", {
+        duration: 10000,
+      });
     }
   }, [isStudentTrue, navigate, data?.isVerified]);
 
@@ -383,8 +388,15 @@ const Registration = () => {
         })
         .then((res) => {
           if (res.data.message === "Event registration completed") {
-            toast("Event registration completed");
-            window.location.href = "/dashboard";
+            toast(
+              "Event registration completed, Kindly Check email for the Confirmation message",
+              {
+                duration: 10000,
+              }
+            );
+            setTimeout(() => {
+              window.location.href = "/dashboard";
+            }, 2500);
           }
         });
     } catch (ee) {
@@ -632,113 +644,7 @@ const Registration = () => {
                 </div>
               </div> */}
 
-              {/* IB PORTFOLIO */}
               <div id={styles.flex}>
-                {committeePreference.includes("IB") && (
-                  <main id={styles.maxoptionwidth}>
-                    <p id={styles.portfoliotitle}>
-                      Portfolio list for{" "}
-                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span> :
-                      (you can select max 3 portfolios for each Committee){" "}
-                    </p>
-
-                    {window.innerWidth > 768 && (
-                      <select
-                        multiple
-                        onChange={handleSelect}
-                        value={ibPortfolio}
-                        // size={ibOptions.length}
-                      >
-                        {ibOptions.map((option, index) => (
-                          <option key={index} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
-                    )}
-
-                    {window.innerWidth < 768 && (
-                      <main id={styles.heightfixed}>
-                        <label multiple onClick={handleSelect} value={ibPortfolio}>
-                          {ibOptions.map((option, index) => (
-                            <option key={index} value={option}>
-                              {option}
-                            </option>
-                          ))}
-                        </label>
-                      </main>
-                    )}
-
-                    <div>
-                      <h3>
-                        Selected Portfolios for{" "}
-                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span>:
-                      </h3>
-                      <ul>
-                        {ibPortfolio.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </main>
-                )}
-
-                {/* UNHRC PORTFOLIO */}
-                {committeePreference.includes("UNHRC") && (
-                  <main id={styles.maxoptionwidth}>
-                    <p>
-                      Portfolio list for{" "}
-                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>UNHRC</span>{" "}
-                      : (you can select max 3 portfolios for each Committee){" "}
-                    </p>
-                    {window.innerWidth > 768 && (
-                      <select
-                        multiple
-                        onChange={handleSelectUnhrc}
-                        value={unhrcPortfolio}
-                      >
-                        {unhrcOptions.map((option, index) => (
-                          <option key={index} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
-                    )}
-
-                    {window.innerWidth < 768 && (
-                      <main id={styles.heightfixed}>
-                        <label
-                          multiple
-                          onClick={handleSelectUnhrc}
-                          value={unhrcPortfolio}
-                          className={styles.limitedheight}
-                        >
-                          {unhrcOptions.map((option, index) => (
-                            <option key={index} value={option}>
-                              {option}
-                            </option>
-                          ))}
-                        </label>
-                      </main>
-                    )}
-
-                    <div>
-                      <h3>
-                        Selected Portfolios for{" "}
-                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>
-                          UNHRC
-                        </span>
-                        :
-                      </h3>
-                      <ul>
-                        {unhrcPortfolio.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </main>
-                )}
-
                 {/* IPC PORTFOLIO */}
                 {committeePreference.includes("IPC") && (
                   <main id={styles.maxoptionwidth}>
@@ -778,6 +684,11 @@ const Registration = () => {
                       <h3>
                         Selected Portfolios for{" "}
                         <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IPC</span>:
+                        {ipcPortfolio?.length > 0 && (
+                          <p id={styles.smolsize}>
+                            Click again on the item in the above list to deselect them
+                          </p>
+                        )}
                       </h3>
                       <ul>
                         {ipcPortfolio.map((item, index) => (
@@ -837,9 +748,129 @@ const Registration = () => {
                           Hastinapur Special Council
                         </span>{" "}
                         :{" "}
+                        {mahaPortfolio?.length > 0 && (
+                          <p id={styles.smolsize}>
+                            Click again on the item in the above list to deselect them
+                          </p>
+                        )}
                       </h3>
                       <ul>
                         {mahaPortfolio.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </main>
+                )}
+                {/* IB PORTFOLIO */}
+                {committeePreference.includes("IB") && (
+                  <main id={styles.maxoptionwidth}>
+                    <p id={styles.portfoliotitle}>
+                      Portfolio list for{" "}
+                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span> :
+                      (you can select max 3 portfolios for each Committee){" "}
+                    </p>
+
+                    {window.innerWidth > 768 && (
+                      <select
+                        multiple
+                        onChange={handleSelect}
+                        value={ibPortfolio}
+                        // size={ibOptions.length}
+                      >
+                        {ibOptions.map((option, index) => (
+                          <option key={index} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {window.innerWidth < 768 && (
+                      <main id={styles.heightfixed}>
+                        <label multiple onClick={handleSelect} value={ibPortfolio}>
+                          {ibOptions.map((option, index) => (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </label>
+                      </main>
+                    )}
+
+                    <div>
+                      <h3>
+                        Selected Portfolios for{" "}
+                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span>:
+                        {ibPortfolio?.length > 0 && (
+                          <p id={styles.smolsize}>
+                            Click again on the item in the above list to deselect them
+                          </p>
+                        )}
+                      </h3>
+                      <ul>
+                        {ibPortfolio.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </main>
+                )}
+
+                {/* UNHRC PORTFOLIO */}
+                {committeePreference.includes("UNHRC") && (
+                  <main id={styles.maxoptionwidth}>
+                    <p>
+                      Portfolio list for{" "}
+                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>UNHRC</span>{" "}
+                      : (you can select max 3 portfolios for each Committee){" "}
+                    </p>
+                    {window.innerWidth > 768 && (
+                      <select
+                        multiple
+                        onChange={handleSelectUnhrc}
+                        value={unhrcPortfolio}
+                      >
+                        {unhrcOptions.map((option, index) => (
+                          <option key={index} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {window.innerWidth < 768 && (
+                      <main id={styles.heightfixed}>
+                        <label
+                          multiple
+                          onClick={handleSelectUnhrc}
+                          value={unhrcPortfolio}
+                          className={styles.limitedheight}
+                        >
+                          {unhrcOptions.map((option, index) => (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </label>
+                      </main>
+                    )}
+
+                    <div>
+                      <h3>
+                        Selected Portfolios for{" "}
+                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>
+                          UNHRC
+                        </span>
+                        :
+                        {unhrcPortfolio?.length > 0 && (
+                          <p id={styles.smolsize}>
+                            Click again on the item in the above list to deselect them
+                          </p>
+                        )}
+                      </h3>
+                      <ul>
+                        {unhrcPortfolio.map((item, index) => (
                           <li key={index}>{item}</li>
                         ))}
                       </ul>

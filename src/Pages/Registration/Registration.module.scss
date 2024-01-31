@@ -490,8 +490,20 @@
   }
 
   #heightfixed {
-    height: 50vh !important;
+    height: 35vh !important;
     overflow: scroll;
-    scrollbar-width: 2.5px;
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+  }
+}
+
+#smolsize {
+  font-size: 0.75vw !important;
+}
+
+@media (max-width: 660px) {
+  #smolsize {
+    font-size: 2.5vw !important;
   }
 }
