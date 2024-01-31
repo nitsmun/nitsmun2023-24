@@ -414,6 +414,10 @@
   }
 }
 
+#extramarginaccom {
+  margin-top: 1vw;
+}
+
 @media (max-width: 660px) {
   #flex {
     display: flex;
@@ -474,5 +478,32 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  #columnflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
+
+  #heightfixed {
+    height: 35vh !important;
+    overflow: scroll;
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+  }
+}
+
+#smolsize {
+  font-size: 0.75vw !important;
+}
+
+@media (max-width: 660px) {
+  #smolsize {
+    font-size: 2.5vw !important;
   }
 }

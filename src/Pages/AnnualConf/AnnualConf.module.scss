@@ -501,12 +501,79 @@
   }
 
   .innerCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: 1rem auto;
+
     .photoCont {
       width: 100%;
       overflow: hidden;
       padding: 0;
       border: none;
-      border-radius: 3.5rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .photo {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        box-shadow: 0 0 1rem #000000;
+        margin: 1rem;
+        border: 0 solid transparent;
+        border-radius: 1rem;
+      }
+    }
+
+    @media screen and (min-width:400px) {
+      .photoCont {
+        border-radius: 1.5rem;
+
+        .photo {
+          margin: 1rem;
+          border: 0 solid transparent;
+          border-radius: 1.5rem;
+        }
+      }
+    }
+
+    @media screen and (min-width:500px) {
+      .photoCont {
+        border-radius: 2rem;
+
+        .photo {
+          margin: 1rem;
+          border: 0 solid transparent;
+          border-radius: 2rem;
+        }
+      }
+    }
+
+    @media screen and (min-width:600px) {
+      .photoCont {
+        border-radius: 2.5rem;
+
+        .photo {
+          margin: 1rem;
+          border: 0 solid transparent;
+          border-radius: 2.5rem;
+        }
+      }
+    }
+
+    @media screen and (min-width:700px) {
+      .photoCont {
+        border-radius: 3rem;
+
+        .photo {
+          margin: 1rem;
+          border: 0 solid transparent;
+          border-radius: 3rem;
+        }
+      }
     }
   }
 }

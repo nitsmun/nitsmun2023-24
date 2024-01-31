@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-console */
 import { useState, useMemo, useEffect, useContext } from "react";
@@ -45,11 +47,16 @@ const Registration = () => {
   useEffect(() => {
     document.title = "Registration form | NITSMUN";
     if (!isStudentTrue) {
-      navigate("/");
+      navigate("/applynow");
+      toast.error("You need to login first to register for the event", {
+        duration: 10000,
+      });
     }
     if (data?.isVerified === false) {
       navigate("/dashboard");
-      toast.error("You need to verify your email first");
+      toast.error("You need to verify your email first", {
+        duration: 10000,
+      });
     }
   }, [isStudentTrue, navigate, data?.isVerified]);
 
@@ -57,6 +64,7 @@ const Registration = () => {
 
   const [payment, setPayment] = useState("");
   const [college, setCollege] = useState("");
+  const [accomodation, setAccomodation] = useState("");
   const [previousMunExperience, setPreviousMunExperience] = useState("");
   const [committeePreference, setCommitteePreference] = useState([]);
   const [portfolioPreference, setPortfolioPreference] = useState([]);
@@ -68,6 +76,15 @@ const Registration = () => {
       setCommitteePreference((prevCOmt) => [...prevCOmt, value]);
     } else {
       setCommitteePreference((prevComt) => prevComt.filter((comt) => comt !== value));
+      if (value === "IB") {
+        setIbPortfolio([]);
+      } else if (value === "UNHRC") {
+        setUnhrcPortfolio([]);
+      } else if (value === "IPC") {
+        setIpcPortfolio([]);
+      } else if (value === "Mahabharat") {
+        setMahaPortfolio([]);
+      }
     }
   };
 
@@ -311,11 +328,20 @@ const Registration = () => {
     if (committeePreference?.length > 3) {
       toast("Please select 1-3 committees");
       setCommitteePreference([]);
+      setIbPortfolio([]);
+      setUnhrcPortfolio([]);
+      setIpcPortfolio([]);
+      setMahaPortfolio([]);
+      setPortfolioPreference([]);
     }
 
     if (portfolioPreference?.length > 9) {
       toast("You can select maximum of 9 Portfolios");
       setPortfolioPreference([]);
+      setIbPortfolio([]);
+      setUnhrcPortfolio([]);
+      setIpcPortfolio([]);
+      setMahaPortfolio([]);
     }
   }, [committeePreference, portfolioPreference]);
 
@@ -338,6 +364,7 @@ const Registration = () => {
     committeePreference,
     portfolioPreference,
     college,
+    accomodation,
   };
 
   const payload =
@@ -350,7 +377,7 @@ const Registration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-
+    // console.log(payload)
     try {
       await axios
         .post(`${import.meta.env.VITE_REACT_APP_API}/reg/yp`, payload, {
@@ -361,8 +388,15 @@ const Registration = () => {
         })
         .then((res) => {
           if (res.data.message === "Event registration completed") {
-            toast("Event registration completed");
-            window.location.href = "/dashboard";
+            toast(
+              "Event registration completed, Kindly Check email for the Confirmation message",
+              {
+                duration: 10000,
+              }
+            );
+            setTimeout(() => {
+              window.location.href = "/dashboard";
+            }, 2500);
           }
         });
     } catch (ee) {
@@ -410,20 +444,17 @@ const Registration = () => {
       return Boolean(
         payment &&
           previousMunExperience &&
-          portfolioPreference?.length > 1 &&
-          portfolioPreference?.length < 10 &&
-          committeePreference?.length > 1 &&
-          committeePreference?.length < 4
+          portfolioPreference?.length > 0 &&
+          committeePreference?.length > 0
       );
     }
     return Boolean(
       payment &&
         previousMunExperience &&
         college &&
-        portfolioPreference?.length > 1 &&
-        portfolioPreference?.length < 10 &&
-        committeePreference?.length > 1 &&
-        committeePreference?.length < 4
+        portfolioPreference?.length > 0 &&
+        committeePreference?.length > 0 &&
+        accomodation
     );
   }, [
     payment,
@@ -432,6 +463,7 @@ const Registration = () => {
     portfolioPreference,
     committeePreference,
     data?.isStudentOfNITS,
+    accomodation,
   ]);
 
   if (error) {
@@ -440,7 +472,9 @@ const Registration = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
+  // console.log(committeePreference)
+  // console.log(portfolioPreference)
+  // console.log(accomodation)
   return (
     <div>
       <Navbar page="REGISTRATION" />
@@ -610,70 +644,7 @@ const Registration = () => {
                 </div>
               </div> */}
 
-              {/* IB PORTFOLIO */}
               <div id={styles.flex}>
-                {committeePreference.includes("IB") && (
-                  <main id={styles.maxoptionwidth}>
-                    <p id={styles.portfoliotitle}>
-                      Portfolio list for{" "}
-                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span> :
-                      (you can select max 3 portfolios for each Committee){" "}
-                    </p>
-                    <select multiple onChange={handleSelect} value={ibPortfolio}>
-                      {ibOptions.map((option, index) => (
-                        <option key={index} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-
-                    <div>
-                      <h3>
-                        Selected Portfolios for{" "}
-                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span>:
-                      </h3>
-                      <ul>
-                        {ibPortfolio.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </main>
-                )}
-
-                {/* UNHRC PORTFOLIO */}
-                {committeePreference.includes("UNHRC") && (
-                  <main id={styles.maxoptionwidth}>
-                    <p>
-                      Portfolio list for{" "}
-                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>UNHRC</span>{" "}
-                      : (you can select max 3 portfolios for each Committee){" "}
-                    </p>
-                    <select multiple onChange={handleSelectUnhrc} value={unhrcPortfolio}>
-                      {unhrcOptions.map((option, index) => (
-                        <option key={index} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-
-                    <div>
-                      <h3>
-                        Selected Portfolios for{" "}
-                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>
-                          UNHRC
-                        </span>
-                        :
-                      </h3>
-                      <ul>
-                        {unhrcPortfolio.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </main>
-                )}
-
                 {/* IPC PORTFOLIO */}
                 {committeePreference.includes("IPC") && (
                   <main id={styles.maxoptionwidth}>
@@ -682,18 +653,42 @@ const Registration = () => {
                       <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IPC</span> :
                       (you can select max 3 portfolios for each Committee)
                     </p>
-                    <select multiple onChange={handleSelectIpc} value={ipcPortfolio}>
-                      {ipcOptions.map((option, index) => (
-                        <option key={index} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
+                    {window.innerWidth > 768 && (
+                      <select
+                        multiple
+                        onChange={handleSelectIpc}
+                        value={ipcPortfolio}
+                        // size={ipcOptions.length}
+                      >
+                        {ipcOptions.map((option, index) => (
+                          <option key={index} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {window.innerWidth < 768 && (
+                      <main id={styles.heightfixed}>
+                        <label multiple onClick={handleSelectIpc} value={ipcPortfolio}>
+                          {ipcOptions.map((option, index) => (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </label>
+                      </main>
+                    )}
 
                     <div>
                       <h3>
                         Selected Portfolios for{" "}
                         <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IPC</span>:
+                        {ipcPortfolio?.length > 0 && (
+                          <p id={styles.smolsize}>
+                            Click again on the item in the above list to deselect them
+                          </p>
+                        )}
                       </h3>
                       <ul>
                         {ipcPortfolio.map((item, index) => (
@@ -714,13 +709,37 @@ const Registration = () => {
                       </span>{" "}
                       : (you can select max 3 portfolios for each Committee)
                     </p>
-                    <select multiple onChange={handleSelectMaha} value={mahaPortfolio}>
-                      {mahaOptions.map((option, index) => (
-                        <option key={index} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
+                    {window.innerWidth > 768 && (
+                      <select
+                        multiple
+                        onChange={handleSelectMaha}
+                        value={mahaPortfolio}
+                        // size={mahaOptions.length}
+                      >
+                        {mahaOptions.map((option, index) => (
+                          <option key={index} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {window.innerWidth < 768 && (
+                      <main id={styles.heightfixed}>
+                        <label
+                          multiple
+                          onClick={handleSelectMaha}
+                          value={mahaPortfolio}
+                          // size={mahaOptions.length}
+                        >
+                          {mahaOptions.map((option, index) => (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </label>
+                      </main>
+                    )}
 
                     <div>
                       <h3>
@@ -729,9 +748,129 @@ const Registration = () => {
                           Hastinapur Special Council
                         </span>{" "}
                         :{" "}
+                        {mahaPortfolio?.length > 0 && (
+                          <p id={styles.smolsize}>
+                            Click again on the item in the above list to deselect them
+                          </p>
+                        )}
                       </h3>
                       <ul>
                         {mahaPortfolio.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </main>
+                )}
+                {/* IB PORTFOLIO */}
+                {committeePreference.includes("IB") && (
+                  <main id={styles.maxoptionwidth}>
+                    <p id={styles.portfoliotitle}>
+                      Portfolio list for{" "}
+                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span> :
+                      (you can select max 3 portfolios for each Committee){" "}
+                    </p>
+
+                    {window.innerWidth > 768 && (
+                      <select
+                        multiple
+                        onChange={handleSelect}
+                        value={ibPortfolio}
+                        // size={ibOptions.length}
+                      >
+                        {ibOptions.map((option, index) => (
+                          <option key={index} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {window.innerWidth < 768 && (
+                      <main id={styles.heightfixed}>
+                        <label multiple onClick={handleSelect} value={ibPortfolio}>
+                          {ibOptions.map((option, index) => (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </label>
+                      </main>
+                    )}
+
+                    <div>
+                      <h3>
+                        Selected Portfolios for{" "}
+                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>IB</span>:
+                        {ibPortfolio?.length > 0 && (
+                          <p id={styles.smolsize}>
+                            Click again on the item in the above list to deselect them
+                          </p>
+                        )}
+                      </h3>
+                      <ul>
+                        {ibPortfolio.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </main>
+                )}
+
+                {/* UNHRC PORTFOLIO */}
+                {committeePreference.includes("UNHRC") && (
+                  <main id={styles.maxoptionwidth}>
+                    <p>
+                      Portfolio list for{" "}
+                      <span style={{ fontWeight: 900, fontFamily: "Inter" }}>UNHRC</span>{" "}
+                      : (you can select max 3 portfolios for each Committee){" "}
+                    </p>
+                    {window.innerWidth > 768 && (
+                      <select
+                        multiple
+                        onChange={handleSelectUnhrc}
+                        value={unhrcPortfolio}
+                      >
+                        {unhrcOptions.map((option, index) => (
+                          <option key={index} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {window.innerWidth < 768 && (
+                      <main id={styles.heightfixed}>
+                        <label
+                          multiple
+                          onClick={handleSelectUnhrc}
+                          value={unhrcPortfolio}
+                          className={styles.limitedheight}
+                        >
+                          {unhrcOptions.map((option, index) => (
+                            <option key={index} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </label>
+                      </main>
+                    )}
+
+                    <div>
+                      <h3>
+                        Selected Portfolios for{" "}
+                        <span style={{ fontWeight: 900, fontFamily: "Inter" }}>
+                          UNHRC
+                        </span>
+                        :
+                        {unhrcPortfolio?.length > 0 && (
+                          <p id={styles.smolsize}>
+                            Click again on the item in the above list to deselect them
+                          </p>
+                        )}
+                      </h3>
+                      <ul>
+                        {unhrcPortfolio.map((item, index) => (
                           <li key={index}>{item}</li>
                         ))}
                       </ul>
@@ -745,8 +884,7 @@ const Registration = () => {
                 <div className={styles.payCont}>
                   <p className={styles.p}>
                     To participate in the NITSMUN Annual Conference 2024, a registration
-                    fee of Rs 349 is needed to be paid by every delegate which will
-                    include
+                    fee of Rs 349 is to be paid by every delegate.
                   </p>
                   <div className={styles.payInfoMaster}>
                     <div className={styles.paymentInfoCont}>
@@ -819,6 +957,7 @@ const Registration = () => {
                         />
                       </div>
                     </div>
+
                     {/* <div>
                       <img
                         alt="logo loading..."
@@ -826,6 +965,50 @@ const Registration = () => {
                       />
                     </div> */}
                   </div>
+
+                  {data?.isStudentOfNITS === false && (
+                    <>
+                      <FieldName
+                        compulsory
+                        name="Do you want to avail the accomodation facility?"
+                      />
+                      <h6>
+                        Note: There will be separate charges for availing the accomodation
+                        facility.
+                      </h6>
+                      <main id={styles.extramarginaccom}>
+                        <div>
+                          <label className="radioinpt">
+                            <input
+                              type="radio"
+                              name="accomodation"
+                              value="Yes"
+                              checked={accomodation === "Yes"}
+                              onChange={(event) => {
+                                setAccomodation(event.target.value);
+                              }}
+                            />
+                            Yes
+                          </label>
+                        </div>
+
+                        <div>
+                          <label className="radioinpt">
+                            <input
+                              type="radio"
+                              name="accomodation"
+                              value="No"
+                              checked={accomodation === "No"}
+                              onChange={(event) => {
+                                setAccomodation(event.target.value);
+                              }}
+                            />
+                            No
+                          </label>
+                        </div>
+                      </main>
+                    </>
+                  )}
 
                   {/* submit button  */}
                   <div className={styles.subCont}>
@@ -846,15 +1029,16 @@ const Registration = () => {
               </div>
             </div>
           </div>
-          <div className={styles.contactInfoCont}>
+          <div className={styles.contactInfoCont} id={styles.columnflex}>
             <h2 className={styles.bolded}>For any general queries contact:</h2>
             <h2 className={styles.normal}>1. Ronak Jain (+91 84028 22820)</h2>
             <h2 className={styles.normal}>2. Aditi (+91 84865 00973)</h2>
           </div>
-          <div className={styles.contactInfoCont}>
+          <div className={styles.contactInfoCont} id={styles.columnflex}>
             <h2 className={styles.bolded}>For any form related queries contact:</h2>
             <h2 className={styles.normal}>1. Aditya (+91 8210610167)</h2>
-            <h2 className={styles.normal}>2. Ankit (+91 9431875819)</h2>
+            <h2 className={styles.normal}>2. Ankit (+91 88129 59563)</h2>
+            <h2 className={styles.normal}>3. Dorothy (+91 81330 72305)</h2>
           </div>
         </form>
       </div>

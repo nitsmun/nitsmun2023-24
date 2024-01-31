@@ -129,8 +129,8 @@ const FormCard = () => {
         })
         .then((res) => {
           if (res.data.message === "User account created successfully") {
-            toast("User account created successfully");
-            navigate("/Login");
+            toast("User account created");
+            navigate("/login");
           }
         });
     } catch (err) {

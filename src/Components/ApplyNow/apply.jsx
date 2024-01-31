@@ -17,7 +17,9 @@ const Apply = () => {
       navigate("/registration");
     } else {
       navigate("/signup");
-      toast.error("Please login or signup to register for the event");
+      toast.error("Please login or signup to register for the event", {
+        duration: 10000,
+      });
     }
   };
 
@@ -60,6 +62,38 @@ const Apply = () => {
               alt=""
             />
           </div>
+
+          <main id={styles.ulliprocess}>
+            <h2>Steps to apply for the Annual Conference 2024 : </h2>
+            <ul>
+              <li>Create an account on NITSMUN Signup page (/signup)</li>
+              <li>
+                Login with your Credentials. (You can directly login if you already
+                created an account)
+              </li>
+              <li>
+                After successful login you will be redirected to dashboard page, which
+                will ask you to Verify your email. Follow the simple listed steps
+              </li>
+              <li>
+                Check your personal Email Inbox and spam folder for the link, click on the
+                link to verify your email.
+              </li>
+              <li>
+                After successful verification you will be redirected to Annual Conference
+                Registration page
+              </li>
+              <li>
+                Provide the details, Committee preference, Portfolio preference, and do
+                the payment, then click on submit button
+              </li>
+              <li>
+                After Successful registration of the event, you will get an confirmation
+                email on your Personal Email
+              </li>
+              <li>If you face any sort of issues please contact +918210610167</li>
+            </ul>
+          </main>
           <h2 id={styles.regopen}>
             Registration for Annual Conference 2024 is now Open!
           </h2>

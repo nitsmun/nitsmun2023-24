@@ -1,23 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Monoton&family=Montserrat:wght@400;700&family=Nothing+You+Could+Do&family=Poppins&display=swap");
 
-.exitCont {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-
-  .exit {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-
-    .cross {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-  }
-}
-
 .dashPage {
   overflow-x: hidden;
   background-image: url("https://res.cloudinary.com/dz2mlxltd/image/upload/v1706370659/spiralbg_mj8fzf.svg");
@@ -65,7 +47,7 @@
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   left: 30vw;
   top: 20vh;
   background-color: #ffffff;
@@ -75,28 +57,6 @@
   box-shadow: 0 0 1rem #000000;
   border: 0 solid transparent;
   border-radius: 1rem;
-  flex-direction: column;
-  animation-name: popup;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  .innerCont {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
-  }
-}
-
-@keyframes popup {
-  0% {
-    scale: 0;
-  }
-
-  100% {
-    scale: 1;
-  }
 }
 
 @media screen and (min-width: 1051px) {
@@ -329,5 +289,88 @@
   .options {
     flex-direction: column;
     width: 40%;
+  }
+}
+
+#verificationparent {
+  padding-top: 8vw !important;
+  min-height: 100vh;
+  padding: 0 4vw;
+
+  h1 {
+    font-size: 2vw;
+    font-family: "Lato", sans-serif;
+    margin-bottom: 1.5vw;
+  }
+
+  h3 {
+    font-size: 1.5vw;
+    font-family: "Lato", sans-serif;
+    margin-bottom: 1.5vw;
+  }
+
+  ul li {
+    font-family: "Lato", sans-serif;
+    font-size: 1.25vw;
+  }
+
+  #boldss {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    color: #161c59;
+  }
+}
+
+#btn {
+  background-color: #c9984e;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 1vw;
+  border-radius: 15px;
+  margin: 2vw 0;
+}
+
+@media (max-width: 660px) {
+  #verificationparent {
+    padding-top: 20vw !important;
+    min-height: 100vh;
+    padding: 0 8vw;
+
+    h1 {
+      font-size: 4vw;
+      font-family: "Lato", sans-serif;
+      margin-bottom: 4vw;
+    }
+
+    h3 {
+      font-size: 3.5vw;
+      font-family: "Lato", sans-serif;
+      margin-bottom: 4vw;
+    }
+
+    ul li {
+      font-family: "Lato", sans-serif;
+      font-size: 3.5vw;
+      line-height: 1.6;
+      margin: 3vw 0;
+    }
+
+    #boldss {
+      font-family: "Lato", sans-serif;
+      font-weight: 900;
+      color: #161c59;
+    }
+  }
+
+  #btn {
+    background-color: #c9984e;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 3vw;
+    border-radius: 15px;
+    margin: 4vw 0;
+    font-size: 4vw;
   }
 }

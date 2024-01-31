@@ -32,9 +32,9 @@ const Navbar = (props) => {
       id: "dashboard",
       type: "route",
     });
-    const applyIndex = navLinks.findIndex((item) => item.name === "APPLY");
+    const applyIndex = navLinks.findIndex((item) => item.name === "ABOUT");
     navLinks.splice(applyIndex, 1);
-    deskHam.push({ id: "2", name: "APPLY NOW", dest: "/applynow" });
+    deskHam.push({ id: "4", name: "ABOUT", dest: "/about" });
   }
 
   const navLinksMobile = [

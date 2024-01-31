@@ -2,45 +2,81 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { toast } from "sonner";
 
 const VerifyEmail = () => {
   const { token } = useParams();
-  const [haveVerified, setVerified] = useState();
-  const [verifying, setverifying] = useState(false);
-
+  const [verified, setVerified] = useState(false);
+  const [verifying, setVerifying] = useState(true);
+  // console.log(token)
   useEffect(() => {
-    const emailVerify = () => {
-      setverifying(true);
-      axios
-        .put(`${import.meta.env.VITE_REACT_APP_API}/verifytoken`, { token })
+    const verifyEmail = async () => {
+      await axios
+        .put(`${import.meta.env.VITE_REACT_APP_API}/verifytoken/${token}`)
         .then((res) => {
           if (res.data.message === "Email verified successfully") {
             setVerified(true);
-            setverifying(false);
-          } else {
-            setVerified(false);
-            setverifying(false);
-            console.log(res.data);
+            setVerifying(false);
+            toast(
+              "Email verified successfully, redirecting to registration page after 2sec or alternatively you can go to applynow page to register for the Annual Conference 2024",
+              {
+                duration: 10000,
+              }
+            );
+            setTimeout(() => {
+              window.location.href = "/registration";
+            }, 2500);
+          }
+        })
+
+        .catch((err) => {
+          setVerified(false);
+          setVerifying(false);
+          if (err.response) {
+            switch (err.response.data.error) {
+              case "email already verified":
+                toast("email already verified");
+                break;
+              case "Server Error":
+                toast("Server Error");
+                break;
+              case "Token is missing":
+                toast("Token is missing");
+                break;
+              case "User not found":
+                toast("User not found");
+                break;
+              case "token expired. please try again later":
+                toast("token expired. please try again later");
+                break;
+              default:
+                toast("something went wrong");
+                break;
+            }
           }
         });
     };
 
-    emailVerify();
+    verifyEmail();
   }, [token]);
+  if (verifying === true) {
+    return (
+      <main>
+        <div className="veriyfing..."></div>
+      </main>
+    );
+  }
+
   return (
-    <main>
-      {verifying ? (
-        <h1>Verifying email...</h1>
+    <div>
+      {verified === true ? (
+        <h1>
+          Email verified...redirecting to event registration page after 2 seconds...
+        </h1>
       ) : (
-        <main>
-          {haveVerified ? (
-            <h1>Email verified successfully</h1>
-          ) : (
-            <h1>Something went wrong, please try again later</h1>
-          )}
-        </main>
+        <h1>Somehting went wrong</h1>
       )}
-    </main>
+    </div>
   );
 };
 

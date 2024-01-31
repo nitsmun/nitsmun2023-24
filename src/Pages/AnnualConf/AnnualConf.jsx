@@ -6,6 +6,10 @@ import Faq from "../../Components/Pages/Contact/Faq/Faq";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import { UserContext } from "../../Context/ContextProv";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
 
 const Hero = () => {
   return (
@@ -106,14 +110,18 @@ const Glimpses = () => {
       <div className={styles.headerCont}>
         <h1 className={styles.h1}>Some Glimpses of NITSMUN 2023</h1>
       </div>
-      <div className={styles.innerCont}>
-        <img
-          className={styles.photoCont}
-          alt="loading..."
-          src="https://res.cloudinary.com/dhry5xscm/image/upload/v1705864080/nitsmun/foot_bg_qgtjeq.svg"
-        />
-      </div>
-    </div>
+      <Swiper navigation={true} autoplay={{ "delay": 2500, "disableOnInteraction": false }} modules={[Navigation]} className={styles.innerCont}>
+        <SwiperSlide className={styles.photoCont}><img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706712667/nitsmun/gallery7_zpeejq.webp" alt="photo1" className={styles.photo} /></SwiperSlide>
+        <SwiperSlide className={styles.photoCont}><img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706712669/nitsmun/gallery6_vw08yg.webp" alt="photo2" className={styles.photo} /></SwiperSlide>
+        <SwiperSlide className={styles.photoCont}><img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706712668/nitsmun/gallery2_rsusrz.webp" alt="photo3" className={styles.photo} /></SwiperSlide>
+        <SwiperSlide className={styles.photoCont}><img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706712666/nitsmun/gallery3_x2blej.webp" alt="photo4" className={styles.photo} /></SwiperSlide>
+        <SwiperSlide className={styles.photoCont}><img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706712666/nitsmun/gallery4_eyrcjr.webp" alt="photo5" className={styles.photo} /></SwiperSlide>
+        <SwiperSlide className={styles.photoCont}><img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706712667/nitsmun/gallery5_n3dynj.webp" alt="photo6" className={styles.photo} /></SwiperSlide>
+        <SwiperSlide className={styles.photoCont}><img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706712668/nitsmun/gallery9_eyvcia.webp" alt="photo7" className={styles.photo} /></SwiperSlide>
+        <SwiperSlide className={styles.photoCont}><img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706712668/nitsmun/gallery2_rsusrz.webp" alt="photo8" className={styles.photo} /></SwiperSlide>
+        <SwiperSlide className={styles.photoCont}><img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706712667/nitsmun/gallery1_srwzf8.webp" alt="photo9" className={styles.photo} /></SwiperSlide>
+      </Swiper>
+    </div >
   );
 };
 
