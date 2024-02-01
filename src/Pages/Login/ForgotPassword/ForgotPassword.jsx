@@ -1,30 +1,74 @@
-import { useState } from "react";
+/* eslint-disable no-console */
+import { useState, useMemo } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import styles from "./ForgotPassword.module.scss";
 import Navbar from "../../../Components/Navbar/Navbar";
 const FormCard = () => {
   const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const isButtonEnabled = useMemo(() => {
+    return Boolean(email);
+  }, [email]);
+
+  const isValidEmail = useMemo(() => {
+    return Boolean(email.includes("@") && email.includes("."));
+  }, [email]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = axios.post(
-      `${import.meta.env.VITE_REACT_APP_API}/sendlink`,
-      { email },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.JWT_SECRET_KEY}`,
-        },
+    setSubmitting(true);
+    try {
+      await axios
+        .post(`${import.meta.env.VITE_REACT_APP_API}/sendresetpwdlink`, { email })
+        .then((res) => {
+          if (res.data.message === "Reset password link sent successfully") {
+            setEmail("");
+            toast.success("Reset password link sent successfully", {
+              duration: 10000,
+            });
+          }
+        });
+    } catch (err) {
+      if (err.response) {
+        switch (err.response.data.error) {
+          case "email is missing":
+            toast.error("email is missing");
+            break;
+          case "no user found":
+            toast.error("no user found");
+            break;
+          case "Please verify your email first":
+            toast.error("Please verify your email first");
+            break;
+          case "Server Error":
+            toast.error("Server Error");
+            break;
+          case "Email is required":
+            toast.error("Email is required");
+            break;
+          case "Invalid email":
+            toast.error("Invalid email");
+            break;
+          case "Either token or tokenExpiresAt is missing":
+            toast.error("Either token or tokenExpiresAt is missing");
+            break;
+          default:
+            toast.error("Something went wrong");
+            console.error(err);
+            break;
+        }
       }
-    );
-    toast(response.json());
+    } finally {
+      setSubmitting(false);
+    }
   };
   return (
     <div className={styles.loginWrap}>
       <div className={styles.headingCont}>
         <h1 className={styles.h1}>Forgot Password?</h1>
         <p className={styles.p}>
-          Enter the email address you used when you joined and we will send you
+          Enter the personal email address you used when you joined and we will send you
           instructions to rest your password
         </p>
       </div>
@@ -40,7 +84,15 @@ const FormCard = () => {
         <div className={styles.subCont}>
           <input
             type="submit"
-            value="Confirm"
+            value={submitting ? "Submitting..." : "Submit"}
+            style={{
+              cursor:
+                submitting || !isButtonEnabled || !isValidEmail
+                  ? "not-allowed"
+                  : "pointer",
+              opacity: submitting || !isButtonEnabled || !isValidEmail ? "0.5" : "1",
+            }}
+            disabled={!isButtonEnabled || submitting || !isValidEmail}
             onClick={handleSubmit}
             className={styles.subBtn}
           />
@@ -60,12 +112,12 @@ const ForgotPassword = () => {
               <img
                 src="https://res.cloudinary.com/dhry5xscm/image/upload/v1703270578/nitsmun/oAuth-logo_z5vdk0.svg"
                 alt="logo loading..."
-                className={styles.img}
+                // className={styles.img}
               />
             </div>
-            <h1 className={styles.h1}>
+            {/* <h1 className={styles.h1}>
               Join us in shaping a better world through NITS MUN!
-            </h1>
+            </h1> */}
           </div>
           <FormCard />
         </div>

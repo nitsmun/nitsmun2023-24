@@ -53,9 +53,9 @@ const App = () => {
         <Route path="/annualconf" element={<AnnualConf />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/ForgotPassword" element={<ForgotPassword />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/reset" element={<Reset />} />
+        <Route path="/resetpassword/:token" element={<Reset />} />
         <Route path="/about" element={<About />} />
         <Route path="/archive" element={<Archive />} />
         <Route path="/verifyemail/:token" element={<VerifyEmail />} />

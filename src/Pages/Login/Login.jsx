@@ -122,6 +122,13 @@ const FormCard = () => {
             }}
             onClick={handleSub}
           />
+
+          <h6 className={styles.signupQuestion}>
+            Forgot Password?{" "}
+            <Link to="/forgotPassword" className={styles.a}>
+              Click here to reset
+            </Link>
+          </h6>
           <h6 className={styles.signupQuestion}>
             Haven&apos; t signed up?{" "}
             <Link to="/signup" className={styles.a}>
