@@ -1,12 +1,12 @@
-import styles from "./MockMun24.module.scss";
-import Faq from "../../Components/Pages/Contact/Faq/Faq";
-import Navbar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
+import styles from "./MockMun24.module.scss";
+import Faq from "../../Components/Pages/Contact/Faq/Faq";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 const Hero = () => {
   return (
     <div className={styles.hero}>
