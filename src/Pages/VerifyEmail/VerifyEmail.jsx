@@ -62,7 +62,9 @@ const VerifyEmail = () => {
   if (verifying === true) {
     return (
       <main>
-        <div className="veriyfing..."></div>
+        <div className="veriyfing...">
+          <h1>Verifying your email please wait...</h1>
+        </div>
       </main>
     );
   }
