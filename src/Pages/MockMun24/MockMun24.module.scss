@@ -69,6 +69,7 @@
 .hero {
   width: 100%;
   height: auto;
+
   img {
     height: 100%;
     width: 100%;
@@ -305,11 +306,65 @@
 
   .innerCont {
     .photoCont {
-      width: 100%;
+      width: 50%;
       overflow: hidden;
       padding: 0;
       border: none;
       border-radius: 3.5rem;
     }
+  }
+}
+
+.swiperCont {
+
+  width: 80%;
+  border: 0 solid transparent;
+  border-radius: 1rem;
+
+  .photoCont {
+    height: 8rem;
+
+    .photo {
+      height: 100%;
+      width: 100%;
+    }
+
+    background-color: red;
+  }
+
+  @media screen and (min-width:350px) {
+    .photoCont {
+      height: 14rem;
+    }
+  }
+
+  @media screen and (min-width:450px) {
+    .photoCont {
+      height: 16rem;
+    }
+  }
+
+  @media screen and (min-width:550px) {
+    .photoCont {
+      height: 18rem;
+    }
+  }
+
+  @media screen and (min-width:650px) {
+    .photoCont {
+      height: 20rem;
+    }
+  }
+
+  @media screen and (min-width:800px) {
+    .photoCont {
+      height: 24rem;
+    }
+  }
+}
+
+@media screen and (min-width:900px) {
+  .swiperCont {
+    width: 50%;
   }
 }

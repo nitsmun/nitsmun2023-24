@@ -6,39 +6,39 @@ const Photo = () => {
   const photos = [
     {
       sl: 1,
-      src: "https://res.cloudinary.com/dp92qug2f/image/upload/v1679132650/nitsmun/juniormun2021/jmun_ss1_ksrumw.webp",
+      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1707127538/nitsmun/mockmun1_ulokow.jpg",
     },
     {
       sl: 2,
-      src: "https://res.cloudinary.com/dp92qug2f/image/upload/v1679132652/nitsmun/juniormun2021/jmun_ss2_izcmqr.webp",
+      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1707127536/nitsmun/mockmun2_qehbza.jpg",
     },
     {
       sl: 3,
-      src: "https://res.cloudinary.com/dp92qug2f/image/upload/v1679132655/nitsmun/juniormun2021/jmun_ss3_jrhoc0.webp",
+      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1707127534/nitsmun/mockmun3_lp3fn7.jpg",
     },
     {
       sl: 4,
-      src: "https://res.cloudinary.com/dp92qug2f/image/upload/v1679132658/nitsmun/juniormun2021/jmun_ss4_i6ph8q.webp",
+      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706712669/nitsmun/gallery6_vw08yg.webp",
     },
     {
       sl: 5,
-      src: "https://res.cloudinary.com/dp92qug2f/image/upload/v1679132662/nitsmun/juniormun2021/jmun_ss5_wp21km.webp",
-    },
-    {
-      sl: 6,
       src: "https://res.cloudinary.com/dp92qug2f/image/upload/v1679132667/nitsmun/juniormun2021/jmun_ss6_ka2xo6.webp",
     },
     {
+      sl: 6,
+      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706712667/nitsmun/gallery1_srwzf8.webp",
+    },
+    {
       sl: 7,
-      src: "https://res.cloudinary.com/dp92qug2f/image/upload/v1679132672/nitsmun/juniormun2021/jmun_ss7_gcuxwq.webp",
+      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706712667/nitsmun/gallery5_n3dynj.webp",
     },
     {
       sl: 8,
-      src: "https://res.cloudinary.com/dp92qug2f/image/upload/v1679130327/nitsmun/annual%20conference%20photos/nitsmun2022/330123622_1258857281654852_6420257772004656386_n.jpg_elpbtk_mpgkhm.webp",
+      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706712666/nitsmun/gallery3_x2blej.webp",
     },
     {
       sl: 9,
-      src: "https://res.cloudinary.com/dp92qug2f/image/upload/v1679130326/nitsmun/annual%20conference%20photos/nitsmun2022/2022_2_euc3u5.webp",
+      src: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706712666/nitsmun/gallery4_eyrcjr.webp",
     },
   ];
   const [scrollPos, setScrollPos] = useState(0);
@@ -102,9 +102,8 @@ const Photo = () => {
               onClick={() => scrollFunc("left")}
               className={`${styles.btn} ${styles.btnLeft}`}
               style={{
-                visibility: `${
-                  scrollPos < photo * photos.length - 100 ? "visible" : "hidden"
-                }`,
+                visibility: `${scrollPos < photo * photos.length - 100 ? "visible" : "hidden"
+                  }`,
               }}
             >
               ←
@@ -158,9 +157,8 @@ const Photo = () => {
                   src={`${wideview === 0 ? "none" : photos[wideview - 1].src}`}
                   alt="loading.."
                 />
-                <h1 className={styles.h1}>{`${
-                  wideview === 0 ? "none" : photos[wideview - 1].sl
-                }`}</h1>
+                <h1 className={styles.h1}>{`${wideview === 0 ? "none" : photos[wideview - 1].sl
+                  }`}</h1>
               </div>
             </div>
             <button onClick={rightClick} className={styles.btn}>
