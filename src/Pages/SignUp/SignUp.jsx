@@ -182,6 +182,10 @@ const FormCard = () => {
       setSubmitting(false);
     }
   };
+
+  useEffect(() => {
+    document.title = "Signup | NITSMUN";
+  }, []);
   useEffect(() => {
     if (isStudentOfNITS === false) {
       document.getElementById("no").checked = true;

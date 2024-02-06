@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import styles from "./Photo.module.scss";
 import Footer from "../../Components/Footer/Footer";
@@ -69,6 +69,9 @@ const Photo = () => {
       setWideview(wideview + 1);
     }
   };
+  useEffect(() => {
+    document.title = "Photo Gallery | NITSMUN";
+  }, []);
   return (
     <div className={styles.pageContainer}>
       <div>
@@ -102,8 +105,9 @@ const Photo = () => {
               onClick={() => scrollFunc("left")}
               className={`${styles.btn} ${styles.btnLeft}`}
               style={{
-                visibility: `${scrollPos < photo * photos.length - 100 ? "visible" : "hidden"
-                  }`,
+                visibility: `${
+                  scrollPos < photo * photos.length - 100 ? "visible" : "hidden"
+                }`,
               }}
             >
               ←
@@ -157,8 +161,9 @@ const Photo = () => {
                   src={`${wideview === 0 ? "none" : photos[wideview - 1].src}`}
                   alt="loading.."
                 />
-                <h1 className={styles.h1}>{`${wideview === 0 ? "none" : photos[wideview - 1].sl
-                  }`}</h1>
+                <h1 className={styles.h1}>{`${
+                  wideview === 0 ? "none" : photos[wideview - 1].sl
+                }`}</h1>
               </div>
             </div>
             <button onClick={rightClick} className={styles.btn}>

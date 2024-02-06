@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import styles from "./ContactUs.module.scss";
@@ -24,18 +24,51 @@ const ContactUs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
+  const isSendButtonEnabled = useMemo(() => {
+    return Boolean(
+      name && email && message && email.includes("@") && email.includes(".")
+    );
+  }, [email, message, name]);
+
   const sendMessage = async (e) => {
     e.preventDefault();
-    const request = await axios.post(`${import.meta.env.VITE_REACT_APP_API}/contactus`, {
-      name,
-      email,
-      message,
-    });
-    if (request.status === 200) {
-      toast("Thank you for contacting us. We will get to you soon!!");
-      setName("");
-      setMessage("");
-      setEmail("");
+    setSending(true);
+    try {
+      await axios
+        .post(`${import.meta.env.VITE_REACT_APP_API}/contactus`, {
+          name,
+          email,
+          message,
+        })
+        .then((res) => {
+          if (
+            res.data.message ===
+            "Thank you for contacting us. We will get back to you soon"
+          ) {
+            setEmail("");
+            setName("");
+            setMessage("");
+            toast.success("Thank you for contacting us. We will get back to you soon", {
+              duration: 7500,
+            });
+          }
+        });
+    } catch (err) {
+      if (err.response) {
+        switch (err.response.data.error) {
+          case "All fields are required":
+            toast.error("All fields are required");
+            break;
+          case "something went wrong":
+            toast.error("something went wrong on the server side");
+            break;
+          default:
+            toast.error("Something went wrong");
+        }
+      }
+    } finally {
+      setSending(false);
     }
   };
   return (
@@ -74,7 +107,12 @@ const ContactUs = () => {
         <input
           type="submit"
           className={styles.subButton}
-          value="Send"
+          disabled={sending || !isSendButtonEnabled}
+          style={{
+            cursor: sending || !isSendButtonEnabled ? "not-allowed" : "pointer",
+            opacity: sending || !isSendButtonEnabled ? "0.5" : "1",
+          }}
+          value={sending ? "Sending..." : "Send"}
           onClick={sendMessage}
         />
       </form>

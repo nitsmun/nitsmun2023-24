@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./about.module.scss";
 import Faq from "../Pages/Contact/Faq/Faq";
 import Banner from "../Archiv/Banner";
@@ -7,6 +7,9 @@ import Footer from "../Footer/Footer";
 // import Container from './container';
 
 const About = () => {
+  useEffect(() => {
+    document.title = "About | NITSMUN";
+  }, []);
   return (
     <div className={styles.about} id="about">
       <Navbar page="ABOUT" />

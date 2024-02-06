@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Faq from "../Pages/Contact/Faq/Faq";
 import styles from "./Archive.module.scss";
 import Banner from "./Banner";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 const Archive = () => {
+  useEffect(() => {
+    document.title = "Archive | NITSMUN";
+  }, []);
   return (
     <div className={styles.archiveContainer}>
       <Navbar page="ARCHIVE" />

@@ -42,6 +42,9 @@ const Registration = () => {
     enabled: isStudentTrue,
   });
 
+  const isAdmin = useMemo(() => {
+    return Boolean(role === "admin" && isLoggedIn);
+  }, [role, isLoggedIn]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -58,7 +61,11 @@ const Registration = () => {
         duration: 10000,
       });
     }
-  }, [isStudentTrue, navigate, data?.isVerified]);
+
+    if (isAdmin) {
+      navigate("/dashboard");
+    }
+  }, [isStudentTrue, navigate, data?.isVerified, isAdmin]);
 
   const eventName = "Annual Conference 2024";
 

@@ -36,6 +36,7 @@ import About from "./Components/About/About";
 import Error from "./Pages/Error/Error";
 import AnnualConf from "./Pages/AnnualConf/AnnualConf";
 import VerifyEmail from "./Pages/VerifyEmail/VerifyEmail";
+import ContactRes from "./Pages/ContactUsRes/ContactRes";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -70,7 +71,7 @@ const App = () => {
         <Route path="/eventreg/:eventID" element={<IndividualEventReg />} />
         {/* event based on status */}
         <Route path="/reg/:eventName/:status" element={<RegistrationsBasedOnStatus />} />
-
+        <Route path="/contactusres" element={<ContactRes />} />
         {/* SuperAdmin stuffs */}
         <Route exact path="/superadmin" element={<SuperAdminDashboard />} />
         <Route exact path="/allaccounts" element={<AllAccounts />} />

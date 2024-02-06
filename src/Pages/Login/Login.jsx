@@ -16,6 +16,9 @@ const FormCard = () => {
   const navigate = useNavigate();
   const { isLoggedIn } = useContext(UserContext);
   useEffect(() => {
+    document.title = "Login | NITSMUN";
+  }, []);
+  useEffect(() => {
     if (isLoggedIn) {
       navigate("/dashboard");
     }

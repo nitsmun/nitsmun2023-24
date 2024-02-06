@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import TeamCard from "./TeamCard";
 import styles from "./Team.module.scss";
@@ -12,6 +13,9 @@ import {
 } from "./DataBase";
 
 const Team = () => {
+  useEffect(() => {
+    document.title = "Team | NITSMUN";
+  }, []);
   return (
     <div className={styles.teamPage}>
       <Navbar page="TEAM" />

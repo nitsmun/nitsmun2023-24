@@ -1,5 +1,5 @@
 /* eslint-disable check-file/filename-naming-convention */
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import styles from "./apply.module.scss";
@@ -28,6 +28,9 @@ const Apply = () => {
     window.open("https://forms.gle/2sEyFRTPrXTBSt288", "_blank");
   };
 
+  useEffect(() => {
+    document.title = "Apply | NITSMUN";
+  }, []);
   return (
     <div className={styles.parent}>
       <Navbar page="APPLY" />

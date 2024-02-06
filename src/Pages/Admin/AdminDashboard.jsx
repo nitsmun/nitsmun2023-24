@@ -28,6 +28,11 @@ const AdminDashboard = () => {
         {" "}
         <Link to="/allreg">All registrations</Link>
       </div>
+
+      <div>
+        {" "}
+        <Link to="/contactusres">Contact us Responses</Link>
+      </div>
       {/* <div>
         {" "}
         <Link to={`/reg/${eventName}/confirmed`}>Confirmed registrations</Link>
