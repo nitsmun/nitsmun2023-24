@@ -15,21 +15,32 @@ const WidePopup = (props) => {
   if (props.name === "events registered") {
     return (
       <div className={styles.widePop}>
-        {props.infos === null ? (
+        {props.events === null ? (
           <h1>No events registered</h1>
         ) : (
-          props.infos.map((item) => <li>{item}</li>)
+          <main>
+            <p id={styles.boldpp}>Annual Conference 2024</p>
+            <p id={styles.reallysmall}>
+              (click again on registered events button to close popup)
+            </p>
+          </main>
         )}
       </div>
     );
   }
+
   if (props.name === "events information") {
     return (
       <div className={styles.widePop}>
         {props.infos === null ? (
-          <h1>No upcoming events</h1>
+          <main>
+            <p id={styles.boldpp}>To be announced..stay tuned </p>
+            <p id={styles.reallysmall}>
+              (click again on upcoming events button to close popup)
+            </p>
+          </main>
         ) : (
-          props.infos.map((item) => <li>{item}</li>)
+          props.infos?.map((item) => <p id={styles.boldpp}>{item}</p>)
         )}
       </div>
     );
@@ -142,21 +153,21 @@ const Card = (props) => {
               <div className={styles.userDetails}>
                 <div className={styles.person}>
                   <div className={styles.photoParent}>
-                    <img className={styles.img} alt="loading.." src={props.photo} />
+                    <img className={styles.img} alt="" src={props.photo} />
                   </div>
                   <div className={styles.bio}>
-                    <div className={styles.field}>
+                    <div className={styles.field} id={styles.topmargintoname}>
                       <h1 className={styles.h1}>Name</h1>
                       <h1 className={styles.desc}>{props.name}</h1>
                     </div>
 
                     {props.isStudentOfNITS === true ? (
                       <>
-                        <div className={styles.field}>
+                        <div className={styles.field} id={styles.topmargintoname}>
                           <h1 className={styles.h1}>Scholar ID</h1>
                           <h1 className={styles.desc}>{props.phone}</h1>
                         </div>
-                        <div className={styles.field}>
+                        <div className={styles.field} id={styles.topmargintoname}>
                           <h1 className={styles.h1}>Branch</h1>
                           <h1 className={styles.desc}>{props.branch}</h1>
                         </div>
@@ -166,53 +177,50 @@ const Card = (props) => {
                 </div>
                 <div className={styles.contactSec}>
                   <div className={styles.personalContact}>
-                    <h1 className={styles.heading}>Contact Details</h1>
+                    {/* <h1 className={styles.heading}>Contact Details</h1> */}
                     <div className={styles.content}>
-                      <div className={styles.field}>
+                      <div className={styles.field} id={styles.topmargintoname}>
                         <h1 className={styles.h1}>Phone Number</h1>
                         <h1 className={styles.desc}>{props.phone}</h1>
                       </div>
-
-                      <div className={styles.field}>
+                      <div className={styles.field} id={styles.topmargintoname}>
                         <h1 className={styles.h1}>Email</h1>
                         <h1 className={styles.desc}>{props.email}</h1>
                       </div>
                     </div>
                   </div>
                   {props.isStudentOfNITS === true ? (
-                    <div className={styles.instContact}>
-                      <h1 className={styles.heading}>Contact Details</h1>
-                      <div className={styles.content}>
-                        <div className={styles.field}>
-                          <h1 className={styles.h1}>Phone Number</h1>
-                          <h1 className={styles.desc}>{props.phone}</h1>
-                        </div>
-
-                        <div className={styles.field}>
-                          <h1 className={styles.h1}>Email</h1>
-                          <h1 className={styles.desc}>{props.instituteEmail}</h1>
-                        </div>
-                      </div>
-                    </div>
+                    <div className={styles.instContact}></div>
                   ) : null}
                 </div>
               </div>
+
               <div className={styles.eventCol}>
                 <div className={styles.parent}>
                   <ul className={styles.eventsRegistered}>
+                    <h3 style={{ textDecoration: "underline" }}>Registered Events:</h3>
                     {props.events === null ? (
                       <h1 className={styles.h1}>No events registered yet</h1>
                     ) : (
-                      props.events.map((item) => <li>{item}</li>)
+                      props.events?.map((item) => {
+                        return (
+                          <ul>
+                            <li>
+                              <p id={styles.boldpp}>{item?.eventName}</p>
+                            </li>
+                          </ul>
+                        );
+                      })
                     )}
                   </ul>
                 </div>
+
                 <div className={styles.parent}>
                   <div className={styles.eventsUpcoming}>
                     {props.eventsInfo === null ? (
-                      <h1 className={styles.h1}>No upcoming events</h1>
+                      <h1 className={styles.h1}>Upcoming event to be announced...</h1>
                     ) : (
-                      props.eventsInfo.map((item) => (
+                      props.eventsInfo?.map((item) => (
                         <li>
                           <h1>{item.name}</h1>
                           <div className={styles.detailsCont}>
@@ -239,12 +247,16 @@ const Card = (props) => {
                   style={{ cursor: "pointer" }}
                   className={styles.btn}
                 >
-                  <div>
+                  <div id={styles.flexbetn}>
                     <img
-                      alt="icon loading..."
+                      alt=""
                       src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706499/nitsmun/dashboard_yynv9s.svg"
                     />
-                    <label style={{ cursor: "pointer" }} htmlFor="dashboard">
+                    <label
+                      id={styles.labessize}
+                      style={{ cursor: "pointer" }}
+                      htmlFor="dashboard"
+                    >
                       Dashboard
                     </label>
                   </div>
@@ -276,16 +288,21 @@ const Card = (props) => {
                 }
                 className={styles.btn}
               >
-                <div>
+                <div id={styles.flexbetn}>
                   <img
-                    alt="icon loading..."
+                    alt=""
                     src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg"
                   />
-                  <label style={{ cursor: "pointer" }} htmlFor="events registered">
+                  <label
+                    id={styles.labessize}
+                    style={{ cursor: "pointer" }}
+                    htmlFor="events registered"
+                  >
                     Events Registered
                   </label>
                 </div>
               </button>
+
               <button
                 onClick={() =>
                   wideView(
@@ -299,34 +316,46 @@ const Card = (props) => {
                 }
                 className={styles.btn}
               >
-                <div>
+                <div id={styles.flexbetn}>
                   <img
                     alt="icon loading..."
                     src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706500/nitsmun/tasks-1_tlxmil.svg"
                   />
-                  <label style={{ cursor: "pointer" }} htmlFor="upcoming events">
+                  <label
+                    id={styles.labessize}
+                    style={{ cursor: "pointer" }}
+                    htmlFor="upcoming events"
+                  >
                     Upcoming Events
                   </label>
                 </div>
               </button>
             </div>
             <div className={styles.col}>
-              <Link to="/dashboard/edit" className={styles.btn}>
+              <Link to="/dashboard/edit" className={styles.btn} id={styles.flexbetn}>
                 <img
                   alt="icon loading..."
                   src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706541/nitsmun/Vector_kntss1.svg"
                 />
-                <label style={{ cursor: "pointer" }} htmlFor="edit profile">
+                <label
+                  id={styles.labessize}
+                  style={{ cursor: "pointer" }}
+                  htmlFor="edit profile"
+                >
                   Edit Profile
                 </label>
               </Link>
               <button className={styles.btn} onClick={handleSignout}>
-                <div>
+                <div id={styles.flexbetn}>
                   <img
                     alt="icon loading..."
                     src="https://res.cloudinary.com/dhry5xscm/image/upload/v1704706540/nitsmun/material-symbols_logout_wibfg1.svg"
                   />
-                  <label style={{ cursor: "pointer" }} htmlFor="logout">
+                  <label
+                    id={styles.labessize}
+                    style={{ cursor: "pointer" }}
+                    htmlFor="logout"
+                  >
                     Log Out
                   </label>
                 </div>
@@ -340,9 +369,9 @@ const Card = (props) => {
 
                   <label htmlFor="queries">
                     <h1 className={styles.queries}>For queries contact</h1>
-                    <a style={{ color: "#333333" }} href="tel:1234512345">
+                    <a style={{ color: "#333333" }} href="tel:+91 8402822820">
                       {" "}
-                      <h2 className={styles.queries}>12345-12345</h2>
+                      <h2 className={styles.queries}>+91 8402822820</h2>
                     </a>
                   </label>
                 </div>
@@ -393,11 +422,7 @@ const Card = (props) => {
 const Dashboard = () => {
   const [events, setEvents] = useState(null);
   const [eventsInfo, setEventsinfo] = useState(null);
-  useEffect(() => {
-    setEvents(null);
-    setEventsinfo(null);
-    document.title = "Dashboard | NITSMUN";
-  }, []);
+
   const { role, isLoggedIn } = useContext(UserContext);
   const isTrue = useMemo(() => {
     return Boolean(role && isLoggedIn);
@@ -423,11 +448,18 @@ const Dashboard = () => {
   const pendingStatusEvent = allData?.filter((item) => item.status === "pending");
   const confirmedStatusEvent = allData?.filter((item) => item.status === "confirmed");
   const declinedStatusEvent = allData?.filter((item) => item.status === "declined");
-  console.log(allData);
+  // console.log(allData);
   console.log(pendingStatusEvent);
   console.log(confirmedStatusEvent);
   console.log(declinedStatusEvent);
 
+  useEffect(() => {
+    setEvents(allData);
+    setEventsinfo(null);
+
+    document.title = "Dashboard | NITSMUN";
+  }, [allData]);
+  // console.log(events)
   if (error || eventsError) {
     return <div>Something went wrong!</div>;
   }
@@ -474,7 +506,9 @@ const Dashboard = () => {
   }
 
   window.location.href = "/";
-  toast("You have not logged in!");
+  toast.error("You have not logged in!", {
+    duration: 10000,
+  });
   return null;
 };
 export default Dashboard;
