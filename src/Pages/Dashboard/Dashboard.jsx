@@ -19,10 +19,11 @@ const WidePopup = (props) => {
           <h1>No events registered</h1>
         ) : (
           <main>
-            <p id={styles.boldpp}>Annual Conference 2024</p>
+            {/* <p id={styles.boldpp}>Annual Conference 2024</p>
             <p id={styles.reallysmall}>
               (click again on registered events button to close popup)
-            </p>
+            </p> */}
+            <p>This section is under development.</p>
           </main>
         )}
       </div>
