@@ -397,6 +397,15 @@
   font-weight: 600;
   color: #161c59;
   font-family: "Lato", sans-serif;
+  font-size: 1.8vw;
+}
+
+#boldppp {
+  font-weight: 600;
+  color: #161c59;
+  font-family: "Lato", sans-serif;
+  font-size: 1.2vw;
+  margin-top: 0.75vw;
 }
 
 #labessize {
@@ -430,5 +439,9 @@
     margin: 1vw 0;
     font-size: 2.5vw;
     line-height: 1.6;
+  }
+
+  #boldpp {
+    font-size: 6vw !important;
   }
 }

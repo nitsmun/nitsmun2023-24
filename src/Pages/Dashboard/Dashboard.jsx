@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import React, { useState, useEffect, useContext, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,18 +13,37 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { fetchAllStudentRegistrations } from "../../ReactQuery/Fetchers/StudentRegisteredEvent";
 
 const WidePopup = (props) => {
+  // console.log(props?.events)
   if (props.name === "events registered") {
     return (
       <div className={styles.widePop}>
-        {props.events === null ? (
-          <h1>No events registered</h1>
+        {props.events?.length === 0 ? (
+          <main>
+            <p id={styles.boldpp}>No events registered.</p>
+            <p id={styles.reallysmall}>
+              (click again on Events Registered button to close popup)
+            </p>
+          </main>
         ) : (
           <main>
             {/* <p id={styles.boldpp}>Annual Conference 2024</p>
             <p id={styles.reallysmall}>
               (click again on registered events button to close popup)
             </p> */}
-            <p>This section is under development.</p>
+            {/* <p id={styles.boldpp}>This section is under development.</p>
+            <p id={styles.reallysmall}>
+              (click again on events registered button to close popup)
+            </p> */}
+            {props.events?.map((item) => {
+              return (
+                <main key={item?._id}>
+                  <p id={styles.boldpp}>{item?.eventName}</p>
+                  <p id={styles.reallysmall}>
+                    (click again on Events Registered button to close popup)
+                  </p>
+                </main>
+              );
+            })}
           </main>
         )}
       </div>
@@ -37,7 +57,7 @@ const WidePopup = (props) => {
           <main>
             <p id={styles.boldpp}>To be announced..stay tuned </p>
             <p id={styles.reallysmall}>
-              (click again on upcoming events button to close popup)
+              (click again on Upcoming Events button to close popup)
             </p>
           </main>
         ) : (
@@ -145,7 +165,9 @@ const Card = (props) => {
 
   return (
     <>
-      {option === false ? null : <WidePopup name={option} infos={choice} />}
+      {option === false ? null : (
+        <WidePopup name={option} infos={choice} events={props.events} />
+      )}
       {props.isVerified === true ? (
         <div className={styles.cardWrap}>
           {/* <h1 className={styles.h1}>USER DASHBOARD</h1> */}
@@ -182,11 +204,16 @@ const Card = (props) => {
                     <div className={styles.content}>
                       <div className={styles.field} id={styles.topmargintoname}>
                         <h1 className={styles.h1}>Phone Number</h1>
-                        <h1 className={styles.desc}>{props.phone}</h1>
+                        <a style={{ color: "black" }} href={`tel:${props.phone}`}>
+                          <h1 className={styles.desc}>{props.phone}</h1>
+                        </a>
                       </div>
                       <div className={styles.field} id={styles.topmargintoname}>
                         <h1 className={styles.h1}>Email</h1>
-                        <h1 className={styles.desc}>{props.email}</h1>
+                        <a style={{ color: "black" }} href={`mailto:${props.email}`}>
+                          {" "}
+                          <h1 className={styles.desc}>{props.email}</h1>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -200,14 +227,14 @@ const Card = (props) => {
                 <div className={styles.parent}>
                   <ul className={styles.eventsRegistered}>
                     <h3 style={{ textDecoration: "underline" }}>Registered Events:</h3>
-                    {props.events === null ? (
+                    {props.events?.length === 0 ? (
                       <h1 className={styles.h1}>No events registered yet</h1>
                     ) : (
                       props.events?.map((item) => {
                         return (
                           <ul>
                             <li>
-                              <p id={styles.boldpp}>{item?.eventName}</p>
+                              <p id={styles.boldppp}>{item?.eventName}</p>
                             </li>
                           </ul>
                         );
