@@ -3,7 +3,7 @@ export const Secretariat = [
     id: 1,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676476439/events/nitsmun/team/marufPadaya_faj39h.jpg",
+      "https://res.cloudinary.com/dp92qug2f/image/upload/v1707424604/maruf_padaya_vi93jh.jpg",
     alt: "Maruf Padaya",
     name: "Maruf Padaya",
     post: "Sacretary General",
