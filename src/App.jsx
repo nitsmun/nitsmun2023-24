@@ -53,6 +53,10 @@ const App = () => {
         <Route path="/mockmun24" element={<MockMun24 />} />
         <Route path="/annualconf" element={<AnnualConf />} />
         <Route path="/registration" element={<Registration />} />
+        <Route
+          path="/registration/invite/:grpLeaderEmail/to/:memberEmail/token/:uniqueToken/:eventNameIn/:grpName"
+          element={<Registration />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/signup" element={<SignUp />} />

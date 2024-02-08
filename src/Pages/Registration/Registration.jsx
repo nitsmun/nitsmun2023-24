@@ -3,9 +3,9 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-console */
 import { useState, useMemo, useEffect, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import FileBase64 from "react-file-base64";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 import { toast } from "sonner";
 import axios from "axios";
@@ -30,6 +30,12 @@ const FieldName = (props) => {
 };
 
 const Registration = () => {
+  const { grpLeaderEmail, memberEmail, uniqueToken, eventNameIn, grpName } = useParams();
+  console.log("grpLeaderEmail:", grpLeaderEmail);
+  console.log("memberEmail:", memberEmail);
+  console.log("uniqueToken:", uniqueToken);
+  console.log("eventNameIn:", eventNameIn);
+  console.log("grpName:", grpName);
   const { role, isLoggedIn } = useContext(UserContext);
   const [submitting, setSubmitting] = useState(false);
 
