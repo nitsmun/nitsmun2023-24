@@ -507,3 +507,123 @@
     font-size: 2.5vw !important;
   }
 }
+
+#choiceregis {
+  min-height: 100vh;
+  padding: 10vw;
+  h1 {
+    font-size: 2.2vw;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 2.5vw;
+  }
+  main {
+    text-align: center;
+    button {
+      cursor: pointer;
+      margin: 1vw;
+      border: none;
+      background-color: #c9984e;
+      outline: none;
+      border-radius: 10px;
+      padding: 0.5vw 2vw;
+      font-size: 1.25vw;
+    }
+  }
+  #moretoplabel {
+    margin: 1vw;
+  }
+}
+
+#moreboldsize {
+  font-size: 1vw;
+  font-weight: 600;
+}
+
+#imporantinfoongrp {
+  margin: 1vw 0;
+}
+
+#sendinvitebtnid {
+  margin: 1vw auto;
+  padding: 0.5vw 1.25vw;
+  border: none;
+  outline: none;
+  background-color: #c9984e;
+  color: white;
+  border-radius: 8px;
+}
+
+#textmemes {
+  font-size: 1vw;
+  font-weight: 600;
+  margin: 0.5vw;
+}
+
+#textmemescenter {
+  text-align: center;
+  color: green;
+  font-size: 1vw;
+  font-weight: 600;
+  margin: 0.5vw;
+  text-decoration: underline;
+}
+
+@media (max-width: 660px) {
+  #choiceregis {
+    min-height: 100vh;
+    padding: 10vw;
+    padding-top: 40vw;
+    h1 {
+      font-size: 3.25vw;
+      margin-bottom: 1vw;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 3vw;
+      font-size: 2.9vw;
+    }
+    main {
+      text-align: center;
+      button {
+        cursor: pointer;
+        margin: 3vw;
+        border: none;
+        background-color: #c9984e;
+        outline: none;
+        border-radius: 10px;
+        // padding: 2wv 9vw !important;
+        font-size: 5vw;
+      }
+    }
+    #moretoplabel {
+      margin: 1vw;
+    }
+  }
+
+  #sendinvitebtnid {
+    margin: 5vw auto;
+    padding: 1.25vw 4vw;
+    font-size: 4vw;
+    border: none;
+    outline: none;
+    background-color: #c9984e;
+    color: white;
+    border-radius: 8px;
+  }
+
+  #textmemes {
+    font-size: 3vw;
+    font-weight: 600;
+    margin: 2vw;
+  }
+
+  #textmemescenter {
+    text-align: center;
+    color: green;
+    font-size: 3vw;
+    font-weight: 600;
+    margin: 2vw;
+  }
+}
