@@ -570,6 +570,20 @@
   text-decoration: underline;
 }
 
+#imporantforgrp {
+  margin: 1vw 0;
+  width: 70% auto;
+  ul li {
+    text-align: justify;
+  }
+  h4 {
+    font-size: 1.8vw;
+    text-decoration: underline;
+    font-weight: 600;
+    font-family: "Poppins";
+    margin: 1vw 0;
+  }
+}
 @media (max-width: 660px) {
   #choiceregis {
     min-height: 100vh;
@@ -625,5 +639,19 @@
     font-size: 3vw;
     font-weight: 600;
     margin: 2vw;
+  }
+
+  #imporantforgrp {
+    margin: 5vw 0;
+    width: 100% auto;
+    ul li {
+      text-align: justify;
+    }
+    h4 {
+      font-size: 4vw;
+      font-weight: 600;
+      font-family: "Poppins";
+      margin: 3vw 0;
+    }
   }
 }

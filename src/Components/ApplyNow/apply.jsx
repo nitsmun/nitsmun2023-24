@@ -23,10 +23,10 @@ const Apply = () => {
     }
   };
 
-  const handleApplyToExe = (e) => {
-    e.preventDefault();
-    window.open("https://forms.gle/2sEyFRTPrXTBSt288", "_blank");
-  };
+  // const handleApplyToExe = (e) => {
+  //   e.preventDefault();
+  //   window.open("https://forms.gle/2sEyFRTPrXTBSt288", "_blank");
+  // };
 
   useEffect(() => {
     document.title = "Apply | NITSMUN";
@@ -86,9 +86,11 @@ const Apply = () => {
                 After successful verification you will be redirected to Annual Conference
                 Registration page
               </li>
+              <li>Select Group Registration (recommended) or Individual registration</li>
               <li>
-                Provide the details, Committee preference, Portfolio preference, and do
-                the payment, then click on submit button
+                If you have selected Group Registration, you will be asked to enter the
+                group name, send the invite to your group members, after the members have
+                registered for the annual conference you can register for the event.
               </li>
               <li>
                 After Successful registration of the event, you will get an confirmation
@@ -101,20 +103,20 @@ const Apply = () => {
             Registration for Annual Conference 2024 is now Open!
           </h2>
 
-          <h2 id={`${styles.regopen} `} className={styles.moremarginttop}>
+          {/* <h2 id={`${styles.regopen} `} className={styles.moremarginttop}>
             Registration for Executive board is now Open!
-          </h2>
+          </h2> */}
           <div className={styles.applyBtn}>
             <button className={styles.button} onClick={handleApply}>
               Register now for Annual Conference 2024
             </button>
           </div>
 
-          <div className={styles.applyBtn}>
+          {/* <div className={styles.applyBtn}>
             <button className={styles.button} onClick={handleApplyToExe}>
               Apply Now for the Executive Board
             </button>
-          </div>
+          </div> */}
           <Faq color="#ffffff" />
         </div>
       </div>

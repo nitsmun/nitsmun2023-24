@@ -856,7 +856,9 @@ const Registration = () => {
                 checked={choiceOfReg === "group"}
                 onChange={(e) => setChoiceOfReg(e.target.value)}
               />
-              <label htmlFor="choice">Group Registration</label>
+              <label htmlFor="choice">
+                Group Registration (group leader select this)
+              </label>
             </div>
             <div id={styles.moretoplabel}>
               <input
@@ -875,6 +877,49 @@ const Registration = () => {
             >
               Next
             </button>
+          </main>
+
+          <main id={styles.imporantforgrp}>
+            <h4>Important instructions related to Group Registration:</h4>
+            <ul>
+              <li>
+                Form a group of at least 3 individuals who will register together. There
+                is a discounted rate available for group registrations, making it
+                advisable to register for Annual Conference 2024 as a group.
+              </li>
+              <li>
+                Designate a group leader (with no specified priorities or additional
+                advantages); anyone within the group can assume this role. Instruct the
+                chosen leader to opt for group registration, input a group name, and send
+                invitations to the members. Invited members will receive an invitation
+                link via email, and they should utilize this link to register and avail of
+                the discount.
+              </li>
+              <li>
+                Say, if you invite 3 members and 2 of them successfully register for the
+                annual conference, the discount will be applied based on the number of
+                members who registered for the event through your invitation link.
+              </li>
+              <li>
+                Group members do not need to pay any fees; only the group leader is
+                required to pay fees for the entire group.
+              </li>
+            </ul>
+
+            <h4>Functionality of a group leader:</h4>
+            <ul>
+              <li>He/She will send invites to the group members.</li>
+              <li>
+                Ensure that the invited member registers for the annual conference using
+                the provided invite link to secure their spot within the group.
+              </li>
+              <li>The group leader will pay the fees for the whole group.</li>
+              <li style={{ color: "red" }}>
+                After all group members have completed their registrations, the group
+                leader must finalise the process by registering for the event using the
+                same group name that was provided when sending the invites.
+              </li>
+            </ul>
           </main>
         </main>
       )}
