@@ -48,7 +48,7 @@ const Registration = () => {
       setIsGroupRegistration(true);
     }
   }, [eventNameIn, grpLeaderEmail, memberEmail, uniqueToken, grpName]);
-
+  console.log("isGroupRegistration:", isGroupRegistration);
   // console.log("regThroughInviteLink:", regThroughInviteLink)
   // console.log("grpLeaderEmail:", grpLeaderEmail);
   // console.log("memberEmail:", memberEmail);
@@ -400,6 +400,7 @@ const Registration = () => {
     previousMunExperience,
     committeePreference,
     portfolioPreference,
+    isGroupRegistration,
   };
 
   const otherGuy = {
@@ -410,6 +411,7 @@ const Registration = () => {
     portfolioPreference,
     college,
     accomodation,
+    isGroupRegistration,
   };
 
   const [grpTeamDetailsFromApi, setGrpTeamDetailsFromApi] = useState();
@@ -461,6 +463,7 @@ const Registration = () => {
     memberEmail,
     grpLeaderEmail,
     inviteToken: uniqueToken,
+    isGroupRegistration,
   };
   // change payment: to any string
   // console.log("payLoadForInvitedIndividualRegistration:", payLoadForInvitedIndividualRegistration)
@@ -471,6 +474,7 @@ const Registration = () => {
     ...commonPayload,
     grpName: grpNameFromLeader,
     grpMembers: teamMembersFromApi,
+    isGroupRegistration,
   };
 
   const payload =
@@ -482,7 +486,7 @@ const Registration = () => {
       ? commonPayload
       : null;
   // console.log("teamMembersFromApi : ", teamMembersFromApi)
-
+  // console.log(payload)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -572,19 +576,22 @@ const Registration = () => {
             toast.error("You have already accepted the invite");
             break;
           default:
-            if (error.includes("User with email")) {
-              const email = error.match(/User with email (.*) not found/)[1];
-              toast.error(`User with email ${email} not found`);
-            } else if (error.includes("has not verified their email")) {
-              const email = error.match(/email (.*) has not verified their email/)[1];
-              toast.error(`error ${email} has not verified their email`);
-            }
-            // else if()
-            else {
-              toast("Something went wrong");
-              console.error(ee);
-              break;
-            }
+            // if (error.includes("User with email")) {
+            //   const email = error.match(/User with email (.*) not found/)[1];
+            //   toast.error(`User with email ${email} not found`);
+            // } else if (error.includes("has not verified their email")) {
+            //   const email = error.match(/email (.*) has not verified their email/)[1];
+            //   toast.error(`error ${email} has not verified their email`);
+            // }
+            // // else if()
+            // else {
+            //   toast("Something went wrong");
+            //   console.error(ee);
+            //   break;
+            // }
+            toast("Something went wrong");
+            console.error(ee);
+            break;
         }
       }
     } finally {
@@ -817,6 +824,7 @@ const Registration = () => {
       }
     }
   }, [data, teamMembersFromApi]);
+  // console.log(teamMembersFromApi)
   if (error) {
     return <div>Something went wrong!</div>;
   }
