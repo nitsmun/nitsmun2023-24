@@ -59,12 +59,12 @@ const Apply = () => {
             />
           </div>
 
-          <div id={styles.topexebanner}>
+          {/* <div id={styles.topexebanner}>
             <img
               src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706616455/exe_application_cbufrm.webp"
               alt=""
             />
-          </div>
+          </div> */}
 
           <main id={styles.ulliprocess}>
             <h2>Steps to apply for the Annual Conference 2024 : </h2>

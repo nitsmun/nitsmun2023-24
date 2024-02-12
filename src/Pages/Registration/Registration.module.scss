@@ -584,6 +584,20 @@
     margin: 1vw 0;
   }
 }
+
+#focusedbold {
+  font-weight: 900;
+  font-family: "Lato", sans-serif;
+  text-decoration: underline;
+}
+
+#procintotal {
+  font-size: 1.5vw;
+  font-weight: 600;
+  margin: 1vw 0;
+  color: green;
+}
+
 @media (max-width: 660px) {
   #choiceregis {
     min-height: 100vh;
@@ -653,5 +667,12 @@
       font-family: "Poppins";
       margin: 3vw 0;
     }
+  }
+
+  #procintotal {
+    font-size: 4vw;
+    font-weight: 600;
+    margin: 2vw 0;
+    color: green;
   }
 }

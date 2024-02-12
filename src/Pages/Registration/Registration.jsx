@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/no-array-index-key */
@@ -643,7 +644,7 @@ const Registration = () => {
             committeePreference?.length > 0 &&
             accomodation &&
             grpNameFromLeader &&
-            teamMembersFromApi?.length > 0
+            teamMembersFromApi?.length > 1
         );
       }
       if (data?.isStudentOfNITS === true) {
@@ -653,7 +654,7 @@ const Registration = () => {
             portfolioPreference?.length > 0 &&
             committeePreference?.length > 0 &&
             grpNameFromLeader &&
-            teamMembersFromApi?.length > 0
+            teamMembersFromApi?.length > 1
         );
       }
     }
@@ -685,7 +686,8 @@ const Registration = () => {
     grpNameFromLeader,
     teamMembersFromApi,
   ]);
-
+  // console.log(teamMembersFromApi?.length)
+  // console.log(isButtonEnabled)
   const isGoNextBtnEnabled = useMemo(() => {
     return Boolean(choiceOfReg);
   }, [choiceOfReg]);
@@ -814,17 +816,20 @@ const Registration = () => {
     }
   };
 
-  const [pricing, setPricing] = useState(349);
-  useEffect(() => {
-    if (data && teamMembersFromApi) {
-      if (teamMembersFromApi?.length > 1) {
-        setPricing("340 for each member");
-      } else if (teamMembersFromApi?.length > 5) {
-        setPricing("250 for each member");
-      }
-    }
-  }, [data, teamMembersFromApi]);
-  // console.log(teamMembersFromApi)
+  // const [pricing, setPricing] = useState(399);
+  // useEffect(() => {
+  //   if (data && teamMembersFromApi) {
+  //     if (teamMembersFromApi?.length > 1) {
+  //       setPricing("349 for each member");
+  //     } else if (teamMembersFromApi?.length > 5) {
+  //       setPricing("250 for each member");
+  //     }
+  //   }
+  // }, [data, teamMembersFromApi]);
+  // console.log(teamMembersFromApi?.length)
+
+  const grandTotalPricing = 349 * (teamMembersFromApi?.length + 1);
+
   if (error) {
     return <div>Something went wrong!</div>;
   }
@@ -883,9 +888,11 @@ const Registration = () => {
             <h4>Important instructions related to Group Registration:</h4>
             <ul>
               <li>
-                Form a group of at least 3 individuals who will register together. There
-                is a discounted rate available for group registrations, making it
-                advisable to register for Annual Conference 2024 as a group.
+                Form a group of at least{" "}
+                <span id={styles.focusedbold}>3 individuals (including team leader)</span>{" "}
+                who will register together. There is a discounted rate available for group
+                registrations, making it advisable to register for Annual Conference 2024
+                as a group.
               </li>
               <li>
                 Designate a group leader (with no specified priorities or additional
@@ -1347,7 +1354,7 @@ const Registration = () => {
                     <div className={styles.payCont}>
                       <p className={styles.p}>
                         To participate in the NITSMUN Annual Conference 2024, a
-                        registration fee of Rs 349 is to be paid by every delegate.
+                        registration fee of Rs 399 is to be paid by every delegate.
                       </p>
                       <div className={styles.payInfoMaster}>
                         <div className={styles.paymentInfoCont}>
@@ -1442,8 +1449,9 @@ const Registration = () => {
                             name="Do you want to avail the accomodation facility?"
                           />
                           <h6>
-                            Note: There will be separate charges for availing the
-                            accomodation facility.
+                            Hospitality fee: Rs. 1500 (Note: Hospitality fee includes
+                            accommodation, access to concerts and other events under
+                            Incandescence 2024)
                           </h6>
                           <main id={styles.extramarginaccom}>
                             <div>
@@ -1614,11 +1622,23 @@ const Registration = () => {
 
               {/* {teamMembersFromApi?.length} */}
               {grpNameFromLeader !== "" && (
-                <p id={styles.textmemescenter}>
-                  These members have registered in the {eventName} with your invite link
-                  in the group: {grpNameFromLeader}
-                </p>
+                <>
+                  <p id={styles.textmemescenter}>
+                    These members have registered in the {eventName} with your invite link
+                    in the group: {grpNameFromLeader}
+                  </p>
+                  <p
+                    id={styles.textmemescenter}
+                    style={{ color: "red", textDecoration: "none", fontStyle: "italic" }}
+                  >
+                    {teamMembersFromApi?.length === 1 &&
+                      `"You need to add atleast 1 more member to complete the group"`}
+                    {teamMembersFromApi?.length === 0 &&
+                      `"You need to add atleast 2 member to complete the group"`}
+                  </p>
+                </>
               )}
+
               {teamMembersFromApi?.length > 0 &&
                 teamMembersFromApi.map((item) => {
                   return (
@@ -1999,8 +2019,10 @@ const Registration = () => {
                           <p className={styles.p}>
                             To participate in the NITSMUN Annual Conference 2024, a
                             registration fee of Rs{" "}
-                            {regThroughInviteLink === true ? "" : pricing} is to be paid
-                            by group leader.
+                            {regThroughInviteLink === true
+                              ? ""
+                              : "349 per member of the group(including the group leader)"}{" "}
+                            is to be paid by group leader.
                           </p>
                           <div className={styles.payInfoMaster}>
                             <div className={styles.paymentInfoCont}>
@@ -2041,6 +2063,11 @@ const Registration = () => {
                                   Scan the QR code given below :
                                 </h1>
                               </div>
+                              {teamMembersFromApi?.length > 0 && (
+                                <p id={styles.procintotal}>
+                                  Grand Total: Rs. {grandTotalPricing}
+                                </p>
+                              )}
 
                               <div id={styles.qrcodehldr}>
                                 <img
@@ -2086,8 +2113,9 @@ const Registration = () => {
                             name="Do you want to avail the accomodation facility?"
                           />
                           <h6>
-                            Note: There will be separate charges for availing the
-                            accomodation facility.
+                            Hospitality fee: Rs. 1500 (Note: Hospitality fee includes
+                            accommodation, access to concerts and other events under
+                            Incandescence 2024)
                           </h6>
                           <main id={styles.extramarginaccom}>
                             <div>
