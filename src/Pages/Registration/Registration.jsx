@@ -49,7 +49,7 @@ const Registration = () => {
       setIsGroupRegistration(true);
     }
   }, [eventNameIn, grpLeaderEmail, memberEmail, uniqueToken, grpName]);
-  console.log("isGroupRegistration:", isGroupRegistration);
+  // console.log("isGroupRegistration:", isGroupRegistration);
   // console.log("regThroughInviteLink:", regThroughInviteLink)
   // console.log("grpLeaderEmail:", grpLeaderEmail);
   // console.log("memberEmail:", memberEmail);
@@ -488,6 +488,8 @@ const Registration = () => {
       : null;
   // console.log("teamMembersFromApi : ", teamMembersFromApi)
   // console.log(payload)
+  // console.log(regThroughInviteLink)
+  // console.log(isButtonEnabled)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -659,14 +661,26 @@ const Registration = () => {
       }
     }
 
-    // this is for individual registration withour invite link
+    // this is for individual registration without invite link
+    if (
+      regThroughInviteLink === false &&
+      isGroupRegistration === false &&
+      data?.isStudentOfNITS === false
+    ) {
+      return Boolean(
+        payment &&
+          previousMunExperience &&
+          college &&
+          portfolioPreference?.length > 0 &&
+          committeePreference?.length > 0 &&
+          accomodation
+      );
+    }
     return Boolean(
       payment &&
         previousMunExperience &&
-        college &&
         portfolioPreference?.length > 0 &&
-        committeePreference?.length > 0 &&
-        accomodation
+        committeePreference?.length > 0
     );
   }, [
     payment,
@@ -830,6 +844,16 @@ const Registration = () => {
 
   const grandTotalPricing = 349 * (teamMembersFromApi?.length + 1);
 
+  // const handleOpenInNewTab = (e) => {
+  //   e.preventDefault();
+  //   const imageUrl = `${payment}`;
+  //   window.open(imageUrl, '_blank');
+  // };
+
+  const handleDeleteTheUploadedPayment = (e) => {
+    e.preventDefault();
+    setPayment("");
+  };
   if (error) {
     return <div>Something went wrong!</div>;
   }
@@ -931,6 +955,7 @@ const Registration = () => {
         </main>
       )}
 
+      {/* individual registration */}
       {isGroupRegistration === false && (
         <>
           <h1 className={styles.mainHeading}>INDIVIDUAL REGISTRATION</h1>
@@ -1425,7 +1450,7 @@ const Registration = () => {
                                   handleImgChange(base64);
                                 } else {
                                   toast(
-                                    "Invalid file type or image is greater than 300KB"
+                                    "Invalid file type or image is greater than 500KB"
                                   );
                                   setPayment("");
                                 }
@@ -1487,6 +1512,23 @@ const Registration = () => {
                         </>
                       )}
 
+                      {/* Show the uplaoded photo */}
+                      {payment && (
+                        <main id={styles.maindivpreviewphto}>
+                          <p>Uploaded Payment photo:</p>
+                          <div id={styles.uploadedimgpreview}>
+                            <img src={payment} alt="" />
+                          </div>
+                        </main>
+                      )}
+                      {payment && (
+                        <button
+                          id={styles.deletephotobtn}
+                          onClick={handleDeleteTheUploadedPayment}
+                        >
+                          Delete this uploaded photo
+                        </button>
+                      )}
                       {/* submit button  */}
                       <div className={styles.subCont}>
                         <input
@@ -2094,7 +2136,7 @@ const Registration = () => {
                                       handleImgChange(base64);
                                     } else {
                                       toast(
-                                        "Invalid file type or image is greater than 300KB"
+                                        "Invalid file type or image is greater than 500KB"
                                       );
                                       setPayment("");
                                     }
@@ -2151,6 +2193,23 @@ const Registration = () => {
                         </>
                       )}
 
+                      {/* Show the uplaoded photo */}
+                      {payment && (
+                        <main id={styles.maindivpreviewphto}>
+                          <p>Uploaded Payment photo:</p>
+                          <div id={styles.uploadedimgpreview}>
+                            <img src={payment} alt="" />
+                          </div>
+                        </main>
+                      )}
+                      {payment && (
+                        <button
+                          id={styles.deletephotobtn}
+                          onClick={handleDeleteTheUploadedPayment}
+                        >
+                          Delete this uploaded photo
+                        </button>
+                      )}
                       {/* submit button  */}
                       <div className={styles.subCont}>
                         <input
