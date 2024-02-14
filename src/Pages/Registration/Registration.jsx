@@ -850,10 +850,10 @@ const Registration = () => {
   //   window.open(imageUrl, '_blank');
   // };
 
-  const handleDeleteTheUploadedPayment = (e) => {
-    e.preventDefault();
-    setPayment("");
-  };
+  // const handleDeleteTheUploadedPayment = (e) => {
+  //   e.preventDefault();
+  //   setPayment("");
+  // };
   if (error) {
     return <div>Something went wrong!</div>;
   }
@@ -1522,13 +1522,12 @@ const Registration = () => {
                         </main>
                       )}
                       {payment && (
-                        <button
-                          id={styles.deletephotobtn}
-                          onClick={handleDeleteTheUploadedPayment}
-                        >
-                          Delete this uploaded photo
-                        </button>
+                        <p id={styles.texttoselectdiff}>
+                          &quot;Click again on Choose file button to select different
+                          photo&quot;
+                        </p>
                       )}
+
                       {/* submit button  */}
                       <div className={styles.subCont}>
                         <input
@@ -2203,12 +2202,10 @@ const Registration = () => {
                         </main>
                       )}
                       {payment && (
-                        <button
-                          id={styles.deletephotobtn}
-                          onClick={handleDeleteTheUploadedPayment}
-                        >
-                          Delete this uploaded photo
-                        </button>
+                        <p id={styles.texttoselectdiff}>
+                          &quot;Click again on Choose file button to select different
+                          photo&quot;
+                        </p>
                       )}
                       {/* submit button  */}
                       <div className={styles.subCont}>

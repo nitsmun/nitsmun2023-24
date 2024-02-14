@@ -502,6 +502,12 @@
   font-size: 0.75vw !important;
 }
 
+#texttoselectdiff {
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.75vw;
+}
+
 @media (max-width: 660px) {
   #smolsize {
     font-size: 2.5vw !important;
@@ -734,5 +740,9 @@
   #deletephotobtn {
     margin: 2.5vw auto;
     padding: 1.5vw 2.25vw;
+  }
+
+  #texttoselectdiff {
+    font-size: 2.2vw;
   }
 }
