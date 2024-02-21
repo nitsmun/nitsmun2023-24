@@ -51,7 +51,7 @@ const Navbar = (props) => {
     { name: "Apply", dest: "/applynow", id: "applynow", type: "route" },
     { name: "PHOTO GALLERY", dest: "/photo", id: "photo", type: "route" },
     { name: "CONTACT", dest: "/contact", id: "contact", type: "route" },
-    { name: "ARCHIVE", dest: "/about", id: "archive", type: "route" },
+    { name: "ARCHIVE", dest: "/archive", id: "archive", type: "route" },
   ];
   if (isLoggedIn) {
     navLinksMobile.push({
