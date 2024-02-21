@@ -22,7 +22,7 @@ const About = () => {
           <div className={styles.imgText}>
             <img
               className={styles.img}
-              src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703886312/modelUN_1_k1qoka.png"
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1708516969/nitsmun/about4_zmcq4w.jpg"
               alt="img"
             />
             <p className={styles.p}>
@@ -48,7 +48,7 @@ const About = () => {
           <div className={styles.imgText}>
             <img
               className={styles.img}
-              src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703886312/modelUN_1_k1qoka.png"
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1708516432/nitsmun/about3_sywhvi.jpg"
               alt="img"
             />
             <p className={styles.p}>
@@ -68,7 +68,7 @@ const About = () => {
           <div className={styles.imgText}>
             <img
               className={styles.img}
-              src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1703886312/modelUN_1_k1qoka.png"
+              src="https://res.cloudinary.com/dhry5xscm/image/upload/v1708516424/nitsmun/about2_nsesuv.jpg"
               alt="img"
             />
             <p className={styles.p}>
