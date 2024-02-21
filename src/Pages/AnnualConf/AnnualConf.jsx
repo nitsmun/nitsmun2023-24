@@ -12,7 +12,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const Hero = () => {
+
   return (
+    
     <div className={styles.hero}>
       <img
         src="https://res.cloudinary.com/dp92qug2f/image/upload/v1706616784/off_poster_f8mjht.webp"
@@ -550,6 +552,17 @@ const AnnualConf = () => {
               </Swiper>
             </div>
           </Card>
+          <div className={styles.sponsor}>
+            <h1 className={styles.sponsorHeading}>Proudly co-sponsored by</h1>
+         
+            <div className={styles.sponsorContent}>
+              <a href="https://www.cogg.io/" target="_blank">
+                  <img className={styles.img} src="https://res.cloudinary.com/dfpklvfbt/image/upload/v1708520672/cogg_dsqslm.png" alt="cogg" />
+              </a>
+              </div>
+                    
+          </div>
+          
           <Glimpses />
           <Faq color="#1d1c41" />
         </div>

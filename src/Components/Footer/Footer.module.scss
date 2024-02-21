@@ -2,6 +2,7 @@
   background-color: #070826;
   padding-top: 6vh;
   padding: 0 4vw;
+  
   /* display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,6 +18,9 @@
   padding: 0 30vw;
   margin-bottom: 2vh;
 }
+.imageContainer1{
+  display: none;
+}
 
 /* .image{
     display: flex;
@@ -30,9 +34,11 @@
   align-items: center;
   justify-content: center;
   background-color: #1b1c32;
-  height: 1rem;
-  width: 1rem;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
+
+
 }
 
 .header {
@@ -49,6 +55,7 @@
   justify-content: center;
   margin-right: 4vw;
   color: aliceblue;
+  // border: 2px solid red;
 }
 
 .contact .h2 {
@@ -62,6 +69,7 @@
   color: white;
   height: 100%;
   margin-bottom: 2vh;
+  // border: 2px solid red;
 }
 
 .option .phone {
@@ -77,6 +85,7 @@
   margin-left: 3vw;
   text-align: right;
   font-size: 1rem;
+  // border: 2px solid red;
 }
 
 .logo {
@@ -147,13 +156,10 @@
   border-radius: 50%;
 }
 
-@media screen and (min-width: 700px) {
-  .imageContainer1 {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 700px) {
+  .imageContainer1 {
+    display: flex;
+  }
   .explore {
     display: none;
   }
@@ -172,16 +178,30 @@
     justify-content: center;
     align-items: center;
   }
+  .contact .option{
+    width: 40vw;
+    
+  }
+  .option .optionText{
+    font-size: 1.5rem;
+  }
 }
-
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1046px) {
   .image-container .icon {
     width: 1rem;
     height: 1rem;
   }
-}
+  .option{
+    width: 32vw;
+  }
+  .option .optionText {
+    margin-left: 1.7vw;
+    text-align: right;
+    font-size: 0.9rem;
+  }  
 
-@media screen and (max-width: 850px) {
+}
+@media screen and (max-width: 857px) {
   .contact .h2 {
     font-size: 1.2rem;
   }
@@ -203,7 +223,11 @@
     height: 1rem;
   }
 }
-
+@media screen and (max-width: 770px){
+  .option .optionText {
+    font-size: 0.70rem;
+  }  
+}
 @media screen and (max-width: 600px) {
   .imageContainer1 .icon {
     height: 1rem;
@@ -232,19 +256,35 @@
   .contact .h2 {
     margin-bottom: 1.5vh;
   }
-
+  
+  .contact .option{
+    width: 45vw;
+    
+  }
   .option .optionText {
     font-size: 0.8rem;
   }
 }
-
+@media screen and (max-width: 531px){
+  .option .optionText {
+    font-size: 0.7rem;
+  }
+  .fontContainer .text{
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 471px){
+  .option .optionText {
+    font-size: 0.65rem;
+  }
+}
 @media screen and (max-width: 450px) {
   .contact .h2 {
     font-size: 1rem;
   }
 
   .contact .optionText {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
   .logoIcon {
@@ -259,6 +299,10 @@
 }
 
 @media screen and (max-width: 400px) {
+  .contact .optionText {
+    font-size: 0.5rem;
+  }
+  
   .logoIcon {
     width: 12vh;
     height: 12vh;
