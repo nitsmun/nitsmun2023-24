@@ -649,6 +649,18 @@ export const Secretariatwebjr = [
     id: 3,
     cName: "team-sec",
     imgsrc:
+    "https://res.cloudinary.com/dfpklvfbt/image/upload/v1708208373/IMG_9845_1_wsrayf.jpg",
+    alt:"Kaushik Talukdar",
+    name: "Kaushik Talukdar",
+    post: "Technical Team",
+    mail: "mailto:kaushiktalukdar004@gmail.com",
+    linkedin: "https://www.linkedin.com/in/kaushik-talukdar-8b7b86257/",
+    fb: "https://github.com/kaushikt-04",
+  },
+  {
+    id: 4,
+    cName: "team-sec",
+    imgsrc:
       "https://res.cloudinary.com/dhry5xscm/image/upload/v1700683185/nitsmun/bitopan-img_h61um4.webp",
     alt: "Bitopan Baishya",
     name: "Bitopan Baishya",
@@ -657,4 +669,5 @@ export const Secretariatwebjr = [
     linkedin: "https://www.linkedin.com/in/bitopanbaishya",
     fb: "https://github.com/BitopanBaishya",
   },
+
 ];
