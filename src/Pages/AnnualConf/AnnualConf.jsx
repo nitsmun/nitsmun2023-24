@@ -376,7 +376,7 @@ const AnnualConf = () => {
                   <h1 className={styles.h1}>IPC- International Press Conferences </h1>
                   <p className={styles.p}>
                     <p className={styles.innerPara}>
-                      <b>Agenda:</b> The International Press Corps(IPC) is a committee where people who love writing, taking pictures, and fair journalism come together. Each journalist is teamed up with a famous news agency and given the job of watching and reporting on debates in other committees. They have to capture interesting moments and send reports every day. And you know what's cool? It's not just serious stuff; there's a lot of fun too! Imagine enjoying the lively discussions on the house floor – journalism with a dose of fun!
+                      <b>Agenda:</b> The International Press Corps(IPC) is a committee where people who love writing, taking pictures, and fair journalism come together. Each journalist is teamed up with a famous news agency and given the job of watching and reporting on debates in other committees. They have to capture interesting moments and send reports every day. And you know what&apos;s cool? It&apos;s not just serious stuff; there&apos;s a lot of fun too! Imagine enjoying the lively discussions on the house floor – journalism with a dose of fun!
                     </p>
                     {/* <p className={styles.innerPara}>
                       The United Nations Security Council maintains global peace, with 15
