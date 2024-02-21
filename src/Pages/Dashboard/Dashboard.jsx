@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import React, { useState, useEffect, useContext, useMemo } from "react";
@@ -123,9 +124,12 @@ const Card = (props) => {
         )
         .then((res) => {
           if (res.data.message === "Verification link sent successfully") {
-            toast.success("Verification link sent to your personal email", {
-              duration: 10000,
-            });
+            // toast.success("Verification link sent to your personal email", {
+            //   duration: 10000,
+            // });
+            alert(
+              "Verification link sent to your personal email. please refresh your email inbox"
+            );
           }
         });
     } catch (ee) {
