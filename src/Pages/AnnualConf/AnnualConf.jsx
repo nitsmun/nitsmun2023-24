@@ -194,14 +194,14 @@ const AnnualConf = () => {
     bg: "",
     register: "",
   });
-  const moreDetails = (Title, Agenda, Banner, Desc) => {
+  const moreDetails = (Title, Agenda, Banner, Desc, bg) => {
     setWideview((prev) => !prev);
     setWide({
       title: Title,
       agenda: Agenda,
       banner: Banner,
       desc: Desc,
-      bg: "",
+      bg: bg,
       register: "",
     });
   };
@@ -248,12 +248,13 @@ const AnnualConf = () => {
               <button className={styles.infoBtnPopup} onClick={handleRegister}>
                 Register Now
               </button>
-              <button
-                className={styles.infoBtnPopup}
-                onClick={() => toast("Link has not been activated yet!")}
-              >
-                Background Guide
-              </button>
+              {wide.bg === "" ?
+                null : <a
+                  className={styles.infoBtnPopup}
+                  href={wide.bg}
+                >
+                  Background Guide
+                </a>}
             </div>
           </div>
         </div>
@@ -290,12 +291,12 @@ const AnnualConf = () => {
                     <button className={styles.infoBtn} onClick={handleRegister}>
                       Register Now
                     </button>
-                    <button
+                    <a
+                      href="https://drive.google.com/file/d/19-6zDrWK1m4-ehJciQxeFJZdRKSA3Um-/view"
                       className={styles.infoBtn}
-                      onClick={() => toast("Link has not been activated yet!")}
                     >
                       Background Guide
-                    </button>
+                    </a>
                     <button
                       className={styles.detailsBtn}
                       onClick={() =>
@@ -303,7 +304,8 @@ const AnnualConf = () => {
                           "Hastinapur Special Council",
                           "Ethical Maze in Mahabharata: Unveiling the Intrigues of 'Cheer Haran' and the Moral Labyrinth Faced by Characters.",
                           "https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/hastinapur_x7vijo.jpg",
-                          "Welcome to the 'Special Council of Hastinapur' at NITSMUN! This committee is designed to simulate pivotal diplomatic events from the Mahabharat, offering delegates a platform to navigate intricate political landscapes, forge alliances, and strategize for the kingdom of Hastinapur. Prepare for intense debates, historical intricacies, and an immersive diplomatic experience. Secure your spot, and let's write history together!"
+                          "Welcome to the 'Special Council of Hastinapur' at NITSMUN! This committee is designed to simulate pivotal diplomatic events from the Mahabharat, offering delegates a platform to navigate intricate political landscapes, forge alliances, and strategize for the kingdom of Hastinapur. Prepare for intense debates, historical intricacies, and an immersive diplomatic experience. Secure your spot, and let's write history together!",
+                          "https://drive.google.com/file/d/19-6zDrWK1m4-ehJciQxeFJZdRKSA3Um-/view"
                         )
                       }
                     >
@@ -337,12 +339,12 @@ const AnnualConf = () => {
                     <button className={styles.infoBtn} onClick={handleRegister}>
                       Register Now
                     </button>
-                    <button
+                    <a
                       className={styles.infoBtn}
-                      onClick={() => toast("Link has not been activated yet!")}
+                      href="https://drive.google.com/file/d/1q4V4wiAMEzeG84k9z8CGsIzWL3ew3F8X/view?usp=drive_link"
                     >
                       Background Guide
-                    </button>
+                    </a>
                     <button
                       className={styles.detailsBtn}
                       onClick={() =>
@@ -350,7 +352,8 @@ const AnnualConf = () => {
                           "UNHRC",
                           "Addressing the Ongoing Atrocities in Israel-Palestine with Main Focus On Violence Against Women and childern",
                           "https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/unhrc_24_qvqtzx.jpg",
-                          "Welcome to the 'United Nations Human Rights Council (UNHRC)' at NITSMUN, a cornerstone of intellectual discourse in the vibrant tapestry of Incandescence! This committee is crafted to emulate the dynamic realm of international diplomacy, where delegates will grapple with pressing human rights issues, engage in diplomatic maneuvers, and work towards collaborative solutions. Get ready for impassioned debates, diplomatic intricacies, and a profound exploration of global affairs. Embrace the opportunity to be a part of this consequential council, where your voice shapes the discourse on human rights. Secure your spot, and let the spirit of diplomacy illuminate the path to constructive resolutions. Together, let's embark on a journey to make a lasting impact on the world stage!"
+                          "Welcome to the 'United Nations Human Rights Council (UNHRC)' at NITSMUN, a cornerstone of intellectual discourse in the vibrant tapestry of Incandescence! This committee is crafted to emulate the dynamic realm of international diplomacy, where delegates will grapple with pressing human rights issues, engage in diplomatic maneuvers, and work towards collaborative solutions. Get ready for impassioned debates, diplomatic intricacies, and a profound exploration of global affairs. Embrace the opportunity to be a part of this consequential council, where your voice shapes the discourse on human rights. Secure your spot, and let the spirit of diplomacy illuminate the path to constructive resolutions. Together, let's embark on a journey to make a lasting impact on the world stage!",
+                          "https://drive.google.com/file/d/1q4V4wiAMEzeG84k9z8CGsIzWL3ew3F8X/view?usp=drive_link"
                         )
                       }
                     >
@@ -373,7 +376,7 @@ const AnnualConf = () => {
                   <h1 className={styles.h1}>IPC- International Press Conferences </h1>
                   <p className={styles.p}>
                     <p className={styles.innerPara}>
-                      <b>Agenda:</b> Coming soon..
+                      <b>Agenda:</b> The International Press Corps(IPC) is a committee where people who love writing, taking pictures, and fair journalism come together. Each journalist is teamed up with a famous news agency and given the job of watching and reporting on debates in other committees. They have to capture interesting moments and send reports every day. And you know what's cool? It's not just serious stuff; there's a lot of fun too! Imagine enjoying the lively discussions on the house floor – journalism with a dose of fun!
                     </p>
                     {/* <p className={styles.innerPara}>
                       The United Nations Security Council maintains global peace, with 15
@@ -385,12 +388,7 @@ const AnnualConf = () => {
                     <button className={styles.infoBtn} onClick={handleRegister}>
                       Register Now
                     </button>
-                    <button
-                      className={styles.infoBtn}
-                      onClick={() => toast("Link has not been activated yet!")}
-                    >
-                      Background Guide
-                    </button>
+
                     <button
                       className={styles.detailsBtn}
                       onClick={() =>
@@ -398,7 +396,8 @@ const AnnualConf = () => {
                           "IPC- International Press Conferences",
                           "",
                           "https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/ipc_2024_ajldq6.jpg",
-                          "The International Press Corps(IPC) is a committee where people who love writing, taking pictures, and fair journalism come together. Each journalist is teamed up with a famous news agency and given the job of watching and reporting on debates in other committees. They have to capture interesting moments and send reports every day. And you know what's cool? It's not just serious stuff; there's a lot of fun too! Imagine enjoying the lively discussions on the house floor – journalism with a dose of fun!"
+                          "The International Press Corps(IPC) is a committee where people who love writing, taking pictures, and fair journalism come together. Each journalist is teamed up with a famous news agency and given the job of watching and reporting on debates in other committees. They have to capture interesting moments and send reports every day. And you know what's cool? It's not just serious stuff; there's a lot of fun too! Imagine enjoying the lively discussions on the house floor – journalism with a dose of fun!",
+                          ""
                         )
                       }
                     >
@@ -435,12 +434,12 @@ const AnnualConf = () => {
                     <button className={styles.infoBtn} onClick={handleRegister}>
                       Register Now
                     </button>
-                    <button
+                    <a
                       className={styles.infoBtn}
-                      onClick={() => toast("Link has not been activated yet!")}
+                      href="https://drive.google.com/drive/folders/1gv1_vS-3iPH5oV2VM38cm-hrK1oDRlhO?usp=sharing"
                     >
                       Background Guide
-                    </button>
+                    </a>
                     <button
                       className={styles.detailsBtn}
                       onClick={() =>
@@ -448,7 +447,8 @@ const AnnualConf = () => {
                           "IB- Intelligence Bureau",
                           "Analysing Security Measures for the Ram Mandir Inauguration – Evaluating Concerns, Crowd Logistics, and Precautionary Protocols.",
                           "https://res.cloudinary.com/dp92qug2f/image/upload/v1706595374/ib_wbiqww.jpg",
-                          "Step into the realm of strategy and security with the Intelligence Bureau (IB) Committee at NITSMUN Annual Conference 2024! Join us on a journey to analyze, plan, and safeguard important events, all in the mission to protect the country and its integrity. Your voice matters in addressing concerns and playing a pivotal role in ensuring security. Join the conference to contribute your perspective to the strategic discussions."
+                          "Step into the realm of strategy and security with the Intelligence Bureau (IB) Committee at NITSMUN Annual Conference 2024! Join us on a journey to analyze, plan, and safeguard important events, all in the mission to protect the country and its integrity. Your voice matters in addressing concerns and playing a pivotal role in ensuring security. Join the conference to contribute your perspective to the strategic discussions.",
+                          "https://drive.google.com/drive/folders/1gv1_vS-3iPH5oV2VM38cm-hrK1oDRlhO"
                         )
                       }
                     >
@@ -462,32 +462,92 @@ const AnnualConf = () => {
           <Card>
             <div className={styles.mainHeading}>
               <h1 className={styles.h1}>EXECUTIVE BOARD</h1>
-              <div className={styles.innerCont1}>
-                <div className={styles.imgParent}>
-                  {/* <img
-                    src="https://res.cloudinary.com/dxcqxo6kl/image/upload/v1706367691/prof_rg9g0w.jpg"
-                    alt="loading..."
-                    className={styles.img}
-                  /> */}
-                </div>
-                <div className={styles.content}>
-                  <div className={styles.innerParent}>
-                    <h1 className={styles.h1}>TO BE ANNOUNCED...</h1>
-                    <p className={styles.p}>
-                      {/* <p className={styles.innerPara}>
-                        Hey! I am Mayurakhi Khaund. I am 2nd year Civil Undergraduate student
-                        at NITS. Also, I work as a content writer and as a marketing executive
-                        for various clubs. MUN has always been something that intrigues me and
-                        it&apos;s just an incredible platform to furnish skills in an
-                        individual. I am really grateful to NITSMUN for giving me the
-                        opportunity to participate and organise amazing conferences and now,
-                        to chair one! Looking forward to creating unforgettable memories in
-                        here. See you at the next upcoming session!
-                      </p> */}
-                    </p>
+              <Swiper navigation
+                autoplay={{ delay: 2500, disableOnInteraction: false }}
+                modules={[Navigation]} className={styles.eb}>
+                <SwiperSlide className={styles.innerCont1}>
+                  <div className={styles.imgParent}>
+                    <img
+                      src="https://res.cloudinary.com/dhry5xscm/image/upload/v1708416512/nitsmun/sounak_sengupta_nimxjf.jpg"
+                      alt="loading..."
+                      className={styles.img}
+                    />
                   </div>
-                </div>
-              </div>
+                  <div className={styles.content}>
+                    <div className={styles.innerParent}>
+                      <h1 className={styles.h1}>Sounak Sengupta</h1>
+                      <p className={styles.p}>
+                        <p className={styles.innerPara}>
+                          Mr Sounak Sengupta as the Chairperson for Intelligence Bureau. Sounak Sengupta, a physics post graduate student, has been doing MUNs since 2018. Apart from his academic persuasions, he takes keen interest in debates and public speaking.
+                        </p>
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className={styles.innerCont1}>
+                  <div className={styles.imgParent}>
+                    <img
+                      src="https://res.cloudinary.com/dhry5xscm/image/upload/v1708416612/nitsmun/prathmesh_repal_vjhrlg.jpg"
+                      alt="loading..."
+                      className={styles.img}
+                    />
+                  </div>
+                  <div className={styles.content}>
+                    <div className={styles.innerParent}>
+                      <h1 className={styles.h1}>Prathmesh Repal</h1>
+                      <p className={styles.p}>
+                        <p className={styles.innerPara}>
+                          Mr. Prathamesh Repal as the Chairperson for UNHRC. As he takes the helm as the  Chairperson for the UNHRC simulation at NITS 2024, his passion for fostering a conducive and inclusive committee atmosphere shines through. He strives to uphold the essence of MUNs as a breeding ground for creative ideas and solutions.
+                        </p>
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className={styles.innerCont1}>
+                  <div className={styles.imgParent}>
+                    <img
+                      src="https://res.cloudinary.com/dhry5xscm/image/upload/v1708416729/nitsmun/david_das_tlqeld.jpg"
+                      alt="loading..."
+                      className={styles.img}
+                    />
+                  </div>
+                  <div className={styles.content}>
+                    <div className={styles.innerParent}>
+                      <h1 className={styles.h1}>David Das</h1>
+                      <p className={styles.p}>
+                        <p className={styles.innerPara}>
+                          Mr David Das as the Chairperson for Hastinapur Special Council. With over 100 MUNs under his belt, he is a master of debating and diplomacy, and a gifted speaker. One of his crowning achievements was attending a MUN conference at the UN Headquarters in New York in 2017, where he won the “Best Delegation” Award for his outstanding performance at the UNHQ.
+                        </p>
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className={styles.innerCont1}>
+                  <div className={styles.imgParent}>
+                    <img
+                      src="https://res.cloudinary.com/dhry5xscm/image/upload/v1708447587/bhaswar_wa2ib3.webp"
+                      alt="loading..."
+                      className={styles.img}
+                    />
+                  </div>
+                  <div className={styles.content}>
+                    <div className={styles.innerParent}>
+                      <h1 className={styles.h1}>Bhaswar Agnivesh</h1>
+                      <p className={styles.p}>
+                        <p className={styles.innerPara}>
+                          Hey! I am Bhaswar Agnivesh. I am 2nd year Electronics & Communication Undergraduate student
+                          at NITS. MUN has always been something that intrigues me and
+                          it&apos;s just an incredible platform to furnish skills in an
+                          individual. I am really grateful to NITSMUN for giving me the
+                          opportunity to participate and organise amazing conferences and now,
+                          to chair one! Looking forward to creating unforgettable memories in
+                          here. See you at the next upcoming session!
+                        </p>
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
             </div>
           </Card>
           <Glimpses />
