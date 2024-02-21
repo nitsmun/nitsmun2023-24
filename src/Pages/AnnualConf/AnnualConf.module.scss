@@ -429,6 +429,13 @@
         }
       }
 
+      .imgParent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
       .imgParent .img {
         width: var(--img-width);
         height: var(--img-height);
