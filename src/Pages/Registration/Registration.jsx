@@ -1532,8 +1532,10 @@ const Registration = () => {
                       <div className={styles.subCont}>
                         <input
                           type="submit"
-                          value={submitting ? "Submitting..." : "Submit"}
-                          disabled={submitting || !isButtonEnabled}
+                          // value={submitting ? "Submitting..." : "Submit"}
+                          value="Registration closed"
+                          // disabled={submitting || !isButtonEnabled}
+                          disabled
                           style={{
                             cursor:
                               submitting || !isButtonEnabled ? "not-allowed" : "pointer",
@@ -2211,8 +2213,10 @@ const Registration = () => {
                       <div className={styles.subCont}>
                         <input
                           type="submit"
-                          value={submitting ? "Submitting..." : "Submit"}
-                          disabled={submitting || !isButtonEnabled}
+                          // value={submitting ? "Submitting..." : "Submit"}
+                          value="Registration closed"
+                          // disabled={submitting || !isButtonEnabled}
+                          disabled
                           style={{
                             cursor:
                               submitting || !isButtonEnabled ? "not-allowed" : "pointer",

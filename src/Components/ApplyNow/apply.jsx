@@ -99,8 +99,8 @@ const Apply = () => {
               <li>If you face any sort of issues please contact +918210610167</li>
             </ul>
           </main>
-          <h2 id={styles.regopen}>
-            Registration for Annual Conference 2024 is now Open!
+          <h2 id={styles.regopen} style={{ color: "red" }}>
+            Registration for the Annual Conference 2024 has been closed!
           </h2>
 
           {/* <h2 id={`${styles.regopen} `} className={styles.moremarginttop}>
