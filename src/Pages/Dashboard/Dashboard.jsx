@@ -108,6 +108,8 @@ const Card = (props) => {
     navigate("/dashboard");
   };
   const [sending, setSending] = useState(false);
+  const [linkReceived, setLinkReceived] = useState(false);
+  const [verificationLink, setVerificationLink] = useState("");
   const handleSendVerificationLink = async (e) => {
     e.preventDefault();
     setSending(true);
@@ -124,12 +126,15 @@ const Card = (props) => {
         )
         .then((res) => {
           if (res.data.message === "Verification link sent successfully") {
-            // toast.success("Verification link sent to your personal email", {
-            //   duration: 10000,
-            // });
-            alert(
-              "Verification link sent to your personal email. please refresh your email inbox"
-            );
+            setLinkReceived(true);
+            setVerificationLink(res.data?.verifyEmailLink);
+            toast.success("Verification link provided", {
+              duration: 15000,
+            });
+
+            // alert(
+            //   `Link is pr`
+            // );
           }
         });
     } catch (ee) {
@@ -410,6 +415,14 @@ const Card = (props) => {
               </button>
             </div>
           </div>
+        </div>
+      ) : linkReceived ? (
+        <div id={styles.conditionallink}>
+          <h2>Click on below link: </h2>
+          <a href={verificationLink}>
+            {" "}
+            <p>{verificationLink}</p>
+          </a>
         </div>
       ) : (
         <main id={styles.verificationparent}>

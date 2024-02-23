@@ -445,3 +445,22 @@
     font-size: 6vw !important;
   }
 }
+
+#conditionallink {
+  // height: 100vh;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  h2 {
+    text-align: center;
+    margin-bottom: 5vw;
+  }
+  flex-wrap: wrap;
+  width: 100%;
+  a {
+    p {
+      text-align: start;
+      // text-decoration: underline;
+    }
+  }
+}
