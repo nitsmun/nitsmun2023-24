@@ -96,7 +96,7 @@ const Apply = () => {
                 After Successful registration of the event, you will get an confirmation
                 email on your Personal Email
               </li>
-              <li>If you face any sort of issues please contact +918210610167</li>
+              {/* <li>If you face any sort of issues please contact +918210610167</li> */}
             </ul>
           </main>
           <h2 id={styles.regopen} style={{ color: "red" }}>

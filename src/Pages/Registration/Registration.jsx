@@ -1554,12 +1554,12 @@ const Registration = () => {
                 <h2 className={styles.normal}>1. Ronak Jain (+91 84028 22820)</h2>
                 <h2 className={styles.normal}>2. Aditi (+91 84865 00973)</h2>
               </div>
-              <div className={styles.contactInfoCont} id={styles.columnflex}>
+              {/* <div className={styles.contactInfoCont} id={styles.columnflex}>
                 <h2 className={styles.bolded}>For any form related queries contact:</h2>
                 <h2 className={styles.normal}>1. Aditya (+91 8210610167)</h2>
                 <h2 className={styles.normal}>2. Ankit (+91 88129 59563)</h2>
                 <h2 className={styles.normal}>3. Dorothy (+91 81330 72305)</h2>
-              </div>
+              </div> */}
             </form>
           </div>
         </>
@@ -2235,12 +2235,12 @@ const Registration = () => {
                 <h2 className={styles.normal}>1. Ronak Jain (+91 84028 22820)</h2>
                 <h2 className={styles.normal}>2. Aditi (+91 84865 00973)</h2>
               </div>
-              <div className={styles.contactInfoCont} id={styles.columnflex}>
+              {/* <div className={styles.contactInfoCont} id={styles.columnflex}>
                 <h2 className={styles.bolded}>For any form related queries contact:</h2>
                 <h2 className={styles.normal}>1. Aditya (+91 8210610167)</h2>
                 <h2 className={styles.normal}>2. Ankit (+91 88129 59563)</h2>
                 <h2 className={styles.normal}>3. Dorothy (+91 81330 72305)</h2>
-              </div>
+              </div> */}
             </form>
           </div>
         </>
