@@ -69,7 +69,7 @@ const Footer = () => {
               className={styles.phone}
             />
             <p className={styles.optionText}>
-              <a href="tel:+91 7096597864">+91 8402822820</a>
+              <a href="tel:+91 8402822820">+91 8402822820</a>
             </p>
           </div>
         </div>
