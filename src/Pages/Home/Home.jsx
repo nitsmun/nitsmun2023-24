@@ -39,8 +39,8 @@ const Home = () => {
         <div className="letter-container" id="letter">
           <Letter
             title="Faculty Advisor"
-            name="Dr. Wasim Arif"
-            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1701965729/ecs-website/wasim-img_orgqul.jpg"
+            name="Dr. Debjit Bhowmik"
+            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1729409434/nitsmun/debjitbhowmick_jn2bg4.jpg"
           />
           <Letter
             title="Secretary General"
