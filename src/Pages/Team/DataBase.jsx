@@ -29,7 +29,7 @@ export const Secretariat = [
     id: 3,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676476399/events/nitsmun/team/khush_MUN_w0cszx.jpg",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728838420/tpppkxdhtxz8walp6fzl.jpg",
     alt: "Khush Agarwal",
     name: "Khush Agarwal",
     post: "General Secretary",
@@ -55,7 +55,7 @@ export const Secretariat = [
     id: 5,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676476862/events/nitsmun/team/ranjanKapar_j4hqgc.jpg",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728838717/z5eeztvpt4ctei1kyxae.png",
     alt: "Ranjan Kr Kapar",
     name: "Ranjan Kr Kapar",
     post: "Director of Media Operations",
@@ -105,7 +105,7 @@ export const Secretariat = [
     id: 9,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676477322/events/nitsmun/team/sayantanDas_xiusrh.jpg",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728839037/kqprk1vnzpitakqashsv.png",
     alt: "Sayantan Das",
     name: "Sayantan Das",
     post: "Director of Public Relations and Outreach",
@@ -117,7 +117,7 @@ export const Secretariat = [
     id: 10,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676477032/events/nitsmun/team/rohit1_eh4kdf.png",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728839775/hsdv1t3efgmtlkejxbry.jpg",
     alt: "Rohit Choudhary",
     name: "Rohit Choudhary",
     post: "Director of Marketing Operations",
@@ -166,7 +166,7 @@ export const Secretariat = [
     id: 14,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dp92qug2f/image/upload/c_scale,w_360,f_auto,fl_lossy/v1676477462/events/nitsmun/team/Suraj_Kumar_Pampana_e3kaio.jpg",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728839111/qu1mltqhzffhjyyfpnab.jpg",
     alt: "Suraj Kumar Pampana",
     name: "Suraj Kumar Pampana",
     post: "Director of Liaison & Delegate Affairs",
@@ -207,7 +207,7 @@ export const Secretariatjr = [
     id: 1,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dhry5xscm/image/upload/v1695931102/nitsmun/mayurakhi_a8xhjj.webp",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728838476/uvpnwjgo9kxzxoyulmxq.jpg",
     alt: "Mayurakhi Khaund",
     name: "Mayurakhi Khaund",
     post: "Deputy Director General",
@@ -219,7 +219,7 @@ export const Secretariatjr = [
     id: 2,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dhry5xscm/image/upload/v1695931106/nitsmun/bhaswar_dx9d8o.webp",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728839678/vfl6nchbskzusc9ipnce.jpg",
     alt: "Bhaswar Agnivesh",
     name: "Bhaswar Agnivesh",
     post: "Deputy Director General",
@@ -244,7 +244,7 @@ export const Secretariatjr = [
     id: 4,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dhry5xscm/image/upload/v1695931103/nitsmun/paditya_kogiwt.webp",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728838543/cnv3gxfblo9hbxz7pwcn.jpg",
     alt: "Pidaparthi Satyasai Aditya",
     name: "Pidaparthi Satyasai Aditya",
     post: "Deputy Director of Liaison & Delegate Affairs",
@@ -283,7 +283,7 @@ export const Secretariatjr = [
     id: 1,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dffke2hbp/image/upload/v1725381613/iaxo9du5gg5poaetmfdp.jpg",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728839377/jkc4p5iqtciirec4fskp.jpg",
     alt: "Vishnu Priya",
     name: "Vishnu Priya",
     post: "Deputy Director of Research and Development",
@@ -360,7 +360,7 @@ export const Secretariatjr = [
     id: 5,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dhry5xscm/image/upload/v1695931104/nitsmun/tripti_ydvxdv.webp",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728839262/owaanuboyqqunjq2lncp.jpg",
     alt: "Tripti Golchha",
     name: "Tripti Golchha",
     post: "Under Secretary General (Operations)",
@@ -373,7 +373,7 @@ export const Secretariatjr = [
     id: 6,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dhry5xscm/image/upload/v1695931102/nitsmun/alya_jain_yazhvn.webp",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728839443/n81a4lasinmcwp3ascxa.jpg",
     alt: "Aalya Jain",
     name: "Aalya Jain",
     post: "Deputy Director of Marketing Operations",
@@ -385,7 +385,7 @@ export const Secretariatjr = [
     id: 10,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dhry5xscm/image/upload/v1725719900/nitsmun/kaustav_dkqxhy.webp",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728838299/ongt3uhsqvb3cvpccsk9.jpg",
     alt: "Kaustav Dev",
     name: "Kaustav Dev",
     post: "Deputy Director of Design Operations",
@@ -462,7 +462,7 @@ export const Secretariatjr = [
     id: 3,
     cName: "team-sec",
     imgsrc:
-      "https://res.cloudinary.com/dfpklvfbt/image/upload/v1708208373/IMG_9845_1_wsrayf.jpg",
+      "https://res.cloudinary.com/dffke2hbp/image/upload/v1728838174/avxe5z3ifjp3hssefujv.jpg",
     alt: "Kaushik Talukdar",
     name: "Kaushik Talukdar",
     post: "Deputy Director of Technical Operations",
@@ -973,7 +973,7 @@ export const Secretariatwebjr = [
     imgsrc:
       "https://res.cloudinary.com/dffke2hbp/image/upload/v1725306287/gkhzcafphbz4pgfjwqk1.jpg",
     alt: "Vivek Sharma",
-    name: "Vivek sharma",
+    name: "Vivek Sharma",
     post: "Technical Team",
     mail: "mailto:beingviveksharma99@gmail.com",
     linkedin: "https://www.linkedin.com/in/vivek-sharma-318593297",
